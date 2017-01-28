@@ -1,0 +1,10 @@
+(nav-runtime-config 
+   (extent-nw  -20.000000 100.000000 25.711941)
+   (extent-ne  20.000000 100.000000 25.711941)
+   (extent-sw  -20.000000 -100.000000 -25.711941)
+   (extent-se  20.000000 -100.000000 25.711941)
+   (offset  -0.000000 -37.705135 21.509708)
+   (nav-data-path  "$(nav-data-dir)\LSD-49_Harpers_Ferry_class")
+   (cs-type  6)
+   (original-terrain  "$(DATA_DIR)\Vehicles\Surface\LSD-49_Harpers_Ferry_class\LSD-49_Harpers_Ferry_class.medf")
+)

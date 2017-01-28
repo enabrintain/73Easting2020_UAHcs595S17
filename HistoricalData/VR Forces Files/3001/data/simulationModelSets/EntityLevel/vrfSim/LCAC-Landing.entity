@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<simObjects entityVersion="1.0">
+   <simObject objectType="1:1:3:0:11:1:0:0" matchType="1:1:3:-1:11:1:-1:-1" platform="@(platforms-dir)/Ground_Vehicle.ope">
+      <boundingVolume paramName="bounding-volume" offsetType="ground-center">
+         <dimensions length="27.025392" width="14.395246" height="6.450946"/>
+      </boundingVolume>
+      <string paramName="short-name">LCAC</string>
+      <bool paramName="can-be-embarked-upon">True</bool>
+      <loadPoints paramName="ingress-points">
+         <loadPoint supportedSlots="">
+            <vector x="-22" y="0" z="0"/>
+            <vector x="-11.7" y="0" z="-2.392614"/>
+         </loadPoint>
+         <loadPoint supportedSlots="">
+            <vector x="-18.15708" y="16.825221" z="0"/>
+            <vector x="-26.306047" y="8.101033" z="0"/>
+            <vector x="-22.087758" y="-0.047935" z="0"/>
+            <vector x="-11.733776" y="-0.047935" z="-2.392614"/>
+         </loadPoint>
+         <loadPoint supportedSlots="">
+            <vector x="-18.15708" y="-16.825221" z="0"/>
+            <vector x="-26.306047" y="-8.101033" z="0"/>
+            <vector x="-22.087758" y="-0.047935" z="0"/>
+            <vector x="-11.733776" y="-0.047935" z="-2.392614"/>
+         </loadPoint>
+      </loadPoints>
+      <loadPoints paramName="egress-points">
+         <loadPoint supportedSlots="">
+            <vector x="13.541185" y="0.046966" z="-1.703203"/>
+            <vector x="16.171243" y="0.046966" z="-0.189245"/>
+            <vector x="21.901012" y="0.046966" z="0"/>
+         </loadPoint>
+      </loadPoints>
+      <slotExclusions paramName="slot-exclusions">
+         <slotExclusion ifSlotsReserved="1 2 3 4 5 6 7 8 9 10 11 12 13" excludeTheseSlots="14"/>
+         <slotExclusion ifSlotsReserved="14" excludeTheseSlots="1 2 3 4 5 6 7 8 9 10 11 12 13"/>
+         <slotExclusion ifSlotsReserved="10" excludeTheseSlots="1 2 4 5 14"/>
+         <slotExclusion ifSlotsReserved="11" excludeTheseSlots="2 3 5 6 14"/>
+         <slotExclusion ifSlotsReserved="12" excludeTheseSlots="4 5 7 8 14"/>
+         <slotExclusion ifSlotsReserved="13" excludeTheseSlots="5 6 8 9 14"/>
+         <slotExclusion ifSlotsReserved="1 2 4 5 14" excludeTheseSlots="10"/>
+         <slotExclusion ifSlotsReserved="2 3 5 6 14" excludeTheseSlots="11"/>
+         <slotExclusion ifSlotsReserved="4 5 7 8 14" excludeTheseSlots="12"/>
+         <slotExclusion ifSlotsReserved="5 6 8 9 14" excludeTheseSlots="13"/>
+      </slotExclusions>
+      <bool paramName="flip-disembark-body-x">False</bool>
+      <bool paramName="flip-disembark-body-y">False</bool>
+      <embarkationSlots paramName="embarkation-slots">
+         <embarkationSlot embarkableObject="-1:1:1:-1:6:-1:-1:-1" capacity="1" jumpToLocation="False" turnToHeading="True" embarkedAppearance="0XFFFFFFFF">
+            <embarkedPosition x="5.224486" y="-2.81189" z="-2.481805"/>
+            <embarkedHeading>0</embarkedHeading>
+         </embarkationSlot>
+         <embarkationSlot embarkableObject="-1:1:1:-1:6:-1:-1:-1" capacity="1" jumpToLocation="False" turnToHeading="True" embarkedAppearance="0XFFFFFFFF">
+            <embarkedPosition x="5.224486" y="-0.078108" z="-2.503364"/>
+            <embarkedHeading>0</embarkedHeading>
+         </embarkationSlot>
+         <embarkationSlot embarkableObject="-1:1:1:-1:6:-1:-1:-1" capacity="1" jumpToLocation="False" turnToHeading="True" embarkedAppearance="0XFFFFFFFF">
+            <embarkedPosition x="4.990162" y="2.655675" z="-2.489567"/>
+            <embarkedHeading>0</embarkedHeading>
+         </embarkationSlot>
+         <embarkationSlot embarkableObject="-1:1:1:-1:6:-1:-1:-1" capacity="1" jumpToLocation="False" turnToHeading="True" embarkedAppearance="0XFFFFFFFF">
+            <embarkedPosition x="-0.672673" y="-2.81189" z="-2.47052"/>
+            <embarkedHeading>0</embarkedHeading>
+         </embarkationSlot>
+         <embarkationSlot embarkableObject="-1:1:1:-1:6:-1:-1:-1" capacity="1" jumpToLocation="False" turnToHeading="True" embarkedAppearance="0XFFFFFFFF">
+            <embarkedPosition x="-0.595376" y="0.093931" z="-2.466902"/>
+            <embarkedHeading>0</embarkedHeading>
+         </embarkationSlot>
+         <embarkationSlot embarkableObject="-1:1:1:-1:6:-1:-1:-1" capacity="1" jumpToLocation="False" turnToHeading="True" embarkedAppearance="0XFFFFFFFF">
+            <embarkedPosition x="-0.750781" y="2.889999" z="-2.466902"/>
+            <embarkedHeading>0</embarkedHeading>
+         </embarkationSlot>
+         <embarkationSlot embarkableObject="-1:1:1:-1:6:-1:-1:-1" capacity="1" jumpToLocation="False" turnToHeading="True" embarkedAppearance="0XFFFFFFFF">
+            <embarkedPosition x="-6.413616" y="-2.81189" z="-2.43131"/>
+            <embarkedHeading>0</embarkedHeading>
+         </embarkationSlot>
+         <embarkationSlot embarkableObject="-1:1:1:-1:6:-1:-1:-1" capacity="1" jumpToLocation="False" turnToHeading="True" embarkedAppearance="0XFFFFFFFF">
+            <embarkedPosition x="-6.413616" y="0.078108" z="-2.430964"/>
+            <embarkedHeading>0</embarkedHeading>
+         </embarkationSlot>
+         <embarkationSlot embarkableObject="-1:1:1:-1:6:-1:-1:-1" capacity="1" jumpToLocation="False" turnToHeading="True" embarkedAppearance="0XFFFFFFFF">
+            <embarkedPosition x="-6.413616" y="2.811891" z="-2.428174"/>
+            <embarkedHeading>0</embarkedHeading>
+         </embarkationSlot>
+         <embarkationSlot embarkableObject="-1:1:1:-1:7:-1:-1:-1" capacity="1" jumpToLocation="False" turnToHeading="True" embarkedAppearance="0XFFFFFFFF">
+            <embarkedPosition x="6.543353" y="-2.160404" z="-2.470023"/>
+            <embarkedHeading>0</embarkedHeading>
+         </embarkationSlot>
+         <embarkationSlot embarkableObject="-1:1:1:-1:7:-1:-1:-1" capacity="1" jumpToLocation="False" turnToHeading="True" embarkedAppearance="0XFFFFFFFF">
+            <embarkedPosition x="6.637283" y="1.221099" z="-2.470023"/>
+            <embarkedHeading>0</embarkedHeading>
+         </embarkationSlot>
+         <embarkationSlot embarkableObject="-1:1:1:-1:7:-1:-1:-1" capacity="1" jumpToLocation="False" turnToHeading="True" embarkedAppearance="0XFFFFFFFF">
+            <embarkedPosition x="-3.225434" y="-1.878612" z="-2.470023"/>
+            <embarkedHeading>0</embarkedHeading>
+         </embarkationSlot>
+         <embarkationSlot embarkableObject="-1:1:1:-1:7:-1:-1:-1" capacity="1" jumpToLocation="False" turnToHeading="True" embarkedAppearance="0XFFFFFFFF">
+            <embarkedPosition x="-3.131503" y="1.40896" z="-2.470023"/>
+            <embarkedHeading>0</embarkedHeading>
+         </embarkationSlot>
+         <embarkationSlot embarkableObject="-1:1:1:-1:-1:-1:-1:-1" capacity="1" jumpToLocation="False" turnToHeading="True" embarkedAppearance="0XFFFFFFFF">
+            <embarkedPosition x="-0.689306" y="0" z="-2.470023"/>
+            <embarkedHeading>0</embarkedHeading>
+         </embarkationSlot>
+      </embarkationSlots>
+      <bool paramName="can-embark">True</bool>
+      <real paramName="mass">5000</real>
+      <sensorSignatures>
+         <real paramName="visual-signature">5</real>
+         <real paramName="radar-signature">0.5</real>
+         <real paramName="infrared-signature">16</real>
+      </sensorSignatures>
+      <bool paramName="can-pivot">False</bool>
+      <real paramName="max-pivot-speed">0</real>
+      <bodyPosition paramName="left-support" forward="13.512696" right="-7.197623" down="0"/>
+      <bodyPosition paramName="right-support" forward="13.512696" right="7.197623" down="0"/>
+      <bodyPosition paramName="other-support" forward="-13.512696" right="0" down="0"/>
+      <real paramName="max-speed">15</real>
+      <real paramName="max-reverse-speed">10</real>
+      <real paramName="turning-radius">5</real>
+      <real paramName="max-slope">1</real>
+      <real paramName="ordered-speed">10</real>
+      <real paramName="max-acceleration">3.5</real>
+      <real paramName="max-deceleration">4</real>
+      <string paramName="object-geometry-filename">@(DATA_DIR)/Vehicles/Surface/LCAC-US/LCAC-US.medf</string>
+      <real paramName="disaggregation-range">4100</real>
+      <soilList paramName="soil-list">
+         <soilFactors soilType="paved-road" acceleration-factor="1" stopping-factor="1" max-speed-factor="1"/>
+         <soilFactors soilType="hard-packed" acceleration-factor="0.9" stopping-factor="0.9" max-speed-factor="0.9"/>
+         <soilFactors soilType="gravel" acceleration-factor="0.8" stopping-factor="0.8" max-speed-factor="0.8"/>
+         <soilFactors soilType="rocks" acceleration-factor="0.8" stopping-factor="0.8" max-speed-factor="0.8"/>
+         <soilFactors soilType="sand" acceleration-factor="0.8" stopping-factor="0.8" max-speed-factor="0.8"/>
+         <soilFactors soilType="shallow-water" acceleration-factor="0.8" stopping-factor="0.8" max-speed-factor="0.8"/>
+         <soilFactors soilType="deep-water" acceleration-factor="1" stopping-factor="1" max-speed-factor="1"/>
+         <soilFactors soilType="muck" acceleration-factor="0.8" stopping-factor="0.8" max-speed-factor="0.8"/>
+      </soilList>
+      <componentSystem systemName="damage" platform="@(system-dir)/damage/ground-unarmored.sysdef"/>
+      <componentSystem systemName="movement" platform="@(system-dir)/movement/air-cushion.sysdef">
+         <real paramName="fuel-amount">500</real>
+      </componentSystem>
+      <componentSystem systemName="sensor" platform="@(system-dir)/sensors/visual-sensor.sysdef">
+         <bodyPosition paramName="sensor-position" right="0" forward="0" down="-3.1"/>
+         <real paramName="max-range">4000</real>
+         <real paramName="sensor-sensitivity-start">1</real>
+      </componentSystem>
+      <componentSystem systemName="other" platform="@(system-dir)/other/spot-report-generator.sysdef"/>
+      <componentSystem systemName="other-2" platform="@(system-dir)/other/spot-report-receiver.sysdef"/>
+      <string paramName="gui-unique-id">ModelSet-850-22</string>
+      <string paramName="gui-keywords"/>
+      <string paramName="gui-label"/>
+      <string paramName="gui-categories"/>
+      <string paramName="gui-deployable-countries"/>
+      <string paramName="gui-menu-icon"/>
+      <bool paramName="gui-can-create">False</bool>
+      <bool paramName="gui-can-aggregate">False</bool>
+      <bool paramName="gui-on-overlay-palette">False</bool>
+      <bool paramName="di-guy-enabled">False</bool>
+      <string paramName="character-type"/>
+      <string paramName="character-appearance"/>
+      <string paramName="animation"/>
+      <bool paramName="use-random-appearance-upon-creation">False</bool>
+      <stringList paramName="appearances-for-random-selection"/>
+   </simObject>
+</simObjects>

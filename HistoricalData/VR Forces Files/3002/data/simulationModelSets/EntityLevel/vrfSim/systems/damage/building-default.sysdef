@@ -1,0 +1,384 @@
+(building-default-damage 
+   (actuators 
+      (damage-component 
+         (component-descriptor-type "damage-adjudication-actuator-descriptor")
+         (component-type  "damage-adjudication-actuator")
+         (min-tick-period  -1.000000)
+         (min-tick-period-variance  -1.000000)
+         (tick-period-uses-real-time False)
+         (process-state-repository-name  "")
+         (process-state-repository-type  "")
+         (is-enabled True)
+         (art-part-list )
+         (smoke-time  1200.000000)
+         (flame-time  600.000000)
+         (terminate-on-destroy False)
+         (damage-model 
+            (ammo-entry
+               (ammo
+                  ;;M2A2 25mm Chain Gun 
+                  (munition-type  2 2 225 2 3 2 0)
+                  (warhead  -1)
+                  (guidance-mode  0)
+               )
+               (direct-damage-file 
+                  (filename  "$(damage-dir)\heavy-armor-vs-25mm-round.dmg")
+               )
+               (collateral-damage-file 
+                  (filename  "")
+               )
+            )
+            (ammo-entry 
+               (ammo 
+				; Guided anti-armor CIS
+                  (munition-type  2 2 222 1 -1 -1 -1)
+                  (warhead  -1)
+                  (guidance-mode  0)
+               )
+               (direct-damage-file 
+                  (filename  "")
+               )
+               (collateral-damage-file 
+                  (filename  "$(damage-dir)\heavy-armor-vs-missile.dmg")
+               )
+            )
+            (ammo-entry 
+               (ammo 
+				; CIS 30mm anti-armor ballistic
+                  (munition-type  2 2 222 2 2 -1 -1)
+                  (warhead  -1)
+                  (guidance-mode  0)
+               )
+               (direct-damage-file 
+                  (filename  "$(damage-dir)\heavy-armor-vs-AT30.dmg")
+               )
+               (collateral-damage-file 
+                  (filename  "$(damage-dir)\collateral-heavy-armor-vs-AT30.dmg")
+               )
+            )
+            (ammo-entry 
+               (ammo 
+				; CIS 85mm HEAT round
+                  (munition-type  2 2 222 2 8 1 -1)
+                  (warhead  -1)
+                  (guidance-mode  0)
+               )
+               (direct-damage-file 
+                  (filename  "$(damage-dir)\heavy-armor-vs-explosive-round.dmg")
+               )
+               (collateral-damage-file 
+                  (filename  "")
+               )
+            )
+            (ammo-entry 
+               (ammo 
+				; CIS 125mm anti-armor round (HEAT or APDS)
+                  (munition-type  2 2 222 2 11 -1 -1)
+                  (warhead  -1)
+                  (guidance-mode  0)
+               )
+               (direct-damage-file 
+                  (filename  "$(damage-dir)\heavy-armor-vs-explosive-round.dmg")
+               )
+               (collateral-damage-file 
+                  (filename  "")
+               )
+            )
+            (ammo-entry 
+               (ammo 
+				; USA 30mm anti-armor ballistic
+                  (munition-type  2 2 225 2 4 -1 -1)
+                  (warhead  -1)
+                  (guidance-mode  0)
+               )
+               (direct-damage-file 
+                  (filename  "$(damage-dir)\heavy-armor-vs-AT30.dmg")
+               )
+               (collateral-damage-file 
+                  (filename  "$(damage-dir)\collateral-heavy-armor-vs-AT30.dmg")
+               )
+            )
+            (ammo-entry 
+               (ammo 
+				; USA TOW missile
+                  (munition-type  2 2 225 1 1 -1 -1)
+                  (warhead  -1)
+                  (guidance-mode  0)
+               )
+               (direct-damage-file 
+                  (filename  "")
+               )
+               (collateral-damage-file 
+                  (filename  "$(damage-dir)\heavy-armor-vs-missile.dmg")
+               )
+            )
+            (ammo-entry 
+               (ammo 
+				; USA Hellfire missile
+                  (munition-type  2 2 225 1 3 -1 -1)
+                  (warhead  -1)
+                  (guidance-mode  0)
+               )
+               (direct-damage-file 
+                  (filename  "")
+               )
+               (collateral-damage-file 
+                  (filename  "$(damage-dir)\heavy-armor-vs-missile.dmg")
+               )
+            )
+            (ammo-entry 
+               (ammo 
+				; USA Maverick missile
+                  (munition-type  2 2 225 1 4 -1 -1)
+                  (warhead  -1)
+                  (guidance-mode  0)
+               )
+               (direct-damage-file 
+                  (filename  "")
+               )
+               (collateral-damage-file 
+                  (filename  "$(damage-dir)\heavy-armor-vs-missile.dmg")
+               )
+            )
+            (ammo-entry 
+               (ammo 
+				; USA 25mm anti-armor round
+                  (munition-type  2 2 225 2 3 -1 -1)
+                  (warhead  -1)
+                  (guidance-mode  0)
+               )
+               (direct-damage-file 
+                  (filename  "$(damage-dir)\heavy-armor-vs-explosive-round.dmg")
+               )
+               (collateral-damage-file 
+                  (filename  "")
+               )
+            )
+            (ammo-entry 
+               (ammo 
+				; USA 84mm HEAT round
+                  (munition-type  2 2 225 2 8 1 -1)
+                  (warhead  -1)
+                  (guidance-mode  0)
+               )
+               (direct-damage-file 
+                  (filename  "$(damage-dir)\heavy-armor-vs-explosive-round.dmg")
+               )
+               (collateral-damage-file 
+                  (filename  "")
+               )
+            )
+            (ammo-entry 
+               (ammo 
+				; USA 120mm round (HEAT or APDS)
+                  (munition-type  2 2 225 2 13 -1 -1)
+                  (warhead  -1)
+                  (guidance-mode  0)
+               )
+               (direct-damage-file 
+                  (filename  "$(damage-dir)\heavy-armor-vs-explosive-round.dmg")
+               )
+               (collateral-damage-file 
+                  (filename  "")
+               )
+            )
+            (ammo-entry 
+               (ammo 
+				; CIS guided anti-radar missile
+                  (munition-type  2 4 222 1 -1 -1 -1)
+                  (warhead  -1)
+                  (guidance-mode  0)
+               )
+               (direct-damage-file 
+                  (filename  "")
+               )
+               (collateral-damage-file 
+                  (filename  "$(damage-dir)\heavy-armor-vs-missile.dmg")
+               )
+            )
+            (ammo-entry 
+               (ammo 
+				; Guided anti-ship munition
+                  (munition-type  2 6 -1 1 -1 -1 -1)
+                  (warhead  -1)
+                  (guidance-mode  0)
+               )
+               (direct-damage-file 
+                  (filename  "")
+               )
+               (collateral-damage-file 
+                  (filename  "$(damage-dir)\heavy-armor-vs-cruise-missile.dmg")
+               )
+            )
+            (ammo-entry 
+               (ammo 
+				; CIS guided battlefield support munition
+                  (munition-type  2 9 222 1 -1 -1 -1)
+                  (warhead  -1)
+                  (guidance-mode  0)
+               )
+               (direct-damage-file 
+                  (filename  "")
+               )
+               (collateral-damage-file 
+                  (filename  "$(damage-dir)\heavy-armor-vs-missile.dmg")
+               )
+            )
+            (ammo-entry 
+               (ammo 
+				; CIS KAB-500N laser guided HE missile
+                  (munition-type  2 9 222 1 15 -1 -1)
+                  (warhead  -1)
+                  (guidance-mode  0)
+               )
+               (direct-damage-file 
+                  (filename  "$(damage-dir)\heavy-armor-vs-bomb.dmg")
+               )
+               (collateral-damage-file 
+                  (filename  "$(damage-dir)\heavy-armor-vs-bomb.dmg")
+               )
+            )
+            (ammo-entry 
+               (ammo 
+				; USA Mk-84 guided bomb
+                  (munition-type  2 9 225 1 15 -1 -1)
+                  (warhead  -1)
+                  (guidance-mode  0)
+               )
+               (direct-damage-file 
+                  (filename  "$(damage-dir)\heavy-armor-vs-bomb.dmg")
+               )
+               (collateral-damage-file 
+                  (filename  "$(damage-dir)\heavy-armor-vs-bomb.dmg")
+               )
+            )
+            (ammo-entry 
+               (ammo 
+				; USA guided battlefield support, "wind correted munitions dispenser"
+                  (munition-type  2 9 225 1 22 -1 -1)
+                  (warhead  -1)
+                  (guidance-mode  0)
+               )
+               (direct-damage-file 
+                  (filename  "$(damage-dir)\heavy-armor-vs-cluster-bomb.dmg")
+               )
+               (collateral-damage-file 
+                  (filename  "$(damage-dir)\heavy-armor-vs-cluster-bomb.dmg")
+               )
+            )
+            (ammo-entry 
+               (ammo 
+				; USA 66mm rocket
+                  (munition-type  2 9 225 2 6 -1 -1)
+                  (warhead  -1)
+                  (guidance-mode  0)
+               )
+               (direct-damage-file 
+                  (filename  "")
+               )
+               (collateral-damage-file 
+                  (filename  "$(damage-dir)\heavy-armor-vs-artillery-round.dmg")
+               )
+            )
+            (ammo-entry 
+               (ammo 
+				; USA 76mm unguided battlefield suport (artillery round)
+                  (munition-type  2 9 225 2 7 -1 -1)
+                  (warhead  -1)
+                  (guidance-mode  0)
+               )
+               (direct-damage-file 
+                  (filename  "")
+               )
+               (collateral-damage-file 
+                  (filename  "$(damage-dir)\heavy-armor-vs-artillery-round.dmg")
+               )
+            )
+            (ammo-entry 
+               (ammo 
+				; USA 81mm round
+                  (munition-type  2 9 225 2 8 -1 -1)
+                  (warhead  -1)
+                  (guidance-mode  0)
+               )
+               (direct-damage-file 
+                  (filename  "")
+               )
+               (collateral-damage-file 
+                  (filename  "$(damage-dir)\heavy-armor-vs-artillery-round.dmg")
+               )
+            )
+            (ammo-entry 
+               (ammo 
+				; USA 127mm rocket
+                  (munition-type  2 9 225 2 12 -1 -1)
+                  (warhead  -1)
+                  (guidance-mode  0)
+               )
+               (direct-damage-file 
+                  (filename  "")
+               )
+               (collateral-damage-file 
+                  (filename  "$(damage-dir)\heavy-armor-vs-artillery-round.dmg")
+               )
+            )
+            (ammo-entry 
+               (ammo 
+				; USA 155mm artillery round
+                  (munition-type  2 9 225 2 14 2 -1)
+                  (warhead  -1)
+                  (guidance-mode  0)
+               )
+               (direct-damage-file 
+                  (filename  "")
+               )
+               (collateral-damage-file 
+                  (filename  "$(damage-dir)\heavy-armor-vs-artillery-round.dmg")
+               )
+            )
+            (ammo-entry 
+               (ammo 
+				; CIS SS-24 guided missile
+                  (munition-type  2 10 222 1 21 -1 -1)
+                  (warhead  -1)
+                  (guidance-mode  0)
+               )
+               (collateral-damage-file 
+                  (filename  "$(damage-dir)\heavy-armor-vs-ballistic-missile.dmg")
+               )
+            )
+            (ammo-entry 
+               (ammo 
+				; USA M39 Ballistic Missile (Army TACMS)
+                  (munition-type  2 9 225 1 17 -1 -1)
+                  (warhead  -1)
+                  (guidance-mode  0)
+               )
+               (collateral-damage-file 
+                  (filename  "$(damage-dir)\heavy-armor-vs-ballistic-missile.dmg")
+               )
+            )
+            (ammo-entry 
+               (ammo 
+				; CIS SCUD-B missile
+                  (munition-type  2 11 222 2 2 -1 -1)
+                  (warhead  -1)
+                  (guidance-mode  0)
+               )
+               (collateral-damage-file 
+                  (filename  "$(damage-dir)\heavy-armor-vs-ballistic-missile.dmg")
+               )
+            )
+         )
+      )
+   )
+   (resources )
+   (meta-data 
+      (system-name  "Building Default Damage")
+      (system-description  "Default damage system for a building.")
+      (allowed-state-repository-types "cultural-feature-param")
+      (system-categories "damage")
+      (parameter-data-list )
+      (meta-data-entry-list )
+   )
+)

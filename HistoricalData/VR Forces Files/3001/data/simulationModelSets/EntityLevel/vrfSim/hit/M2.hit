@@ -1,0 +1,59 @@
+;;
+;; File - M2.hit
+;;
+;;
+;; Copyright (c) 1999 MaK Technologies, Inc.
+;; All rights reserved.
+;;
+;; $RCSfile: M2.hit,v $ $Revision: 1.1 $ $State: Exp $
+;;
+;; Hit Probability Table for the M2 (12.7mm) for whole burst.
+;; (for example only!)
+;;
+
+(hit-probability-table
+  (entity-range 
+     (entity-type  3 -1 -1 -1 -1 -1 -1)
+     (range-determinant 
+        (range-list 
+           (range 10.000000
+              (probability 1.00000)
+           )
+           (range 200.000000
+              (probability 0.80000)
+           )
+           (range 500.000000
+              (probability 0.4000)
+           )
+           (range 1000.0
+              (probability 0.2)
+           )
+           (range 3600.000000
+              (probability 0.100)
+           )
+        )
+     )
+   )
+  (entity-range
+     (entity-type  1 1 -1 -1 -1 -1 -1)
+     (range-determinant 
+        (range-list 
+           (range 10.000000
+              (probability 1.00000)
+           )
+           (range 200.000000
+              (probability 0.90000)
+           )
+           (range 500.000000
+              (probability 0.6000)
+           )
+           (range 1000.0
+              (probability 0.4)
+           )
+           (range 3600.000000
+              (probability 0.200)
+           )
+        )
+     )
+  )
+)

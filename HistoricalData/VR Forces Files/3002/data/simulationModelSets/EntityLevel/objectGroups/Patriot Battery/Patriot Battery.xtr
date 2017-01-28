@@ -1,0 +1,5 @@
+(scenario-extras 
+   (force-hostility )
+   (spawn-templates )
+   (doctrine-assignments USE-DEFAULT)
+)

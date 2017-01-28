@@ -1,0 +1,2 @@
+(
+(Plan-File (version "2.0"))(Plan (pending-triggers) (plan-name "VRF_UUID:09efb047-6bfe-4c80-8291-f72bebe696d9") (quick-launch-flags 4) (ordinal 1) (Block (Task (task-type "move-into-formation") (subtask False) (location -2812362.976327 -4332319.038925 3729448.724365) (heading 0.000000) (formation-name "Wedge")) (Task (task-type "move-to") (subtask False) (control-point "VRF_UUID:d8c2a53a-6860-41d9-90d3-84578e2554f6") (continue-moving-flag False))) (plan-execution-stack)))

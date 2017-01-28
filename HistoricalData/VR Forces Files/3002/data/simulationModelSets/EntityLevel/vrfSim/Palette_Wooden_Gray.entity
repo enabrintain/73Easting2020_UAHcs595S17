@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<simObjects entityVersion="1.0">
+   <simObject objectType="1:5:1:0:21:15:0:2" matchType="1:5:1:0:21:15:0:2" platform="@(platforms-dir)/Cultural_Feature.ope">
+      <bodyPosition paramName="left-support" forward="0.61" right="-0.5" down="0"/>
+      <bodyPosition paramName="right-support" forward="0.61" right="0.5" down="0"/>
+      <bodyPosition paramName="other-support" forward="-0.61" right="0" down="0"/>
+      <bool paramName="gravity-aligned">True</bool>
+      <bool paramName="use-object-geometry">True</bool>
+      <boundingVolume paramName="bounding-volume" offsetType="ground-center">
+         <dimensions length="1.22" width="1" height="0.16"/>
+      </boundingVolume>
+      <real paramName="mass">57145</real>
+      <string paramName="short-name">Pltt</string>
+      <string paramName="object-geometry-filename"/>
+      <DtReaderWriters paramName="sensor-signatures"/>
+      <string paramName="character-type"/>
+      <string paramName="character-appearance"/>
+      <string paramName="hand-item"/>
+      <string paramName="animation"/>
+      <bool paramName="use-random-appearance-upon-creation">True</bool>
+      <stringList paramName="appearances-for-random-selection"/>
+      <bool paramName="use-random-hand-item-upon-creation">False</bool>
+      <stringList paramName="hand-items-for-random-selection"/>
+      <bool paramName="di-guy-enabled">False</bool>
+      <string paramName="gui-unique-id">ModelSet-11734793-Palette Wooden Gray</string>
+      <string paramName="gui-keywords"/>
+      <string paramName="gui-default-overlay-layer"/>
+      <string paramName="gui-label">Palette Wooden Gray</string>
+      <string paramName="gui-categories">"Cultural Feature"</string>
+      <string paramName="gui-deployable-countries"/>
+      <string paramName="gui-menu-icon"/>
+      <bool paramName="gui-can-create">True</bool>
+      <bool paramName="gui-can-aggregate">False</bool>
+      <bool paramName="IncludeInBVSPCalcs">True</bool>
+      <string paramName="gui-on-palettes">"EntityCreationPalette"</string>
+      <sensorSignatures>
+         <real paramName="active-sonar-signature">0</real>
+         <real paramName="infrared-signature">4</real>
+         <real paramName="mad-signature">0</real>
+         <real paramName="passive-sonar-signature">0</real>
+         <real paramName="radar-signature">27</real>
+         <real paramName="visual-signature">4</real>
+      </sensorSignatures>
+   </simObject>
+</simObjects>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<simObjects entityVersion="1.0">
+   <simObject objectType="1:1:4:225:0:0:0:0" matchType="1:1:4:225:-1:-1:-1:-1" platform="@(platforms-dir)/Subsurface_Vehicle.ope">
+      <bool paramName="can-embark">False</bool>
+      <boundingVolume paramName="bounding-volume" offsetType="custom">
+         <offset forward="0" right="0" down="10"/>
+         <dimensions length="364" width="36" height="52"/>
+      </boundingVolume>
+      <string paramName="short-name">SUB</string>
+      <real paramName="mass">7636.87</real>
+      <sensorSignatures>
+         <real paramName="visual-signature">3</real>
+         <real paramName="radar-signature">10</real>
+         <real paramName="passive-sonar-signature">0</real>
+         <real paramName="active-sonar-signature">0</real>
+      </sensorSignatures>
+      <bodyPosition paramName="left-support" forward="-1" right="-2.5" down="2"/>
+      <bodyPosition paramName="right-support" forward="-1" right="2.5" down="2"/>
+      <bodyPosition paramName="other-support" forward="2.5" right="0" down="1.8"/>
+      <real paramName="max-speed">12.861111</real>
+      <real paramName="turning-radius">20</real>
+      <real paramName="max-slope">1</real>
+      <real paramName="ordered-speed">10</real>
+      <real paramName="max-acceleration">2</real>
+      <real paramName="max-deceleration">1</real>
+      <real paramName="max-lateral-acceleration">9.8</real>
+      <string paramName="object-geometry-filename"/>
+      <real paramName="disaggregation-range">4100</real>
+      <real paramName="max-depth">300</real>
+      <componentSystem systemName="damage" platform="@(system-dir)/damage/subsurface-default.sysdef"/>
+      <componentSystem systemName="movement" platform="@(system-dir)/movement/subsurface-dynamics.sysdef">
+         <real paramName="fuel-amount">537</real>
+      </componentSystem>
+      <componentSystem systemName="sensor" platform="@(system-dir)/sensors/sonar-sensor.sysdef">
+         <bodyPosition paramName="sensor-position" right="0" forward="0" down="-2"/>
+         <real paramName="max-range">4000</real>
+         <bool paramName="sonar-dip-capable">True</bool>
+         <real paramName="max-effective-speed">10</real>
+         <bool paramName="active-by-default">False</bool>
+         <real paramName="sensor-sensitivity-start">1</real>
+      </componentSystem>
+      <componentSystem systemName="weapon" platform="@(system-dir)\weapons\Homing-torpedo-fwd-launcher.sysdef">
+         <int paramName="num-missiles">20</int>
+         <bodyPosition paramName="attach-point" forward="60" right="0" down="8"/>
+      </componentSystem>
+      <componentSystem systemName="other" platform="@(system-dir)/other/spot-report-generator.sysdef"/>
+      <componentSystem systemName="other-2" platform="@(system-dir)/other/spot-report-receiver.sysdef"/>
+      <string paramName="gui-unique-id">ModelSet-856-28</string>
+      <string paramName="gui-keywords"/>
+      <string paramName="gui-label"/>
+      <string paramName="gui-categories"/>
+      <string paramName="gui-deployable-countries"/>
+      <string paramName="gui-menu-icon"/>
+      <bool paramName="gui-can-create">False</bool>
+      <bool paramName="gui-can-aggregate">False</bool>
+      <bool paramName="gui-on-overlay-palette">False</bool>
+      <real paramName="mad-signature">0</real>
+   </simObject>
+</simObjects>

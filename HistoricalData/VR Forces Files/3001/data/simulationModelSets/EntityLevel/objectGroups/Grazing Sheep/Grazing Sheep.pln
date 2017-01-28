@@ -1,0 +1,193 @@
+(
+   (Plan-File (version "2.0"))
+   (Plan 
+      (pending-triggers )
+      (plan-name  "VRF_UUID:3398f583-1edc-4f25-940b-2fa494e530be")
+      (Block 
+         (While 
+            (Condition 
+               (True )
+            )
+            (Block 
+               (If 
+                  (Condition 
+                     (Random 
+                        (Probability  0.120000)
+                     )
+                  )
+                  (Then-Block 
+                     (Task 
+                        (task-type "di-guy-animation-task")
+                        (subtask  False)
+                        (di-guy-animation-task-kind  "stand_long")
+                        (di-guy-animation-duration  0.000000)
+                     )
+                  )
+                  (Else-Block 
+                     (Task 
+                        (task-type "di-guy-animation-task")
+                        (subtask  False)
+                        (di-guy-animation-task-kind  "stand_feeding")
+                        (di-guy-animation-duration  300.000000)
+                     )
+                  )
+               )
+            )
+         )
+      )
+      (plan-execution-stack 
+      )
+   )
+   (Plan 
+      (pending-triggers )
+      (plan-name  "VRF_UUID:fafcef43-abfa-47bd-8fde-bf6bc25b7091")
+      (Block 
+         (While 
+            (Condition 
+               (True )
+            )
+            (Block 
+               (If 
+                  (Condition 
+                     (Random 
+                        (Probability  0.200000)
+                     )
+                  )
+                  (Then-Block 
+                     (Task 
+                        (task-type "di-guy-animation-task")
+                        (subtask  False)
+                        (di-guy-animation-task-kind  "stand_long")
+                        (di-guy-animation-duration  0.000000)
+                     )
+                  )
+                  (Else-Block 
+                     (Task 
+                        (task-type "di-guy-animation-task")
+                        (subtask  False)
+                        (di-guy-animation-task-kind  "stand_feeding")
+                        (di-guy-animation-duration  230.000000)
+                     )
+                  )
+               )
+            )
+         )
+      )
+      (plan-execution-stack 
+      )
+   )
+   (Plan 
+      (pending-triggers )
+      (plan-name  "VRF_UUID:846568e8-925d-41de-9959-2bfe681b6ca0")
+      (Block 
+         (While 
+            (Condition 
+               (True )
+            )
+            (Block 
+               (If 
+                  (Condition 
+                     (Random 
+                        (Probability  0.200000)
+                     )
+                  )
+                  (Then-Block 
+                     (Task 
+                        (task-type "di-guy-animation-task")
+                        (subtask  False)
+                        (di-guy-animation-task-kind  "stand_long")
+                        (di-guy-animation-duration  0.000000)
+                     )
+                  )
+                  (Else-Block 
+                     (Task 
+                        (task-type "di-guy-animation-task")
+                        (subtask  False)
+                        (di-guy-animation-task-kind  "stand_feeding")
+                        (di-guy-animation-duration  200.000000)
+                     )
+                  )
+               )
+            )
+         )
+      )
+      (plan-execution-stack 
+      )
+   )
+   (Plan 
+      (pending-triggers )
+      (plan-name  "VRF_UUID:2cfd0d32-3422-4147-9967-5ae1d4d27ad2")
+      (Block 
+         (While 
+            (Condition 
+               (True )
+            )
+            (Block 
+               (If 
+                  (Condition 
+                     (Random 
+                        (Probability  0.300000)
+                     )
+                  )
+                  (Then-Block 
+                     (Task 
+                        (task-type "di-guy-animation-task")
+                        (subtask  False)
+                        (di-guy-animation-task-kind  "stand_long")
+                        (di-guy-animation-duration  0.000000)
+                     )
+                  )
+                  (Else-Block 
+                     (Task 
+                        (task-type "di-guy-animation-task")
+                        (subtask  False)
+                        (di-guy-animation-task-kind  "stand_feeding")
+                        (di-guy-animation-duration  180.000000)
+                     )
+                  )
+               )
+            )
+         )
+      )
+      (plan-execution-stack 
+      )
+   )
+   (Plan 
+      (pending-triggers )
+      (plan-name  "VRF_UUID:ea29b107-0e98-48e2-88d9-e54a88e90687")
+      (Block 
+         (While 
+            (Condition 
+               (True )
+            )
+            (Block 
+               (If 
+                  (Condition 
+                     (Random 
+                        (Probability  0.150000)
+                     )
+                  )
+                  (Then-Block 
+                     (Task 
+                        (task-type "di-guy-animation-task")
+                        (subtask  False)
+                        (di-guy-animation-task-kind  "stand_long")
+                        (di-guy-animation-duration  0.000000)
+                     )
+                  )
+                  (Else-Block 
+                     (Task 
+                        (task-type "di-guy-animation-task")
+                        (subtask  False)
+                        (di-guy-animation-task-kind  "stand_feeding")
+                        (di-guy-animation-duration  450.000000)
+                     )
+                  )
+               )
+            )
+         )
+      )
+      (plan-execution-stack 
+      )
+   )
+)

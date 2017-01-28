@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<simObjects entityVersion="1.0">
+  <simObject objectType="1:8:2:-1:1:-1:-1:-1" matchType="1:8:2:-1:1:-1:-1:-1" platform="@(platforms-dir)/Expendable_Object.ope">
+    <bool paramName="can-embark">False</bool>
+    <boundingVolume paramName="bounding-volume" offsetType="center">
+      <dimensions length="15" width="15" height="15"/>
+    </boundingVolume>
+    <string paramName="short-name">Chaff</string>
+    <real paramName="mass">0.1</real>
+    <sensorSignatures>
+      <real paramName="visual-signature">4</real>
+      <real paramName="radar-signature">12</real>
+      <real paramName="infrared-signature">4</real>
+      <real paramName="passive-sonar-signature">0</real>
+      <real paramName="active-sonar-signature">0</real>
+    </sensorSignatures>
+    <bodyPosition paramName="left-support" right="-7.5" forward="7.5" down="7.5"/>
+    <bodyPosition paramName="right-support" right="7.5" forward="7.5" down="7.5"/>
+    <bodyPosition paramName="other-support" right="0" forward="-7.5" down="7.5"/>
+    <componentSystem systemName="movement" platform="@(system-dir)/movement/fall-from-sky-dynamics.sysdef"/>
+    <componentSystem systemName="other" platform="@(system-dir)\other/limit-existance.sysdef">
+      <real paramName="life-span">30</real>
+    </componentSystem>
+  </simObject>
+</simObjects>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<simObjects entityVersion="1.0">
+   <simObject objectType="1:1:2:105:8:4:1:0" matchType="1:1:2:105:8:4:1:-1" platform="@(platforms-dir)/Fixed_Wing_Aircraft.ope">
+      <componentSystem systemName="movement" platform="@(system-dir)\movement\fixed-wing-heavy.sysdef">
+         <real paramName="fuel-amount">6820</real>
+         <string paramName="flight-controls">Flight Controls</string>
+      </componentSystem>
+      <componentSystem systemName="damage" platform="@(system-dir)\damage\fixed-wing-default.sysdef"/>
+      <componentSystem systemName="other" platform="@(system-dir)\other\iff-transponder.sysdef"/>
+      <bodyPosition paramName="left-support" forward="-2.53" right="0" down="3"/>
+      <bodyPosition paramName="right-support" forward="2.53" right="0" down="3"/>
+      <bodyPosition paramName="other-support" forward="0" right="14.21" down="3"/>
+      <bool paramName="can-embark">False</bool>
+      <bool paramName="can-be-embarked-upon">False</bool>
+      <bool paramName="use-random-appearance-upon-creation">True</bool>
+      <bool paramName="flip-disembark-body-x">True</bool>
+      <bool paramName="flip-disembark-body-y">True</bool>
+      <bool paramName="use-object-geometry">True</bool>
+      <boundingVolume paramName="bounding-volume" offsetType="custom">
+         <offset forward="-0.68" right="0" down="-0"/>
+         <dimensions length="15.93" width="13.65" height="4.81"/>
+      </boundingVolume>
+      <real paramName="mass">6010</real>
+      <real paramName="max-speed">241.111111</real>
+      <real paramName="ordered-speed">200.833333</real>
+      <real paramName="max-acceleration">4.5</real>
+      <real paramName="max-deceleration">4</real>
+      <real paramName="disaggregation-range">321000</real>
+      <real paramName="min-speed">50</real>
+      <real paramName="max-altitude">12497</real>
+      <real paramName="max-climb-rate">150</real>
+      <real paramName="max-yaw-rate">0.5</real>
+      <real paramName="max-pitch-rate">0.25</real>
+      <real paramName="max-roll-rate">2</real>
+      <real paramName="flaps-deceleration">10</real>
+      <real paramName="ordered-ground-speed">10</real>
+      <real paramName="max-ground-speed">100</real>
+      <real paramName="max-ground-stopping-deceleration">1</real>
+      <real paramName="ground-turning-radius">5</real>
+      <real paramName="max-ground-slope">1</real>
+      <real paramName="on-ground-tolerance">9.5</real>
+      <string paramName="short-name">SeaScan</string>
+      <string paramName="character-type"/>
+      <string paramName="character-appearance"/>
+      <string paramName="animation"/>
+      <string paramName="object-geometry-filename"/>
+      <stringList paramName="appearances-for-random-selection"/>
+      <DtReaderWriters paramName="sensor-signatures"/>
+      <string paramName="hand-item"/>
+      <bool paramName="use-random-hand-item-upon-creation">False</bool>
+      <stringList paramName="hand-items-for-random-selection"/>
+      <string paramName="gui-unique-id">ModelSet-42614430-IAI 1124 Sea Scan</string>
+      <string paramName="gui-keywords"/>
+      <string paramName="gui-default-overlay-layer"/>
+      <string paramName="gui-label">IAI 1124 Sea Scan (No 3D)</string>
+      <string paramName="gui-categories">"Fixed Wing"</string>
+      <string paramName="gui-deployable-countries">"Australia" "Canada" "Chile" "Ecuador" "Germany" "Guatemala" "Honduras" "Israel" "Mexico" "New Zealand" "Panama" "Uganda"</string>
+      <string paramName="gui-menu-icon"/>
+      <bool paramName="gui-can-create">True</bool>
+      <bool paramName="gui-can-aggregate">False</bool>
+      <bool paramName="IncludeInBVSPCalcs">True</bool>
+      <string paramName="gui-on-palettes">"EntityCreationPalette"</string>
+      <sensorSignatures>
+         <real paramName="active-sonar-signature">0</real>
+         <real paramName="infrared-signature">30</real>
+         <real paramName="mad-signature">0</real>
+         <real paramName="passive-sonar-signature">0</real>
+         <real paramName="radar-signature">100</real>
+         <real paramName="visual-signature">7</real>
+      </sensorSignatures>
+   </simObject>
+</simObjects>

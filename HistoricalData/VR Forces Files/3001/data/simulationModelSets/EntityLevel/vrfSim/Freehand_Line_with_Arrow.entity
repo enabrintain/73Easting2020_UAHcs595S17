@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<simObjects entityVersion="1.0">
+  <simObject objectType="1:17:0:0:2:1:0:2" matchType="1:17:0:0:2:1:0:2" platform="@(platforms-dir)/Line_Object.ope">
+    <string paramName="short-name">Freehand Line</string>
+    <string paramName="gui-unique-id">ModelSet-91999399-Freehand Line with Arrow</string>
+    <string paramName="gui-keywords">freehand;arrow;penstyle</string>
+    <string paramName="gui-label">Freehand Line with Arrow</string>
+    <string paramName="gui-categories">"Shapes"</string>
+    <string paramName="gui-menu-icon">@(DATA_DIR)/images/overlays/small/freehand.png</string>
+    <bool paramName="gui-can-create">True</bool>
+    <bool paramName="gui-can-aggregate">False</bool>
+    <bool paramName="gui-on-overlay-palette">True</bool>
+  </simObject>
+</simObjects>

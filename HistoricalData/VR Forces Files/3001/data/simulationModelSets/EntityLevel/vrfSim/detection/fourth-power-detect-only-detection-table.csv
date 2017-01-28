@@ -1,0 +1,8 @@
+CID Table-detection falls off with 4th power of range; only detection results provided. Appropriate for e.g. active sonar.,Version 1.0,,Detection,Interval,(seconds),->,,,
+ ,,0,1,5,10,20,40,80,160
+Apparent ,1,0,0,0,0,0,1,1,1
+Signature  ,1.19,0,0,0,0,1,1,1,1
+       |,1.41,0,0,0,1,1,1,1,1
+      V,1.68,0,0,1,1,1,1,1,1
+ ,2.51,0,1,1,1,1,1,1,1
+,5,1,1,1,1,1,1,1,1

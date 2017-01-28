@@ -1,0 +1,7 @@
+(signature-modifiers
+   (subsurface
+      ;;The signature will decrease linearly from absolute to 0
+	  ;;where 0 will be at the zero-signature-depth.
+      (zero-signature-depth 300) 
+   )
+)

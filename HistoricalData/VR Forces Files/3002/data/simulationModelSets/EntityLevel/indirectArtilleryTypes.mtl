@@ -1,0 +1,36 @@
+(indirect-artillery-types
+   (version 1)
+   (indirect-artillery
+      (label "76 mm M319")
+      (munition-type 2 9 225 2 6 1 0)
+   )
+   (indirect-artillery
+      (label "76 mm M331A1, HVAP-DS-T")
+      (munition-type 2 9 225 2 6 2 0)
+   )
+   (indirect-artillery
+      (label "76 mm M331A2, HVAP-DS-T")
+      (munition-type 2 9 225 2 6 3 0)
+   )
+   (indirect-artillery
+      (label "76 mm M339, AP-T")
+      (munition-type 2 9 225 2 6 4 0)
+   )
+   (indirect-artillery
+      (label "76 mm M464, APFSDS-T")
+      (munition-type 2 9 225 2 6 5 0)
+   )
+   (indirect-artillery
+      (label "81 mm")
+      (munition-type 2 9 225 2 7 0 0)
+   )
+   (indirect-artillery
+      (label "84 mm")
+      (munition-type 2 9 225 2 8 0 0)
+   )
+   (indirect-artillery
+      (label "155 mm Artillery")
+      (munition-type 2 9 225 2 14 2 0)
+   )
+)
+

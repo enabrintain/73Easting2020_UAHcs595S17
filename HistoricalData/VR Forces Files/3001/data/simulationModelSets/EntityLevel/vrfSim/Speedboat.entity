@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<simObjects entityVersion="1.0">
+   <simObject objectType="1:1:3:0:61:11:0:1" matchType="1:1:3:0:61:11:0:1" platform="@(platforms-dir)/Surface_Ship.ope">
+      <componentSystem systemName="damage" platform="@(system-dir)\damage\surface-default.sysdef"/>
+      <componentSystem systemName="movement" platform="@(system-dir)\movement\small-boat.sysdef">
+         <real paramName="fuel-amount">50</real>
+      </componentSystem>
+      <DtReaderWriters paramName="sensor-signatures"/>
+      <bodyPosition paramName="left-support" forward="4.05" right="-1.4" down="0"/>
+      <bodyPosition paramName="right-support" forward="4.05" right="1.4" down="0"/>
+      <bodyPosition paramName="other-support" forward="-4.05" right="0" down="0"/>
+      <bool paramName="can-be-embarked-upon">True</bool>
+      <bool paramName="use-random-appearance-upon-creation">True</bool>
+      <bool paramName="can-embark">True</bool>
+      <bool paramName="use-random-hand-item-upon-creation">False</bool>
+      <boundingVolume paramName="bounding-volume" offsetType="custom">
+         <offset forward="0.5" right="0" down="-0.3"/>
+         <dimensions length="8.1" width="2.8" height="2"/>
+      </boundingVolume>
+      <real paramName="mass">2000</real>
+      <real paramName="max-speed">15</real>
+      <real paramName="max-reverse-speed">7.5</real>
+      <real paramName="turning-radius">2</real>
+      <real paramName="ordered-speed">8</real>
+      <real paramName="max-acceleration">5</real>
+      <real paramName="max-deceleration">5</real>
+      <real paramName="max-lateral-acceleration">6</real>
+      <real paramName="disaggregation-range">4100</real>
+      <string paramName="short-name">Spdbt</string>
+      <string paramName="character-type"/>
+      <string paramName="character-appearance"/>
+      <string paramName="animation"/>
+      <string paramName="object-geometry-filename">@(DATA_DIR)/Vehicles/Surface/SPEED_BOAT_MEDIUM_V7.0.flt/DB_SPEEDBOAT_MEDIUM_V7.0.medf</string>
+      <string paramName="hand-item"/>
+      <string paramName="nav-data-path"/>
+      <stringList paramName="appearances-for-random-selection"/>
+      <stringList paramName="hand-items-for-random-selection"/>
+      <componentSystem systemName="sensor" platform="@(system-dir)\sensors\visual-sensor.sysdef">
+         <bodyPosition paramName="sensor-position" forward="0" right="0" down="0"/>
+         <real paramName="max-range">4000</real>
+         <real paramName="sensor-sensitivity-start">1</real>
+         <real paramName="suppression-factor">0</real>
+      </componentSystem>
+      <string paramName="gui-unique-id">ModelSet-196747588-Speedboat</string>
+      <string paramName="gui-keywords"/>
+      <string paramName="gui-default-overlay-layer"/>
+      <string paramName="gui-label">Speedboat</string>
+      <string paramName="gui-categories">"Surface"</string>
+      <string paramName="gui-deployable-countries"/>
+      <string paramName="gui-menu-icon"/>
+      <bool paramName="gui-can-create">True</bool>
+      <bool paramName="gui-can-aggregate">False</bool>
+      <bool paramName="IncludeInBVSPCalcs">True</bool>
+      <string paramName="gui-on-palettes">"EntityCreationPalette"</string>
+      <slotExclusions paramName="slot-exclusions">
+         <slotExclusion/>
+      </slotExclusions>
+      <sensorSignatures>
+         <real paramName="active-sonar-signature">2</real>
+         <real paramName="infrared-signature">25</real>
+         <real paramName="mad-signature">0</real>
+         <real paramName="passive-sonar-signature">2</real>
+         <real paramName="radar-signature">25</real>
+         <real paramName="visual-signature">10</real>
+      </sensorSignatures>
+   </simObject>
+</simObjects>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE boost_serialization>
+<boost_serialization signature="serialization::archive" version="8">
+<DtScriptedMovementObject class_id="0" tracking_level="0" version="3">
+	<myName>Pull Over</myName>
+	<myPhases class_id="1" tracking_level="0" version="0">
+		<count>1</count>
+		<item_version>3</item_version>
+		<item class_id="2" tracking_level="0" version="3">
+			<myMovementFile>VehiclePullOverAnimation.ASE</myMovementFile>
+			<myCompletionRule>5</myCompletionRule>
+			<myClampType>2</myClampType>
+			<myFileConfiguration>HMMWV</myFileConfiguration>
+			<mySimulationStartTimeOffset>0</mySimulationStartTimeOffset>
+			<myEntityType></myEntityType>
+		</item>
+	</myPhases>
+	<myScriptType>2</myScriptType>
+	<myDescription>Pull over to the side of the road</myDescription>
+	<myCategories>Ground Movement</myCategories>
+</DtScriptedMovementObject>
+</boost_serialization>
+

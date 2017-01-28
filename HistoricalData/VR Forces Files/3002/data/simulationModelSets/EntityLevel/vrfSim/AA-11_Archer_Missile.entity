@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<simObjects entityVersion="1.0">
+  <simObject objectType="1:2:1:222:1:11:0:0" matchType="1:2:1:222:1:11:-1:-1" platform="@(platforms-dir)/Missile.ope">
+    <boundingVolume paramName="bounding-volume" offsetType="center">
+      <dimensions length="5.8" width="0.17" height="0.17"/>
+    </boundingVolume>
+    <string paramName="short-name">Archer</string>
+    <bool paramName="affected-by-counter-measures">True</bool>
+    <entityType paramName="counter-measure-type">8:2:-1:2:1:0:0</entityType>
+    <real paramName="distraction-probability">0.1</real>
+    <real paramName="mass">5000</real>
+    <sensorSignatures>
+      <real paramName="radar-signature">10</real>
+      <real paramName="visual-signature">2</real>
+    </sensorSignatures>
+    <bodyPosition paramName="left-support" right="-0.085" forward="2.9" down="0.085"/>
+    <bodyPosition paramName="right-support" right="0.085" forward="2.9" down="0.085"/>
+    <bodyPosition paramName="other-support" right="0" forward="-2.9" down="0.085"/>
+    <real paramName="max-speed">828.65</real>
+    <real paramName="ordered-speed">10</real>
+    <real paramName="max-acceleration">4.5</real>
+    <real paramName="max-deceleration">4.5</real>
+    <real paramName="disaggregation-range">21000</real>
+    <real paramName="max-maneuver-gs">22</real>
+    <bool paramName="fire-and-forget">False</bool>
+    <real paramName="cep-radius">1.5</real>
+    <real paramName="transition-angle">0.7854</real>
+    <real paramName="proportional-navigation-gain">4</real>
+    <string paramName="range-name">Archer Missile</string>
+    <componentSystem systemName="damage" platform="@(system-dir)/damage/missile-default.sysdef"/>
+    <componentSystem systemName="movement" platform="@(system-dir)/movement/missile-dynamics.sysdef"/>
+    <string paramName="gui-unique-id">ModelSet-87492261-AA-11 Archer Missile</string>
+    <string paramName="gui-keywords"/>
+    <string paramName="gui-label">AA-11 Archer Missile</string>
+    <string paramName="gui-categories">"Munition"</string>
+    <string paramName="gui-menu-icon"/>
+    <bool paramName="gui-can-create">False</bool>
+    <bool paramName="gui-can-aggregate">False</bool>
+    <bool paramName="gui-on-overlay-palette">False</bool>
+    <real paramName="effective-range">20000</real>
+    <string paramName="object-geometry-filename"/>
+  </simObject>
+</simObjects>

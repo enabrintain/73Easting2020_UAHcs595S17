@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<simObjects entityVersion="1.0">
+  <simObject objectType="1:2:10:222:1:21:0:0" matchType="1:2:10:222:1:21:0:0" platform="@(platforms-dir)/Scripted_Movement_Object.ope">
+    <boundingVolume paramName="bounding-volume" offsetType="center">
+      <dimensions length="11.6" width="2.2" height="0.7"/>
+    </boundingVolume>
+    <string paramName="short-name">SS-24 Scapel</string>
+    <real paramName="mass">670</real>
+    <sensorSignatures>
+      <real paramName="radar-signature">25</real>
+      <real paramName="visual-signature">2</real>
+      <real paramName="infrared-signature">20</real>
+    </sensorSignatures>
+    <componentSystem systemName="movement" platform="@(system-dir)/movement/scripted-movement-dynamics.sysdef"/>
+    <componentSystem systemName="damage" platform="@(system-dir)/damage/missile-default.sysdef"/>
+    <string paramName="gui-unique-id">ModelSet-244681852-SS-24 Scapel</string>
+    <string paramName="gui-keywords"/>
+    <string paramName="gui-label">SS-24 Scalpel Missile</string>
+    <string paramName="gui-categories">"Munition"</string>
+    <string paramName="gui-menu-icon"/>
+    <bool paramName="gui-can-create">False</bool>
+    <bool paramName="gui-can-aggregate">False</bool>
+    <bool paramName="gui-on-overlay-palette">False</bool>
+    <string paramName="object-geometry-filename"/>
+  </simObject>
+</simObjects>

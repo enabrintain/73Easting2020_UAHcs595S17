@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<simObjects entityVersion="1.0">
+   <simObject objectType="1:1:1:222:28:13:7:3" matchType="1:1:1:222:28:13:7:3" platform="@(platforms-dir)/Ground_Vehicle.ope">
+      <componentSystem systemName="damage" platform="@(system-dir)/damage/ground-light-armor.sysdef"/>
+      <componentSystem systemName="other" platform="@(system-dir)/other/spot-report-generator.sysdef"/>
+      <componentSystem systemName="other-2" platform="@(system-dir)/other/spot-report-receiver.sysdef"/>
+      <componentSystem systemName="sensor" platform="@(system-dir)\sensors\visual-sensor.sysdef">
+         <bodyPosition paramName="sensor-position" forward="0" right="0" down="-1"/>
+         <real paramName="max-range">4000</real>
+         <real paramName="sensor-sensitivity-start">1</real>
+         <real paramName="suppression-factor">1</real>
+      </componentSystem>
+      <componentSystem systemName="other-3" platform="@(system-dir)\damage\crew-suppression-default.sysdef">
+         <real paramName="suppression-insult">2</real>
+         <real paramName="recovery-time">8</real>
+      </componentSystem>
+      <componentSystem systemName="weapon" platform="@(system-dir)\weapons\14_5mm-quad-gun.sysdef">
+         <bodyPosition paramName="attach-point" forward="0" right="0" down="-0.5276"/>
+         <bodyPosition paramName="turret-attach-point" forward="-0.1472" right="0" down="-0.5545"/>
+         <int paramName="num-rounds">500</int>
+         <int paramName="turret-art-part-type">4096</int>
+         <int paramName="gun-art-part-type">4416</int>
+         <int paramName="rapid-fire-rate">120</int>
+         <int paramName="sustained-rate">48</int>
+         <real paramName="elevation-rate">0.785398</real>
+         <real paramName="min-elevation">0</real>
+         <real paramName="max-elevation">1.570796</real>
+         <string paramName="slew-group">weapon:14-5mm Ballistic Gun</string>
+         <string paramName="ballistic-gun-group">weapon:14-5mm Ballistic Gun</string>
+         <bool paramName="suppressible">True</bool>
+      </componentSystem>
+      <DtReaderWriters paramName="sensor-signatures"/>
+      <bodyPosition paramName="left-support" forward="1.449399" right="-0.865078" down="0"/>
+      <bodyPosition paramName="right-support" forward="1.449399" right="0.865078" down="0"/>
+      <bodyPosition paramName="other-support" forward="-1.449076" right="0" down="0"/>
+      <bool paramName="can-be-embarked-upon">False</bool>
+      <bool paramName="can-embark">True</bool>
+      <bool paramName="can-pivot">False</bool>
+      <bool paramName="use-random-appearance-upon-creation">False</bool>
+      <bool paramName="di-guy-enabled">False</bool>
+      <bool paramName="flip-disembark-body-x">True</bool>
+      <bool paramName="flip-disembark-body-y">True</bool>
+      <bool paramName="use-random-hand-item-upon-creation">False</bool>
+      <bool paramName="use-object-geometry">True</bool>
+      <boundingVolume paramName="bounding-volume" offsetType="ground-center">
+         <dimensions length="5" width="2.76" height="1.76"/>
+      </boundingVolume>
+      <real paramName="mass">5000</real>
+      <real paramName="max-pivot-speed">0</real>
+      <real paramName="max-speed">0</real>
+      <real paramName="max-reverse-speed">10</real>
+      <real paramName="turning-radius">4</real>
+      <real paramName="max-slope">1</real>
+      <real paramName="ordered-speed">10</real>
+      <real paramName="max-acceleration">3.5</real>
+      <real paramName="max-deceleration">4</real>
+      <real paramName="disaggregation-range">4100</real>
+      <soilList paramName="soil-list"/>
+      <string paramName="short-name">AA_Towed</string>
+      <string paramName="character-type"/>
+      <string paramName="character-appearance"/>
+      <string paramName="animation"/>
+      <string paramName="object-geometry-filename"/>
+      <string paramName="hand-item"/>
+      <stringList paramName="appearances-for-random-selection"/>
+      <stringList paramName="hand-items-for-random-selection"/>
+      <string paramName="gui-unique-id">ModelSet-6248452-ZPU-4</string>
+      <string paramName="gui-keywords"/>
+      <string paramName="gui-default-overlay-layer"/>
+      <string paramName="gui-label">ZPU-4 AA Gun</string>
+      <string paramName="gui-categories">"Ground" "Materially Classified"</string>
+      <string paramName="gui-deployable-countries"/>
+      <string paramName="gui-menu-icon"/>
+      <bool paramName="gui-can-create">True</bool>
+      <bool paramName="gui-can-aggregate">False</bool>
+      <bool paramName="IncludeInBVSPCalcs">True</bool>
+      <string paramName="gui-on-palettes">"EntityCreationPalette"</string>
+      <sensorSignatures>
+         <real paramName="active-sonar-signature">0</real>
+         <real paramName="infrared-signature">2</real>
+         <real paramName="mad-signature">0</real>
+         <real paramName="passive-sonar-signature">0</real>
+         <real paramName="radar-signature">0.5</real>
+         <real paramName="visual-signature">1</real>
+      </sensorSignatures>
+   </simObject>
+</simObjects>

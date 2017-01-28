@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<simObjects entityVersion="1.0">
+   <simObject objectType="1:1:1:71:5:2:1:0" matchType="1:1:1:71:5:2:1:-1" platform="@(platforms-dir)/Ground_Vehicle.ope">
+      <componentSystem systemName="movement" platform="@(system-dir)\movement\ground-tracked.sysdef">
+         <real paramName="fuel-amount">350</real>
+         <string paramName="automotive-driving">Automotive Driving</string>
+      </componentSystem>
+      <componentSystem systemName="damage" platform="@(system-dir)\damage\ground-light-armor.sysdef"/>
+      <componentSystem systemName="other" platform="@(system-dir)\other\spot-report-generator.sysdef"/>
+      <componentSystem systemName="other-2" platform="@(system-dir)\other\spot-report-receiver.sysdef"/>
+      <bodyPosition paramName="left-support" forward="1.92748" right="-1.581001" down="0"/>
+      <bodyPosition paramName="right-support" forward="1.92748" right="1.581001" down="0"/>
+      <bodyPosition paramName="other-support" forward="-2.126878" right="0" down="0"/>
+      <bool paramName="can-be-embarked-upon">False</bool>
+      <bool paramName="can-embark">True</bool>
+      <bool paramName="can-pivot">True</bool>
+      <bool paramName="use-random-appearance-upon-creation">False</bool>
+      <bool paramName="di-guy-enabled">False</bool>
+      <bool paramName="flip-disembark-body-x">True</bool>
+      <bool paramName="flip-disembark-body-y">True</bool>
+      <boundingVolume paramName="bounding-volume" offsetType="ground-center">
+         <dimensions length="6.04" width="3.603" height="3.25"/>
+      </boundingVolume>
+      <real paramName="mass">1520</real>
+      <real paramName="max-pivot-speed">0.2</real>
+      <real paramName="max-speed">15.638889</real>
+      <real paramName="max-reverse-speed">10</real>
+      <real paramName="turning-radius">4</real>
+      <real paramName="max-slope">0.6</real>
+      <real paramName="ordered-speed">10</real>
+      <real paramName="max-acceleration">1.7</real>
+      <real paramName="max-deceleration">4</real>
+      <real paramName="disaggregation-range">4100</real>
+      <soilList paramName="soil-list"/>
+      <string paramName="short-name">ARTY</string>
+      <string paramName="character-type"/>
+      <string paramName="character-appearance"/>
+      <string paramName="animation"/>
+      <string paramName="object-geometry-filename"/>
+      <stringList paramName="appearances-for-random-selection"/>
+      <DtReaderWriters paramName="sensor-signatures"/>
+      <string paramName="hand-item"/>
+      <bool paramName="use-random-hand-item-upon-creation">False</bool>
+      <stringList paramName="hand-items-for-random-selection"/>
+      <componentSystem systemName="weapon" platform="@(system-dir)\weapons\M284-155mm-cannon.sysdef">
+         <bodyPosition paramName="attach-point" forward="-0.882247" right="0" down="-1.606503"/>
+         <bodyPosition paramName="gun-attach-point" forward="1.025034" right="0" down="0.465021"/>
+         <int paramName="num-rounds">100</int>
+         <int paramName="turret-art-part-type">4096</int>
+         <int paramName="gun-art-part-type">4416</int>
+         <int paramName="rot-turret-art-part-type">4096</int>
+         <int paramName="elevating-turret-art-part-type">4128</int>
+         <bool paramName="suppressible">True</bool>
+      </componentSystem>
+      <componentSystem systemName="other-3" platform="@(system-dir)\damage\crew-suppression-default.sysdef">
+         <real paramName="suppression-insult">2</real>
+         <real paramName="recovery-time">8</real>
+      </componentSystem>
+      <string paramName="gui-unique-id">ModelSet-217377058-LG1 Howitzer</string>
+      <string paramName="gui-keywords"/>
+      <string paramName="gui-default-overlay-layer"/>
+      <string paramName="gui-label">LG1 Howitzer (No 3D)</string>
+      <string paramName="gui-categories">"Ground"</string>
+      <string paramName="gui-deployable-countries">"Belgium" "Canada" "Colombia" "Indonesia" "Thailand"</string>
+      <string paramName="gui-menu-icon"/>
+      <bool paramName="gui-can-create">True</bool>
+      <bool paramName="gui-can-aggregate">False</bool>
+      <string paramName="gui-on-palettes">"EntityCreationPalette"</string>
+      <sensorSignatures>
+         <real paramName="active-sonar-signature">0</real>
+         <real paramName="infrared-signature">4</real>
+         <real paramName="mad-signature">0</real>
+         <real paramName="passive-sonar-signature">0</real>
+         <real paramName="radar-signature">0.75</real>
+         <real paramName="visual-signature">3</real>
+      </sensorSignatures>
+   </simObject>
+</simObjects>

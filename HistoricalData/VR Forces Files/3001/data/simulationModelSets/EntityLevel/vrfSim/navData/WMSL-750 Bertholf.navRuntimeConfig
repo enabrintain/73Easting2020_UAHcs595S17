@@ -1,0 +1,10 @@
+(nav-runtime-config 
+   (extent-nw  -20.000000 80.000000 23.423240)
+   (extent-ne  20.000000 80.000000 23.423240)
+   (extent-sw  -20.000000 -80.000000 -23.423240)
+   (extent-se  20.000000 -80.000000 23.423240)
+   (offset  0.000000 10.000000 17.500000)
+   (nav-data-path  "$(nav-data-dir)\WMSL-750 Bertholf")
+   (cs-type  6)
+   (original-terrain  "$(DATA_DIR)\Vehicles\Surface\WMSL-750 Bertholf\WMSL-750 Bertholf.medf")
+)

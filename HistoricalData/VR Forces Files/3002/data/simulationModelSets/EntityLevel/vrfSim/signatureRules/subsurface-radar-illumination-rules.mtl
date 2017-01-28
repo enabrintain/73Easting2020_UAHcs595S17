@@ -1,0 +1,7 @@
+(signature-modifiers
+   (subsurface-extensible-art-part
+      (art-part-type 2048)
+      (height-to-surface 5.0)
+      (modifier-coefficients .05)
+   )
+)

@@ -1,0 +1,18 @@
+(signature-modifiers
+   (environmental
+      (modifier-coefficients 1.0 0.1)
+   )
+   (subsurface-extensible-art-part
+      (art-part-type 2048)
+      (height-to-surface 5.0)
+      (modifier-coefficients .05)
+   )
+   (subsurface
+      ;; Modifier for each meter below surface.  If below
+      ;; the last value then will always have no signature
+      ;; Make sure to have at least as many signatures as
+      ;; periscope height.  Last value is considered at
+      ;; 0 meters
+      (modifier-coefficients 0 .1 .3 .35 .4 .45 .5 .65 .8 .85 .9)
+   )
+)

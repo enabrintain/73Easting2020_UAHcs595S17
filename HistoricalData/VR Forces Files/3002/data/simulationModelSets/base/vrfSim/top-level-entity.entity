@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<simObjects entityVersion="1.0">
+  <simObject objectType="3:11:255:255:11:255:255:255" matchType="3:11:255:255:11:255:255:255" platform="@(platforms-dir)/Top_Level_Entity.ope">
+    <string paramName="echelon-level">Force</string>
+  </simObject>
+</simObjects>

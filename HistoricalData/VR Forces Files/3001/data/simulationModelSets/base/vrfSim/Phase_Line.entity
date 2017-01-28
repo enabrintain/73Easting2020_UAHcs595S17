@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<simObjects entityVersion="1.0">
+  <simObject objectType="1:17:0:0:1:0:0:0" matchType="1:17:-1:-1:1:-1:-1:-1" platform="@(platforms-dir)/Line_Object.ope">
+    <string paramName="short-name">Phase Line</string>
+    <string paramName="gui-unique-id">ModelSet-159380805-Phase Line</string>
+    <string paramName="gui-keywords">min=2;max=2;penstyle</string>
+    <string paramName="gui-label">Phase Line</string>
+    <string paramName="gui-categories">"Control Objects"</string>
+    <string paramName="gui-menu-icon">@(DATA_DIR)/images/overlays/small/line.png</string>
+    <bool paramName="gui-can-create">True</bool>
+    <bool paramName="gui-can-aggregate">False</bool>
+    <bool paramName="gui-on-overlay-palette">True</bool>
+  </simObject>
+</simObjects>

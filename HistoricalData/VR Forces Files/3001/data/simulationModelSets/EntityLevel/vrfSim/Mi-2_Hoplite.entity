@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<simObjects entityVersion="1.0">
+   <simObject objectType="1:1:2:222:21:5:0:0" matchType="1:1:2:222:21:5:-1:-1" platform="@(platforms-dir)/Rotary_Wing_Aircraft.ope">
+      <componentSystem systemName="movement" platform="@(system-dir)/movement/rotary-wing-utility.sysdef">
+         <real paramName="fuel-amount">350</real>
+         <string paramName="flight-controls">Rotary Wing Controls</string>
+      </componentSystem>
+      <componentSystem systemName="damage" platform="@(system-dir)/damage/rotary-wing-default.sysdef"/>
+      <componentSystem systemName="other-2" platform="@(system-dir)/other/spot-report-receiver.sysdef"/>
+      <componentSystem systemName="other-3" platform="@(system-dir)\other/counter-measures-launcher.sysdef">
+         <int paramName="num-flares">60</int>
+         <int paramName="num-chaff">60</int>
+         <bodyPosition paramName="attach-point" right="1" forward="0" down="-0"/>
+         <orientation paramName="launcher-orientation" yaw="2.356194" pitch="-0.436332" roll="-0"/>
+      </componentSystem>
+      <componentSystem systemName="other-4" platform="@(system-dir)\other/iff-transponder.sysdef"/>
+      <componentSystem systemName="other" platform="@(system-dir)\other\spot-report-generator.sysdef">
+         <bool paramName="broadcast">True</bool>
+      </componentSystem>
+      <componentSystem systemName="sensor" platform="@(system-dir)\sensors\infrared-sensor.sysdef">
+         <bodyPosition paramName="sensor-position" forward="0" right="0" down="-2"/>
+         <real paramName="max-range">5000</real>
+         <real paramName="sensor-sensitivity-start">1</real>
+         <real paramName="suppression-factor">0</real>
+      </componentSystem>
+      <DtReaderWriters paramName="sensor-signatures"/>
+      <bodyPosition paramName="left-support" forward="0.7848510146141" right="-1.474789977074" down="1.402680039406"/>
+      <bodyPosition paramName="right-support" forward="0.7848510146141" right="1.474789977074" down="1.402680039406"/>
+      <bodyPosition paramName="other-support" forward="3.897259950638" right="0" down="1.402680039406"/>
+      <bool paramName="can-be-embarked-upon">True</bool>
+      <bool paramName="can-embark">True</bool>
+      <bool paramName="use-random-appearance-upon-creation">True</bool>
+      <bool paramName="use-object-geometry">True</bool>
+      <bool paramName="use-random-hand-item-upon-creation">False</bool>
+      <boundingVolume paramName="bounding-volume" offsetType="custom">
+         <offset forward="0.286" right="-0.0713" down="-0.606"/>
+         <dimensions length="15.4" width="11.6" height="4.02"/>
+      </boundingVolume>
+      <real paramName="mass">7923</real>
+      <real paramName="max-speed">122.8</real>
+      <real paramName="ordered-speed">25</real>
+      <real paramName="max-acceleration">16</real>
+      <real paramName="max-deceleration">12</real>
+      <real paramName="disaggregation-range">5100</real>
+      <real paramName="max-altitude">12000</real>
+      <real paramName="max-climb-rate">50</real>
+      <real paramName="max-yaw-rate">5</real>
+      <real paramName="max-pitch-rate">2.5</real>
+      <real paramName="max-roll-rate">5</real>
+      <real paramName="max-yaw-acceleration">0.564</real>
+      <real paramName="max-pitch-acceleration">0.64</real>
+      <real paramName="max-roll-acceleration">2.28</real>
+      <real paramName="zero-collective-lift-acceleration">-10</real>
+      <real paramName="full-collective-lift-acceleration">30</real>
+      <string paramName="short-name">UtilRW</string>
+      <string paramName="character-type"/>
+      <string paramName="character-appearance"/>
+      <string paramName="animation"/>
+      <string paramName="object-geometry-filename"/>
+      <string paramName="hand-item"/>
+      <stringList paramName="appearances-for-random-selection"/>
+      <stringList paramName="hand-items-for-random-selection"/>
+      <string paramName="gui-unique-id">ModelSet-85932069-Mi-2 Hoplite</string>
+      <string paramName="gui-keywords"/>
+      <string paramName="gui-default-overlay-layer"/>
+      <string paramName="gui-label">Mi-2 Hoplite</string>
+      <string paramName="gui-categories">"Materially Classified" "Rotary Wing"</string>
+      <string paramName="gui-deployable-countries"/>
+      <string paramName="gui-menu-icon"/>
+      <bool paramName="gui-can-create">True</bool>
+      <bool paramName="gui-can-aggregate">False</bool>
+      <bool paramName="IncludeInBVSPCalcs">True</bool>
+      <string paramName="gui-on-palettes">"EntityCreationPalette"</string>
+      <loadPoints paramName="ingress-points">
+         <loadPoint supportedSlots="">
+            <vector x="0" y="3" z="2"/>
+         </loadPoint>
+         <loadPoint supportedSlots="">
+            <vector x="0" y="-3" z="2"/>
+         </loadPoint>
+      </loadPoints>
+      <loadPoints paramName="egress-points">
+         <loadPoint supportedSlots="">
+            <vector x="0" y="3" z="2"/>
+         </loadPoint>
+      </loadPoints>
+      <embarkationSlots paramName="embarkation-slots">
+         <embarkationSlot embarkableObject="-1:3:1:-1:-1:-1:-1:-1" capacity="1" jumpToLocation="True" turnToHeading="True" embarkedAppearance="0X10A0000">
+            <embarkedPosition x="0.902973" y="-0.536032" z="1"/>
+            <embarkedOrientation yaw="1.570796" pitch="0" roll="0"/>
+         </embarkationSlot>
+         <embarkationSlot embarkableObject="-1:3:1:-1:-1:-1:-1:-1" capacity="1" jumpToLocation="True" turnToHeading="True" embarkedAppearance="0X10A0000">
+            <embarkedPosition x="0.293624" y="-0.540798" z="1"/>
+            <embarkedOrientation yaw="1.570796" pitch="0" roll="0"/>
+         </embarkationSlot>
+         <embarkationSlot embarkableObject="-1:3:1:-1:-1:-1:-1:-1" capacity="1" jumpToLocation="True" turnToHeading="True" embarkedAppearance="0X10A0000">
+            <embarkedPosition x="-0.285259" y="-0.51033" z="1"/>
+            <embarkedOrientation yaw="1.570796" pitch="0" roll="0"/>
+         </embarkationSlot>
+         <embarkationSlot embarkableObject="-1:3:1:-1:-1:-1:-1:-1" capacity="1" jumpToLocation="True" turnToHeading="True" embarkedAppearance="0X10A0000">
+            <embarkedPosition x="-0.882824" y="-0.519937" z="1"/>
+            <embarkedOrientation yaw="1.570796" pitch="0" roll="0"/>
+         </embarkationSlot>
+         <embarkationSlot embarkableObject="-1:3:1:-1:-1:-1:-1:-1" capacity="1" jumpToLocation="True" turnToHeading="True" embarkedAppearance="0X10A0000">
+            <embarkedPosition x="-0.925076" y="0.479863" z="1"/>
+            <embarkedOrientation yaw="4.712389" pitch="0" roll="0"/>
+         </embarkationSlot>
+         <embarkationSlot embarkableObject="-1:3:1:-1:-1:-1:-1:-1" capacity="1" jumpToLocation="True" turnToHeading="True" embarkedAppearance="0X10A0000">
+            <embarkedPosition x="-1.515383" y="-0.308483" z="1"/>
+            <embarkedOrientation yaw="1.570796" pitch="0" roll="0"/>
+         </embarkationSlot>
+         <embarkationSlot embarkableObject="-1:3:1:-1:-1:-1:-1:-1" capacity="1" jumpToLocation="True" turnToHeading="True" embarkedAppearance="0X10A0000">
+            <embarkedPosition x="-1.538234" y="0.377035" z="1"/>
+            <embarkedOrientation yaw="4.712389" pitch="0" roll="0"/>
+         </embarkationSlot>
+         <embarkationSlot embarkableObject="-1:3:1:-1:-1:-1:-1:-1" capacity="1" jumpToLocation="True" turnToHeading="True" embarkedAppearance="0X10A0000">
+            <embarkedPosition x="-2.109499" y="-0.285633" z="1"/>
+            <embarkedOrientation yaw="1.570796" pitch="0" roll="0"/>
+         </embarkationSlot>
+      </embarkationSlots>
+      <slotExclusions paramName="slot-exclusions">
+         <slotExclusion/>
+      </slotExclusions>
+      <bool paramName="flip-disembark-body-x">False</bool>
+      <bool paramName="flip-disembark-body-y">False</bool>
+      <sensorSignatures>
+         <real paramName="active-sonar-signature">0</real>
+         <real paramName="infrared-signature">25</real>
+         <real paramName="mad-signature">0</real>
+         <real paramName="passive-sonar-signature">0</real>
+         <real paramName="radar-signature">25</real>
+         <real paramName="visual-signature">5</real>
+      </sensorSignatures>
+   </simObject>
+</simObjects>

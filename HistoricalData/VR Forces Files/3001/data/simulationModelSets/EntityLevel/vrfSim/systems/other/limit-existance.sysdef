@@ -1,0 +1,30 @@
+(limit-existence 
+   (controllers 
+      (limit-existence-controller 
+         (component-descriptor-type "limit-existence-controller-descriptor")
+         (component-type  "limit-existence-controller")
+         (is-enabled True)
+         (duration $life-span)
+      )
+   )
+   (actuators )
+   (connections )
+   (resources )
+   (meta-data 
+      (system-name  "Limit Entity Existence")
+      (system-description  "Used to control the life span of the object this system is attached to. Once it's life span is up the object is removed from the simulation.")
+      (allowed-state-repository-types "all")
+      (system-categories "other")
+      (parameter-data-list 
+         (real-parameter-data 
+            (parameter-name  "life-span")
+            (variable-type  "DtRwReal")
+            (display-label  "How long this entity will exist in the simulation")
+            (display-units  "seconds")
+            (source-units  "seconds")
+            (default-value  10.000000)
+         )
+      )
+      (meta-data-entry-list )
+   )
+)

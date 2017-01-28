@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<simObjects entityVersion="1.0">
+   <simObject objectType="1:1:2:222:20:1:0:0" matchType="1:1:2:222:20:1:-1:-1" platform="@(platforms-dir)/Rotary_Wing_Aircraft.ope">
+      <componentSystem systemName="movement" platform="@(system-dir)/movement/rotary-wing-attack.sysdef">
+         <real paramName="fuel-amount">643</real>
+         <string paramName="flight-controls">Rotary Wing Controls</string>
+      </componentSystem>
+      <componentSystem systemName="damage" platform="@(system-dir)/damage/rotary-wing-default.sysdef"/>
+      <componentSystem systemName="weapon" platform="@(system-dir)/weapons/CIS-attack-helo-missile-package.sysdef">
+         <int paramName="num-archers">8</int>
+         <int paramName="num-spirals">8</int>
+         <bodyPosition paramName="attach-point" right="0" forward="0" down="0"/>
+         <real paramName="weapon-hold-altitude">10</real>
+         <int paramName="launcher-art-part-type">4736</int>
+      </componentSystem>
+      <componentSystem systemName="other" platform="@(system-dir)/other/spot-report-generator.sysdef"/>
+      <componentSystem systemName="other-2" platform="@(system-dir)/other/spot-report-receiver.sysdef"/>
+      <componentSystem systemName="other-3" platform="@(system-dir)\other/cis-counter-measures-launcher.sysdef">
+         <int paramName="num-flares">60</int>
+         <int paramName="num-chaff">60</int>
+         <bodyPosition paramName="attach-point" right="1" forward="0" down="-0"/>
+         <orientation paramName="launcher-orientation" yaw="2.356194" pitch="-0.436332" roll="-0"/>
+      </componentSystem>
+      <componentSystem systemName="other-4" platform="@(system-dir)\other/iff-transponder.sysdef"/>
+      <componentSystem systemName="sensor" platform="@(system-dir)\sensors\infrared-sensor.sysdef">
+         <bodyPosition paramName="sensor-position" forward="0" right="0" down="-2"/>
+         <real paramName="max-range">5000</real>
+         <real paramName="sensor-sensitivity-start">1</real>
+         <real paramName="suppression-factor">0</real>
+      </componentSystem>
+      <DtReaderWriters paramName="sensor-signatures"/>
+      <bodyPosition paramName="left-support" forward="3.284600019455" right="-1.110599994659" down="2.035900115967"/>
+      <bodyPosition paramName="right-support" forward="3.284600019455" right="1.110599994659" down="2.035900115967"/>
+      <bodyPosition paramName="other-support" forward="-7.13149023056" right="0" down="2.035900115967"/>
+      <bool paramName="can-be-embarked-upon">False</bool>
+      <bool paramName="can-embark">True</bool>
+      <bool paramName="use-random-appearance-upon-creation">True</bool>
+      <bool paramName="flip-disembark-body-x">False</bool>
+      <bool paramName="flip-disembark-body-y">False</bool>
+      <bool paramName="use-random-hand-item-upon-creation">False</bool>
+      <bool paramName="use-object-geometry">True</bool>
+      <boundingVolume paramName="bounding-volume" offsetType="custom">
+         <offset forward="-0.538" right="-2.48e-005" down="-0.484"/>
+         <dimensions length="18.1" width="6.36" height="5.04"/>
+      </boundingVolume>
+      <real paramName="mass">11500</real>
+      <real paramName="max-speed">168</real>
+      <real paramName="ordered-speed">30</real>
+      <real paramName="max-acceleration">16</real>
+      <real paramName="max-deceleration">12</real>
+      <real paramName="disaggregation-range">5100</real>
+      <real paramName="max-altitude">12000</real>
+      <real paramName="max-climb-rate">50</real>
+      <real paramName="max-yaw-rate">2.5</real>
+      <real paramName="max-pitch-rate">3</real>
+      <real paramName="max-roll-rate">3.5</real>
+      <real paramName="max-yaw-acceleration">0.564</real>
+      <real paramName="max-pitch-acceleration">0.64</real>
+      <real paramName="max-roll-acceleration">2.28</real>
+      <real paramName="zero-collective-lift-acceleration">-10</real>
+      <real paramName="full-collective-lift-acceleration">30</real>
+      <string paramName="short-name">CISARW</string>
+      <string paramName="character-type"/>
+      <string paramName="character-appearance"/>
+      <string paramName="animation"/>
+      <string paramName="object-geometry-filename"/>
+      <string paramName="hand-item"/>
+      <stringList paramName="appearances-for-random-selection"/>
+      <stringList paramName="hand-items-for-random-selection"/>
+      <string paramName="gui-unique-id">ModelSet-183045619-Mi-28 Havoc</string>
+      <string paramName="gui-keywords"/>
+      <string paramName="gui-default-overlay-layer"/>
+      <string paramName="gui-label">Mi-28 Havoc</string>
+      <string paramName="gui-categories">"Materially Classified" "Rotary Wing"</string>
+      <string paramName="gui-deployable-countries">"Iraq" "Russia" "Kenya"</string>
+      <string paramName="gui-menu-icon"/>
+      <bool paramName="gui-can-create">True</bool>
+      <bool paramName="gui-can-aggregate">False</bool>
+      <bool paramName="IncludeInBVSPCalcs">True</bool>
+      <string paramName="gui-on-palettes">"EntityCreationPalette"</string>
+      <sensorSignatures>
+         <real paramName="active-sonar-signature">0</real>
+         <real paramName="infrared-signature">25</real>
+         <real paramName="mad-signature">0</real>
+         <real paramName="passive-sonar-signature">0</real>
+         <real paramName="radar-signature">25</real>
+         <real paramName="visual-signature">5</real>
+      </sensorSignatures>
+   </simObject>
+</simObjects>

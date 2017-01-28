@@ -1,0 +1,86 @@
+;;
+;; File - missile-Unknown.dmg
+;;
+;;
+;; Copyright (c) 1999 MaK Technologies, Inc.
+;; All rights reserved.
+;;
+;; $RCSfile: missile-Unknown.dmg,v $ $Revision: 1.2 $ $State: Exp $
+;;
+;; Damage Table for generic missile vs. any munition
+;; (for example only!)
+;;
+(damage-table 
+   (front 
+      (angle-of-incidence 
+         (angle  1.5708) ;; 0-90 degrees
+         (range-determinant 
+            (coefficients 
+               (catastrophic-kill -0.25 1.25)
+               (firepower-kill -0.33 2.33)
+               (mobility-kill -0.5 5.0)
+            )
+         )
+      )
+   )
+   (left-side 
+      (angle-of-incidence 
+         (angle  1.5708)
+         (range-determinant 
+            (coefficients 
+               (catastrophic-kill -0.25 1.25)
+               (firepower-kill -0.33 2.33)
+               (mobility-kill -0.5 5.0)
+            )
+         )
+      )
+   )   
+   (right-side 
+      (angle-of-incidence 
+         (angle  1.5708)
+         (range-determinant 
+            (coefficients 
+               (catastrophic-kill -0.25 1.25)
+               (firepower-kill -0.33 2.33)
+               (mobility-kill -0.5 5.0)
+            )
+         )
+      )
+   )
+  (top
+      (angle-of-incidence 
+         (angle  1.570800)
+         (range-determinant 
+            (coefficients 
+               (catastrophic-kill -0.25 1.25)
+               (firepower-kill -0.33 2.33)
+               (mobility-kill -0.5 5.0)
+            )
+         )
+      )
+   )
+   (bottom
+      (angle-of-incidence 
+         (angle  1.570800)
+         (range-determinant 
+            (coefficients 
+               (catastrophic-kill -0.25 1.25)
+               (firepower-kill -0.33 2.33)
+               (mobility-kill -0.5 5.0)
+            )
+         )
+      )
+   )
+   (rear 
+      (angle-of-incidence 
+         (angle  1.570800)
+         (range-determinant 
+            (coefficients 
+               (catastrophic-kill -0.25 1.25)
+               (firepower-kill -0.33 2.33)
+               (mobility-kill -0.5 5.0)
+            )
+         )
+      )
+   )
+)

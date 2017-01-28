@@ -1,0 +1,86 @@
+;;
+;; File - always-kill.dmg
+;;
+;;
+;; Copyright (c) 2014 MaK Technologies, Inc.
+;; All rights reserved.
+;;
+;;
+;; Damage Table that always results in a kill. For obviously
+;; overmatched munitions vs. entities.
+;; Example-- direct hit of tank shells or bombs vs. lifeform.
+;;
+(damage-table 
+   (front 
+      (angle-of-incidence 
+         (angle  1.5708) ;; 90 degrees
+         (range-determinant 
+            (range-list
+               (range 1000000000.0
+                  (catastrophic-kill  1.000000)
+               )
+            )
+         )
+      )
+   )
+   (left-side 
+      (angle-of-incidence 
+         (angle  1.5708) ;; 90 degrees
+         (range-determinant 
+            (range-list
+               (range 1000000000.0
+                  (catastrophic-kill  1.000000)
+               )
+            )
+         )
+      )
+   )   
+   (right-side 
+      (angle-of-incidence 
+         (angle  1.5708) ;; 90 degrees
+         (range-determinant 
+            (range-list
+               (range 1000000000.0
+                  (catastrophic-kill  1.000000)
+               )
+            )
+         )
+      )
+   )
+  (top
+      (angle-of-incidence 
+         (angle  1.5708) ;; 90 degrees
+         (range-determinant 
+            (range-list
+               (range 1000000000.0
+                  (catastrophic-kill  1.000000)
+               )
+            )
+         )
+      )
+   )
+   (bottom
+      (angle-of-incidence 
+         (angle  1.5708) ;; 90 degrees
+         (range-determinant 
+            (range-list
+               (range 1000000000.0
+                  (catastrophic-kill  1.000000)
+                )
+            )
+         )
+      )
+   )
+   (rear 
+      (angle-of-incidence 
+         (angle  1.5708) ;; 90 degrees
+         (range-determinant 
+            (range-list
+               (range 1000000000.0
+                  (catastrophic-kill  1.000000)
+              )
+            )
+         )
+      )
+   )
+)

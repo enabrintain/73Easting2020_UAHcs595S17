@@ -1,0 +1,222 @@
+(bare-emitter 
+   (systems )
+   (sensors 
+      (radar-sensor 
+         (component-descriptor-type "emitter-component-descriptor")
+         (component-type  "emitter-component")
+         (min-tick-period  -1.000000)
+         (min-tick-period-variance  -1.000000)
+         (tick-period-uses-real-time False)
+         (process-state-repository-name  "")
+         (process-state-repository-type  "")
+         (is-enabled True)
+         (on-at-start  True)
+         (use-high-density-tracking-at-start False)
+         (use-high-density-jamming-at-start False)
+         (radar-mode-at-start "Mixed Noise")
+         (emitter-system 
+            (system-name-enum  1946)
+            (system-function-enum  42)
+            (radar-mode-list 
+               (deception-mode 
+                  (index  0)
+                  (radar-mode  "Deception Jamming")
+                  (beam-list 
+                     (beam-0 
+                        (index  0)
+                        (type  "jam")
+                        (frequency  8999999488.000000)
+                        (frequency-range  50000.000000)
+                        (power  85.000000)
+                        (pulse-repetition-frequency  0.000000)
+                        (pulse-width  0.000000)
+                        (azimuth-center  0.000000)
+                        (azimuth-sweep  0.523599)
+                        (elevation-center  0.349066)
+                        (elevation-sweep  0.523599)
+                        (sweep-sync  0.000000)
+                        (beam-function-enum  12)
+                        (beam-param-index  0)
+                        (jamming-technique-kind 2) ; Deception
+                        (jamming-technique-category 20) ; Angle and False Target
+                        (jamming-technique-subcategory 5) ; Angle and Velocity False Target
+                        (jamming-technique-specific 5) ; Inverse Gain and Velocity False Target
+                     )
+                  )
+               )
+               (mixed-mode 
+                  (index  1)
+                  (radar-mode  "Mixed Mode Jamming")
+                  (beam-list 
+                     (beam-0 
+                        (index  0)
+                        (type  "jam")
+                        (frequency  8999999488.000000)
+                        (frequency-range  50000.000000)
+                        (power  85.000000)
+                        (pulse-repetition-frequency  0.000000)
+                        (pulse-width  0.000000)
+                        (azimuth-center  0.000000)
+                        (azimuth-sweep  0.523599)
+                        (elevation-center  0.349066)
+                        (elevation-sweep  0.523599)
+                        (sweep-sync  0.000000)
+                        (beam-function-enum  12)
+                        (beam-param-index  0)
+                        (jamming-technique-kind 3) ; Deception and Noise
+                        (jamming-technique-category 5) ; Angle and Noise
+                        (jamming-technique-subcategory 5) ; Angle and Barrage
+                        (jamming-technique-specific 5) ; Barrage and Inverse Gain
+                     )
+                  )
+               )
+               (mixed-noise-mode 
+                  (index  2)
+                  (radar-mode  "Mixed Noise")
+                  (beam-list 
+                     (beam-0 
+                        (index  0)
+                        (type  "jam")
+                        (frequency  8999999488.000000)
+                        (frequency-range  50000.000000)
+                        (power  80.000000)
+                        (pulse-repetition-frequency  0.000000)
+                        (pulse-width  0.000000)
+                        (azimuth-center  0.000000)
+                        (azimuth-sweep  0.523599)
+                        (elevation-center  0.349066)
+                        (elevation-sweep  0.523599)
+                        (sweep-sync  0.000000)
+                        (beam-function-enum  12)
+                        (beam-param-index  0)
+                        (jamming-technique-kind 1) ; Noise
+                        (jamming-technique-category 20) ; Bistatic Clutter
+                        (jamming-technique-subcategory 0)
+                        (jamming-technique-specific 0)
+                     )
+                     (beam-1 
+                        (index  1)
+                        (type  "jam")
+                        (frequency  8999999488.000000)
+                        (frequency-range  50000.000000)
+                        (power  80.000000)
+                        (pulse-repetition-frequency  0.000000)
+                        (pulse-width  0.000000)
+                        (azimuth-center  0.000000)
+                        (azimuth-sweep  0.523599)
+                        (elevation-center  0.349066)
+                        (elevation-sweep  0.523599)
+                        (sweep-sync  0.000000)
+                        (beam-function-enum  12)
+                        (beam-param-index  0)
+                        (jamming-technique-kind 1) ; Noise
+                        (jamming-technique-category 80) ; Swept Noise
+                        (jamming-technique-subcategory 10) ; Swept AM
+                        (jamming-technique-specific 0)
+                     )
+                     (beam-2 
+                        (index  2)
+                        (type  "jam")
+                        (frequency  8999999488.000000)
+                        (frequency-range  50000.000000)
+                        (power  80.000000)
+                        (pulse-repetition-frequency  0.000000)
+                        (pulse-width  0.000000)
+                        (azimuth-center  0.000000)
+                        (azimuth-sweep  0.523599)
+                        (elevation-center  0.349066)
+                        (elevation-sweep  0.523599)
+                        (sweep-sync  0.000000)
+                        (beam-function-enum  12)
+                        (beam-param-index  0)
+                        (jamming-technique-kind 1) ; Noise
+                        (jamming-technique-category 75) ; Spot Noise
+                        (jamming-technique-subcategory 20) ; Doppler Spot Noise
+                        (jamming-technique-specific 0)
+                     )
+                  )
+               )
+               (wideband-barrage-mode 
+                  (index  3)
+                  (radar-mode  "X Band Barrage") ; Covers most of X band
+                  (beam-list 
+                     (beam-0 
+                        (index  0)
+                        (type  "jam")
+                        (frequency  9000000000.000000)
+                        (frequency-range  1000000000.000000)
+                        (power  80.000000)
+                        (pulse-repetition-frequency  0.000000)
+                        (pulse-width  0.000000)
+                        (azimuth-center  0.000000)
+                        (azimuth-sweep  0.523599)
+                        (elevation-center  0.349066)
+                        (elevation-sweep  0.523599)
+                        (sweep-sync  0.000000)
+                        (beam-function-enum  12)
+                        (beam-param-index  0)
+                        (jamming-technique-kind 1) ; Noise
+                        (jamming-technique-category 10) ; Barrage Noise
+                        (jamming-technique-subcategory 0)
+                        (jamming-technique-specific 0)
+                     )
+                     (beam-1 
+                        (index  1)
+                        (type  "jam")
+                        (frequency  10000000000.000000)
+                        (frequency-range  1000000000.000000)
+                        (power  80.000000)
+                        (pulse-repetition-frequency  0.000000)
+                        (pulse-width  0.000000)
+                        (azimuth-center  0.000000)
+                        (azimuth-sweep  0.523599)
+                        (elevation-center  0.349066)
+                        (elevation-sweep  0.523599)
+                        (sweep-sync  0.000000)
+                        (beam-function-enum  12)
+                        (beam-param-index  0)
+                        (jamming-technique-kind 1) ; Noise
+                        (jamming-technique-category 10) ; Barrage Noise
+                        (jamming-technique-subcategory 0)
+                        (jamming-technique-specific 0)
+                     )
+                     (beam-2 
+                        (index  2)
+                        (type  "jam")
+                        (frequency  11000000000.000000)
+                        (frequency-range  1000000000.000000)
+                        (power  80.000000)
+                        (pulse-repetition-frequency  0.000000)
+                        (pulse-width  0.000000)
+                        (azimuth-center  0.000000)
+                        (azimuth-sweep  0.523599)
+                        (elevation-center  0.349066)
+                        (elevation-sweep  0.523599)
+                        (sweep-sync  0.000000)
+                        (beam-function-enum  12)
+                        (beam-param-index  0)
+                        (jamming-technique-kind 1) ; Noise
+                        (jamming-technique-category 10) ; Barrage Noise
+                        (jamming-technique-subcategory 0)
+                        (jamming-technique-specific 0)
+                     )
+                  )
+               )
+            )
+         )
+      )
+   )
+   (controllers )
+   (actuators )
+   (connections )
+   (resources )
+   (meta-data 
+      (system-name  "Tactical Radar Jammer")
+      (system-description  "Multi-mode ECM tactical jamming system.")
+      (allowed-state-repository-types "all")
+      (system-categories "other")
+      (parameter-data-list )
+      (meta-data-entry-list )
+   )
+   (compatibility-psr-names )
+)

@@ -1,0 +1,8 @@
+CID Table-visual,Version 1.0,,Detection,Interval,(seconds),->
+ ,,0,1,2,5,
+Apparent ,1,0,0,0,4,
+Signature  ,1.5,0,0,4,4,
+       |,2,0,4,4,4,
+      V,3,4,4,4,4,
+ ,,,,,,
+ ,,,,,,

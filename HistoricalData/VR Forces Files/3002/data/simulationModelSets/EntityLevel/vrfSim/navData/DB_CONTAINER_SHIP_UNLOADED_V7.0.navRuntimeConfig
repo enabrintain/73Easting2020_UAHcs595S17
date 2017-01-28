@@ -1,0 +1,10 @@
+(nav-runtime-config 
+   (extent-nw  -20.000000 80.000000 19.285269)
+   (extent-ne  20.000000 80.000000 19.285269)
+   (extent-sw  -20.000000 -80.000000 -19.285269)
+   (extent-se  20.000000 -80.000000 19.285269)
+   (offset  -0.089133 3.779799 14.549261)
+   (nav-data-path  "$(nav-data-dir)\DB_CONTAINER_SHIP_UNLOADED_V7.0")
+   (cs-type  6)
+   (original-terrain  "$(DATA_DIR)\Vehicles\Surface\CONTAINER_SHIP_UNLOADED_V7.0.flt\DB_CONTAINER_SHIP_UNLOADED_V7.0.medf")
+)

@@ -1,0 +1,59 @@
+;;
+;; File - 14_5mm_quad_gun.hit
+;;
+;;
+;; Copyright (c) 2009 MaK Technologies, Inc.
+;; All rights reserved.
+;;
+;; $RCSfile: 14_5mm_quad_gun.hit,v $ $Revision: 1.1 $ $State: Exp $
+;;
+;; Hit Probability Table for the 14_.mm ADA quad gun
+;; (for example only!)
+;;
+
+(hit-probability-table
+  (entity-range 
+     (entity-type  1 2 -1 -1 -1 -1 -1)
+     (range-determinant 
+        (range-list 
+           (range 10.000000
+              (probability 1.00000)
+           )
+           (range 500.000000
+              (probability 0.90000)
+           )
+           (range 4000.000000
+              (probability 0.7000)
+           )
+           (range 6000.0
+              (probability 0.4)
+           )
+           (range 8000.000000
+              (probability 0.0100)
+           )
+        )
+     )
+  )
+  (entity-range 
+     (entity-type  1 1 -1 -1 -1 -1 -1)
+     (range-determinant 
+        (range-list 
+           (range 10.000000
+              (probability 1.00000)
+           )
+           (range 500.000000
+              (probability 0.90000)
+           )
+           (range 1000.000000
+              (probability 0.7000)
+           )
+           (range 4000.0
+              (probability 0.4)
+           )
+           (range 5000.000000
+              (probability 0.0100)
+           )
+        )
+     )
+  )
+)

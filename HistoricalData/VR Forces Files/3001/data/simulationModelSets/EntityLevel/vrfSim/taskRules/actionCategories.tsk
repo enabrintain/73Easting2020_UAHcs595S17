@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE boost_serialization>
+<boost_serialization signature="serialization::archive" version="8">
+<DtActionCategories class_id="0" tracking_level="0" version="0">
+	<count>5</count>
+	<item_version>0</item_version>
+	<item class_id="1" tracking_level="0" version="0">
+		<first>Weapon</first>
+		<second class_id="2" tracking_level="0" version="0">
+			<first>Weapon</first>
+			<second>0</second>
+		</second>
+	</item>
+	<item>
+		<first>Movement</first>
+		<second>
+			<first>Movement</first>
+			<second>1</second>
+		</second>
+	</item>
+	<item>
+		<first>Lifeforem Posture</first>
+		<second>
+			<first>Lifeform Posture</first>
+			<second>0</second>
+		</second>
+	</item>
+	<item>
+		<first>Depth</first>
+		<second>
+			<first>Depth control</first>
+			<second>0</second>
+		</second>
+	</item>
+	<item>
+		<first>Radio</first>
+		<second>
+			<first>Radio Communication</first>
+			<second>0</second>
+		</second>
+	</item>
+</DtActionCategories>
+</boost_serialization>
+

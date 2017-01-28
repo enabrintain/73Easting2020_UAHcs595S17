@@ -1,0 +1,74 @@
+;;
+;; File - fixedWing-AntiAir.dmg
+;;
+;;
+;; Copyright (c) 1999-2000 MaK Technologies, Inc.
+;; All rights reserved.
+;;
+;; $RCSfile: fixedWing-AntiAir.dmg,v $ $Revision: 1.4 $ $State: Exp $
+;;
+;; Damage Table for fixed wing vs.generic anti-air missile
+;; (for example only!)
+;;
+(damage-table 
+   (front 
+      (angle-of-incidence 
+         (angle  1.5708) ;; 0-90 degrees
+         (range-determinant 
+            (coefficients 
+               (catastrophic-kill -0.25 1.25)
+            )
+         )
+      )
+   )
+   (left-side 
+      (angle-of-incidence 
+         (angle  1.5708)
+         (range-determinant 
+            (coefficients 
+               (catastrophic-kill -0.25 1.25)
+            )
+         )
+      )
+   )   
+   (right-side 
+      (angle-of-incidence 
+         (angle  1.5708)
+         (range-determinant 
+            (coefficients 
+               (catastrophic-kill -0.25 1.25)
+            )
+         )
+      )
+   )
+  (top
+      (angle-of-incidence 
+         (angle  1.570800)
+         (range-determinant 
+            (coefficients 
+               (catastrophic-kill -0.25 1.25)
+            )
+         )
+      )
+   )
+   (bottom
+      (angle-of-incidence 
+         (angle  1.570800)
+         (range-determinant 
+            (coefficients 
+               (catastrophic-kill -0.25 1.25)
+            )
+         )
+      )
+   )
+   (rear 
+      (angle-of-incidence 
+         (angle  1.570800)
+         (range-determinant 
+            (coefficients 
+               (catastrophic-kill -0.25 1.25)
+            )
+         )
+      )
+   )
+)

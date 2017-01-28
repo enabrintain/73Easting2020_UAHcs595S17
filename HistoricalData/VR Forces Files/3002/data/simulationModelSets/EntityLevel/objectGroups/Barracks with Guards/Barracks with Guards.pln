@@ -1,0 +1,118 @@
+(
+   (Plan-File (version "2.0"))
+   (Plan 
+      (pending-triggers )
+      (plan-name  "VRF_UUID:ad2f199b-b0d6-4d8c-b70c-d9fde316b2a9")
+      (Block 
+         (Task 
+            (task-type "di-guy-animation-task")
+            (subtask  False)
+            (di-guy-animation-task-kind  "stand_ready_ambient_3")
+            (di-guy-animation-duration  -1.000000)
+         )
+      )
+      (plan-execution-stack 
+      )
+   )
+   (Plan 
+      (pending-triggers )
+      (plan-name  "VRF_UUID:3cd658ab-ad76-457c-b8c0-3e950a203aad")
+      (Block 
+         (While 
+            (Condition 
+               (True )
+            )
+            (Block 
+               (Task 
+                  (task-type "move-along")
+                  (subtask  False)
+                  (route  "VRF_UUID:f7f4b7b5-612e-4889-9e2a-163f922c1e2a")
+                  (traversal-direction  0)
+                  (start-at-closest-point  False)
+               )
+               (Task 
+                  (task-type "di-guy-animation-task")
+                  (subtask  False)
+                  (di-guy-animation-task-kind  "stand_ready_talk_1")
+                  (di-guy-animation-duration  0.000000)
+               )
+               (Task 
+                  (task-type "di-guy-animation-task")
+                  (subtask  False)
+                  (di-guy-animation-task-kind  "stand_ready_ambient_1")
+                  (di-guy-animation-duration  60.000000)
+               )
+            )
+         )
+      )
+      (plan-execution-stack 
+      )
+   )
+   (Plan 
+      (pending-triggers )
+      (plan-name  "VRF_UUID:c719b22f-a3ed-47de-8a33-a8a994197c2d")
+      (Block 
+         (Task 
+            (task-type "di-guy-animation-task")
+            (subtask  False)
+            (di-guy-animation-task-kind  "stand_ready_ambient_3")
+            (di-guy-animation-duration  -1.000000)
+         )
+      )
+      (plan-execution-stack 
+      )
+   )
+   (Plan 
+      (pending-triggers )
+      (plan-name  "VRF_UUID:f9ebd5eb-2af3-4c03-907d-9e9f0dfdb100")
+      (Block 
+         (While 
+            (Condition 
+               (True )
+            )
+            (Block 
+               (Task 
+                  (task-type "di-guy-animation-task")
+                  (subtask  False)
+                  (di-guy-animation-task-kind  "stand_ready_curious_2")
+                  (di-guy-animation-duration  0.000000)
+               )
+               (Task 
+                  (task-type "di-guy-animation-task")
+                  (subtask  False)
+                  (di-guy-animation-task-kind  "stand_ready_ambient_1")
+                  (di-guy-animation-duration  30.000000)
+               )
+               (Task 
+                  (task-type "move-along")
+                  (subtask  False)
+                  (route  "VRF_UUID:b16b4505-de6e-4443-a346-edc487404058")
+                  (traversal-direction  0)
+                  (start-at-closest-point  False)
+               )
+               (Task 
+                  (task-type "di-guy-animation-task")
+                  (subtask  False)
+                  (di-guy-animation-task-kind  "stand_ready_curious_2")
+                  (di-guy-animation-duration  0.000000)
+               )
+               (Task 
+                  (task-type "di-guy-animation-task")
+                  (subtask  False)
+                  (di-guy-animation-task-kind  "stand_ready_ambient_1")
+                  (di-guy-animation-duration  30.000000)
+               )
+               (Task 
+                  (task-type "move-along")
+                  (subtask  False)
+                  (route  "VRF_UUID:b16b4505-de6e-4443-a346-edc487404058")
+                  (traversal-direction  1)
+                  (start-at-closest-point  False)
+               )
+            )
+         )
+      )
+      (plan-execution-stack 
+      )
+   )
+)

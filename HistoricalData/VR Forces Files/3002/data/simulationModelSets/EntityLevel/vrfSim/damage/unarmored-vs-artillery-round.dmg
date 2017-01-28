@@ -1,0 +1,121 @@
+;;
+;; File - unarmored-artillery.dmg
+;;
+;; Copyright (c) 1999-2007 MaK Technologies, Inc.
+;; All rights reserved.
+;;
+;; $RCSfile: unarmored-vs-artillery-round.dmg,v $ $Revision: 1.4 $ $State: Exp $
+;;
+;; Damage Table for generic unarmored ground entity vs. M107 (155mm HE)
+;; (for example only!)
+;;
+(damage-table 
+   (front 
+      (angle-of-incidence 
+         (angle  1.5708) ;; 90 degrees
+         (range-determinant 
+            (range-list 
+               (range 1.000000
+                  (catastrophic-kill  0.800000)
+               )
+               (range 20.000000
+                  (catastrophic-kill  0.500000)
+               )
+               (range 50.000000
+                  (catastrophic-kill  0.050000)
+               )
+            ) 
+         )
+      )
+   )
+   (left-side 
+      (angle-of-incidence 
+         (angle  1.5708)
+         (range-determinant 
+            (range-list 
+               (range 1.000000
+                  (catastrophic-kill  0.800000)
+               )
+               (range 20.000000
+                  (catastrophic-kill  0.500000)
+               )
+               (range 50.000000
+                  (catastrophic-kill  0.050000)
+               )
+            )         
+         )
+      )
+   )   
+   (right-side 
+      (angle-of-incidence 
+         (angle  1.5708)
+         (range-determinant 
+            (range-list 
+               (range 1.000000
+                  (catastrophic-kill  0.800000)
+               )
+               (range 20.000000
+                  (catastrophic-kill  0.500000)
+               )
+               (range 50.000000
+                  (catastrophic-kill  0.050000)
+               )
+            )      
+         )
+      )
+   )
+  (top
+      (angle-of-incidence 
+         (angle  1.570800)
+         (range-determinant 
+            (range-list 
+               (range 1.000000
+                  (catastrophic-kill  0.800000)
+               )
+               (range 20.000000
+                  (catastrophic-kill  0.500000)
+               )
+               (range 50.000000
+                  (catastrophic-kill  0.050000)
+               )
+            )
+         )
+      )
+   )
+   (bottom
+      (angle-of-incidence 
+         (angle  1.570800)
+         (range-determinant 
+            (range-list 
+	       (range 1.000000
+                  (catastrophic-kill  0.800000)
+               )
+               (range 20.000000
+                  (catastrophic-kill  0.500000)
+               )
+               (range 50.000000
+                  (catastrophic-kill  0.050000)
+               )
+            )
+         )
+      )
+   )
+   (rear 
+      (angle-of-incidence 
+         (angle  1.570800)
+         (range-determinant 
+            (range-list 
+               (range 1.000000
+                  (catastrophic-kill  0.800000)
+               )
+               (range 20.000000
+                  (catastrophic-kill  0.500000)
+               )
+               (range 50.000000
+                  (catastrophic-kill  0.050000)
+               )
+            )
+         )
+      )
+   )
+)

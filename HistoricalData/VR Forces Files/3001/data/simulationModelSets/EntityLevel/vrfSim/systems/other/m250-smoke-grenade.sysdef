@@ -1,0 +1,46 @@
+(m250-smoke-grenade 
+   (controllers 
+      (launch-smoke-controller 
+         (component-descriptor-type "launch-smoke-descriptor")
+         (component-type  "launch-smoke-controller")
+         (is-enabled True)
+         (detonation-type  2 9 225 2 42 0 0)
+;; US M250 smoke grenade, equiped on M1 Series turrets
+         (num-smoke-clouds  6)
+         (distance-from-entity  30.000000)
+;; In meters
+         (inter-cloud-angle  0.105000)
+;; In radians 
+         (cloud-elevation-angle  0.050000)
+;; In radians
+         (resource-name  "smoke-grenade")
+         (simulate-smoke-cloud-objects True)
+      )
+   )
+   (actuators )
+   (connections )
+   (resources 
+      (smoke-grenade 
+         (resource-type "integer-resource")
+         (amount $num-rounds)
+         (full-amount $num-rounds)
+      )
+   )
+   (meta-data 
+      (system-name  "M250 smoke grenade launcher")
+      (system-description  "Allows an entity to launch thermal obscuring white phospherous (WP) smoke.")
+      (allowed-state-repository-types "all")
+      (system-categories "other")
+      (parameter-data-list 
+         (int-parameter-data 
+            (parameter-name  "num-rounds")
+            (variable-type  "DtRwInt")
+            (display-label  "Grenade supply")
+            (display-units  "")
+            (source-units  "")
+            (default-value  10)
+         )
+      )
+      (meta-data-entry-list )
+   )
+)

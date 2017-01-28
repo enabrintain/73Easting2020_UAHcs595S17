@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<simObjects entityVersion="1.0">
+  <simObject objectType="1:16:0:0:1:0:0:0" matchType="1:16:-1:-1:1:-1:-1:-1" platform="@(platforms-dir)/Point_Object.ope">
+    <string paramName="short-name">Waypoint</string>
+    <string paramName="gui-unique-id">ModelSet-151476212-Waypoint</string>
+    <string paramName="gui-keywords"/>
+    <string paramName="gui-label">Waypoint</string>
+    <string paramName="gui-categories">"Control Objects"</string>
+    <string paramName="gui-menu-icon"/>
+    <bool paramName="gui-can-create">True</bool>
+    <bool paramName="gui-can-aggregate">False</bool>
+    <bool paramName="gui-on-overlay-palette">True</bool>
+  </simObject>
+  <simObject objectType="1:16:0:0:21:1:0:-1" matchType="1:16:-1:-1:21:1:-1:-1" platform="@(platforms-dir)/Point_Object.ope">
+    <string paramName="short-name">Sink</string>
+    <string paramName="gui-unique-id">ModelSet-151476212-Waypoint</string>
+    <string paramName="gui-keywords"/>
+    <string paramName="gui-label">Sink</string>
+    <string paramName="gui-categories">"Control Objects"</string>
+    <string paramName="gui-menu-icon">@(DATA_DIR)/images/overlays/small/waypoint.png</string>
+    <bool paramName="gui-can-create">False</bool>
+    <bool paramName="gui-can-aggregate">False</bool>
+    <bool paramName="gui-on-overlay-palette">True</bool>
+  </simObject>
+  <simObject objectType="1:16:0:0:2:0:0:0" matchType="1:16:0:0:2:0:0:0" platform="@(platforms-dir)/Point_Object.ope">
+    <string paramName="short-name">Target Point</string>
+    <string paramName="gui-unique-id">ModelSet-218515412-Target Point</string>
+    <string paramName="gui-keywords"/>
+    <string paramName="gui-label">Target Point</string>
+    <string paramName="gui-categories">"Fire Support"</string>
+    <string paramName="gui-menu-icon">@(DATA_DIR)/images/overlays/small/target.png</string>
+    <bool paramName="gui-can-create">True</bool>
+    <bool paramName="gui-can-aggregate">False</bool>
+    <bool paramName="gui-on-overlay-palette">True</bool>
+  </simObject>
+  <simObject objectType="1:16:0:0:13:0:0:0" matchType="1:16:0:0:13:0:0:0" platform="@(platforms-dir)/Point_Object.ope">
+    <string paramName="short-name">Point of Interest</string>
+    <string paramName="gui-unique-id">ModelSet-135922788-Point of Interest</string>
+    <string paramName="gui-keywords"/>
+    <string paramName="gui-label">Point of Interest</string>
+    <string paramName="gui-categories">"Intel"</string>
+    <string paramName="gui-menu-icon">@(DATA_DIR)/images/overlays/small/poi.png</string>
+    <bool paramName="gui-can-create">True</bool>
+    <bool paramName="gui-can-aggregate">False</bool>
+    <bool paramName="gui-on-overlay-palette">True</bool>
+  </simObject>
+  <simObject objectType="1:16:0:0:6:0:0:0" matchType="1:16:0:0:6:0:0:0" platform="@(platforms-dir)/Point_Object.ope">
+    <string paramName="short-name">Decision Point</string>
+    <string paramName="gui-unique-id">ModelSet-118910516-Decision Point</string>
+    <string paramName="gui-keywords"/>
+    <string paramName="gui-label">Decision Point</string>
+    <string paramName="gui-categories">"Maneuver"</string>
+    <string paramName="gui-menu-icon">@(DATA_DIR)/images/overlays/small/decpt.png</string>
+    <bool paramName="gui-can-create">True</bool>
+    <bool paramName="gui-can-aggregate">False</bool>
+    <bool paramName="gui-on-overlay-palette">True</bool>
+  </simObject>
+  <simObject objectType="1:16:0:0:10:0:0:0" matchType="1:16:0:0:10:0:0:0" platform="@(platforms-dir)/Point_Object.ope">
+    <string paramName="short-name">Coordination Point</string>
+    <string paramName="gui-unique-id">ModelSet-39738932-Coordination Point</string>
+    <string paramName="gui-keywords"/>
+    <string paramName="gui-label">Coordination Point</string>
+    <string paramName="gui-categories">"Maneuver"</string>
+    <string paramName="gui-menu-icon"/>
+    <bool paramName="gui-can-create">True</bool>
+    <bool paramName="gui-can-aggregate">False</bool>
+    <bool paramName="gui-on-overlay-palette">True</bool>
+  </simObject>
+  <simObject objectType="1:16:0:0:20:0:0:0" matchType="1:16:0:0:20:0:0:0" platform="@(platforms-dir)/Point_Object.ope">
+    <string paramName="short-name">Supply Point</string>
+    <string paramName="gui-unique-id">ModelSet-1028660-Supply Point</string>
+    <string paramName="gui-keywords"/>
+    <string paramName="gui-label">Supply Point</string>
+    <string paramName="gui-categories">"Logistics"</string>
+    <string paramName="gui-menu-icon"/>
+    <bool paramName="gui-can-create">True</bool>
+    <bool paramName="gui-can-aggregate">False</bool>
+    <bool paramName="gui-on-overlay-palette">True</bool>
+  </simObject>
+  <simObject objectType="1:16:0:0:20:1:0:0" matchType="1:16:0:0:20:1:0:0" platform="@(platforms-dir)/Point_Object.ope">
+    <string paramName="short-name">Class I</string>
+    <string paramName="gui-unique-id">ModelSet-170436041-Class I</string>
+    <string paramName="gui-keywords"/>
+    <string paramName="gui-label">Class I</string>
+    <string paramName="gui-categories">"Logistics"</string>
+    <string paramName="gui-menu-icon"/>
+    <bool paramName="gui-can-create">True</bool>
+    <bool paramName="gui-can-aggregate">False</bool>
+    <bool paramName="gui-on-overlay-palette">True</bool>
+  </simObject>
+  <simObject objectType="1:16:0:0:20:2:0:0" matchType="1:16:0:0:20:2:0:0" platform="@(platforms-dir)/Point_Object.ope">
+    <string paramName="short-name">Class II</string>
+    <string paramName="gui-unique-id">ModelSet-42622361-Class II</string>
+    <string paramName="gui-keywords"/>
+    <string paramName="gui-label">Class II</string>
+    <string paramName="gui-categories">"Logistics"</string>
+    <string paramName="gui-menu-icon"/>
+    <bool paramName="gui-can-create">True</bool>
+    <bool paramName="gui-can-aggregate">False</bool>
+    <bool paramName="gui-on-overlay-palette">True</bool>
+  </simObject>
+  <simObject objectType="1:16:0:0:20:3:0:0" matchType="1:16:0:0:20:3:0:0" platform="@(platforms-dir)/Point_Object.ope">
+    <string paramName="short-name">Class III</string>
+    <string paramName="gui-unique-id">ModelSet-145086873-Class III</string>
+    <string paramName="gui-keywords"/>
+    <string paramName="gui-label">Class III</string>
+    <string paramName="gui-categories">"Logistics"</string>
+    <string paramName="gui-menu-icon"/>
+    <bool paramName="gui-can-create">True</bool>
+    <bool paramName="gui-can-aggregate">False</bool>
+    <bool paramName="gui-on-overlay-palette">True</bool>
+  </simObject>
+  <simObject objectType="1:16:0:0:20:4:0:0" matchType="1:16:0:0:20:4:0:0" platform="@(platforms-dir)/Point_Object.ope">
+    <string paramName="short-name">Class IV</string>
+    <string paramName="gui-unique-id">ModelSet-42622374-Class IV</string>
+    <string paramName="gui-keywords"/>
+    <string paramName="gui-label">Class IV</string>
+    <string paramName="gui-categories">"Logistics"</string>
+    <string paramName="gui-menu-icon"/>
+    <bool paramName="gui-can-create">True</bool>
+    <bool paramName="gui-can-aggregate">False</bool>
+    <bool paramName="gui-on-overlay-palette">True</bool>
+  </simObject>
+  <simObject objectType="1:16:0:0:20:5:0:0" matchType="1:16:0:0:20:5:0:0" platform="@(platforms-dir)/Point_Object.ope">
+    <string paramName="short-name">Class V</string>
+    <string paramName="gui-unique-id">ModelSet-170436054-Class V</string>
+    <string paramName="gui-keywords"/>
+    <string paramName="gui-label">Class V</string>
+    <string paramName="gui-categories">"Logistics"</string>
+    <string paramName="gui-menu-icon"/>
+    <bool paramName="gui-can-create">True</bool>
+    <bool paramName="gui-can-aggregate">False</bool>
+    <bool paramName="gui-on-overlay-palette">True</bool>
+  </simObject>
+  <simObject objectType="1:16:0:0:20:6:0:0" matchType="1:16:0:0:20:6:0:0" platform="@(platforms-dir)/Point_Object.ope">
+    <string paramName="short-name">Class VI</string>
+    <string paramName="gui-unique-id">ModelSet-42622185-Class VI</string>
+    <string paramName="gui-keywords"/>
+    <string paramName="gui-label">Class VI</string>
+    <string paramName="gui-categories">"Logistics"</string>
+    <string paramName="gui-menu-icon"/>
+    <bool paramName="gui-can-create">True</bool>
+    <bool paramName="gui-can-aggregate">False</bool>
+    <bool paramName="gui-on-overlay-palette">True</bool>
+  </simObject>
+  <simObject objectType="1:16:0:0:20:7:0:0" matchType="1:16:0:0:20:7:0:0" platform="@(platforms-dir)/Point_Object.ope">
+    <string paramName="short-name">Class VII</string>
+    <string paramName="gui-unique-id">ModelSet-145084057-Class VII</string>
+    <string paramName="gui-keywords"/>
+    <string paramName="gui-label">Class VII</string>
+    <string paramName="gui-categories">"Logistics"</string>
+    <string paramName="gui-menu-icon"/>
+    <bool paramName="gui-can-create">True</bool>
+    <bool paramName="gui-can-aggregate">False</bool>
+    <bool paramName="gui-on-overlay-palette">True</bool>
+  </simObject>
+  <simObject objectType="1:16:0:0:20:8:0:0" matchType="1:16:0:0:20:8:0:0" platform="@(platforms-dir)/Point_Object.ope">
+    <string paramName="short-name">Class VIII</string>
+    <string paramName="gui-unique-id">ModelSet-173861081-Class VIII</string>
+    <string paramName="gui-keywords"/>
+    <string paramName="gui-label">Class VIII</string>
+    <string paramName="gui-categories">"Logistics"</string>
+    <string paramName="gui-menu-icon"/>
+    <bool paramName="gui-can-create">True</bool>
+    <bool paramName="gui-can-aggregate">False</bool>
+    <bool paramName="gui-on-overlay-palette">True</bool>
+  </simObject>
+  <simObject objectType="1:16:0:0:20:9:0:0" matchType="1:16:0:0:20:9:0:0" platform="@(platforms-dir)/Point_Object.ope">
+    <string paramName="short-name">Class IX</string>
+    <string paramName="gui-unique-id">ModelSet-42622376-Class IX</string>
+    <string paramName="gui-keywords"/>
+    <string paramName="gui-label">Class IX</string>
+    <string paramName="gui-categories">"Logistics"</string>
+    <string paramName="gui-menu-icon"/>
+    <bool paramName="gui-can-create">True</bool>
+    <bool paramName="gui-can-aggregate">False</bool>
+    <bool paramName="gui-on-overlay-palette">True</bool>
+  </simObject>
+  <simObject objectType="1:16:-1:-1:-1:-1:-1:-1" matchType="1:16:-1:-1:-1:-1:-1:-1" platform="@(platforms-dir)/Point_Object.ope">
+    <string paramName="short-name">Point</string>
+  </simObject>
+  <simObject objectType="1:16:-1:-1:2:-1:-1:-1" matchType="1:16:-1:-1:2:-1:-1:-1" platform="@(platforms-dir)/Point_Object.ope">
+    <string paramName="short-name">Target Point</string>
+  </simObject>
+  <simObject objectType="1:101:-1:-1:-1:-1:-1:-1" matchType="1:101:-1:-1:-1:-1:-1:-1" platform="@(platforms-dir)/Point_Object.ope">
+    <string paramName="short-name">Symbol</string>
+  </simObject>
+</simObjects>

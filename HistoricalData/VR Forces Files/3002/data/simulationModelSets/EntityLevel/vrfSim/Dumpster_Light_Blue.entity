@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<simObjects entityVersion="1.0">
+  <simObject objectType="1:5:1:0:5:21:0:3" matchType="1:5:1:0:5:21:0:3" platform="@(platforms-dir)/Cultural_Feature.ope">
+    <boundingVolume paramName="bounding-volume" offsetType="ground-center">
+      <dimensions length="1.53" width="2.93" height="2.11"/>
+    </boundingVolume>
+    <string paramName="short-name">Dumpster</string>
+    <real paramName="mass">57145</real>
+    <sensorSignatures>
+      <real paramName="visual-signature">4</real>
+      <real paramName="radar-signature">27</real>
+      <real paramName="infrared-signature">4</real>
+    </sensorSignatures>
+    <bodyPosition paramName="left-support" right="-1.465" forward="0.765" down="0"/>
+    <bodyPosition paramName="right-support" right="1.465" forward="0.765" down="0"/>
+    <bodyPosition paramName="other-support" right="0" forward="-0.765" down="0"/>
+    <bool paramName="gravity-aligned">True</bool>
+    <string paramName="gui-unique-id">ModelSet-150938869-Dumpster Light Blue</string>
+    <string paramName="gui-keywords"/>
+    <string paramName="gui-label">Dumpster Light Blue</string>
+    <string paramName="gui-categories">"Cultural Feature"</string>
+    <string paramName="gui-menu-icon"/>
+    <bool paramName="gui-can-create">True</bool>
+    <bool paramName="gui-can-aggregate">False</bool>
+    <bool paramName="gui-on-overlay-palette">False</bool>
+    <string paramName="object-geometry-filename"/>
+  </simObject>
+</simObjects>

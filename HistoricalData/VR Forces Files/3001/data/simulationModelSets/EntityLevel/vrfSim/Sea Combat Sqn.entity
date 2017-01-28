@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<simObjects entityVersion="1.0">
+   <simObject name="simObjects" entityVersion="1.0" platform="@(platforms-dir)\Aggregate.ope" objectType="3:11:2:-1:13:14:31:0" matchType="3:11:2:-1:13:14:31:0">
+      <string paramName="short-name">HSC </string>
+      <string paramName="echelon-level">Sqn</string>
+      <bool paramName="display-combat-range">True</bool>
+      <real paramName="combat-range">5000</real>
+      <bool paramName="allow-aggregation">True</bool>
+      <real paramName="visual-signature">0</real>
+      <real paramName="infrared-signature">0</real>
+      <real paramName="radar-signature">0</real>
+      <string paramName="object-geometry-filename"/>
+      <real paramName="disaggregation-range">1000</real>
+      <formations paramName="formation-list" autoLayout="0"/>
+      <string paramName="gui-unique-id">ModelSet-250558590-Sea Combat Sqn</string>
+      <string paramName="gui-keywords"/>
+      <string paramName="gui-default-overlay-layer"/>
+      <string paramName="gui-label">Sea Combat Sqn</string>
+      <string paramName="gui-categories">"Unit"</string>
+      <string paramName="gui-deployable-countries"/>
+      <string paramName="gui-menu-icon"/>
+      <bool paramName="gui-can-create">False</bool>
+      <bool paramName="gui-can-aggregate">True</bool>
+      <string paramName="gui-on-palettes">"EntityCreationPalette"</string>
+      <sensorSignatures/>
+      <subordinates paramName="subordinates"/>
+
+simObject</simObject>
+</simObjects>

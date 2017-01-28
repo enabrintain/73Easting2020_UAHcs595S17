@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE boost_serialization>
+<boost_serialization signature="serialization::archive" version="9">
+<DtScriptedTaskMetaData class_id="0" tracking_level="0" version="8">
+	<myScriptId>Monitor_Terrain</myScriptId>
+	<myMenuText>Monitor Terrain</myMenuText>
+	<myToolTip>Monitor terrain types through the info dialog.</myToolTip>
+	<myMenuIcon></myMenuIcon>
+	<myVersion>1</myVersion>
+	<myScriptEngine>lua</myScriptEngine>
+	<myComments></myComments>
+	<myMenuLocations class_id="1" tracking_level="0" version="0">
+		<count>1</count>
+		<item_version>0</item_version>
+		<item>Other/$(menutext)&lt;Other/Lower_Periscope</item>
+	</myMenuLocations>
+	<myIsSystemScript>1</myIsSystemScript>
+	<myDescription>Monitors changes in terrain type as an entity moves and displays them at Warn level.  Set Notify level to Debug to get the altitude of the terrain when a terrain change is detected.</myDescription>
+	<myScriptLocation></myScriptLocation>
+	<myDirectoryPath>Examples/Test</myDirectoryPath>
+	<myEntityTypes>
+		<count>2</count>
+		<item_version>0</item_version>
+		<item>1:-1:-1:-1:-1:-1:-1</item>
+		<item>3:-1:-1:-1:-1:-1:-1</item>
+	</myEntityTypes>
+	<myVariables>
+		<count>0</count>
+		<item_version>0</item_version>
+	</myVariables>
+	<myScript></myScript>
+	<myActionCategories></myActionCategories>
+	<myShowInMenu>0</myShowInMenu>
+	<myEncrypted>0</myEncrypted>
+	<myScriptType>1</myScriptType>
+	<myDoctrines></myDoctrines>
+	<myFlags>1</myFlags>
+	<myShowInToolbar>0</myShowInToolbar>
+	<myToolbarLocation></myToolbarLocation>
+	<myExtendedMenuText></myExtendedMenuText>
+</DtScriptedTaskMetaData>
+</boost_serialization>
+

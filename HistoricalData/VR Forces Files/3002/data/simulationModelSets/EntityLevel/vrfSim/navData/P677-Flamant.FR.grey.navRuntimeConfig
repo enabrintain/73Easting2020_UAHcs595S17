@@ -1,0 +1,10 @@
+(nav-runtime-config 
+   (extent-nw  -20.000000 40.000000 12.026958)
+   (extent-ne  20.000000 40.000000 12.026958)
+   (extent-sw  -20.000000 -40.000000 -12.026958)
+   (extent-se  20.000000 -40.000000 12.026958)
+   (offset  0.000883 2.383237 9.137784)
+   (nav-data-path  "$(nav-data-dir)\P677-Flamant.FR.grey")
+   (cs-type  6)
+   (original-terrain  "$(DATA_DIR)\Vehicles\Surface\P677-Flamant.FR\P677-Flamant.FR.grey.medf")
+)

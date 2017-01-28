@@ -1,0 +1,73 @@
+;;
+;; File - GAU8-Avenger.hit
+;;
+;;
+;; Copyright (c) 2014 MaK Technologies, Inc.
+;; All rights reserved.
+;;
+;; Hit Probability Table for the GAU-8 Avenger gatling gun firing 
+;; bursts of 30mm ammo.
+;; (for example only!)
+;; Max effective range is 1500m.
+;;
+;; For an auto weapon such as this that fires bursts,
+;; this table indicates the P(hit) for a burst.
+;; The burst size depends on entity/system parameter
+;; values for rounds-per-trigger-pull and
+;; rounds-per-detonation (if that is specified).
+
+
+(hit-probability-table
+; Any lifeform
+  (entity-range 
+     (entity-type  3 1 -1 -1 -1 -1 -1)
+     (range-determinant 
+        (range-list 
+           (range 500.000000
+              (probability 0.5000)
+           )
+           (range 1500.0         
+              (probability 0.2)
+           )
+           (range 3600.000000
+              (probability 0.0500)
+           )
+        )
+     )
+  )
+
+; Ground vehicles
+  (entity-range 
+     (entity-type  1 1 -1 -1 -1 -1 -1)
+     (range-determinant 
+        (range-list 
+           (range 500.000000
+              (probability 0.90000)
+           )
+           (range 1500.0
+              (probability 0.8)
+           )
+           (range 3600.000000
+              (probability 0.2)
+           )
+        )
+     )
+  )
+  ; Aircraft-- assumed in the air
+  (entity-range 
+     (entity-type  1 2 -1 -1 -1 -1 -1)
+     (range-determinant 
+        (range-list 
+           (range 500.000000
+              (probability 0.7000)
+           )
+           (range 1500.0
+              (probability 0.5)
+           )
+           (range 3000.000000
+              (probability 0.1)
+           )
+        )
+     )
+  )
+)

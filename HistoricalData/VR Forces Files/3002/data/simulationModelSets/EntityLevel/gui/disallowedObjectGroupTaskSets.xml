@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE boost_serialization>
+<boost_serialization signature="serialization::archive" version="8">
+<DtMenuPathConfiguration class_id="0" tracking_level="0" version="0">
+	<count>4</count>
+	<item_version>0</item_version>
+   <item>:DtTaskMenu/Movement/DtVrfTaskMoveToLocationAction</item>
+   <item>:DtTaskMenu/Engagement/DtVrfTaskFFLAction</item>
+   <item>:DtTaskMenu/Engagement/DtVrfTaskReleaseBombOnLocationAction</item>
+   <item>:DtSetMenu/Position/DtVrfSetLocationAction</item>
+</DtMenuPathConfiguration>
+</boost_serialization>
+

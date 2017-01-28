@@ -1,0 +1,63 @@
+;;
+;; File - M230.hit
+;;
+;;
+;; Copyright (c) 2012 MaK Technologies, Inc.
+;; All rights reserved.
+;;
+;; $RCSfile: M230.hit,v $ $Revision: 1.1 $ $State: Exp $
+;;
+;; Hit Probability Table for the M230 chain gun firing 
+;; bursts of 30mm HEDP ammo.
+;; (for example only!)
+;; Max effective range is 1500m.
+;;
+;; For an auto weapon such as this that fires bursts,
+;; this table indicates the P(hit) for a burst.
+;; The burst size depends on entity/system parameter
+;; values for rounds-per-trigger-pull and
+;; rounds-per-fire-interaction (if that is specified).
+
+;; Note that an Apache w/ M230 has multiple fire control
+;; systems, and can use better ones at longer ranges
+
+(hit-probability-table
+; Any lifeform
+  (entity-range 
+     (entity-type  3 1 -1 -1 -1 -1 -1)
+     (range-determinant 
+        (range-list 
+           (range 500.000000
+              (probability 0.9000)
+           )
+           (range 1500.0         
+              (probability 0.5)
+           )
+           (range 3600.000000
+              (probability 0.200)
+           )
+        )
+     )
+  )
+
+; Ground vehicles
+  (entity-range 
+     (entity-type  1 1 -1 -1 -1 -1 -1)
+     (range-determinant 
+        (range-list 
+           (range 500.000000
+              (probability 0.98000)
+           )
+           (range 1500.0
+              (probability 0.8)
+           )
+           (range 2500.0
+              (probability 0.5)
+           )
+           (range 3600.000000
+              (probability 0.2)
+           )
+        )
+     )
+  )
+)

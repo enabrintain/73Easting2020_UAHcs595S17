@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<simObjects entityVersion="1.0">
+  <simObject objectType="1:2:9:225:2:12:0:0" matchType="1:2:9:225:2:12:-1:-1" platform="@(platforms-dir)/Expendable_Object.ope">
+    <boundingVolume paramName="bounding-volume" offsetType="center">
+      <dimensions length="0.2032" width="0.0254" height="0.0254"/>
+    </boundingVolume>
+    <string paramName="short-name">MK 45 Shell</string>
+    <real paramName="mass">0.5</real>
+    <sensorSignatures>
+      <real paramName="visual-signature">4</real>
+      <real paramName="radar-signature">25</real>
+      <real paramName="infrared-signature">18</real>
+      <real paramName="passive-sonar-signature">4</real>
+      <real paramName="active-sonar-signature">4</real>
+    </sensorSignatures>
+    <bodyPosition paramName="left-support" right="-0.0127" forward="0.1016" down="0.0127"/>
+    <bodyPosition paramName="right-support" right="0.0127" forward="0.1016" down="0.0127"/>
+    <bodyPosition paramName="other-support" right="0" forward="-0.1016" down="0.0127"/>
+    <componentSystem systemName="movement" platform="@(system-dir)/movement/frictionless-gravity-dynamics.sysdef"/>
+    <componentSystem systemName="weapon" platform="@(system-dir)/weapons/missile-warhead.sysdef"/>
+  </simObject>
+</simObjects>

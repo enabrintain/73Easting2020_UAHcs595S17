@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<simObjects entityVersion="1.0">
+   <simObject objectType="1:18:0:0:1:0:0:1" matchType="1:18:0:0:1:0:0:1" platform="@(platforms-dir)/Area_Object.ope">
+      <bool paramName="use-random-appearance-upon-creation">True</bool>
+      <bool paramName="use-random-hand-item-upon-creation">True</bool>
+      <string paramName="short-name">Area</string>
+      <string paramName="character-type"/>
+      <string paramName="character-appearance"/>
+      <string paramName="hand-item"/>
+      <string paramName="animation"/>
+      <stringList paramName="appearances-for-random-selection"/>
+      <stringList paramName="hand-items-for-random-selection"/>
+      <string paramName="gui-unique-id">ModelSet-116016081-3D VRF Area</string>
+      <string paramName="gui-keywords">extruded</string>
+      <string paramName="gui-default-overlay-layer"/>
+      <string paramName="gui-label">Area (Extruded)</string>
+      <string paramName="gui-categories">"Control Objects" "Shapes" "Extruded"</string>
+      <string paramName="gui-deployable-countries"/>
+      <string paramName="gui-menu-icon">@(DATA_DIR)/images/overlays/small/area.png</string>
+      <bool paramName="gui-can-create">True</bool>
+      <bool paramName="gui-can-aggregate">False</bool>
+      <bool paramName="IncludeInBVSPCalcs">True</bool>
+      <string paramName="gui-on-palettes">"TacticalGraphicCreationPalette"</string>
+      <sensorSignatures/>
+   </simObject>
+</simObjects>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<simObjects entityVersion="1.0">
+   <simObject objectType="1:5:1:0:5:21:0:8" matchType="1:5:1:0:5:21:0:8" platform="@(platforms-dir)/Cultural_Feature.ope">
+      <DtReaderWriters paramName="sensor-signatures"/>
+      <bodyPosition paramName="left-support" forward="-0.06" right="0.06" down="0"/>
+      <bodyPosition paramName="right-support" forward="-0.06" right="-0.06" down="0"/>
+      <bodyPosition paramName="other-support" forward="0.06" right="0" down="0"/>
+      <bool paramName="gravity-aligned">True</bool>
+      <bool paramName="use-object-geometry">False</bool>
+      <bool paramName="use-random-appearance-upon-creation">True</bool>
+      <bool paramName="use-random-hand-item-upon-creation">False</bool>
+      <boundingVolume paramName="bounding-volume" offsetType="ground-center">
+         <dimensions length="0.12" width="0.12" height="0.44"/>
+      </boundingVolume>
+      <real paramName="mass">57145</real>
+      <string paramName="short-name">Bottle</string>
+      <string paramName="object-geometry-filename"/>
+      <string paramName="character-type"/>
+      <string paramName="character-appearance"/>
+      <string paramName="hand-item"/>
+      <string paramName="animation"/>
+      <stringList paramName="appearances-for-random-selection"/>
+      <stringList paramName="hand-items-for-random-selection"/>
+      <componentSystem systemName="damage" platform="@(system-dir)\damage\building-default.sysdef"/>
+      <string paramName="gui-unique-id">ModelSet-76987173-Bottle</string>
+      <string paramName="gui-keywords"/>
+      <string paramName="gui-default-overlay-layer"/>
+      <string paramName="gui-label">Bottle</string>
+      <string paramName="gui-categories">"Cultural Feature"</string>
+      <string paramName="gui-deployable-countries"/>
+      <string paramName="gui-menu-icon"/>
+      <bool paramName="gui-can-create">True</bool>
+      <bool paramName="gui-can-aggregate">False</bool>
+      <bool paramName="IncludeInBVSPCalcs">True</bool>
+      <string paramName="gui-on-palettes">"EntityCreationPalette"</string>
+      <sensorSignatures>
+         <real paramName="active-sonar-signature">0</real>
+         <real paramName="infrared-signature">0.75</real>
+         <real paramName="mad-signature">0</real>
+         <real paramName="passive-sonar-signature">0</real>
+         <real paramName="radar-signature">0.25</real>
+         <real paramName="visual-signature">0.5</real>
+      </sensorSignatures>
+simObject</simObject>
+</simObjects>

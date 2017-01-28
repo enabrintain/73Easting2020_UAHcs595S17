@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<simObjects entityVersion="1.0">
+  <simObject objectType="1:5:1:0:2:2:0:0" matchType="1:5:1:-1:2:2:-1:-1" platform="@(platforms-dir)/Cultural_Feature.ope">
+    <boundingVolume paramName="bounding-volume" offsetType="ground-center">
+      <dimensions length="12" width="10.4" height="8"/>
+    </boundingVolume>
+    <string paramName="short-name">SngFmHs</string>
+    <real paramName="mass">57145</real>
+    <sensorSignatures>
+      <real paramName="visual-signature">4</real>
+      <real paramName="radar-signature">27</real>
+      <real paramName="infrared-signature">4</real>
+    </sensorSignatures>
+    <bodyPosition paramName="left-support" right="-5.2" forward="6" down="0"/>
+    <bodyPosition paramName="right-support" right="5.2" forward="6" down="0"/>
+    <bodyPosition paramName="other-support" right="0" forward="-6" down="0"/>
+    <bool paramName="gravity-aligned">True</bool>
+    <string paramName="gui-unique-id">ModelSet-183277557-House - Single Family</string>
+    <string paramName="gui-keywords"/>
+    <string paramName="gui-label">House Single Family</string>
+    <string paramName="gui-categories">"Building"</string>
+    <string paramName="gui-menu-icon"/>
+    <bool paramName="gui-can-create">True</bool>
+    <bool paramName="gui-can-aggregate">False</bool>
+    <bool paramName="gui-on-overlay-palette">False</bool>
+    <string paramName="object-geometry-filename"/>
+  </simObject>
+</simObjects>

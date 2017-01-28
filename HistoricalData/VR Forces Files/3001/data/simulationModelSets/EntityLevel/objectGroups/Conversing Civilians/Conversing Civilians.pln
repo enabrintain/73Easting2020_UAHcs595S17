@@ -1,0 +1,101 @@
+(
+   (Plan-File (version "2.0"))
+   (Plan 
+      (pending-triggers )
+      (plan-name  "VRF_UUID:cee3182b-1e67-4a03-a3be-d4852455a3d7")
+      (Block 
+         (Set 
+            (set-data-request-type "set-di-guy-appearance")
+            (appearance  "Random")
+         )
+         (While 
+            (Condition 
+               (True )
+            )
+            (Block 
+               (Task 
+                  (task-type "di-guy-animation-task")
+                  (subtask  False)
+                  (di-guy-animation-task-kind  "talk2")
+                  (di-guy-animation-duration  10.000000)
+               )
+               (Task 
+                  (task-type "di-guy-animation-task")
+                  (subtask  False)
+                  (di-guy-animation-task-kind  "stand_ambient_1")
+                  (di-guy-animation-duration  20.000000)
+               )
+               (Task 
+                  (task-type "di-guy-animation-task")
+                  (subtask  False)
+                  (di-guy-animation-task-kind  "talk1")
+                  (di-guy-animation-duration  20.000000)
+               )
+               (Task 
+                  (task-type "di-guy-animation-task")
+                  (subtask  False)
+                  (di-guy-animation-task-kind  "stand_ambient_3")
+                  (di-guy-animation-duration  10.000000)
+               )
+               (Task 
+                  (task-type "di-guy-animation-task")
+                  (subtask  False)
+                  (di-guy-animation-task-kind  "talk5")
+                  (di-guy-animation-duration  20.000000)
+               )
+            )
+         )
+      )
+      (plan-execution-stack 
+      )
+   )
+   (Plan 
+      (pending-triggers )
+      (plan-name  "VRF_UUID:4366c4bb-893f-4014-bbf5-9c8d72b316c8")
+      (Block 
+         (Set 
+            (set-data-request-type "set-di-guy-appearance")
+            (appearance  "Random")
+         )
+         (While 
+            (Condition 
+               (True )
+            )
+            (Block 
+               (Task 
+                  (task-type "di-guy-animation-task")
+                  (subtask  False)
+                  (di-guy-animation-task-kind  "nod_head")
+                  (di-guy-animation-duration  5.000000)
+               )
+               (Task 
+                  (task-type "di-guy-animation-task")
+                  (subtask  False)
+                  (di-guy-animation-task-kind  "talk_fwd2")
+                  (di-guy-animation-duration  30.000000)
+               )
+               (Task 
+                  (task-type "di-guy-animation-task")
+                  (subtask  False)
+                  (di-guy-animation-task-kind  "shrug")
+                  (di-guy-animation-duration  0.000000)
+               )
+               (Task 
+                  (task-type "di-guy-animation-task")
+                  (subtask  False)
+                  (di-guy-animation-task-kind  "talk_L")
+                  (di-guy-animation-duration  30.000000)
+               )
+               (Task 
+                  (task-type "di-guy-animation-task")
+                  (subtask  False)
+                  (di-guy-animation-task-kind  "talk_fwd1")
+                  (di-guy-animation-duration  20.000000)
+               )
+            )
+         )
+      )
+      (plan-execution-stack 
+      )
+   )
+)

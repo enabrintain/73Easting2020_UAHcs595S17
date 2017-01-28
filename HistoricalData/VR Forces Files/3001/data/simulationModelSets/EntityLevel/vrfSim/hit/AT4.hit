@@ -1,0 +1,53 @@
+;;
+;; File - AT4.hit
+;;
+;;
+;; Copyright (c) 1999 MaK Technologies, Inc.
+;; All rights reserved.
+;;
+;; $RCSfile: AT4.hit,v $ $Revision: 1.1 $ $State: Exp $
+;;
+;; Hit Probability Table for the AT4(84mm)
+;; (for example only!)
+;;
+
+(hit-probability-table
+  (entity-range 
+     (entity-type  1 1 -1 -1 -1 -1 -1)
+     (range-determinant 
+        (range-list 
+           (range 100.000000
+              (probability 0.90000)
+           )
+           (range 200.000000
+              (probability 0.5000)
+           )
+           (range 500.000000
+              (probability 0.30000)
+           )
+            (range 750.000000
+              (probability 0.10000)
+           )
+        )
+     )
+  )
+  (entity-range 
+     (entity-type  1 2 -1 -1 -1 -1 -1)
+     (range-determinant 
+        (range-list 
+           (range 100.000000
+              (probability 0.90000)
+           )
+           (range 200.000000
+              (probability 0.5000)
+           )
+           (range 500.000000
+              (probability 0.20000)
+           )
+            (range 750.000000
+              (probability 0.05000)
+           )
+        )
+     )
+  )
+)

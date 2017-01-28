@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<simObjects entityVersion="1.0">
+   <simObject objectType="3:11:1:222:13:3:0:0" matchType="3:11:1:222:13:3:-1:-1" platform="@(platforms-dir)/Aggregate.ope">
+      <componentSystem systemName="aggregated-movement" platform="@(system-dir)/movement/ground-aggregated-movement.sysdef"/>
+      <componentSystem systemName="disaggregated-movement" platform="@(system-dir)/movement/human-disaggregated-movement.sysdef"/>
+      <real paramName="combat-range">3600</real>
+      <real paramName="disaggregation-range">700</real>
+      <bool paramName="display-combat-range">True</bool>
+      <bool paramName="allow-aggregation">True</bool>
+      <string paramName="short-name">DI</string>
+      <string paramName="echelon-level">Squad</string>
+      <string paramName="character-type"/>
+      <string paramName="character-appearance"/>
+      <string paramName="animation"/>
+      <bool paramName="use-random-appearance-upon-creation">True</bool>
+      <stringList paramName="appearances-for-random-selection"/>
+      <string paramName="gui-unique-id">ModelSet-39908067-DI Squad CIS</string>
+      <string paramName="gui-keywords"/>
+      <string paramName="gui-label">DI Squad (CIS)</string>
+      <string paramName="gui-categories">"Unit"</string>
+      <string paramName="gui-deployable-countries"/>
+      <string paramName="gui-menu-icon"/>
+      <bool paramName="gui-can-create">True</bool>
+      <bool paramName="gui-can-aggregate">False</bool>
+      <bool paramName="gui-on-overlay-palette">False</bool>
+      <formations paramName="formation-list" autoLayout="True">
+         <formation formationName="Line" formationFile="@(formation-dir)/DI_Squad_US_Line.frm"/>
+         <formation formationName="Column" formationFile="@(formation-dir)/DI_Squad_US_Column.frm"/>
+         <formation formationName="Wedge" formationFile="@(formation-dir)/DI_Squad_US_Wedge.frm"/>
+         <formation formationName="Vee" formationFile="@(formation-dir)/DI_Squad_US_Vee.frm"/>
+      </formations>
+      <subordinates paramName="subordinates">
+         <subordinate objectType="1:3:1:222:1:205:1:0" headingOffset="0" x="0" y="0" z="0"/>
+         <subordinate objectType="1:3:1:222:1:205:1:0" headingOffset="0" x="0" y="0" z="0"/>
+         <subordinate objectType="1:3:1:222:1:246:1:0" headingOffset="0" x="0" y="0" z="0"/>
+         <subordinate objectType="1:3:1:222:1:246:1:0" headingOffset="0" x="0" y="0" z="0"/>
+      </subordinates>
+      <sensorSignatures>
+         <real paramName="visual-signature">0</real>
+         <real paramName="infrared-signature">0</real>
+         <real paramName="radar-signature">0</real>
+      </sensorSignatures>
+      <string paramName="object-geometry-filename"/>
+   </simObject>
+</simObjects>

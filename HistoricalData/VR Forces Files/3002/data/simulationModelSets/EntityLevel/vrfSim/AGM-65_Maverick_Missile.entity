@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<simObjects entityVersion="1.0">
+  <simObject objectType="1:2:2:225:1:4:0:0" matchType="1:2:2:225:1:4:-1:-1" platform="@(platforms-dir)/Missile.ope">
+    <componentSystem systemName="damage" platform="@(system-dir)/damage/missile-default.sysdef"/>
+    <componentSystem systemName="movement" platform="@(system-dir)/movement/missile-dynamics.sysdef"/>
+    <real paramName="mass">5000</real>
+    <real paramName="max-speed">319</real>
+    <real paramName="ordered-speed">10</real>
+    <real paramName="max-acceleration">4.5</real>
+    <real paramName="max-deceleration">4.5</real>
+    <real paramName="disaggregation-range">28000</real>
+    <real paramName="max-maneuver-gs">15</real>
+    <real paramName="cep-radius">1.5</real>
+    <real paramName="transition-angle">0.7854</real>
+    <real paramName="proportional-navigation-gain">4</real>
+    <real paramName="effective-range">7000</real>
+    <bool paramName="fire-and-forget">False</bool>
+    <bool paramName="affected-by-counter-measures">False</bool>
+    <string paramName="short-name">Mavrck</string>
+    <string paramName="range-name">Maverick Missile</string>
+    <bodyPosition paramName="left-support" forward="1.25" right="-0.15" down="0.15"/>
+    <bodyPosition paramName="right-support" forward="1.25" right="0.15" down="0.15"/>
+    <bodyPosition paramName="other-support" forward="-1.25" right="0" down="0.15"/>
+    <boundingVolume paramName="bounding-volume" offsetType="center">
+      <dimensions length="2.5" width="0.3" height="0.3"/>
+    </boundingVolume>
+    <string paramName="character-type"/>
+    <string paramName="character-appearance"/>
+    <string paramName="animation"/>
+    <bool paramName="use-random-appearance-upon-creation">True</bool>
+    <stringList paramName="appearances-for-random-selection"/>
+    <string paramName="gui-unique-id">ModelSet-218188197-AGM-65 Maverick Missile</string>
+    <string paramName="gui-keywords"/>
+    <string paramName="gui-label">AGM-65 Maverick Missile</string>
+    <string paramName="gui-categories">"Munition"</string>
+    <string paramName="gui-deployable-countries">"United States"</string>
+    <string paramName="gui-menu-icon"/>
+    <bool paramName="gui-can-create">False</bool>
+    <bool paramName="gui-can-aggregate">False</bool>
+    <bool paramName="gui-on-overlay-palette">False</bool>
+    <sensorSignatures>
+      <real paramName="radar-signature">10</real>
+      <real paramName="visual-signature">2</real>
+    </sensorSignatures>
+    <string paramName="object-geometry-filename"/>
+  </simObject>
+</simObjects>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<simObjects entityVersion="1.0">
+  <simObject objectType="1:17:0:0:10:5:0:0" matchType="1:17:0:0:10:5:0:0" platform="@(platforms-dir)/Line_Object.ope">
+    <string paramName="short-name">Air Corridor</string>
+    <string paramName="gui-unique-id">ModelSet-261648930-Air Corridor</string>
+    <string paramName="gui-keywords">arrowsize;penstyle</string>
+    <string paramName="gui-label">Air Corridor</string>
+    <string paramName="gui-categories">"Maneuver"</string>
+    <string paramName="gui-menu-icon">@(DATA_DIR)/images/overlays/small/axis.png</string>
+    <bool paramName="gui-can-create">True</bool>
+    <bool paramName="gui-can-aggregate">False</bool>
+    <bool paramName="gui-on-overlay-palette">True</bool>
+  </simObject>
+</simObjects>

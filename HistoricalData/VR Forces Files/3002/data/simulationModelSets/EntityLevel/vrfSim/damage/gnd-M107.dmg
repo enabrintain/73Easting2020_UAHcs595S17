@@ -1,0 +1,122 @@
+;;
+;; File - gnd-M107.dmg
+;;
+;;
+;; Copyright (c) 1999-2000 MaK Technologies, Inc.
+;; All rights reserved.
+;;
+;; $RCSfile: gnd-M107.dmg,v $ $Revision: 1.1 $ $State: Exp $
+;;
+;; Damage Table for generic ground entity vs. M107 (155mm HE)
+;; (for example only!)
+;;
+(damage-table 
+   (front 
+      (angle-of-incidence 
+         (angle  1.5708) ;; 90 degrees
+         (range-determinant 
+            (range-list 
+               (range 100.000000
+                  (catastrophic-kill  0.800000)
+               )
+               (range 300.000000
+                  (catastrophic-kill  0.600000)
+               )
+               (range 500.000000
+                  (catastrophic-kill  0.300000)
+               )
+            ) 
+         )
+      )
+   )
+   (left-side 
+      (angle-of-incidence 
+         (angle  1.5708)
+         (range-determinant 
+            (range-list 
+               (range 100.000000
+                  (catastrophic-kill  0.800000)
+               )
+               (range 300.000000
+                  (catastrophic-kill  0.600000)
+               )
+               (range 500.000000
+                  (catastrophic-kill  0.300000)
+               )
+            )         
+         )
+      )
+   )   
+   (right-side 
+      (angle-of-incidence 
+         (angle  1.5708)
+         (range-determinant 
+            (range-list 
+               (range 100.000000
+                  (catastrophic-kill  0.800000)
+               )
+               (range 300.000000
+                  (catastrophic-kill  0.600000)
+               )
+               (range 500.000000
+                  (catastrophic-kill  0.300000)
+               )
+            )      
+         )
+      )
+   )
+  (top
+      (angle-of-incidence 
+         (angle  1.570800)
+         (range-determinant 
+            (range-list 
+               (range 100.000000
+                  (catastrophic-kill  0.800000)
+               )
+               (range 300.000000
+                  (catastrophic-kill  0.600000)
+               )
+               (range 500.000000
+                  (catastrophic-kill  0.300000)
+               )
+            )
+         )
+      )
+   )
+   (bottom
+      (angle-of-incidence 
+         (angle  1.570800)
+         (range-determinant 
+            (range-list 
+               (range 100.000000
+                  (catastrophic-kill  0.800000)
+               )
+               (range 300.000000
+                  (catastrophic-kill  0.600000)
+               )
+               (range 500.000000
+                  (catastrophic-kill  0.300000)
+               )
+            )
+         )
+      )
+   )
+   (rear 
+      (angle-of-incidence 
+         (angle  1.570800)
+         (range-determinant 
+            (range-list 
+               (range 100.000000
+                  (catastrophic-kill  0.800000)
+               )
+               (range 300.000000
+                  (catastrophic-kill  0.600000)
+               )
+               (range 500.000000
+                  (catastrophic-kill  0.300000)
+               )
+            )
+         )
+      )
+   )
+)

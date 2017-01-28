@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<simObjects entityVersion="1.0">
+   <simObject objectType="1:1:2:225:50:4:1:0" matchType="1:1:2:225:50:4:1:-1" platform="@(platforms-dir)/Fixed_Wing_Aircraft.ope">
+      <componentSystem systemName="movement" platform="@(system-dir)/movement/fixed-wing-high-maneuverability-fighter.sysdef">
+         <real paramName="fuel-amount">3700</real>
+         <string paramName="flight-controls">Flight Controls</string>
+      </componentSystem>
+      <componentSystem systemName="damage" platform="@(system-dir)/damage/fixed-wing-default.sysdef"/>
+      <componentSystem systemName="sensor" platform="@(system-dir)/sensors/airborne-targeting-radar.sysdef">
+         <bodyPosition paramName="sensor-position" right="0" forward="0" down="0"/>
+         <real paramName="max-range">27000</real>
+         <real paramName="sensor-sensitivity-start">1</real>
+      </componentSystem>
+      <componentSystem systemName="sensor-2" platform="@(system-dir)\sensors\infrared-sensor.sysdef">
+         <bodyPosition paramName="sensor-position" forward="0" right="0" down="0"/>
+         <real paramName="max-range">16000</real>
+         <real paramName="sensor-sensitivity-start">1</real>
+         <real paramName="suppression-factor">0</real>
+      </componentSystem>
+      <componentSystem systemName="weapon" platform="@(system-dir)/weapons/fixed-maverick-missile-launcher.sysdef">
+         <int paramName="num-missiles">2</int>
+         <bodyPosition paramName="attach-point" right="0" forward="0" down="0"/>
+         <real paramName="weapon-hold-altitude">10</real>
+         <int paramName="launcher-art-part-type">4736</int>
+      </componentSystem>
+      <componentSystem systemName="other" platform="@(system-dir)/other/spot-report-generator.sysdef"/>
+      <componentSystem systemName="other-2" platform="@(system-dir)/other/spot-report-receiver.sysdef"/>
+      <componentSystem systemName="sensor-3" platform="@(system-dir)\sensors\gimbaled-visual-sensor.sysdef">
+         <bodyPosition paramName="sensor-position" forward="3.5" right="0" down="1"/>
+         <real paramName="max-range">4000</real>
+         <real paramName="min-azimuth-angle">-1.57079633</real>
+         <real paramName="max-azimuth-angle">1.57079633</real>
+         <real paramName="min-elevation-angle">-1.57079633</real>
+         <real paramName="max-elevation-angle">1.04719755</real>
+         <real paramName="scan-elevation-angle">-0.785398163</real>
+         <real paramName="sensor-sensitivity-start">1</real>
+         <real paramName="max-zoom-level">100</real>
+         <string paramName="sensor-id">Sensor 1</string>
+         <bodyPosition paramName="gimbal-elevation-position" forward="0" right="0" down="0"/>
+         <int paramName="gimbaled-sensor-azimuth-art-part-type">15424</int>
+         <int paramName="gimbaled-sensor-elevation-art-part-type">15744</int>
+      </componentSystem>
+      <DtReaderWriters paramName="sensor-signatures"/>
+      <bodyPosition paramName="left-support" forward="0.3" right="-3" down="1.65496"/>
+      <bodyPosition paramName="right-support" forward="0.3" right="3" down="1.65496"/>
+      <bodyPosition paramName="other-support" forward="3" right="0" down="1.65496"/>
+      <bool paramName="can-be-embarked-upon">False</bool>
+      <bool paramName="can-embark">True</bool>
+      <bool paramName="use-random-appearance-upon-creation">True</bool>
+      <bool paramName="flip-disembark-body-x">False</bool>
+      <bool paramName="flip-disembark-body-y">False</bool>
+      <bool paramName="use-random-hand-item-upon-creation">False</bool>
+      <bool paramName="use-object-geometry">True</bool>
+      <boundingVolume paramName="bounding-volume" offsetType="center">
+         <dimensions length="9.03331" width="16.9765" height="3.30992"/>
+      </boundingVolume>
+      <real paramName="mass">1020</real>
+      <real paramName="max-speed">60</real>
+      <real paramName="ordered-speed">38</real>
+      <real paramName="max-acceleration">16</real>
+      <real paramName="max-deceleration">12</real>
+      <real paramName="disaggregation-range">28000</real>
+      <real paramName="min-speed">20</real>
+      <real paramName="max-altitude">29000</real>
+      <real paramName="max-climb-rate">150</real>
+      <real paramName="max-yaw-rate">1.57</real>
+      <real paramName="max-pitch-rate">1.57</real>
+      <real paramName="max-roll-rate">1.57</real>
+      <real paramName="flaps-deceleration">0</real>
+      <real paramName="ordered-ground-speed">10</real>
+      <real paramName="max-ground-speed">38</real>
+      <real paramName="max-ground-stopping-deceleration">30</real>
+      <real paramName="ground-turning-radius">5</real>
+      <real paramName="max-ground-slope">1</real>
+      <real paramName="on-ground-tolerance">5</real>
+      <string paramName="short-name">UAV-Predator</string>
+      <string paramName="character-type"/>
+      <string paramName="character-appearance"/>
+      <string paramName="animation"/>
+      <string paramName="object-geometry-filename"/>
+      <string paramName="hand-item"/>
+      <stringList paramName="appearances-for-random-selection"/>
+      <stringList paramName="hand-items-for-random-selection"/>
+      <string paramName="gui-unique-id">ModelSet-26500198-Predator UAV</string>
+      <string paramName="gui-keywords"/>
+      <string paramName="gui-default-overlay-layer"/>
+      <string paramName="gui-label">MQ-1 Predator</string>
+      <string paramName="gui-categories">"Fixed Wing" "Materially Classified"</string>
+      <string paramName="gui-deployable-countries">"Italy" "Morocco" "Turkey" "United Arab Emirates" "United States"</string>
+      <string paramName="gui-menu-icon"/>
+      <bool paramName="gui-can-create">True</bool>
+      <bool paramName="gui-can-aggregate">False</bool>
+      <bool paramName="IncludeInBVSPCalcs">True</bool>
+      <string paramName="gui-on-palettes">"EntityCreationPalette"</string>
+      <sensorSignatures>
+         <real paramName="active-sonar-signature">0</real>
+         <real paramName="infrared-signature">16</real>
+         <real paramName="mad-signature">0</real>
+         <real paramName="passive-sonar-signature">0</real>
+         <real paramName="radar-signature">20</real>
+         <real paramName="visual-signature">5</real>
+      </sensorSignatures>
+   </simObject>
+</simObjects>

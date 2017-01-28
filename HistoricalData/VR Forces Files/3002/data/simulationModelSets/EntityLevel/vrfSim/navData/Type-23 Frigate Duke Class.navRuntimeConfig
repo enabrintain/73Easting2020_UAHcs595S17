@@ -1,0 +1,10 @@
+(nav-runtime-config 
+   (extent-nw  -20.000000 60.000000 13.511062)
+   (extent-ne  20.000000 60.000000 13.511062)
+   (extent-sw  -20.000000 -60.000000 -13.511062)
+   (extent-se  20.000000 -60.000000 13.511062)
+   (offset  0.000000 0.000000 8.000000)
+   (nav-data-path  "$(nav-data-dir)\Type-23 Frigate Duke Class")
+   (cs-type  6)
+   (original-terrain  "$(DATA_DIR)\Vehicles\Surface\Type-23 Duke Class\Type-23 Frigate Duke Class.medf")
+)

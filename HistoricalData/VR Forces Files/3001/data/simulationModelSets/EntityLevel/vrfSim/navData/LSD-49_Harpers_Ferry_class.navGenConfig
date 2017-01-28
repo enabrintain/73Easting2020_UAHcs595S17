@@ -1,0 +1,16 @@
+(nav-gen-config 
+   (extent-nw  -13.804597 55.282555 47.221649)
+   (extent-ne  13.804596 55.282555 47.221649)
+   (extent-sw  -13.804597 -130.692825 -4.202233)
+   (extent-se  13.804596 -130.692825 47.221649)
+   (tile-count-x  1)
+   (tile-count-y  1)
+   (generate-abstract-data  False)
+   (generate-full-terrain  True)
+   (generate-transition-points  False)
+   (raster-precision  0.100000)
+   (cell-size  20)
+   (profiles-to-generate 
+      (lifeform  "lifeform")
+   )
+)

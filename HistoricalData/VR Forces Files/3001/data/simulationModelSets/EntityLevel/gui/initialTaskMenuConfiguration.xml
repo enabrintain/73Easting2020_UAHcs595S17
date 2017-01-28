@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE boost_serialization>
+<boost_serialization signature="serialization::archive" version="8">
+<DtMenuPathConfiguration class_id="0" tracking_level="0" version="0">
+	<count>38</count>
+	<item_version>0</item_version>
+   <item>:DtTaskMenu/Movement/DtConvoyAlongTaskAction</item>
+   <item>:DtTaskMenu/Movement/DtConvoyToTaskAction</item>
+   <item>:DtTaskMenu/Movement/DtVrfTaskFollowEntityAction</item>
+   <item>:DtTaskMenu/Movement/DtVrfTaskFlyAltitudeAction</item>
+   <item>:DtTaskMenu/Movement/DtVrfTaskFlyHeadingAction</item>
+   <item>:DtTaskMenu/Movement/DtVrfTaskFlyHeadingAndAltitudeAction</item>
+   <item>:DtTaskMenu/Movement/DtVrfTaskMoveIntoFormationAction</item>
+   <item>:DtTaskMenu/Movement/DtVrfTaskMoveAlongRouteAction</item>
+   <item>:DtTaskMenu/Movement/DtVrfTaskMoveToAltitudeAction</item>
+   <item>:DtTaskMenu/Movement/DtVrfTaskMoveToLocationAction</item>
+   <item>:DtTaskMenu/Movement/DtVrfTaskMoveToAction</item>
+   <item>:DtTaskMenu/Movement/DtVrfTaskOrbitAction</item>
+   <item>:DtTaskMenu/Movement/DtVrfTaskPatrolObjectsAction</item>
+   <item>:DtTaskMenu/Movement/DtVrfTaskPatrolRouteAction</item>
+   <item>:DtTaskMenu/Movement/DtVrfTaskRotaryWingLandAction</item>
+   <item>:DtTaskMenu/Movement/DtVrfTaskTurnToHeadingAction</item>
+   <item>:DtTaskMenu/Engagement/DtVrfTaskFireCruiseMissileAction</item>
+   <item>:DtTaskMenu/Engagement/DtVrfTaskFFEAction</item>
+   <item>:DtTaskMenu/Engagement/DtVrfTaskFFLAction</item>
+   <item>:DtTaskMenu/Engagement/DtVrfTaskFFTAction</item>
+   <item>:DtTaskMenu/Engagement/DtVrfTaskFireAtTargetAction</item>
+   <item>:DtTaskMenu/Engagement/DtVrfTaskLaseTargetAction</item>
+   <item>:DtTaskMenu/Engagement/DtVrfTaskReleaseBombOnLaserSpotAction</item>
+   <item>:DtTaskMenu/Engagement/DtVrfTaskReleaseBombOnLocationAction</item>
+   <item>:DtTaskMenu/Engagement/DtVrfTaskReleaseBombOnTargetAction</item>
+   <item>:DtTaskMenu/Engagement/DtVrfTaskLaunchCounterMeasuresAction</item>
+   <item>:DtTaskMenu/Engagement/DtVrfTaskLaunchSmokeAction</item>
+   <item>:DtTaskMenu/Embarkation/DtVrfTaskDisembarkAction</item>
+   <item>:DtTaskMenu/Embarkation/DtVrfTaskDisembarkAllAction</item>
+   <item>:DtTaskMenu/Embarkation/DtVrfTaskEmbarkAction</item>
+   <item>:DtTaskMenu/Other/DtVrfTaskUserTaskAction</item>
+   <item>:DtTaskMenu/Wait/DtVrfTaskWaitAction</item>
+   <item>:DtTaskMenu/Wait/DtVrfTaskWaitDurationAction</item>
+   <item>:DtTaskMenu/Wait/DtVrfTaskWaitElapsedAction</item>
+   <item>:DtTaskMenu/DI-Guy/DtVrfTaskDIGuyAnimationAction</item>
+   <item>:DtTaskMenu/Radio/DtVrfTaskSendTextAction</item>
+   <item>:DtTaskMenu/Radio/DtRadioSetMenu/</item>
+   <item>:DtTaskMenu/Radio/DtRadioTaskMenu/</item>
+</DtMenuPathConfiguration>
+</boost_serialization>
+
