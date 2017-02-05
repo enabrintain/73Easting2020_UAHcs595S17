@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
-<!DOCTYPE boost_serialization>
-<boost_serialization signature="serialization::archive" version="9">
-<DtLocalObjectManager class_id="0" tracking_level="0" version="0">
-	<NumberOfStates>0</NumberOfStates>
-</DtLocalObjectManager>
-</boost_serialization>
-

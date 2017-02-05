@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<simObjects entityVersion="1.0">
-  <simObject objectType="1:17:-1:-1:-1:-1:-1:-1" matchType="1:17:-1:-1:-1:-1:-1:-1" platform="@(platforms-dir)/Line_Object.ope">
-    <string paramName="short-name">Line</string>
-  </simObject>
-</simObjects>
