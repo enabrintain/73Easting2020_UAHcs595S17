@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<simObjects entityVersion="1.0">
+   <simObject objectType="1:1:2:225:1:12:3:0" matchType="1:1:2:225:1:12:3:-1" platform="@(platforms-dir)/Fixed_Wing_Aircraft.ope">
+      <componentSystem systemName="movement" platform="@(system-dir)/movement/fixed-wing-high-maneuverability-fighter.sysdef">
+         <real paramName="fuel-amount">3700</real>
+         <string paramName="flight-controls">Flight Controls</string>
+      </componentSystem>
+      <componentSystem systemName="other" platform="@(system-dir)/other/spot-report-generator.sysdef"/>
+      <componentSystem systemName="other-2" platform="@(system-dir)/other/spot-report-receiver.sysdef"/>
+      <componentSystem systemName="other-3" platform="@(system-dir)/other/iff-transponder.sysdef"/>
+      <componentSystem systemName="other-4" platform="@(system-dir)\other/counter-measures-launcher.sysdef">
+         <int paramName="num-flares">60</int>
+         <int paramName="num-chaff">60</int>
+         <bodyPosition paramName="attach-point" right="1" forward="0" down="-0"/>
+         <orientation paramName="launcher-orientation" yaw="2.356194" pitch="-0.436332" roll="-0"/>
+      </componentSystem>
+      <componentSystem systemName="damage" platform="@(system-dir)/damage/fixed-wing-default.sysdef"/>
+      <componentSystem systemName="weapon" platform="@(system-dir)\weapons/fixed-maverick-missile-launcher.sysdef">
+         <int paramName="num-missiles">6</int>
+         <bodyPosition paramName="attach-point" right="0" forward="0.6" down="-0"/>
+         <real paramName="weapon-hold-altitude">10</real>
+         <int paramName="launcher-art-part-type">4736</int>
+      </componentSystem>
+      <componentSystem systemName="weapon-2" platform="@(system-dir)\weapons/fixed-sidewinder-missile-launcher.sysdef">
+         <int paramName="num-missiles">2</int>
+         <bodyPosition paramName="attach-point" right="0" forward="0" down="0"/>
+         <real paramName="weapon-hold-altitude">10</real>
+         <int paramName="launcher-art-part-type">4768</int>
+      </componentSystem>
+      <componentSystem systemName="weapon-3" platform="@(system-dir)\weapons/US-fighter-bomber-bomb-bay.sysdef">
+         <int paramName="num-GBU-31A-JDAM">1</int>
+         <int paramName="num-CBU-105">1</int>
+      </componentSystem>
+      <componentSystem systemName="sensor" platform="@(system-dir)\sensors\airborne-targeting-radar.sysdef">
+         <bodyPosition paramName="sensor-position" forward="3" right="0" down="0"/>
+         <real paramName="max-range">27000</real>
+         <real paramName="sensor-sensitivity-start">1</real>
+      </componentSystem>
+      <DtReaderWriters paramName="sensor-signatures"/>
+      <bodyPosition paramName="left-support" forward="-2.004639" right="-2.196848" down="2.074205"/>
+      <bodyPosition paramName="right-support" forward="-2.004639" right="2.196848" down="2.074205"/>
+      <bodyPosition paramName="other-support" forward="3.797852" right="-0.000435" down="2.074205"/>
+      <bool paramName="can-be-embarked-upon">False</bool>
+      <bool paramName="can-embark">True</bool>
+      <bool paramName="use-random-appearance-upon-creation">True</bool>
+      <bool paramName="flip-disembark-body-x">False</bool>
+      <bool paramName="flip-disembark-body-y">False</bool>
+      <bool paramName="use-random-hand-item-upon-creation">False</bool>
+      <bool paramName="use-object-geometry">True</bool>
+      <boundingVolume paramName="bounding-volume" offsetType="custom">
+         <offset forward="-0.00028" right="0.064693" down="-0.14"/>
+         <dimensions length="15.470284" width="10.552093" height="4.435061"/>
+      </boundingVolume>
+      <real paramName="mass">22700</real>
+      <real paramName="max-speed">685</real>
+      <real paramName="ordered-speed">300</real>
+      <real paramName="max-acceleration">18</real>
+      <real paramName="max-deceleration">20</real>
+      <real paramName="disaggregation-range">28000</real>
+      <real paramName="min-speed">120</real>
+      <real paramName="max-altitude">16500</real>
+      <real paramName="max-climb-rate">283.333333</real>
+      <real paramName="max-yaw-rate">1.57</real>
+      <real paramName="max-pitch-rate">1.57</real>
+      <real paramName="max-roll-rate">1.57</real>
+      <real paramName="flaps-deceleration">10</real>
+      <real paramName="ordered-ground-speed">10</real>
+      <real paramName="max-ground-speed">200</real>
+      <real paramName="max-ground-stopping-deceleration">30</real>
+      <real paramName="ground-turning-radius">2</real>
+      <real paramName="max-ground-slope">1</real>
+      <real paramName="on-ground-tolerance">5</real>
+      <string paramName="short-name">FtrFW</string>
+      <string paramName="character-type"/>
+      <string paramName="character-appearance"/>
+      <string paramName="animation"/>
+      <string paramName="object-geometry-filename"/>
+      <string paramName="hand-item"/>
+      <stringList paramName="appearances-for-random-selection"/>
+      <stringList paramName="hand-items-for-random-selection"/>
+      <string paramName="gui-unique-id">ModelSet-6768214-F-35 Lightning II</string>
+      <string paramName="gui-keywords"/>
+      <string paramName="gui-default-overlay-layer"/>
+      <string paramName="gui-label">F-35 Lightning II</string>
+      <string paramName="gui-categories">"Fixed Wing"</string>
+      <string paramName="gui-deployable-countries">"United States" "United Kingdom"</string>
+      <string paramName="gui-menu-icon"/>
+      <bool paramName="gui-can-create">True</bool>
+      <bool paramName="gui-can-aggregate">False</bool>
+      <bool paramName="IncludeInBVSPCalcs">True</bool>
+      <string paramName="gui-on-palettes">"EntityCreationPalette"</string>
+      <sensorSignatures>
+         <real paramName="active-sonar-signature">0</real>
+         <real paramName="infrared-signature">20</real>
+         <real paramName="mad-signature">0</real>
+         <real paramName="passive-sonar-signature">0</real>
+         <real paramName="radar-signature">50</real>
+         <real paramName="visual-signature">4</real>
+      </sensorSignatures>
+   </simObject>
+</simObjects>

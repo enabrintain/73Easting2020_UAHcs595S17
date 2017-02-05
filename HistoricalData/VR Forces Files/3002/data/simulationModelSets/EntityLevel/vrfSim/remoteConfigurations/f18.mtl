@@ -1,0 +1,131 @@
+(remote-configuration
+   (remote-objects 
+      (task-manager  "local-task-manager")
+      (component-manager  "component-manager")
+      (plan-manager  "vrfobject-plan-manager")
+   )
+   (radios 
+      (main-radio 
+         (radio-descriptor-type "radio-descriptor")
+         (radio-type  "default-radio")
+         (comm-model-name  "default-internal-radio-model")
+         (publish-transmitter False)
+         (transmitter-params 
+            (radio-type  7 1 225 2 1 20)
+            (initial-frequency  3000000.000000)
+            (power  30.000000)
+         )
+      )
+   )
+   (systems 
+      (sensor 
+         (variable-bindings 
+            (DtRwVector
+               (sensor-position  0.000000 0.000000 -2.100000)
+            )
+            (DtRwReal
+               (max-range  4000.000000)
+            )
+         )
+         (system-definition 
+            (filename  "$(system-dir)\sensors/visual-sensor.sysdef")
+         )
+      )
+      (other 
+         (system-definition 
+            (filename  "$(system-dir)\other/spot-report-generator.sysdef")
+         )
+      )
+      (other-2 
+         (system-definition 
+            (filename  "$(system-dir)\other/spot-report-receiver.sysdef")
+         )
+      )
+      (weapon 
+         (variable-bindings 
+            (DtRwOffsetVector
+               (attach-point  1.000000 0.000000 0.500000)
+            )
+            (DtRwOffsetVector
+               (laser-position  1.000000 0.000000 0.500000)
+            )
+            (DtRwInt
+               (num-missiles  8)
+            )
+         )
+         (system-definition 
+            (filename  "$(system-dir)\weapons/laser-guided-hellfire-missile-launcher.sysdef")
+         )
+      )
+   )
+   (sensors 
+      (under-fire-determination-sensor 
+         (component-descriptor-type "under-fire-determination-sensor-descriptor")
+         (component-type  "under-fire-determination-sensor")
+         (min-tick-period  -1.000000)
+         (min-tick-period-variance  -1.000000)
+         (tick-period-uses-real-time True)
+         (process-state-repository-name  "")
+         (process-state-repository-type  "")
+         (under-fire-time  120.000000)
+         (under-fire-distance  1000.000000)
+         (under-fire-from-friendly True)
+      )
+   )
+   (controllers 
+      (set-data 
+         (component-descriptor-type "component-descriptor")
+         (component-type  "fixed-wing-entity-set-controller")
+         (min-tick-period  -1.000000)
+         (min-tick-period-variance  -1.000000)
+         (tick-period-uses-real-time True)
+         (process-state-repository-name  "")
+         (process-state-repository-type  "")
+      )
+      (send-radio-message-controller 
+         (component-descriptor-type "component-descriptor")
+         (component-type  "send-radio-message-controller")
+         (min-tick-period  -1.000000)
+         (min-tick-period-variance  -1.000000)
+         (tick-period-uses-real-time True)
+         (process-state-repository-name  "")
+         (process-state-repository-type  "")
+      )
+      (contact-fusion 
+         (component-descriptor-type "component-descriptor")
+         (component-type  "contact-fusion-controller")
+         (min-tick-period  -1.000000)
+         (min-tick-period-variance  -1.000000)
+         (tick-period-uses-real-time True)
+         (process-state-repository-name  "")
+         (process-state-repository-type  "")
+      )
+   )
+   (actuators 
+    (vrf-object-data-messenger
+     (component-descriptor-type "vrf-object-data-messenger-descriptor")
+     (component-type  "vrf-object-data-messenger")
+     (max-send-interval  10.000000)
+     (min-send-interval  1.000000)
+     )
+   )
+   (connections 
+      (connect sensor:detected-objects contact-fusion:detected-objects)
+      (connect other-2:detected-objects contact-fusion:detected-objects)
+      (connect other:object-types-to-detect sensor:object-types-to-detect)
+   )
+   (sensor-signatures 
+      (visual 
+         (base-signature  5.000000)
+         (modifiers )
+      )
+      (infrared 
+         (base-signature  16.000000)
+         (modifiers )
+      )
+      (radar 
+         (base-signature  20.000000)
+         (modifiers )
+      )
+   )
+)

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE boost_serialization>
+<boost_serialization signature="serialization::archive" version="8">
+<DtScriptedMovementObject class_id="0" tracking_level="0" version="3">
+	<myName>Barrel Roll</myName>
+	<myPhases class_id="1" tracking_level="0" version="0">
+		<count>1</count>
+		<item_version>3</item_version>
+		<item class_id="2" tracking_level="0" version="3">
+			<myMovementFile>barrelRoll.csv</myMovementFile>
+			<myCompletionRule>4</myCompletionRule>
+			<myClampType>7</myClampType>
+			<myFileConfiguration>barrelRoll147621644</myFileConfiguration>
+			<mySimulationStartTimeOffset>0</mySimulationStartTimeOffset>
+			<myEntityType></myEntityType>
+		</item>
+	</myPhases>
+	<myScriptType>2</myScriptType>
+	<myDescription>An example of a barrel roll (in flight) for a fixed wing</myDescription>
+	<myCategories>Fixed Wing Movement</myCategories>
+</DtScriptedMovementObject>
+</boost_serialization>
+

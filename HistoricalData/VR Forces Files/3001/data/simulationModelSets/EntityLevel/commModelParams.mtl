@@ -1,0 +1,38 @@
+;; Any comm models listed here will be loaded by the DtCommModelManager.
+;; Comm models are chosen by the "comm-model-name" parameter in the radio
+;; definition in the .ope file.  Any radio with the comm model name 
+;; "default-radio-model" will use EITHER the "default-internal-radio-model"
+;; OR the "default-external-radio-model", depending on the 
+;; "use-external-comm-model" setting in the vrfSimSettings.xml file.
+;; This setting can be changed using the gui by selecting options -> comm
+;; model settings...
+;;
+;; A comm model explicitly named will be used regardless of the state
+;; of the state of the "use-external-comm-model" setting.
+
+(comm-models
+  ;; This comm model is completely contained within VR-Forces, and doesn't use any external processes.
+  ;; In this model, all radio messages immediately get to their destination.
+  (default-internal-radio-model
+     (comm-model-descriptor-type "simple-radio-comm-model-descriptor")
+     (comm-model-type "simple-radio-comm-model")  
+     ;; Choose from "aggregate", "force", or "all"
+     ;; See simpleRadioCommModelDescriptor.h for details.
+     (connection-mode "aggregate")
+     (publish-transmitters False)
+  )
+
+  ;; This comm model requires QualNet (or another comms effects server which uses the QualNet ICD)
+  ;; to be running in the same federation as VR-Forces.
+  (default-external-radio-model
+     (comm-model-descriptor-type "external-comm-model-descriptor")
+     (comm-model-type "external-comm-model")  
+     (use-actual-message-size True)
+     (substitute-message-size 512)
+     (message-timeout 30)
+  ;   Set this parameter to false if the external comms server is not sending Ready To Send Signal messages.
+     (use-ready-to-send False)
+     (publish-transmitters True)
+  )
+)
+

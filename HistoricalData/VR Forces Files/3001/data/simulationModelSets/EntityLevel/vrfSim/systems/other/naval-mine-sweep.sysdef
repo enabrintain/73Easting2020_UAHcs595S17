@@ -1,0 +1,28 @@
+(naval-mine-sweep
+   (controllers 
+      (script-enable-controller
+	     (component-descriptor-type "script-enable-controller-descriptor")
+         (component-type  "script-enable-controller")
+         (min-tick-period  -1.000000)
+         (min-tick-period-variance  -1.000000)
+         (tick-period-uses-real-time False)
+         (process-state-repository-name  "")
+         (process-state-repository-type  "")
+         (is-enabled True)
+		 (script-ids "Naval_Mine_Sweep")
+	  )
+   )
+   (actuators )
+   (connections )
+   (resources 
+   )
+   (meta-data 
+      (system-name  "Naval Mine Sweep")
+      (system-description  "Execute task to sweep and disable naval mines.")
+      (allowed-state-repository-types "surface-entity-param")
+      (system-categories "other")
+      (parameter-data-list 
+      )
+      (meta-data-entry-list )
+   )
+)

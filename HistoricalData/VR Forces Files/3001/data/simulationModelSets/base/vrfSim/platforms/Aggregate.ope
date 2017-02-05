@@ -1,0 +1,946 @@
+(aggregate
+   (parameter-type "aggregate-object-param")
+   (display-name "Aggregate")
+   (display-description "Objects of this type will support the display/simulation of true aggregate objects.  True aggregates are containers that represent many objects but not not simulate them individually")
+   (bounding-geometry-type Volume)
+   (bounding-volume 
+      (local-bvol  1.000000 1.000000 1.000000)
+      (offset  0.000000 0.000000 0.000000)
+   )
+   (formation "Other")
+   (force ForceOther)
+   (category  $short-name)
+   (echelon-level  $echelon-level)
+   (is-organized True)
+   (min-tick-period  0.00000)
+   (min-tick-period-variance  0.000000)
+   (dr-algorithm Rpw)
+   (can-have-subordinates False)
+   (dr-thresholds 
+      (translation  5.000000)
+      (rotation  2.000000)
+      (aggregate-dimension  50.0000)
+   )
+   (dr-allow-gui-overrides False)
+   (radios 
+      (main-radio 
+         (radio-descriptor-type "radio-descriptor")
+         (radio-type  "default-radio")
+         (comm-model-name  "default-radio-model")
+         (publish-transmitter False)
+         (transmitter-params 
+            (radio-type  7 1 225 2 1 20)
+            (initial-frequency  3000000.000000)
+            (power  30.000000)
+         )
+         (sample-rate  1000000.000000)
+      )
+   )
+   (systems ) 
+   (sensors )
+   (controllers 
+      (script-reactive-task-controller
+         (component-descriptor-type "component-descriptor")
+         (component-type  "script-reactive-task-controller")
+         (min-tick-period  -1.000000)
+         (min-tick-period-variance  -1.000000)
+         (tick-period-uses-real-time False)
+         (process-state-repository-name  "")
+         (process-state-repository-type  "")
+         (is-enabled True)
+      )
+      (script-controller 
+         (component-descriptor-type "component-descriptor")
+         (component-type  "script-multi-task-controller")
+         (min-tick-period  -1.000000)
+         (min-tick-period-variance  -1.000000)
+         (tick-period-uses-real-time False)
+         (process-state-repository-name  "")
+         (process-state-repository-type  "")
+         (is-enabled True)
+      )
+      (send-radio-message-controller 
+         (component-descriptor-type "component-descriptor")
+         (component-type  "send-radio-message-controller")
+         (min-tick-period  -1.000000)
+         (min-tick-period-variance  -1.000000)
+         (tick-period-uses-real-time False)
+         (process-state-repository-name  "")
+         (process-state-repository-type  "")
+         (is-enabled True)
+      )
+      (embarkation-controller 
+         (component-descriptor-type "embarkation-descriptor")
+         (component-type  "embarkation-controller")
+         (min-tick-period  -1.000000)
+         (min-tick-period-variance  -1.000000)
+         (tick-period-uses-real-time False)
+         (process-state-repository-name  "")
+         (process-state-repository-type  "")
+         (is-enabled True)
+         (create-component $can-embark)
+         (response-timeout  1.000000)
+         (response-retries  2)
+         (stop-at-embarkation-point False)
+      )
+      (aggregated-set-controller 
+         (component-descriptor-type "component-descriptor")
+         (component-type  "aggregated-set-controller")
+         (min-tick-period  -1.000000)
+         (min-tick-period-variance  -1.000000)
+         (tick-period-uses-real-time False)
+         (process-state-repository-name  "")
+         (process-state-repository-type  "")
+         (is-enabled True)
+      )
+      (occupancy-director-controller 
+         (component-descriptor-type "occupancy-director-descriptor")
+         (component-type  "occupancy-director-controller")
+         (min-tick-period  -1.000000)
+         (min-tick-period-variance  -1.000000)
+         (tick-period-uses-real-time False)
+         (process-state-repository-name  "")
+         (process-state-repository-type  "")
+         (is-enabled True)
+         (create-component $can-be-embarked-upon (default false))
+         (ingress-points $ingress-points)
+         (egress-points $egress-points)
+         (slot-exclusions $slot-exclusions)
+         (publish-load-points False)
+         (flip-disembark-body-x $flip-disembark-body-x)
+         (flip-disembark-body-y $flip-disembark-body-y)
+         (embarkation-slots $embarkation-slots)
+      )
+      (contact-fusion 
+         (component-descriptor-type "component-descriptor")
+         (component-type  "contact-fusion-controller")
+         (min-tick-period  -1.000000)
+         (min-tick-period-variance  -1.000000)
+         (tick-period-uses-real-time False)
+         (process-state-repository-name  "")
+         (process-state-repository-type  "")
+         (is-enabled True)
+      )
+      (org-controller 
+         (component-descriptor-type "component-descriptor")
+         (component-type  "organization-controller")
+         (min-tick-period  -1.000000)
+         (min-tick-period-variance  -1.000000)
+         (tick-period-uses-real-time False)
+         (process-state-repository-name  "")
+         (process-state-repository-type  "")
+         (is-enabled True)
+      )
+      (event-trigger-controller 
+         (component-descriptor-type "event-trigger-controller-descriptor")
+         (component-type  "event-trigger-controller")
+         (min-tick-period  5.000000)
+         (min-tick-period-variance  -1.000000)
+         (tick-period-uses-real-time False)
+         (process-state-repository-name  "")
+         (process-state-repository-type  "")
+         (is-enabled True)
+         (detection-level-to-trigger  3)
+         (object-types-to-detect 
+            (object-type  1 (16 0 0 42 0 0 1))
+         )
+      )
+      (activity-controller
+         (component-descriptor-type "component-descriptor")
+         (component-type  "activity-controller")
+         (min-tick-period  -1.000000)
+         (min-tick-period-variance  -1.000000)
+         (tick-period-uses-real-time False)
+         (process-state-repository-name  "")
+         (process-state-repository-type  "")
+         (is-enabled True)
+      )
+	  (script-enable-controller
+         (component-descriptor-type "script-enable-controller-descriptor")
+         (component-type  "script-enable-controller")
+         (min-tick-period  99999999)
+         (min-tick-period-variance  -1.000000)
+         (tick-period-uses-real-time False)
+         (process-state-repository-name  "")
+         (process-state-repository-type  "")
+         (is-enabled True)
+         (script-ids "Attack_Enemies" "Perform_Attrition" "Resize_Footprints" "Update_Combat_Effectiveness" "Update_EW_Degradation"
+            "Use_Supplies" "Send_NBC_Report" "Send_Obstacle_Report" "Halt_Movement_Before_Obstacles" "Flee_When_Routed")
+        (script-variables )
+      )
+   )
+   (actuators 
+      (pseudo-aggregate-damage-actuator 
+         (component-descriptor-type "actuator-component-descriptor")
+         (component-type  "pseudo-aggregate-damage-actuator")
+         (min-tick-period  -1.000000)
+         (min-tick-period-variance  -1.000000)
+         (tick-period-uses-real-time False)
+         (process-state-repository-name  "")
+         (process-state-repository-type  "")
+         (is-enabled True)
+         (art-part-list )
+      )
+   )
+   (connections )
+   (auto-connections
+      (auto-connection
+         (source-category "sensor")
+         (source-port-name "detected-objects")
+         (destination-controller "contact-fusion")
+         (destination-port-name "detected-objects")
+      )
+      (auto-connection
+         (source-category "other")
+         (source-port-name "detected-objects")
+         (destination-controller "contact-fusion")
+         (destination-port-name "detected-objects")
+      )
+      (auto-connection
+         (source-category "spot-report-generator")
+         (source-port-name "object-types-to-detect")
+         (destination-category "sensor")
+         (destination-port-name "object-types-to-detect")
+      )
+      (auto-connection
+         (source-controller "event-trigger-controller")
+         (source-port-name "object-types-to-detect")
+         (destination-category "sensor")
+         (destination-port-name "object-types-to-detect")
+      )
+      (auto-connection
+         (source-category "sensor")
+         (source-port-name "detected-objects")
+         (destination-controller "event-trigger-controller")
+         (destination-port-name "detected-objects")
+      )
+   )
+   (mass  5000.000000)
+   (sensor-signatures 
+      (visual 
+         (base-signature  $visual-signature)
+         (modifiers 
+            (file 
+               (external-file 
+                  (filename  "signatureRules/visual-illumination-rules.mtl")
+               )
+            )
+            (aggregate-posture
+               (sensor-domain "visual")
+            )
+            (engineering-area
+               (sensor-domain "visual")
+               (tick-period 2)
+            )
+            (feature-area
+               (feature-area-signature-modifiers
+                    (feature-area-signature-modifier
+                        (feature-query-name "MAK_SENSOR_DEGRADATION_TERRAIN")
+                        (signature-modifier 0.5)
+                        (maximum-relative-size-for-effect 1.0)
+                    )
+                )
+               (tick-period 2)
+            )
+            (concealment
+               (multiplier 0.25)
+            )
+         )
+      )
+      (radar 
+         (base-signature  $radar-signature)
+         (modifiers
+            (aggregate-posture
+               (sensor-domain "radar")
+            )
+            (engineering-area
+               (sensor-domain "radar")
+               (tick-period 2)
+            )
+            (concealment
+               (multiplier 0.25)
+            )
+         )
+      )
+      (infrared 
+         (base-signature  $infrared-signature)
+         (modifiers
+            (aggregate-posture
+               (sensor-domain "infrared")
+            )
+            (engineering-area
+               (sensor-domain "infrared")
+               (tick-period 2)
+            )
+            (concealment
+               (multiplier 0.25)
+            )
+         )
+      )
+      (emissions 
+         (base-signature  $emissions-signature)
+         (modifiers
+            (emissions
+               (jam-strength-factor 50)
+            )
+         )
+      )
+	  (passive-sonar
+	     (base-signature $passive-sonar-signature)
+		 (modifiers 
+            (file 
+               (external-file 
+                  (filename  "$(signatureRules-dir)\underwater-acoustics-rules.mtl")
+               )
+			)
+		 )
+	  )
+      (active-sonar
+         (base-signature $active-sonar-signature)
+         (modifiers )
+      )
+   )
+   (engagement-rules  "fire-at-will")
+   (resources )
+   (state-repository-extension-type  "default-vrf-state-repository-user-extension")
+   (tasked-by-superior-upon-task-complete True)
+   (initial-sector-of-responsibility 
+      (sector-center  0.000000)
+      (sector-size  1.570796)
+   )
+   (task-execution-rules 
+      (filename  "$(taskRules-dir)/default-task-rules.tsk")
+   )
+   (can-pivot True)
+   (max-pivot-speed  1.000000)
+   (left-support  0.500000 -1.000000 0.000000)
+   (right-support  0.500000 1.000000 0.000000)
+   (other-support  -0.200000 0.000000 0.000000)
+   (max-speed  $max-speed)
+   (max-reverse-speed  2.0)
+   (turning-radius  5.000000)
+   (max-slope  $max-slope)
+   (ordered-speed  $ordered-speed)
+   (max-acceleration  4.500000)
+   (max-deceleration  4.500000)
+   (fuel-efficiency  1000.000000)
+   (object-geometry-file 
+      (filename  "")
+   )
+   (di-guy-character 
+      (character-type  "")
+      (character-appearance  "")
+      (animation  "")
+      (use-random-appearance-upon-creation False)
+      (appearances-for-random-selection )
+   )
+   (disaggregation-range  $disaggregation-range)
+   (using-rail-movement False)
+   (local-objects 
+      (state-repository  "vrf-aggregate-state-repository")
+      (state-repository-min-tick-period  -1.000000)
+      (state-repository-min-tick-period-variance  -1.000000)
+      (net-interface  "pseudo-aggregate-local-entity-net-interface-with-properties")
+      (net-interface-min-tick-period  -1.000000)
+      (net-interface-min-tick-period-variance  -1.000000)
+      (task-manager  "task-manager")
+      (component-manager  "component-manager")
+      (plan-manager  "vrfobject-plan-manager")
+   )
+   (remote-objects 
+      (state-repository  "vrf-aggregate-state-repository")
+      (state-repository-min-tick-period  -1.000000)
+      (state-repository-min-tick-period-variance  -1.000000)
+      (net-interface  "vrf-aggregate-remote-entity-net-interface-with-properties")
+      (net-interface-min-tick-period  10.000000)
+      (net-interface-min-tick-period-variance  2.500000)
+      (task-manager  "")
+      (component-manager  "")
+      (plan-manager  "")
+   )
+   (subordinate-objects $subordinates)
+   (attached-objects )
+   (formation-list $formation-list)
+   (user-extension )
+   (parameter-data
+      (DtRwMap Posture-Sector-Size DtRwString
+         (DtRwStructure Sector-Size-Item
+            (DtRwReal Front)
+            (DtRwReal Right)
+            (DtRwReal Rear)
+            (DtRwReal Left)
+         )
+         ("Rout" ($Posture-Sector-Size-Rout-Front (default 90.0) $Posture-Sector-Size-Rout-Right (default 90.0) $Posture-Sector-Size-Rout-Rear (default 90.0) $Posture-Sector-Size-Rout-Left (default 90.0)))
+         ("Travel" ($Posture-Sector-Size-Travel-Front (default 90.0) $Posture-Sector-Size-Travel-Right (default 90.0) $Posture-Sector-Size-Travel-Rear (default 90.0) $Posture-Sector-Size-Travel-Left (default 90.0)))
+         ("Reconnaissance" ($Posture-Sector-Size-Reconnaissance-Front (default 90.0) $Posture-Sector-Size-Reconnaissance-Right (default 90.0) $Posture-Sector-Size-Reconnaissance-Rear (default 90.0) $Posture-Sector-Size-Reconnaissance-Left (default 90.0)))
+         ("Hasty-Attack" ($Posture-Sector-Size-Hasty-Attack-Front (default 90.0) $Posture-Sector-Size-Hasty-Attack-Right (default 90.0) $Posture-Sector-Size-Hasty-Attack-Rear (default 90.0) $Posture-Sector-Size-Hasty-Attack-Left (default 90.0)))
+         ("Deliberate-Attack" ($Posture-Sector-Size-Deliberate-Attack-Front (default 90.0) $Posture-Sector-Size-Deliberate-Attack-Right (default 90.0) $Posture-Sector-Size-Deliberate-Attack-Rear (default 90.0) $Posture-Sector-Size-Deliberate-Attack-Left (default 90.0)))
+         ("Hasty-Defense" ($Posture-Sector-Size-Hasty-Defense-Front (default 90.0) $Posture-Sector-Size-Hasty-Defense-Right (default 90.0) $Posture-Sector-Size-Hasty-Defense-Rear (default 90.0) $Posture-Sector-Size-Hasty-Defense-Left (default 90.0)))
+         ("Deliberate-Defense" ($Posture-Sector-Size-Deliberate-Defense-Front (default 90.0) $Posture-Sector-Size-Deliberate-Defense-Right (default 90.0) $Posture-Sector-Size-Deliberate-Defense-Rear (default 90.0) $Posture-Sector-Size-Deliberate-Defense-Left (default 90.0)))
+      )
+      (DtRwMap Assemblies DtRwString
+		   (DtRwInt Count)
+		    $Assemblies
+	   )
+      (DtRwBoolean create-aggregated True)
+      (DtRwInt Base-Health $Base-Health (default 1000))
+      (DtRwReal Health-Auto-Resupply-Rate $Health-Auto-Resupply-Rate)
+      (DtRwMap Base-Combat-Power DtRwString
+         (DtRwStructure Combat-Power-Item
+            (DtRwReal Range)
+            (DtRwReal Hit-Factor)
+            (DtRwInt Strength)
+         )
+         ("Anti-Air" ($Base-Combat-Power-Anti-Air-Range $Base-Combat-Power-Anti-Air-Hit-Factor $Base-Combat-Power-Anti-Air-Strength))
+         ("Anti-Tank" ($Base-Combat-Power-Anti-Tank-Range $Base-Combat-Power-Anti-Tank-Hit-Factor $Base-Combat-Power-Anti-Tank-Strength))
+         ("High-Explosive" ($Base-Combat-Power-High-Explosive-Range $Base-Combat-Power-High-Explosive-Hit-Factor $Base-Combat-Power-High-Explosive-Strength))
+         ("Anti-Personnel" ($Base-Combat-Power-Anti-Personnel-Range $Base-Combat-Power-Anti-Personnel-Hit-Factor $Base-Combat-Power-Anti-Personnel-Strength))
+         ("Anti-Ship" ($Base-Combat-Power-Anti-Ship-Range $Base-Combat-Power-Anti-Ship-Hit-Factor $Base-Combat-Power-Anti-Ship-Strength))
+      )
+      (DtRwMap Base-Vulnerability DtRwString
+         (DtRwStructure Vulnerability-Item
+            (DtRwReal Vulnerability)
+            (DtRwReal Defense-Factor)
+         )
+         ("Anti-Air" ($Base-Vulnerability-Anti-Air-Modifier $Base-Vulnerability-Anti-Air-Defense-Factor))
+         ("Anti-Tank" ($Base-Vulnerability-Anti-Tank-Modifier $Base-Vulnerability-Anti-Tank-Defense-Factor))
+         ("High-Explosive" ($Base-Vulnerability-High-Explosive-Modifier $Base-Vulnerability-High-Explosive-Defense-Factor))
+         ("Anti-Personnel" ($Base-Vulnerability-Anti-Personnel-Modifier $Base-Vulnerability-Anti-Personnel-Defense-Factor))
+         ("Anti-Ship" ($Base-Vulnerability-Anti-Ship-Modifier $Base-Vulnerability-Anti-Ship-Defense-Factor))
+      )
+      (DtRwMap Base-NBC-Vulnerability DtRwString
+         (DtRwReal Vulnerability)
+         ("Nuclear" $Base-Vulnerability-Nuclear-Modifier (default 1.0))
+         ("Biological" $Base-Vulnerability-Biological-Modifier (default 1.0))
+         ("Chemical" $Base-Vulnerability-Chemical-Modifier (default 1.0))
+      )
+      (DtRwReal Base-Comms-Dependence $Comms-Dependence)
+      (DtRwReal Base-EW-Defense-Strength $EW-Defense)
+      
+      (DtRwMap Base-Equipment DtRwString
+         (DtRwStructure Equipment-Item
+            (DtRwInt Count)
+            (DtRwString Pacing-Tracking)
+            (DtRwString Category)
+         )
+         $Base-Equipment
+      )
+      (DtRwMap Base-Weapons DtRwString
+         (DtRwStructure Weapon-Item
+            (DtRwInt Count)
+            (DtRwString Pacing-Tracking)
+            (DtRwString Category)
+         )
+         $Base-Weapons
+      )
+      (DtRwMap Base-Ammunition DtRwString
+         (DtRwStructure Ammunition-Item
+            (DtRwInt Count)
+            (DtRwString Pacing-Tracking)
+            (DtRwString Type)
+         )
+         $Base-Ammunition
+      )
+      (DtRwMap Ammunition-Usage DtRwString
+         (DtRwReal UsageRate)
+         ("Anti-Air" $Ammunition-Usage-Anti-Air)
+         ("Anti-Tank" $Ammunition-Usage-Anti-Tank)
+         ("High-Explosive" $Ammunition-Usage-High-Explosive)
+         ("Anti-Personnel" $Ammunition-Usage-Anti-Personnel)
+         ("Anti-Ship" $Ammunition-Usage-Anti-Ship)
+      )
+      (DtRwMap Ammunition-Auto-Resupply DtRwString
+         (DtRwReal Resupply-Rate)
+         ("Anti-Air" $Ammunition-Auto-Resupply-Anti-Air)
+         ("Anti-Tank" $Ammunition-Auto-Resupply-Anti-Tank)
+         ("High-Explosive" $Ammunition-Auto-Resupply-High-Explosive)
+         ("Anti-Personnel" $Ammunition-Auto-Resupply-Anti-Personnel)
+         ("Anti-Ship" $Ammunition-Auto-Resupply-Anti-Ship)
+      )
+      (DtRwReal Large-Munition-Auto-Resupply-Rate $Large-Munition-Auto-Resupply-Rate)
+      
+      (DtRwInt Base-Personnel-Officers $Base-Personnel-Officers)
+      (DtRwInt Base-Personnel-WOs $Base-Personnel-WOs)
+      (DtRwInt Base-Personnel-NCOs $Base-Personnel-NCOs)
+      (DtRwInt Base-Personnel-Enlisted $Base-Personnel-Enlisted)
+      (DtRwStructure Base-Food
+         (DtRwReal Amount $Base-Food)
+         (DtRwString Pacing-Tracking $Base-Food-Pacing-Tracking)
+      )
+      (DtRwStructure Base-Water
+         (DtRwReal Amount $Base-Water)
+         (DtRwString Pacing-Tracking $Base-Water-Pacing-Tracking)
+      )
+      (DtRwStructure Base-Motor-Gas
+         (DtRwReal Amount $Base-Motor-Gas)
+         (DtRwString Pacing-Tracking $Base-Motor-Gas-Pacing-Tracking)
+      )
+      (DtRwStructure Base-Aviation-Fuel
+         (DtRwReal Amount $Base-Aviation-Fuel)
+         (DtRwString Pacing-Tracking $Base-Aviation-Fuel-Pacing-Tracking)
+      )
+      (DtRwStructure Base-Diesel-Fuel
+         (DtRwReal Amount $Base-Diesel-Fuel)
+         (DtRwString Pacing-Tracking $Base-Diesel-Fuel-Pacing-Tracking)
+      )
+      (DtRwStructure Base-Oil
+         (DtRwReal Amount $Base-Oil)
+         (DtRwString Pacing-Tracking $Base-Oil-Pacing-Tracking)
+      )
+      (DtRwStructure Base-Lubricant
+         (DtRwReal Amount $Base-Lubricant)
+         (DtRwString Pacing-Tracking $Base-Lubricant-Pacing-Tracking)
+      )
+      (DtRwReal If-Morale-Less-Than $If-Morale-Less-Than)
+      (DtRwReal Attack-Strength-Morale-Modifier $Attack-Strength-Morale-Modifier (default 1.0))
+      (DtRwMap Base-Resources DtRwString
+         (DtRwStructure Resource-Item
+            (DtRwReal Amount)
+            (DtRwString Pacing-Tracking)
+            (DtRwReal Auto-Resupply-Rate)
+         )
+         $Base-Resources
+      )
+      (DtRwReal Food-Usage-Per-Second $Food-Usage-Per-Second)
+      (DtRwReal Food-Auto-Resupply-Rate $Food-Auto-Resupply-Rate)
+      (DtRwReal Water-Usage-Per-Second $Water-Usage-Per-Second)
+      (DtRwReal Water-Auto-Resupply-Rate $Water-Auto-Resupply-Rate)
+      (DtRwReal Motor-Gas-Usage-Per-Second $Motor-Gas-Usage-Per-Second)
+      (DtRwReal Motor-Gas-Usage-Per-Meter  $Motor-Gas-Usage-Per-Meter)
+      (DtRwReal Motor-Gas-Auto-Resupply-Rate $Motor-Gas-Auto-Resupply-Rate)
+      (DtRwReal Aviation-Fuel-Usage-Per-Second $Aviation-Fuel-Usage-Per-Second)
+      (DtRwReal Aviation-Fuel-Usage-Per-Meter  $Aviation-Fuel-Usage-Per-Meter)
+      (DtRwReal Aviation-Fuel-Auto-Resupply-Rate $Aviation-Fuel-Auto-Resupply-Rate)
+      (DtRwReal Diesel-Fuel-Usage-Per-Second $Diesel-Fuel-Usage-Per-Second)
+      (DtRwReal Diesel-Fuel-Usage-Per-Meter  $Diesel-Fuel-Usage-Per-Meter)
+      (DtRwReal Diesel-Fuel-Auto-Resupply-Rate $Diesel-Fuel-Auto-Resupply-Rate)
+      (DtRwReal Oil-Usage-Per-Second $Oil-Usage-Per-Second)
+      (DtRwReal Oil-Auto-Resupply-Rate $Oil-Auto-Resupply-Rate)
+      (DtRwReal Lubricant-Usage-Per-Second $Lubricant-Usage-Per-Second)
+      (DtRwReal Lubricant-Auto-Resupply-Rate $Lubricant-Auto-Resupply-Rate)
+      
+      (DtRwBoolean Can-Receive-Supplies-Moving $Can-Receive-Supplies-Moving)
+      (DtRwBoolean Can-Receive-Supplies-Attacking $Can-Receive-Supplies-Attacking)
+      (DtRwBoolean Can-Receive-Supplies-Defending $Can-Receive-Supplies-Defending)
+
+      (DtRwReal Base-Physical-Footprint $Base-Physical-Footprint (default 300.0))
+      (DtRwReal Height $Height (default 2.0))
+      (DtRwReal MaximumSpeed-Footprint-Overlap-Modifier $MaximumSpeed-Footprint-Overlap-Modifier (default 0.55))
+      (DtRwReal Combat-Power-Illumination-Intensity-Modifier $Combat-Power-Illumination-Intensity-Modifier (default 1.0))
+      (DtRwReal Combat-Power-Precipitation-Intensity-Modifier $Combat-Power-Precipitation-Intensity-Modifier (default 1.0))
+      (DtRwMap Combat-Posture-Modifier DtRwString
+         (DtRwReal Modifier)
+         ("Rout" $Combat-Posture-Rout-Modifier (default 1.0))
+         ("Travel" $Combat-Posture-Travel-Modifier (default 1.0))
+         ("Reconnaissance" $Combat-Posture-Reconnaissance-Modifier (default 1.0))
+         ("Hasty-Attack" $Combat-Posture-Hasty-Attack-Modifier (default 1.0))
+         ("Deliberate-Attack" $Combat-Posture-Deliberate-Attack-Modifier (default 1.0))
+         ("Hasty-Defense" $Combat-Posture-Hasty-Defense-Modifier (default 1.0))
+         ("Deliberate-Defense" $Combat-Posture-Deliberate-Defense-Modifier (default 1.0))
+      )
+      (DtRwMap MaximumSpeed-Posture-Modifier DtRwString
+         (DtRwReal Modifier)
+         ("Rout" $MaximumSpeed-Posture-Rout-Modifier (default 1.0))
+         ("Travel" $MaximumSpeed-Posture-Travel-Modifier (default 1.0))
+         ("Reconnaissance" $MaximumSpeed-Posture-Reconnaissance-Modifier (default 1.0))
+         ("Hasty-Attack" $MaximumSpeed-Posture-Hasty-Attack-Modifier (default 1.0))
+         ("Deliberate-Attack" $MaximumSpeed-Posture-Deliberate-Attack-Modifier (default 1.0))
+         ("Hasty-Defense" $MaximumSpeed-Posture-Hasty-Defense-Modifier (default 1.0))
+         ("Deliberate-Defense" $MaximumSpeed-Posture-Deliberate-Defense-Modifier (default 1.0))
+      )
+      (DtRwMap MaximumSpeed-MOPP-Level-Modifier DtRwInt
+         (DtRwReal Modifier)
+         (0 $MaximumSpeed-MOPP-Level-0-Modifier (default 1.0))
+         (1 $MaximumSpeed-MOPP-Level-1-Modifier (default 1.0))
+         (2 $MaximumSpeed-MOPP-Level-2-Modifier (default 1.0))
+         (3 $MaximumSpeed-MOPP-Level-3-Modifier (default 1.0))
+         (4 $MaximumSpeed-MOPP-Level-4-Modifier (default 1.0))
+      )
+      (DtRwMap Combat-Sector-Modifier DtRwString
+         (DtRwReal Modifier)
+         ("Front" $Combat-Sector-Front-Modifier (default 1.0))
+         ("Flank" $Combat-Sector-Flank-Modifier (default 1.0))
+         ("Rear" $Combat-Sector-Rear-Modifier (default 1.0))
+      )
+      (DtRwMap Combat-Detection-Level-Modifier DtRwInt
+         (DtRwReal Modifier)
+         (0 $Combat-Detection-Level-0-Modifier (default 1.0))
+         (1 $Combat-Detection-Level-1-Modifier (default 1.0))
+         (2 $Combat-Detection-Level-2-Modifier (default 1.0))
+         (3 $Combat-Detection-Level-3-Modifier (default 1.0))
+         (4 $Combat-Detection-Level-4-Modifier (default 1.0))
+      )
+      (DtRwMap Combat-MOPP-Level-Modifier DtRwInt
+         (DtRwReal Modifier)
+         (0 $Combat-MOPP-Level-0-Modifier (default 1.0))
+         (1 $Combat-MOPP-Level-1-Modifier (default 1.0))
+         (2 $Combat-MOPP-Level-2-Modifier (default 1.0))
+         (3 $Combat-MOPP-Level-3-Modifier (default 1.0))
+         (4 $Combat-MOPP-Level-4-Modifier (default 1.0))
+      )
+      (DtRwMap Vulnerability-Posture-Modifier DtRwString
+         (DtRwReal Modifier)
+         ("Rout" $Vulnerability-Posture-Rout-Modifier (default 1.0))
+         ("Travel" $Vulnerability-Posture-Travel-Modifier (default 1.0))
+         ("Reconnaissance" $Vulnerability-Posture-Reconnaissance-Modifier (default 1.0))
+         ("Hasty-Attack" $Vulnerability-Posture-Hasty-Attack-Modifier (default 1.0))
+         ("Deliberate-Attack" $Vulnerability-Posture-Deliberate-Attack-Modifier (default 1.0))
+         ("Hasty-Defense" $Vulnerability-Posture-Hasty-Defense-Modifier (default 1.0))
+         ("Deliberate-Defense" $Vulnerability-Posture-Deliberate-Defense-Modifier (default 1.0))
+      )
+      (DtRwMap Vulnerability-Sector-Modifier DtRwString
+         (DtRwReal Modifier)
+         ("Front" $Vulnerability-Sector-Front-Modifier (default 1.0))
+         ("Flank" $Vulnerability-Sector-Flank-Modifier (default 1.0))
+         ("Rear" $Vulnerability-Sector-Rear-Modifier (default 1.0))
+      )
+      (DtRwMap Vulnerability-MOPP-Level-Modifier DtRwInt
+         (DtRwReal Modifier)
+         (0 $Vulnerability-MOPP-Level-0-Modifier (default 1.0))
+         (1 $Vulnerability-MOPP-Level-1-Modifier (default 1.0))
+         (2 $Vulnerability-MOPP-Level-2-Modifier (default 1.0))
+         (3 $Vulnerability-MOPP-Level-3-Modifier (default 1.0))
+         (4 $Vulnerability-MOPP-Level-4-Modifier (default 1.0))
+      )
+      (DtRwMap Footprint-Posture-Modifier DtRwString
+         (DtRwReal Modifier)
+         ("Rout" $Footprint-Posture-Rout-Modifier (default 1.0))
+         ("Travel" $Footprint-Posture-Travel-Modifier (default 1.0))
+         ("Reconnaissance" $Footprint-Posture-Reconnaissance-Modifier (default 1.0))
+         ("Hasty-Attack" $Footprint-Posture-Hasty-Attack-Modifier (default 1.0))
+         ("Deliberate-Attack" $Footprint-Posture-Deliberate-Attack-Modifier (default 1.0))
+         ("Hasty-Defense" $Footprint-Posture-Hasty-Defense-Modifier (default 1.0))
+         ("Deliberate-Defense" $Footprint-Posture-Deliberate-Defense-Modifier (default 1.0))
+      )
+      (DtRwMap Range-Posture-Modifier DtRwString
+         (DtRwReal Modifier)
+         ("Rout" $Range-Posture-Rout-Modifier (default 1.0))
+         ("Travel" $Range-Posture-Travel-Modifier (default 1.0))
+         ("Reconnaissance" $Range-Posture-Reconnaissance-Modifier (default 1.0))
+         ("Hasty-Attack" $Range-Posture-Hasty-Attack-Modifier (default 1.0))
+         ("Deliberate-Attack" $Range-Posture-Deliberate-Attack-Modifier (default 1.0))
+         ("Hasty-Defense" $Range-Posture-Hasty-Defense-Modifier (default 1.0))
+         ("Deliberate-Defense" $Range-Posture-Deliberate-Defense-Modifier (default 1.0))
+      )
+      (DtRwMap Sensor-Sensitivity-Posture-Modifier DtRwString
+         (DtRwReal Modifier)
+         ("Rout" $Sensor-Sensitivity-Posture-Rout-Modifier (default 1.0))
+         ("Travel" $Sensor-Sensitivity-Posture-Travel-Modifier (default 1.0))
+         ("Reconnaissance" $Sensor-Sensitivity-Posture-Reconnaissance-Modifier (default 1.0))
+         ("Hasty-Attack" $Sensor-Sensitivity-Posture-Hasty-Attack-Modifier (default 1.0))
+         ("Deliberate-Attack" $Sensor-Sensitivity-Posture-Deliberate-Attack-Modifier (default 1.0))
+         ("Hasty-Defense" $Sensor-Sensitivity-Posture-Hasty-Defense-Modifier (default 1.0))
+         ("Deliberate-Defense" $Sensor-Sensitivity-Posture-Deliberate-Defense-Modifier (default 1.0))
+      )
+      (DtRwMap Sensor-Sensitivity-MOPP-Level-Modifier DtRwInt
+         (DtRwReal Modifier)
+         (0 $Sensor-Sensitivity-MOPP-Level-0-Modifier (default 1.0))
+         (1 $Sensor-Sensitivity-MOPP-Level-1-Modifier (default 1.0))
+         (2 $Sensor-Sensitivity-MOPP-Level-2-Modifier (default 1.0))
+         (3 $Sensor-Sensitivity-MOPP-Level-3-Modifier (default 1.0))
+         (4 $Sensor-Sensitivity-MOPP-Level-4-Modifier (default 1.0))
+      )
+      (DtRwMap Sensor-Signature-Posture-Modifier DtRwString
+         (DtRwReal Modifier)
+         ("Rout" $Sensor-Signature-Posture-Rout-Modifier (default 1.0))
+         ("Travel" $Sensor-Signature-Posture-Travel-Modifier (default 1.0))
+         ("Reconnaissance" $Sensor-Signature-Posture-Reconnaissance-Modifier (default 1.0))
+         ("Hasty-Attack" $Sensor-Signature-Posture-Hasty-Attack-Modifier (default 1.0))
+         ("Deliberate-Attack" $Sensor-Signature-Posture-Deliberate-Attack-Modifier (default 1.0))
+         ("Hasty-Defense" $Sensor-Signature-Posture-Hasty-Defense-Modifier (default 1.0))
+         ("Deliberate-Defense" $Sensor-Signature-Posture-Deliberate-Defense-Modifier (default 1.0))
+      )
+      (DtRwMap Casualty-Type-Probabilities DtRwString
+         (DtRwReal Probability)
+         ("Killed" $Casualty-Type-Killed-Probability (default 0.15))
+         ("Captured" $Casualty-Type-Captured-Probability)
+         ("Wounded" $Casualty-Type-Wounded-Probability (default 0.85))         
+      )
+      (DtRwMap Posture-Transition-Times DtRwString
+         (DtRwStructure Posture-Transition-Times-Item
+            (DtRwReal Rout)
+            (DtRwReal Travel)
+            (DtRwReal Reconnaissance)
+            (DtRwReal Hasty-Attack)
+            (DtRwReal Deliberate-Attack)
+            (DtRwReal Hasty-Defense)
+            (DtRwReal Deliberate-Defense)
+         )
+         ("Rout" ($Rout-To-Rout-Time $Rout-To-Travel-Time $Rout-To-Reconnaissance-Time $Rout-To-Hasty-Attack-Time $Rout-To-Deliberate-Attack-Time $Rout-To-Hasty-Defense-Time $Rout-To-Deliberate-Defense-Time))
+         ("Travel" ($Travel-To-Rout-Time $Travel-To-Travel-Time $Travel-To-Reconnaissance-Time $Travel-To-Hasty-Attack-Time $Travel-To-Deliberate-Attack-Time $Travel-To-Hasty-Defense-Time $Travel-To-Deliberate-Defense-Time))
+         ("Reconnaissance" ($Reconnaissance-To-Rout-Time $Reconnaissance-To-Travel-Time $Reconnaissance-To-Reconnaissance-Time $Reconnaissance-To-Hasty-Attack-Time $Reconnaissance-To-Deliberate-Attack-Time $Reconnaissance-To-Hasty-Defense-Time $Reconnaissance-To-Deliberate-Defense-Time))
+         ("Hasty-Attack" ($Hasty-Attack-To-Rout-Time $Hasty-Attack-To-Travel-Time $Hasty-Attack-To-Reconnaissance-Time $Hasty-Attack-To-Hasty-Attack-Time $Hasty-Attack-To-Deliberate-Attack-Time $Hasty-Attack-To-Hasty-Defense-Time $Hasty-Attack-To-Deliberate-Defense-Time))
+         ("Deliberate-Attack" ($Deliberate-Attack-To-Rout-Time $Deliberate-Attack-To-Travel-Time $Deliberate-Attack-To-Reconnaissance-Time $Deliberate-Attack-To-Hasty-Attack-Time $Deliberate-Attack-To-Deliberate-Attack-Time $Deliberate-Attack-To-Hasty-Defense-Time $Deliberate-Attack-To-Deliberate-Defense-Time))
+         ("Hasty-Defense" ($Hasty-Defense-To-Rout-Time $Hasty-Defense-To-Travel-Time $Hasty-Defense-To-Reconnaissance-Time $Hasty-Defense-To-Hasty-Attack-Time $Hasty-Defense-To-Deliberate-Attack-Time $Hasty-Defense-To-Hasty-Defense-Time $Hasty-Defense-To-Deliberate-Defense-Time))
+         ("Deliberate-Defense" ($Deliberate-Defense-To-Rout-Time $Deliberate-Defense-To-Travel-Time $Deliberate-Defense-To-Reconnaissance-Time $Deliberate-Defense-To-Hasty-Attack-Time $Deliberate-Defense-To-Deliberate-Attack-Time $Deliberate-Defense-To-Hasty-Defense-Time $Deliberate-Defense-To-Deliberate-Defense-Time))
+      )
+      (DtRwStructure MOPP-Level-Transition-Times
+         (DtRwReal Level-0 0.0)
+         (DtRwReal Level-1 $MOPP-1-Transition-Time)
+         (DtRwReal Level-2 $MOPP-2-Transition-Time)
+         (DtRwReal Level-3 $MOPP-3-Transition-Time)
+         (DtRwReal Level-4 $MOPP-4-Transition-Time)
+      )
+      (DtRwReal Health-Percent-For-Rout $Health-Percent-For-Rout (default 30))
+   )
+   (state-data
+      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+      ;; The state properties in this section are not reset when restoring an entity:
+      
+      (DtRwString Posture "Travel")
+      (DtRwStructure Sector-Sizes
+         (DtRwReal Front $Posture-Sector-Size-Travel-Front)
+         (DtRwReal Right $Posture-Sector-Size-Travel-Right)
+         (DtRwReal Rear $Posture-Sector-Size-Travel-Rear)
+         (DtRwReal Left $Posture-Sector-Size-Travel-Left)
+      )
+      (DtRwRangeRingItem Physical-Footprint $Base-Physical-Footprint)
+      
+      ; This property is really a parameter, but is only set after parameters
+      ; above are already set; it is set from system data when systems are loaded.
+      (DtRwMap Indirect-Fire-Power DtRwString
+         (DtRwStructure Indirect-Fire-Power-Item
+            (DtRwRangeRingItem Range)
+            (DtRwReal Radius)
+			(DtRwReal Max-Sheaf-Radius)
+            (DtRwReal Hit-Factor)
+            (DtRwReal Seconds-Per-Attack)
+            (DtRwInt Strength-Per-Attack)
+            (DtRwInt Ammunition-Per-Attack)
+            (DtRwString Damage-Type)
+            (DtRwBoolean Can-Be-Radar-Jammed)
+            (DtRwReal Jamming-Defense-Factor)
+            (DtRwReal Max-Altitude)
+            (DtRwString Allowed-Postures)
+         )
+      )
+      ;; The state properties above are not reset when restoring an entity
+      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+      
+      (DtRwInt Health $Base-Health)
+      (DtRwInt Saved-Base-Health $Base-Health)
+      (DtRwString Combat-Effectiveness "Fully Operational")
+      (DtRwString Ammunition-Status "Fully Operational")
+      (DtRwString Personnel-Status "Fully Operational")
+      (DtRwString Weapons-Status "Fully Operational")
+      (DtRwString POL-Status "Fully Operational")
+      
+      (DtRwStructure Posture-Transition 
+         (DtRwBoolean IsTransitioning False)
+         (DtRwString NewPosture "")
+         (DtRwReal TimeStarted 0)
+         (DtRwReal TimeFinished 0)
+      )
+      (DtRwInt MOPP-Level 0)
+      (DtRwStructure MOPP-Transition 
+         (DtRwBoolean IsTransitioning False)
+         (DtRwInt NewLevel 0)
+         (DtRwReal TimeStarted 0)
+         (DtRwReal TimeFinished 0)
+      )
+      (DtRwReal Morale 1.0)
+      (DtRwReal MaximumSpeedModifier 1.0)
+      (DtRwReal MaximumSpeedAdjustment 0.0)
+      (DtRwString Contamination "None")
+      (DtRwString Activity "Unknown")
+      (DtRwString Engagement-Results "")
+      (DtRwReal Engagement-Results-Time 0)
+      (DtRwReal Engagement-Results-Start 0)
+      
+      (DtRwMap Combat-Power DtRwString
+         (DtRwStructure Combat-Power-Item
+            (DtRwRangeRingItem Range)
+            (DtRwReal Hit-Factor)
+            (DtRwInt Strength)
+         )
+         ("Anti-Air" ($Base-Combat-Power-Anti-Air-Range $Base-Combat-Power-Anti-Air-Hit-Factor $Base-Combat-Power-Anti-Air-Strength))
+         ("Anti-Tank" ($Base-Combat-Power-Anti-Tank-Range $Base-Combat-Power-Anti-Tank-Hit-Factor $Base-Combat-Power-Anti-Tank-Strength))
+         ("High-Explosive" ($Base-Combat-Power-High-Explosive-Range $Base-Combat-Power-High-Explosive-Hit-Factor $Base-Combat-Power-High-Explosive-Strength))
+         ("Anti-Personnel" ($Base-Combat-Power-Anti-Personnel-Range $Base-Combat-Power-Anti-Personnel-Hit-Factor $Base-Combat-Power-Anti-Personnel-Strength))
+         ("Anti-Ship" ($Base-Combat-Power-Anti-Ship-Range $Base-Combat-Power-Anti-Ship-Hit-Factor $Base-Combat-Power-Anti-Ship-Strength))
+      )
+      (DtRwMap Vulnerability DtRwString
+         (DtRwStructure Vulnerability-Item
+            (DtRwReal Vulnerability)
+            (DtRwReal Defense-Factor)
+         )
+         ("Anti-Air" ($Base-Vulnerability-Anti-Air-Modifier $Base-Vulnerability-Anti-Air-Defense-Factor))
+         ("Anti-Tank" ($Base-Vulnerability-Anti-Tank-Modifier $Base-Vulnerability-Anti-Tank-Defense-Factor))
+         ("High-Explosive" ($Base-Vulnerability-High-Explosive-Modifier $Base-Vulnerability-High-Explosive-Defense-Factor))
+         ("Anti-Personnel" ($Base-Vulnerability-Anti-Personnel-Modifier $Base-Vulnerability-Anti-Personnel-Defense-Factor))
+         ("Anti-Ship" ($Base-Vulnerability-Anti-Ship-Modifier $Base-Vulnerability-Anti-Ship-Defense-Factor))
+      )
+      
+      (DtRwMap Equipment DtRwString
+         (DtRwStructure Equipment-Item
+            (DtRwInt Count)
+            (DtRwString Pacing-Tracking)
+            (DtRwString Category)
+         )
+         $Base-Equipment
+      )
+      (DtRwMap Weapons DtRwString
+         (DtRwStructure Weapon-Item
+            (DtRwInt Count)
+            (DtRwString Pacing-Tracking)
+            (DtRwString Category)
+         )
+         $Base-Weapons
+      )
+      (DtRwMap Ammunition DtRwString
+         (DtRwStructure Ammunition-Item
+            (DtRwInt Count)
+            (DtRwString Pacing-Tracking)
+            (DtRwString Type)
+         )
+      )
+      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+      ;; This state property is rolled up from the ammo above, summing
+      ;; ammo of the same category into one category entry (e.g., all
+      ;; anti-tank type ammo goes into the anti-tank category).
+      ;; This cannot be initialized by copying the $Base-Ammunition variable,
+      ;; so is initialized in the Use-Supplies script.
+      (DtRwMap Ammunition-Categories DtRwString
+         (DtRwStructure Ammunition-Item
+            (DtRwReal Count)
+            (DtRwInt BaseCount)
+         )
+         ("UNINITIALIZED" (-1.0 -1))
+      )
+      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+      ;; This state property has no variable to initialize it, so it
+      ;; is initialized in the Use-Supplies script.
+      (DtRwMap Resources DtRwString
+         (DtRwStructure Resource-Item
+            (DtRwReal Amount)
+            (DtRwString Pacing-Tracking)
+         )
+         ("UNINITIALIZED" (-1.0 ""))
+      )
+      (DtRwMap Saved-Base-Resources DtRwString
+        (DtRwReal Amount 0)
+      )
+      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+      (DtRwInt Personnel-Officers $Base-Personnel-Officers)
+      (DtRwInt Personnel-WOs $Base-Personnel-WOs)
+      (DtRwInt Personnel-NCOs $Base-Personnel-NCOs)
+      (DtRwInt Personnel-Enlisted $Base-Personnel-Enlisted)
+      (DtRwInt Number-Killed 0)
+      (DtRwInt Number-Captured 0)
+      (DtRwInt Number-Wounded 0)
+      (DtRwInt Number-Missing 0)
+      (DtRwBoolean Reset-Killed-Captured-Wounded-Missing False)
+      (DtRwMap Casualties-Per-Attacker DtRwString
+         (DtRwStructure Casualty-Item
+            (DtRwInt Number-Killed)
+            (DtRwInt Number-Captured)
+            (DtRwInt Number-Wounded)
+            (DtRwInt Number-Missing)
+         )         
+      )
+      (DtRwStructure Food
+         (DtRwReal Amount $Base-Food)
+         (DtRwString Pacing-Tracking $Base-Food-Pacing-Tracking)
+      )
+      (DtRwReal Saved-Base-Food $Base-Food)
+      (DtRwStructure Water
+         (DtRwReal Amount $Base-Water)
+         (DtRwString Pacing-Tracking $Base-Water-Pacing-Tracking)
+      )
+      (DtRwReal Saved-Base-Water $Base-Water)
+      (DtRwBoolean Has-Food-Water True)
+      
+      (DtRwStructure Motor-Gas
+         (DtRwReal Amount $Base-Motor-Gas)
+         (DtRwString Pacing-Tracking $Base-Motor-Gas-Pacing-Tracking)
+      )
+      (DtRwReal Saved-Base-Motor-Gas $Base-Motor-Gas)
+      (DtRwStructure Aviation-Fuel
+         (DtRwReal Amount $Base-Aviation-Fuel)
+         (DtRwString Pacing-Tracking $Base-Aviation-Fuel-Pacing-Tracking)
+      )
+      (DtRwReal Saved-Base-Aviation-Fuel $Base-Aviation-Fuel)
+      (DtRwStructure Diesel-Fuel
+         (DtRwReal Amount $Base-Diesel-Fuel)
+         (DtRwString Pacing-Tracking $Base-Diesel-Fuel-Pacing-Tracking)
+      )
+      (DtRwReal Saved-Base-Diesel-Fuel $Base-Diesel-Fuel)
+      (DtRwBoolean Has-Fuel True)
+	  
+      (DtRwStructure Oil
+         (DtRwReal Amount $Base-Oil)
+         (DtRwString Pacing-Tracking $Base-Oil-Pacing-Tracking)
+      )
+      (DtRwReal Saved-Base-Oil $Base-Oil)
+      (DtRwStructure Lubricant
+         (DtRwReal Amount $Base-Lubricant)
+         (DtRwString Pacing-Tracking $Base-Lubricant-Pacing-Tracking)
+      )
+      (DtRwReal Saved-Base-Lubricant $Base-Lubricant)
+      (DtRwBoolean Has-OL True)
+      
+      (DtRwReal Attrition-Rate 0.0)
+      (DtRwList Attacks
+         (DtRwStructure Attack-Item
+            (DtRwString Target)
+            (DtRwString Type)
+            (DtRwInt Strength)
+         )
+      )
+      (DtRwList Limited-Munition-Attacks
+         (DtRwStructure Attack-Item
+            (DtRwString Target)
+            (DtRwString Weapon)
+            (DtRwInt Strength)
+         )
+      )
+      (DtRwList Attacks-Defending
+         (DtRwStructure Defense-Item
+            (DtRwString Attacker)
+            (DtRwString Type)
+            (DtRwInt Strength)
+            (DtRwInt HitFactor)
+            (DtRwReal TimeStarted)
+            (DtRwReal TimeComplete)
+            (DtRwReal ProbabilityKill)
+            (DtRwReal ProbabilityCapture)
+            (DtRwReal ProbabilityWound)
+            (DtRwBoolean IsIndirect)
+            (DtRwReal CurrentRandomDraw)
+         )
+      )
+      (DtRwReal Jamming-Strength-On 0.0)
+      (DtRwList EW-Attacks
+         (DtRwStructure EW-Attack-Item
+            (DtRwString Target)
+            (DtRwString Type)
+            (DtRwInt Strength)
+         )
+      )
+      (DtRwList EW-Attacks-Defending
+         (DtRwStructure EW-Defense-Item
+            (DtRwString Attacker)
+            (DtRwString Type)
+            (DtRwInt Strength)
+            (DtRwReal CurrentRandomDraw)
+         )
+      )
+      (DtRwReal EW-Comms-Degradation-Percent 0.0)
+      (DtRwReal Radar-Jamming-Strength-Receiving 0.0)
+      
+      (DtRwMap Environmental-Attrition DtRwString
+         (DtRwReal Strength)
+      )
+      
+      (DtRwString Resupply-Mode "From-Supply")
+      (DtRwReal Auto-Resupply-Period 43200)
+
+      (DtRwMap Supplies-Offered DtRwString
+         (DtRwReal Rate)
+      )
+      (DtRwBoolean Supplies-Stop-Ordered False)
+      (DtRwList Preferred-Targets
+         (DtRwString TargetName)
+      )
+  )
+)

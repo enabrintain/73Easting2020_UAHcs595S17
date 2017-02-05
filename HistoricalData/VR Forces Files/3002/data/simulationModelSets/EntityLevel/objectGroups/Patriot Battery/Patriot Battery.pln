@@ -1,0 +1,149 @@
+(
+   (Plan-File (version "2.0"))
+   (Plan 
+      (pending-triggers )
+      (plan-name  "VRF_UUID:aade9c19-bbd2-4dd9-80cd-94b0acc8610d")
+      (quick-launch-flags  4)
+      (Block 
+         (Set 
+            (set-data-request-type "set-reactive-task-enabled")
+            (script-id  "Patriot_Launcher_attack")
+            (variables 
+               (DtRwBoolean
+                  (reactivetask_enabled  True)
+               )
+               (DtRwInt
+                  (reactivetask_priority  5)
+               )
+            )
+            (variable-data-types 
+            )
+         )
+      )
+      (plan-execution-stack 
+      )
+   )
+   (Plan 
+      (pending-triggers )
+      (plan-name  "VRF_UUID:f6774b58-b2c0-439e-ab32-4240cda2255d")
+      (quick-launch-flags  4)
+      (Block 
+         (Set 
+            (set-data-request-type "set-reactive-task-enabled")
+            (script-id  "Patriot_Launcher_attack")
+            (variables 
+               (DtRwBoolean
+                  (reactivetask_enabled  True)
+               )
+               (DtRwInt
+                  (reactivetask_priority  5)
+               )
+            )
+            (variable-data-types 
+            )
+         )
+      )
+      (plan-execution-stack 
+      )
+   )
+   (Plan 
+      (pending-triggers )
+      (plan-name  "VRF_UUID:73479129-dc1d-40b5-9f15-7b3f5f59d3bd")
+      (quick-launch-flags  4)
+      (Block 
+         (Set 
+            (set-data-request-type "set-reactive-task-enabled")
+            (script-id  "Patriot_Launcher_attack")
+            (variables 
+               (DtRwBoolean
+                  (reactivetask_enabled  True)
+               )
+               (DtRwInt
+                  (reactivetask_priority  5)
+               )
+            )
+            (variable-data-types 
+            )
+         )
+      )
+      (plan-execution-stack 
+      )
+   )
+   (Plan 
+      (pending-triggers )
+      (plan-name  "VRF_UUID:508dec8c-fc9f-448d-9487-62d037d40e62")
+      (quick-launch-flags  4)
+      (Block 
+         (Set 
+            (set-data-request-type "set-reactive-task-enabled")
+            (script-id  "Patriot_Launcher_attack")
+            (variables 
+               (DtRwBoolean
+                  (reactivetask_enabled  True)
+               )
+               (DtRwInt
+                  (reactivetask_priority  5)
+               )
+            )
+            (variable-data-types 
+            )
+         )
+      )
+      (plan-execution-stack 
+      )
+   )
+   (Plan 
+      (pending-triggers )
+      (plan-name  "VRF_UUID:8cac8738-1aab-4588-ba86-f765d78d8a3e")
+      (quick-launch-flags  4)
+      (Block 
+         (Set 
+            (set-data-request-type "set-reactive-task-enabled")
+            (script-id  "Patriot_Launcher_attack")
+            (variables 
+               (DtRwBoolean
+                  (reactivetask_enabled  True)
+               )
+               (DtRwInt
+                  (reactivetask_priority  5)
+               )
+            )
+            (variable-data-types 
+            )
+         )
+      )
+      (plan-execution-stack 
+      )
+   )
+   (Plan 
+      (pending-triggers )
+      (plan-name  "VRF_UUID:0200a2d6-ff3f-4c4e-b335-608cb87e3364")
+      (quick-launch-flags  4)
+      (Block 
+         (Set 
+            (set-data-request-type "set-reactive-task-enabled")
+            (script-id  "Patriot_Launcher_attack")
+            (variables 
+               (DtRwBoolean
+                  (reactivetask_enabled  True)
+               )
+               (DtRwInt
+                  (reactivetask_priority  5)
+               )
+            )
+            (variable-data-types 
+            )
+         )
+      )
+      (plan-execution-stack 
+      )
+   )
+   (Plan 
+      (pending-triggers )
+      (plan-name  "VRF_UUID:838c8cc8-d349-44f2-bcb1-1d43643c6e68")
+      (quick-launch-flags  4)
+      (Block )
+      (plan-execution-stack 
+      )
+   )
+)

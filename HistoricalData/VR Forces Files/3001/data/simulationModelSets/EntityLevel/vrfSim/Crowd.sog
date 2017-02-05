@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <simulation-object-group-entry name="simulation-object-group">
+    <string paramName="gui-unique-id"/>
+    <string paramName="gui-keywords">simulationObjectGroup</string>
+    <string paramName="gui-default-overlay-layer"/>
+    <string paramName="gui-label">Crowd</string>
+    <string paramName="gui-categories">"Object Group"</string>
+    <string paramName="gui-deployable-countries"/>
+    <string paramName="gui-menu-icon"/>
+    <bool paramName="gui-can-create">True</bool>
+    <bool paramName="gui-can-aggregate">False</bool>
+    <bool paramName="IncludeInBVSPCalcs">True</bool>
+    <string paramName="gui-on-palettes">"EntityCreationPalette"</string>
+    <string paramName="object-type">1:256:0:0:0:0:0:6</string>
+    <string paramName="group-description"/>
+    <int paramName="group-creation-flags">36</int>
+    <DtRwStringAttributeList paramName="additional-information"/>
+    <entity-simulation-object>
+      <DtSimulationObjectEntityState>
+        <DtRwUUID paramName="uuid">VRF_UUID:47c8c6d8-686e-431e-ac86-cdead934439a</DtRwUUID>
+        <string paramName="marking-text">Cvln 6</string>
+        <entityType paramName="entity-type">3:1:225:3:0:1:0</entityType>
+        <DtRwUUID paramName="attached-to"/>
+        <int paramName="force">1</int>
+        <int paramName="appearance">39911424</int>
+        <bool paramName="hide-on-create">False</bool>
+        <string paramName="diguy-appearance">sk_male_casual_2</string>
+        <string paramName="diguy-character-type">mped_07</string>
+        <string paramName="diguy-head-appearance"/>
+        <string paramName="diguy-item-appearance"/>
+        <orientation paramName="orientation" yaw="1.570796012878" pitch="-0.2967059612274" roll="-1.570796966553"/>
+        <vector paramName="location" x="4.320887629209" y="-3.440945391163" z="3.229713637366e-006"/>
+      </DtSimulationObjectEntityState>
+    </entity-simulation-object>
+    <entity-simulation-object>
+      <DtSimulationObjectEntityState>
+        <DtRwUUID paramName="uuid">VRF_UUID:1d3876bb-6e55-48b2-b474-f92460ee0e3f</DtRwUUID>
+        <string paramName="marking-text">Cvln 5</string>
+        <entityType paramName="entity-type">3:1:225:3:0:1:0</entityType>
+        <DtRwUUID paramName="attached-to"/>
+        <int paramName="force">1</int>
+        <int paramName="appearance">39911424</int>
+        <bool paramName="hide-on-create">False</bool>
+        <string paramName="diguy-appearance">sk_male_casual_6</string>
+        <string paramName="diguy-character-type">mped_07</string>
+        <string paramName="diguy-head-appearance"/>
+        <string paramName="diguy-item-appearance"/>
+        <orientation paramName="orientation" yaw="-1.570795297623" pitch="0.6108652353287" roll="1.570796608925"/>
+        <vector paramName="location" x="1.396647171632" y="5.978539096145" z="3.776296946656e-006"/>
+      </DtSimulationObjectEntityState>
+    </entity-simulation-object>
+    <entity-simulation-object>
+      <DtSimulationObjectEntityState>
+        <DtRwUUID paramName="uuid">VRF_UUID:8b353456-1371-4274-93e2-33277ef4ef3a</DtRwUUID>
+        <string paramName="marking-text">Cvln 13</string>
+        <entityType paramName="entity-type">3:1:225:3:1:1:0</entityType>
+        <DtRwUUID paramName="attached-to"/>
+        <int paramName="force">1</int>
+        <int paramName="appearance">39911424</int>
+        <bool paramName="hide-on-create">False</bool>
+        <string paramName="diguy-appearance">sk_female_casual_3</string>
+        <string paramName="diguy-character-type">fped_07</string>
+        <string paramName="diguy-head-appearance"/>
+        <string paramName="diguy-item-appearance"/>
+        <orientation paramName="orientation" yaw="-1.570795536041" pitch="0.5061454772949" roll="1.570796251297"/>
+        <vector paramName="location" x="-0.1510142899755" y="5.390156691563" z="3.096833225428e-006"/>
+      </DtSimulationObjectEntityState>
+    </entity-simulation-object>
+    <entity-simulation-object>
+      <DtSimulationObjectEntityState>
+        <DtRwUUID paramName="uuid">VRF_UUID:8b2a7d73-3750-40eb-846e-cadf0f6c92f2</DtRwUUID>
+        <string paramName="marking-text">Cvln 9</string>
+        <entityType paramName="entity-type">3:1:225:3:1:1:0</entityType>
+        <DtRwUUID paramName="attached-to"/>
+        <int paramName="force">1</int>
+        <int paramName="appearance">39911424</int>
+        <bool paramName="hide-on-create">False</bool>
+        <string paramName="diguy-appearance">sk_female_suit_3</string>
+        <string paramName="diguy-character-type">fped_07</string>
+        <string paramName="diguy-head-appearance"/>
+        <string paramName="diguy-item-appearance"/>
+        <orientation paramName="orientation" yaw="3.576278686523e-007" pitch="-1.57079553605" roll="0"/>
+        <vector paramName="location" x="4.665994108453" y="2.386124072837" z="2.993551855186e-006"/>
+      </DtSimulationObjectEntityState>
+    </entity-simulation-object>
+    <entity-simulation-object>
+      <DtSimulationObjectEntityState>
+        <DtRwUUID paramName="uuid">VRF_UUID:8299e5f0-163a-40ab-b475-7e4715e81b25</DtRwUUID>
+        <string paramName="marking-text">Cvln 7</string>
+        <entityType paramName="entity-type">3:1:225:3:0:1:0</entityType>
+        <DtRwUUID paramName="attached-to"/>
+        <int paramName="force">1</int>
+        <int paramName="appearance">39911424</int>
+        <bool paramName="hide-on-create">False</bool>
+        <string paramName="diguy-appearance">sk_male_casual_9</string>
+        <string paramName="diguy-character-type">mped_07</string>
+        <string paramName="diguy-head-appearance"/>
+        <string paramName="diguy-item-appearance"/>
+        <orientation paramName="orientation" yaw="1.570795059204" pitch="-0.8203047513962" roll="-1.570795893669"/>
+        <vector paramName="location" x="-1.915352778977" y="-5.737042874472" z="3.682894822342e-006"/>
+      </DtSimulationObjectEntityState>
+    </entity-simulation-object>
+    <environmental-simulation-object>
+      <DtSimulationObjectEnvironmentalState>
+        <DtRwUUID paramName="uuid">VRF_UUID:4676c461-f089-49ea-81b9-af9ec673a3e5</DtRwUUID>
+        <string paramName="marking-text">Area 1</string>
+        <entityType paramName="entity-type">18:0:0:1:0:0:0</entityType>
+        <DtRwUUID paramName="attached-to"/>
+        <int paramName="force">3</int>
+        <int paramName="appearance">1077936647</int>
+        <bool paramName="hide-on-create">True</bool>
+        <vectors paramName="points">
+          <vector paramName="vec" x="9.800500749681" y="1.186968404596" z="-9.646705545036e-005"/>
+          <vector paramName="vec" x="9.070821686934" y="5.318094404591" z="4.655057198907e-005"/>
+          <vector paramName="vec" x="6.42125014075" y="8.072178404591" z="5.019558961113e-005"/>
+          <vector paramName="vec" x="3.559906700267" y="9.234057404597" z="-0.000154489964944"/>
+          <vector paramName="vec" x="0.09959918956887" y="9.79348040459" z="8.533696943454e-005"/>
+          <vector paramName="vec" x="-2.511733482195" y="9.018894404592" z="4.168567299232e-005"/>
+          <vector paramName="vec" x="-6.487225430966" y="7.7279174046" z="-0.0002541964066877"/>
+          <vector paramName="vec" x="-7.338719376281" y="4.328345404591" z="6.251702286796e-005"/>
+          <vector paramName="vec" x="-7.895380443401" y="-1.222854595405" z="-6.916554277619e-005"/>
+          <vector paramName="vec" x="-6.738849770708" y="-8.194129595406" z="-5.13532274114e-005"/>
+          <vector paramName="vec" x="-3.405151504248" y="-8.581422595409" z="6.049638525239e-005"/>
+          <vector paramName="vec" x="0.8514396282402" y="-9.4420735954" z="-0.0002271349921999"/>
+          <vector paramName="vec" x="5.006030720386" y="-7.247413595413" z="0.000208925458977"/>
+          <vector paramName="vec" x="7.793473828018" y="-4.794557595408" z="3.243370604088e-005"/>
+          <vector paramName="vec" x="9.155186556439" y="-2.083505595401" z="-0.000220203048375"/>
+        </vectors>
+        <int paramName="pen-style">2</int>
+        <int paramName="fill-style">0</int>
+        <int paramName="line-width">4</int>
+        <int paramName="color">-939458816</int>
+        <bool paramName="closed-figure">True</bool>
+        <bool paramName="projected">True</bool>
+        <DtRwStringAttributeList paramName="extended-data">
+          <DtRwStringAttribute paramName="Environmental_Formatting_Data" key="Environmental_Formatting_Data" data=""/>
+          <DtRwStringAttribute paramName="UUID" key="UUID" data="VRF_UUID:4676c461-f089-49ea-81b9-af9ec673a3e5"/>
+        </DtRwStringAttributeList>
+      </DtSimulationObjectEnvironmentalState>
+    </environmental-simulation-object>
+    <aggregate-simulation-object>
+      <DtSimulationObjectAggregateState>
+        <DtRwUUID paramName="uuid">VRF_UUID:2a2703e9-bc8b-4388-96da-962deaf71c20</DtRwUUID>
+        <string paramName="marking-text">Gnd 1</string>
+        <entityType paramName="entity-type">11:1:0:0:0:0:0</entityType>
+        <DtRwUUID paramName="attached-to"/>
+        <int paramName="force">1</int>
+        <int paramName="appearance">0</int>
+        <bool paramName="hide-on-create">False</bool>
+        <stringList paramName="subaggregates"/>
+        <stringList paramName="subentities">"VRF_UUID:5a31db68-cc0d-4f84-ba44-680950e81e62" "VRF_UUID:8b2edf9e-85ab-4776-a099-a0727e79aa0c" "VRF_UUID:858f7b49-5b8d-44ab-8651-52bbb9028c55" "VRF_UUID:1d3876bb-6e55-48b2-b474-f92460ee0e3f" "VRF_UUID:47c8c6d8-686e-431e-ac86-cdead934439a" "VRF_UUID:8299e5f0-163a-40ab-b475-7e4715e81b25" "VRF_UUID:8b2a7d73-3750-40eb-846e-cadf0f6c92f2" "VRF_UUID:415ab266-a164-48c7-ac10-1eeb0d32aeef" "VRF_UUID:8b84045c-6b0f-4e89-8373-ef4598473ea4" "VRF_UUID:ba49f2f4-1089-4813-8f0a-9d290c3e205f" "VRF_UUID:8b353456-1371-4274-93e2-33277ef4ef3a"</stringList>
+        <orientation paramName="orientation" yaw="-1.570794820786" pitch="-1.095051288605" roll="1.570794224739"/>
+        <vector paramName="location" x="0.02536494455786" y="-0.6281788797583" z="2.798748320807e-006"/>
+      </DtSimulationObjectAggregateState>
+    </aggregate-simulation-object>
+    <entity-simulation-object>
+      <DtSimulationObjectEntityState>
+        <DtRwUUID paramName="uuid">VRF_UUID:415ab266-a164-48c7-ac10-1eeb0d32aeef</DtRwUUID>
+        <string paramName="marking-text">Cvln 10</string>
+        <entityType paramName="entity-type">3:1:225:3:1:1:0</entityType>
+        <DtRwUUID paramName="attached-to"/>
+        <int paramName="force">1</int>
+        <int paramName="appearance">39911424</int>
+        <bool paramName="hide-on-create">False</bool>
+        <string paramName="diguy-appearance">sk_female_suit_1</string>
+        <string paramName="diguy-character-type">fped_07</string>
+        <string paramName="diguy-head-appearance"/>
+        <string paramName="diguy-item-appearance"/>
+        <orientation paramName="orientation" yaw="1.570794939995" pitch="0.7853981852531" roll="-1.570796728134"/>
+        <vector paramName="location" x="2.123437428215" y="-6.308952369252" z="4.300155992715e-006"/>
+      </DtSimulationObjectEntityState>
+    </entity-simulation-object>
+    <entity-simulation-object>
+      <DtSimulationObjectEntityState>
+        <DtRwUUID paramName="uuid">VRF_UUID:8b84045c-6b0f-4e89-8373-ef4598473ea4</DtRwUUID>
+        <string paramName="marking-text">Cvln 11</string>
+        <entityType paramName="entity-type">3:1:225:3:1:1:0</entityType>
+        <DtRwUUID paramName="attached-to"/>
+        <int paramName="force">1</int>
+        <int paramName="appearance">39911424</int>
+        <bool paramName="hide-on-create">False</bool>
+        <string paramName="diguy-appearance">sk_female_casual_8</string>
+        <string paramName="diguy-character-type">fped_07</string>
+        <string paramName="diguy-head-appearance"/>
+        <string paramName="diguy-item-appearance"/>
+        <orientation paramName="orientation" yaw="-1.570796489716" pitch="-0.1745329201221" roll="1.570796728134"/>
+        <vector paramName="location" x="2.546864427599" y="-0.05811403142037" z="1.335781527284e-006"/>
+      </DtSimulationObjectEntityState>
+    </entity-simulation-object>
+    <entity-simulation-object>
+      <DtSimulationObjectEntityState>
+        <DtRwUUID paramName="uuid">VRF_UUID:ba49f2f4-1089-4813-8f0a-9d290c3e205f</DtRwUUID>
+        <string paramName="marking-text">Cvln 12</string>
+        <entityType paramName="entity-type">3:1:225:3:1:1:0</entityType>
+        <DtRwUUID paramName="attached-to"/>
+        <int paramName="force">1</int>
+        <int paramName="appearance">39911424</int>
+        <bool paramName="hide-on-create">False</bool>
+        <string paramName="diguy-appearance">sk_female_casual_1</string>
+        <string paramName="diguy-character-type">fped_07</string>
+        <string paramName="diguy-head-appearance"/>
+        <string paramName="diguy-item-appearance"/>
+        <orientation paramName="orientation" yaw="1.570793509483" pitch="-1.466076612473" roll="-1.570793628693"/>
+        <vector paramName="location" x="-1.701383577105" y="-0.5337860747502" z="1.063656088839e-006"/>
+      </DtSimulationObjectEntityState>
+    </entity-simulation-object>
+    <entity-simulation-object>
+      <DtSimulationObjectEntityState>
+        <DtRwUUID paramName="uuid">VRF_UUID:8b2edf9e-85ab-4776-a099-a0727e79aa0c</DtRwUUID>
+        <string paramName="marking-text">Cvln 3</string>
+        <entityType paramName="entity-type">3:1:225:3:0:1:0</entityType>
+        <DtRwUUID paramName="attached-to"/>
+        <int paramName="force">1</int>
+        <int paramName="appearance">39911424</int>
+        <bool paramName="hide-on-create">False</bool>
+        <string paramName="diguy-appearance">sk_male_casual_3</string>
+        <string paramName="diguy-character-type">mped_07</string>
+        <string paramName="diguy-head-appearance"/>
+        <string paramName="diguy-item-appearance"/>
+        <orientation paramName="orientation" yaw="1.570796370506" pitch="-0.7679448723793" roll="-1.570796251297"/>
+        <vector paramName="location" x="-0.5032142384805" y="0.8698538552655" z="8.949282296678e-007"/>
+      </DtSimulationObjectEntityState>
+    </entity-simulation-object>
+    <entity-simulation-object>
+      <DtSimulationObjectEntityState>
+        <DtRwUUID paramName="uuid">VRF_UUID:858f7b49-5b8d-44ab-8651-52bbb9028c55</DtRwUUID>
+        <string paramName="marking-text">Cvln 4</string>
+        <entityType paramName="entity-type">3:1:225:3:0:1:0</entityType>
+        <DtRwUUID paramName="attached-to"/>
+        <int paramName="force">1</int>
+        <int paramName="appearance">39911424</int>
+        <bool paramName="hide-on-create">False</bool>
+        <string paramName="diguy-appearance">sk_male_casual_5</string>
+        <string paramName="diguy-character-type">mped_07</string>
+        <string paramName="diguy-head-appearance"/>
+        <string paramName="diguy-item-appearance"/>
+        <orientation paramName="orientation" yaw="4.295568259179e-007" pitch="-1.57079553605" roll="0"/>
+        <vector paramName="location" x="-6.053021888973" y="2.393220573727" z="4.141372646923e-006"/>
+      </DtSimulationObjectEntityState>
+    </entity-simulation-object>
+    <entity-simulation-object>
+      <DtSimulationObjectEntityState>
+        <DtRwUUID paramName="uuid">VRF_UUID:5a31db68-cc0d-4f84-ba44-680950e81e62</DtRwUUID>
+        <string paramName="marking-text">Cvln 2</string>
+        <entityType paramName="entity-type">3:1:225:3:0:1:0</entityType>
+        <DtRwUUID paramName="attached-to"/>
+        <int paramName="force">1</int>
+        <int paramName="appearance">39911424</int>
+        <bool paramName="hide-on-create">False</bool>
+        <string paramName="diguy-appearance">sk_male_casual_5</string>
+        <string paramName="diguy-character-type">mped_07</string>
+        <string paramName="diguy-head-appearance"/>
+        <string paramName="diguy-item-appearance"/>
+        <orientation paramName="orientation" yaw="-1.570796847343" pitch="0.1570796370506" roll="1.570795416832"/>
+        <vector paramName="location" x="-5.888587271096" y="-1.81331881974" z="3.795435900921e-006"/>
+      </DtSimulationObjectEntityState>
+    </entity-simulation-object>
+  </simulation-object-group-entry>
+</root>

@@ -1,0 +1,46 @@
+(naval-mine-deployment
+   (controllers 
+      (script-enable-controller
+	     (component-descriptor-type "script-enable-controller-descriptor")
+         (component-type  "script-enable-controller")
+         (min-tick-period  -1.000000)
+         (min-tick-period-variance  -1.000000)
+         (tick-period-uses-real-time False)
+         (process-state-repository-name  "")
+         (process-state-repository-type  "")
+         (is-enabled True)
+		   (script-ids "Drop_Naval_Depth_Charge" "Drop_Naval_Depth_Charge_At_Location")
+	  )
+   )
+   (actuators )
+   (connections )
+   (resources 
+      (Sea-Lance-ASW
+         (resource-type "munition-resource")
+         (amount $num-asw)
+         (full-amount $num-asw)
+         (munition-type 
+            (munition-type  2 7 225 1 14 0 0)
+            (warhead  0)
+            (guidance-mode  0)
+         )
+      )
+   )
+   (meta-data 
+      (system-name  "Naval Depth Charge Deployment")
+      (system-description  "Depth charge release system for naval depth charges.")
+      (allowed-state-repository-types "fixed-wing-entity-param")
+      (system-categories "weapon")
+      (parameter-data-list 
+         (int-parameter-data 
+            (parameter-name  "num-asw")
+            (variable-type  "DtRwInt")
+            (display-label  "Number of Depth Charges")
+            (display-units  "")
+            (source-units  "")
+            (default-value  28)
+         )
+      )
+      (meta-data-entry-list )
+   )
+)

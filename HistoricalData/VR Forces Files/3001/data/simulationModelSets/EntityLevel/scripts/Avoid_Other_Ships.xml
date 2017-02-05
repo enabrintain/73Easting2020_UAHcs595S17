@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE boost_serialization>
+<boost_serialization signature="serialization::archive" version="9">
+<DtScriptedTaskMetaData class_id="0" tracking_level="0" version="8">
+	<myScriptId>Avoid_Other_Ships</myScriptId>
+	<myMenuText>Avoid Other Ships</myMenuText>
+	<myToolTip></myToolTip>
+	<myMenuIcon></myMenuIcon>
+	<myVersion>1</myVersion>
+	<myScriptEngine>lua</myScriptEngine>
+	<myComments></myComments>
+	<myMenuLocations class_id="1" tracking_level="0" version="0">
+		<count>1</count>
+		<item_version>0</item_version>
+		<item>$(menutext)</item>
+	</myMenuLocations>
+	<myIsSystemScript>1</myIsSystemScript>
+	<myDescription>Reactive task to avoid other ships. Considers ship type: aircraft carrier is higher than fishing boat (with nets out), which is higher than sailboat, which is higher than other. Avoids surfaced submarines.
+</myDescription>
+	<myScriptLocation></myScriptLocation>
+	<myDirectoryPath>Examples</myDirectoryPath>
+	<myEntityTypes>
+		<count>1</count>
+		<item_version>0</item_version>
+		<item>1:3:-1:-1:-1:-1:-1</item>
+	</myEntityTypes>
+	<myVariables>
+		<count>2</count>
+		<item_version>0</item_version>
+		<item>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot; ?&gt;
+&lt;!DOCTYPE boost_serialization&gt;
+&lt;boost_serialization signature=&quot;serialization::archive&quot; version=&quot;9&quot;&gt;
+&lt;DtScriptedTaskVariable class_id=&quot;0&quot; tracking_level=&quot;0&quot; version=&quot;3&quot;&gt;
+	&lt;myVariableName&gt;reactivetask_priority&lt;/myVariableName&gt;
+	&lt;myType&gt;integer&lt;/myType&gt;
+	&lt;myLabel&gt;&lt;/myLabel&gt;
+	&lt;myToolTip&gt;&lt;/myToolTip&gt;
+	&lt;myDefaultValue&gt;5&lt;/myDefaultValue&gt;
+	&lt;myRangeBottom&gt;-100000&lt;/myRangeBottom&gt;
+	&lt;myRangeTop&gt;100000&lt;/myRangeTop&gt;
+	&lt;myVariableData&gt;&lt;/myVariableData&gt;
+	&lt;myVisible&gt;0&lt;/myVisible&gt;
+	&lt;myIndent&gt;0&lt;/myIndent&gt;
+	&lt;myInternal&gt;1&lt;/myInternal&gt;
+&lt;/DtScriptedTaskVariable&gt;
+</item>
+		<item>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot; ?&gt;
+&lt;!DOCTYPE boost_serialization&gt;
+&lt;boost_serialization signature=&quot;serialization::archive&quot; version=&quot;9&quot;&gt;
+&lt;DtScriptedTaskVariable class_id=&quot;0&quot; tracking_level=&quot;0&quot; version=&quot;3&quot;&gt;
+	&lt;myVariableName&gt;reactivetask_enabled&lt;/myVariableName&gt;
+	&lt;myType&gt;checkbox&lt;/myType&gt;
+	&lt;myLabel&gt;&lt;/myLabel&gt;
+	&lt;myToolTip&gt;&lt;/myToolTip&gt;
+	&lt;myDefaultValue&gt;0&lt;/myDefaultValue&gt;
+	&lt;myRangeBottom&gt;-100000&lt;/myRangeBottom&gt;
+	&lt;myRangeTop&gt;100000&lt;/myRangeTop&gt;
+	&lt;myVariableData&gt;&lt;/myVariableData&gt;
+	&lt;myVisible&gt;0&lt;/myVisible&gt;
+	&lt;myIndent&gt;0&lt;/myIndent&gt;
+	&lt;myInternal&gt;1&lt;/myInternal&gt;
+&lt;/DtScriptedTaskVariable&gt;
+</item>
+	</myVariables>
+	<myScript></myScript>
+	<myActionCategories>Movement</myActionCategories>
+	<myShowInMenu>1</myShowInMenu>
+	<myEncrypted>0</myEncrypted>
+	<myScriptType>2</myScriptType>
+	<myDoctrines></myDoctrines>
+	<myFlags>1</myFlags>
+	<myShowInToolbar>0</myShowInToolbar>
+	<myToolbarLocation></myToolbarLocation>
+	<myExtendedMenuText></myExtendedMenuText>
+</DtScriptedTaskMetaData>
+</boost_serialization>
+

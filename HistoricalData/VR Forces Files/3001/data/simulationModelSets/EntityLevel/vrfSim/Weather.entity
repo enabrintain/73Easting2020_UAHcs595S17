@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<simObjects entityVersion="1.0">
+  <simObject objectType="1:21:0:0:2:0:0:0" matchType="1:21:0:0:2:0:0:0" platform="@(platforms-dir)/Local_Weather.ope">
+    <bool paramName="use-random-appearance-upon-creation">True</bool>
+    <string paramName="short-name">Weather</string>
+    <string paramName="character-type"/>
+    <string paramName="character-appearance"/>
+    <string paramName="animation"/>
+    <stringList paramName="appearances-for-random-selection"/>
+    <string paramName="gui-unique-id">ModelSet-297137-Area</string>
+    <string paramName="gui-keywords">penstyle;defaultwidth=500000;defaultlength=500000</string>
+    <string paramName="gui-label">Weather</string>
+    <string paramName="gui-categories">"Weather"</string>
+    <string paramName="gui-deployable-countries"/>
+    <string paramName="gui-menu-icon">@(DATA_DIR)/images/overlays/small/area.png</string>
+    <bool paramName="gui-can-create">True</bool>
+    <bool paramName="gui-can-aggregate">False</bool>
+    <string paramName="gui-on-palettes">"HazardAreaCreationPalette"</string>
+    <sensorSignatures/>
+  </simObject>
+</simObjects>

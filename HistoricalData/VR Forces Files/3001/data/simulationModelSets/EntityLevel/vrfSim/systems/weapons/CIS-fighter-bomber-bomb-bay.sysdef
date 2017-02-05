@@ -1,0 +1,58 @@
+(bomb-bay 
+   (controllers 
+      (release-bomb 
+         (component-descriptor-type "integrated-laser-guided-launcher-controller-descriptor")
+         (component-type  "release-bomb-controller")
+         (min-tick-period  -1.000000)
+         (min-tick-period-variance  -1.000000)
+         (tick-period-uses-real-time False)
+         (process-state-repository-name  "")
+         (process-state-repository-type  "")
+         (is-enabled True)
+         (munition-type  0 (0 0 0 0 0 0 0))
+         (munition-name  "")
+         (launch-offset  0.000000 0.000000 0.000000)
+         (min-time-between-launch  0.000000)
+         (max-angle-off-boresight  0.349066)
+         (designator-code  -1)
+         (range-name  "")
+         (targeting-control 
+            (target-priorities )
+            (max-targets  -1)
+            (target-region )
+            (fire-with-spot-report-only False)
+         )
+      )
+   )
+   (actuators )
+   (connections )
+   (resources 
+      (KAB-500N 
+         (resource-type "munition-resource")
+         (amount $num-KAB-500N)
+         (full-amount $num-KAB-500N)
+         (munition-type 
+            (munition-type  2 9 222 1 15 0 0)
+            (warhead  0)
+            (guidance-mode  0)
+         )
+      )
+   )
+   (meta-data 
+      (system-name  "CIS Fighter Bomber Bomb Bay")
+      (system-description  "Releases bombs in response to Release Bomb on Target, Location and Laser Spot tasks. Configured to launch bombs manufactured in the Commonwealth of Independent States.")
+      (allowed-state-repository-types "fixed-wing-entity-param" "rotary-wing-entity-param")
+      (system-categories "weapon")
+      (parameter-data-list 
+         (int-parameter-data 
+            (parameter-name  "num-KAB-500N")
+            (variable-type  "DtRwInt")
+            (display-label  "Number of KAB-500N Bombs")
+            (display-units  "")
+            (source-units  "")
+            (default-value  2)
+         )
+      )
+      (meta-data-entry-list )
+   )
+)

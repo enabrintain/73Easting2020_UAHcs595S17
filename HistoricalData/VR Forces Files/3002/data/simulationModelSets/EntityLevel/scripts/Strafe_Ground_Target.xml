@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE boost_serialization>
+<boost_serialization signature="serialization::archive" version="9">
+<DtScriptedTaskMetaData class_id="0" tracking_level="0" version="8">
+	<myScriptId>Strafe_Ground_Target</myScriptId>
+	<myMenuText>Strafe Ground Target</myMenuText>
+	<myToolTip>Fly ingress, strafe with gun, and egress</myToolTip>
+	<myMenuIcon></myMenuIcon>
+	<myVersion>1</myVersion>
+	<myScriptEngine>lua</myScriptEngine>
+	<myComments></myComments>
+	<myMenuLocations class_id="1" tracking_level="0" version="0">
+		<count>1</count>
+		<item_version>0</item_version>
+		<item>Engagement/$(menutext)&gt;Engagement/Bombing_Mission</item>
+	</myMenuLocations>
+	<myIsSystemScript>1</myIsSystemScript>
+	<myDescription>Execute a call for Close Air Support (CAS) using guns.</myDescription>
+	<myScriptLocation></myScriptLocation>
+	<myDirectoryPath>Aircraft</myDirectoryPath>
+	<myEntityTypes>
+		<count>0</count>
+		<item_version>0</item_version>
+	</myEntityTypes>
+	<myVariables>
+		<count>7</count>
+		<item_version>0</item_version>
+		<item>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot; ?&gt;
+&lt;!DOCTYPE boost_serialization&gt;
+&lt;boost_serialization signature=&quot;serialization::archive&quot; version=&quot;9&quot;&gt;
+&lt;DtScriptedTaskVariable class_id=&quot;0&quot; tracking_level=&quot;0&quot; version=&quot;3&quot;&gt;
+	&lt;myVariableName&gt;initialPoint&lt;/myVariableName&gt;
+	&lt;myType&gt;simulationobject&lt;/myType&gt;
+	&lt;myLabel&gt;Initial Point:&lt;/myLabel&gt;
+	&lt;myToolTip&gt;Initial Point, from which the aircraft will begin its strafing attack. If used, do not also specify IP Location.&lt;/myToolTip&gt;
+	&lt;myDefaultValue&gt;Points&lt;/myDefaultValue&gt;
+	&lt;myRangeBottom&gt;-100000&lt;/myRangeBottom&gt;
+	&lt;myRangeTop&gt;100000&lt;/myRangeTop&gt;
+	&lt;myVariableData&gt;DtPointsFilter&lt;/myVariableData&gt;
+	&lt;myVisible&gt;0&lt;/myVisible&gt;
+	&lt;myIndent&gt;0&lt;/myIndent&gt;
+	&lt;myInternal&gt;0&lt;/myInternal&gt;
+&lt;/DtScriptedTaskVariable&gt;
+</item>
+		<item>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot; ?&gt;
+&lt;!DOCTYPE boost_serialization&gt;
+&lt;boost_serialization signature=&quot;serialization::archive&quot; version=&quot;9&quot;&gt;
+&lt;DtScriptedTaskVariable class_id=&quot;0&quot; tracking_level=&quot;0&quot; version=&quot;3&quot;&gt;
+	&lt;myVariableName&gt;initialPointLocation&lt;/myVariableName&gt;
+	&lt;myType&gt;locationwithoutaltitude&lt;/myType&gt;
+	&lt;myLabel&gt;Initial Point:&lt;/myLabel&gt;
+	&lt;myToolTip&gt;Initial point to start attack from&lt;/myToolTip&gt;
+	&lt;myDefaultValue&gt;&lt;/myDefaultValue&gt;
+	&lt;myRangeBottom&gt;-100000&lt;/myRangeBottom&gt;
+	&lt;myRangeTop&gt;100000&lt;/myRangeTop&gt;
+	&lt;myVariableData&gt;&lt;/myVariableData&gt;
+	&lt;myVisible&gt;1&lt;/myVisible&gt;
+	&lt;myIndent&gt;0&lt;/myIndent&gt;
+	&lt;myInternal&gt;0&lt;/myInternal&gt;
+&lt;/DtScriptedTaskVariable&gt;
+</item>
+		<item>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot; ?&gt;
+&lt;!DOCTYPE boost_serialization&gt;
+&lt;boost_serialization signature=&quot;serialization::archive&quot; version=&quot;9&quot;&gt;
+&lt;DtScriptedTaskVariable class_id=&quot;0&quot; tracking_level=&quot;0&quot; version=&quot;3&quot;&gt;
+	&lt;myVariableName&gt;targetPoint&lt;/myVariableName&gt;
+	&lt;myType&gt;simulationobject&lt;/myType&gt;
+	&lt;myLabel&gt;Target Point:&lt;/myLabel&gt;
+	&lt;myToolTip&gt;The location of the strafing target&lt;/myToolTip&gt;
+	&lt;myDefaultValue&gt;Points&lt;/myDefaultValue&gt;
+	&lt;myRangeBottom&gt;-100000&lt;/myRangeBottom&gt;
+	&lt;myRangeTop&gt;100000&lt;/myRangeTop&gt;
+	&lt;myVariableData&gt;DtPointsFilter&lt;/myVariableData&gt;
+	&lt;myVisible&gt;1&lt;/myVisible&gt;
+	&lt;myIndent&gt;0&lt;/myIndent&gt;
+	&lt;myInternal&gt;0&lt;/myInternal&gt;
+&lt;/DtScriptedTaskVariable&gt;
+</item>
+		<item>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot; ?&gt;
+&lt;!DOCTYPE boost_serialization&gt;
+&lt;boost_serialization signature=&quot;serialization::archive&quot; version=&quot;9&quot;&gt;
+&lt;DtScriptedTaskVariable class_id=&quot;0&quot; tracking_level=&quot;0&quot; version=&quot;3&quot;&gt;
+	&lt;myVariableName&gt;targetType&lt;/myVariableName&gt;
+	&lt;myType&gt;combo&lt;/myType&gt;
+	&lt;myLabel&gt;Target Type:&lt;/myLabel&gt;
+	&lt;myToolTip&gt;The specific types of entities to target.&lt;/myToolTip&gt;
+	&lt;myDefaultValue&gt;Any vehicles&lt;/myDefaultValue&gt;
+	&lt;myRangeBottom&gt;-100000&lt;/myRangeBottom&gt;
+	&lt;myRangeTop&gt;100000&lt;/myRangeTop&gt;
+	&lt;myVariableData&gt;None (target location);Tanks;Armored Vehicles;Any vehicles;Infantry&lt;/myVariableData&gt;
+	&lt;myVisible&gt;1&lt;/myVisible&gt;
+	&lt;myIndent&gt;0&lt;/myIndent&gt;
+	&lt;myInternal&gt;0&lt;/myInternal&gt;
+&lt;/DtScriptedTaskVariable&gt;
+</item>
+		<item>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot; ?&gt;
+&lt;!DOCTYPE boost_serialization&gt;
+&lt;boost_serialization signature=&quot;serialization::archive&quot; version=&quot;9&quot;&gt;
+&lt;DtScriptedTaskVariable class_id=&quot;0&quot; tracking_level=&quot;0&quot; version=&quot;3&quot;&gt;
+	&lt;myVariableName&gt;abortWithoutTarget&lt;/myVariableName&gt;
+	&lt;myType&gt;checkbox&lt;/myType&gt;
+	&lt;myLabel&gt;Abort Without Target&lt;/myLabel&gt;
+	&lt;myToolTip&gt;If true, and no target entities are acquired, the strafing mission will abort. Otherwise, the task will fire at the target point if it can&amp;apos;t acquire targets&lt;/myToolTip&gt;
+	&lt;myDefaultValue&gt;0&lt;/myDefaultValue&gt;
+	&lt;myRangeBottom&gt;-100000&lt;/myRangeBottom&gt;
+	&lt;myRangeTop&gt;100000&lt;/myRangeTop&gt;
+	&lt;myVariableData&gt;&lt;/myVariableData&gt;
+	&lt;myVisible&gt;1&lt;/myVisible&gt;
+	&lt;myIndent&gt;1&lt;/myIndent&gt;
+	&lt;myInternal&gt;0&lt;/myInternal&gt;
+&lt;/DtScriptedTaskVariable&gt;
+</item>
+		<item>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot; ?&gt;
+&lt;!DOCTYPE boost_serialization&gt;
+&lt;boost_serialization signature=&quot;serialization::archive&quot; version=&quot;9&quot;&gt;
+&lt;DtScriptedTaskVariable class_id=&quot;0&quot; tracking_level=&quot;0&quot; version=&quot;3&quot;&gt;
+	&lt;myVariableName&gt;egressManeuver&lt;/myVariableName&gt;
+	&lt;myType&gt;radio-combo&lt;/myType&gt;
+	&lt;myLabel&gt;Egress Maneuver:&lt;/myLabel&gt;
+	&lt;myToolTip&gt;The initial egress maneuver. &amp;quot;Juke&amp;quot; is a sharp S-turn before a climb.&lt;/myToolTip&gt;
+	&lt;myDefaultValue&gt;Juke Right&lt;/myDefaultValue&gt;
+	&lt;myRangeBottom&gt;-100000&lt;/myRangeBottom&gt;
+	&lt;myRangeTop&gt;100000&lt;/myRangeTop&gt;
+	&lt;myVariableData&gt;Juke Left;Immediate Climb;Juke Right&lt;/myVariableData&gt;
+	&lt;myVisible&gt;1&lt;/myVisible&gt;
+	&lt;myIndent&gt;0&lt;/myIndent&gt;
+	&lt;myInternal&gt;0&lt;/myInternal&gt;
+&lt;/DtScriptedTaskVariable&gt;
+</item>
+		<item>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot; ?&gt;
+&lt;!DOCTYPE boost_serialization&gt;
+&lt;boost_serialization signature=&quot;serialization::archive&quot; version=&quot;9&quot;&gt;
+&lt;DtScriptedTaskVariable class_id=&quot;0&quot; tracking_level=&quot;0&quot; version=&quot;3&quot;&gt;
+	&lt;myVariableName&gt;finalEgressHeading&lt;/myVariableName&gt;
+	&lt;myType&gt;heading&lt;/myType&gt;
+	&lt;myLabel&gt;Final Egress Heading&lt;/myLabel&gt;
+	&lt;myToolTip&gt;&lt;/myToolTip&gt;
+	&lt;myDefaultValue&gt;0&lt;/myDefaultValue&gt;
+	&lt;myRangeBottom&gt;0&lt;/myRangeBottom&gt;
+	&lt;myRangeTop&gt;6.2831853071795862&lt;/myRangeTop&gt;
+	&lt;myVariableData&gt;&lt;/myVariableData&gt;
+	&lt;myVisible&gt;1&lt;/myVisible&gt;
+	&lt;myIndent&gt;0&lt;/myIndent&gt;
+	&lt;myInternal&gt;0&lt;/myInternal&gt;
+&lt;/DtScriptedTaskVariable&gt;
+</item>
+	</myVariables>
+	<myScript></myScript>
+	<myActionCategories>Movement;Weapon</myActionCategories>
+	<myShowInMenu>1</myShowInMenu>
+	<myEncrypted>0</myEncrypted>
+	<myScriptType>1</myScriptType>
+	<myDoctrines></myDoctrines>
+	<myFlags>1</myFlags>
+	<myShowInToolbar>0</myShowInToolbar>
+	<myToolbarLocation></myToolbarLocation>
+	<myExtendedMenuText></myExtendedMenuText>
+</DtScriptedTaskMetaData>
+</boost_serialization>
+

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<simObjects entityVersion="1.0">
+   <simObject objectType="1:1:1:225:27:2:1:0" matchType="1:1:1:225:27:2:1:-1" platform="@(platforms-dir)/Ground_Vehicle.ope">
+      <componentSystem systemName="movement" platform="@(system-dir)\movement\ground-wheels-road.sysdef">
+         <real paramName="fuel-amount">515</real>
+         <string paramName="automotive-driving">Automotive Driving</string>
+      </componentSystem>
+      <componentSystem systemName="damage" platform="@(system-dir)\damage\ground-unarmored.sysdef"/>
+      <bodyPosition paramName="left-support" forward="2.4" right="-1.1" down="0"/>
+      <bodyPosition paramName="right-support" forward="2.4" right="1.1" down="0"/>
+      <bodyPosition paramName="other-support" forward="-2.4" right="0" down="0"/>
+      <bool paramName="can-be-embarked-upon">False</bool>
+      <bool paramName="can-embark">True</bool>
+      <bool paramName="can-pivot">False</bool>
+      <bool paramName="use-random-appearance-upon-creation">False</bool>
+      <bool paramName="di-guy-enabled">False</bool>
+      <bool paramName="flip-disembark-body-x">True</bool>
+      <bool paramName="flip-disembark-body-y">True</bool>
+      <boundingVolume paramName="bounding-volume" offsetType="custom">
+         <offset forward="0" right="0" down="-0.9"/>
+         <dimensions length="5.84" width="2.03" height="1.9"/>
+      </boundingVolume>
+      <real paramName="mass">3000</real>
+      <real paramName="max-pivot-speed">0</real>
+      <real paramName="max-speed">55.93333333333</real>
+      <real paramName="max-reverse-speed">15</real>
+      <real paramName="turning-radius">4</real>
+      <real paramName="max-slope">0.6</real>
+      <real paramName="ordered-speed">26.66666666667</real>
+      <real paramName="max-acceleration">1.7</real>
+      <real paramName="max-deceleration">4</real>
+      <real paramName="disaggregation-range">700</real>
+      <soilList paramName="soil-list"/>
+      <string paramName="short-name">SmWhel</string>
+      <string paramName="character-type"/>
+      <string paramName="character-appearance"/>
+      <string paramName="animation"/>
+      <string paramName="object-geometry-filename"/>
+      <stringList paramName="appearances-for-random-selection"/>
+      <DtReaderWriters paramName="sensor-signatures"/>
+      <string paramName="hand-item"/>
+      <bool paramName="use-random-hand-item-upon-creation">False</bool>
+      <stringList paramName="hand-items-for-random-selection"/>
+      <string paramName="gui-unique-id">ModelSet-77468847-MILCOTTS Silverado</string>
+      <string paramName="gui-keywords"/>
+      <string paramName="gui-default-overlay-layer"/>
+      <string paramName="gui-label">MILCOTTS Silverado (No 3D)</string>
+      <string paramName="gui-categories">"Ground"</string>
+      <string paramName="gui-deployable-countries">"Canada" "United States"</string>
+      <string paramName="gui-menu-icon"/>
+      <bool paramName="gui-can-create">True</bool>
+      <bool paramName="gui-can-aggregate">False</bool>
+      <string paramName="gui-on-palettes">"EntityCreationPalette"</string>
+      <sensorSignatures>
+         <real paramName="active-sonar-signature">0</real>
+         <real paramName="infrared-signature">4</real>
+         <real paramName="mad-signature">0</real>
+         <real paramName="passive-sonar-signature">0</real>
+         <real paramName="radar-signature">0.5</real>
+         <real paramName="visual-signature">4</real>
+      </sensorSignatures>
+   </simObject>
+</simObjects>

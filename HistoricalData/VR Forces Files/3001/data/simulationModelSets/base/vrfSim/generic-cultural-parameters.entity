@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<simObjects entityVersion="1.0">
+  <simObject objectType="1:5:-1:-1:-1:-1:-1:-1" matchType="1:5:-1:-1:-1:-1:-1:-1" platform="@(platforms-dir)/Cultural_Feature.ope">
+    <boundingVolume paramName="bounding-volume" offsetType="ground-center">
+      <dimensions length="2" width="2" height="2"/>
+    </boundingVolume>
+    <string paramName="short-name"/>
+    <real paramName="mass">5000</real>
+    <bodyPosition paramName="left-support" right="-1" forward="0.5" down="0"/>
+    <bodyPosition paramName="right-support" right="1" forward="0.5" down="0"/>
+    <bodyPosition paramName="other-support" right="0" forward="-0.2" down="0"/>
+    <bool paramName="gravity-aligned">True</bool>
+    <sensorSignatures>
+      <real paramName="visual-signature">4</real>
+      <real paramName="radar-signature">20</real>
+      <real paramName="infrared-signature">4</real>
+    </sensorSignatures>
+    <string paramName="object-geometry-filename"/>
+  </simObject>
+</simObjects>

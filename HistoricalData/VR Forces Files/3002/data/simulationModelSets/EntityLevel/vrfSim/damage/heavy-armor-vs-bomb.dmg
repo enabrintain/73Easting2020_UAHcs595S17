@@ -1,0 +1,116 @@
+;; Copyright (c) 2012 MAK Technologies, Inc.
+;; All rights reserved.
+;;
+;;
+;; Damage Table for Heavy Armor ground vs. generic bomb (such as GBU-31A)
+;;
+(damage-table 
+   (front 
+      (angle-of-incidence 
+         (angle  1.5708) ;; 0-90 degrees
+         (range-determinant 
+            (range-list 
+               (range 10.000000
+                  (catastrophic-kill  0.970000)
+               )
+               (range 20.000000
+                  (catastrophic-kill  0.500000)
+               )
+               (range 100.000000
+                  (catastrophic-kill  0.100000)
+               )
+            ) 
+         )
+      )
+   )
+   (left-side 
+      (angle-of-incidence 
+         (angle  1.5708)
+         (range-determinant 
+            (range-list 
+               (range 10.000000
+                  (catastrophic-kill  0.970000)
+               )
+               (range 20.000000
+                  (catastrophic-kill  0.500000)
+               )
+               (range 100.000000
+                  (catastrophic-kill  0.100000)
+               )
+            ) 
+         )
+      )
+   )   
+   (right-side 
+      (angle-of-incidence 
+         (angle  1.5708)
+         (range-determinant 
+            (range-list 
+               (range 10.000000
+                  (catastrophic-kill  0.970000)
+               )
+               (range 20.000000
+                  (catastrophic-kill  0.500000)
+               )
+               (range 100.000000
+                  (catastrophic-kill  0.100000)
+               )
+            ) 
+         )
+      )
+   )
+  (top
+      (angle-of-incidence 
+         (angle  1.570800)
+         (range-determinant 
+            (range-list 
+               (range 10.000000
+                  (catastrophic-kill  0.970000)
+               )
+               (range 20.000000
+                  (catastrophic-kill  0.500000)
+               )
+               (range 100.000000
+                  (catastrophic-kill  0.100000)
+               )
+            ) 
+         )
+      )
+   )
+   (bottom
+      (angle-of-incidence 
+         (angle  1.570800)
+         (range-determinant 
+            (range-list 
+               (range 10.000000
+                  (catastrophic-kill  0.970000)
+               )
+               (range 20.000000
+                  (catastrophic-kill  0.500000)
+               )
+               (range 100.000000
+                  (catastrophic-kill  0.100000)
+               )
+            ) 
+         )
+      )
+   )
+   (rear 
+      (angle-of-incidence 
+         (angle  1.570800)
+         (range-determinant 
+            (range-list 
+               (range 10.000000
+                  (catastrophic-kill  0.970000)
+               )
+               (range 20.000000
+                  (catastrophic-kill  0.500000)
+               )
+               (range 100.000000
+                  (catastrophic-kill  0.100000)
+               )
+            ) 
+         )
+      )
+   )
+)

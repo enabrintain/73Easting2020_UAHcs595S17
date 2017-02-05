@@ -1,0 +1,7 @@
+,,Standard Human,Standard Ground Vehicle,Standard Fixed Wing,Standard Rotary Wing,Standard Ship,Standard Submarine,Standard Building
+radar-signature,Radar,0.25,15,50,25,28,3,27
+visual-signature,Visual,0.5,3,4,4,20,1,4
+infrared-signature,Infrared,0.75,4,20,25,25,2,4
+passive-sonar-signature,Passive Sonar,,,,,6,0.5,
+active-sonar-signature,Active Sonar,,,,,8,0.75,
+mad-signature,MAD Sensor,,,,,,0.3,

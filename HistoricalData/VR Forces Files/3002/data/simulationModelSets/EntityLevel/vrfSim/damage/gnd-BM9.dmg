@@ -1,0 +1,218 @@
+;;
+;; File - gnd-BM9.dmg
+;;
+;;
+;; Copyright (c) 1999 MaK Technologies, Inc.
+;; All rights reserved.
+;;
+;; $RCSfile: gnd-BM9.dmg,v $ $Revision: 1.1 $ $State: Exp $
+;;
+;; Damage Table for generic ground entity vs. BM-9 (125mm APFSDS-T)
+;; (for example only!)
+;;
+(damage-table 
+   (front 
+      (angle-of-incidence 
+         (angle  0.5236) ;; 30 degrees
+         (range-determinant 
+            (coefficients 
+               (catastrophic-kill -5.0000E-008   0.0000   1.0000)
+            )
+         )
+      )
+      (angle-of-incidence 
+         (angle  1.0472) ;; 60 degrees
+         (range-determinant 
+            (coefficients 
+               (catastrophic-kill -5.0000E-008   0.0000   1.0000)
+            )
+         )
+      )
+      (angle-of-incidence 
+         (angle  1.5708) ;; 90 degrees
+         (range-determinant 
+            (coefficients 
+               (catastrophic-kill -5.0000E-008   0.0000   1.0000)
+            )
+         )
+      )
+   )
+   (left-side 
+      (angle-of-incidence 
+         (angle  0.5236)
+         (range-determinant 
+            (coefficients 
+               (catastrophic-kill -5.0000E-008   0.0000   1.0000)
+            )
+         )
+      )
+      (angle-of-incidence 
+         (angle  1.0472)
+         (range-determinant 
+            (coefficients 
+               (catastrophic-kill -5.0000E-008   0.0000   1.0000)
+            )
+         )
+      )
+      (angle-of-incidence 
+         (angle  1.5708)
+         (range-determinant 
+            (coefficients 
+               (catastrophic-kill -5.0000E-008   0.0000   1.0000)
+            )
+         )
+      )
+   )   
+   (right-side 
+      (angle-of-incidence 
+         (angle  0.5236)
+         (range-determinant 
+            (coefficients 
+               (catastrophic-kill -5.0000E-008   0.0000   1.0000)
+            )
+         )
+      )
+      (angle-of-incidence 
+         (angle  1.0472)
+         (range-determinant 
+            (coefficients 
+               (catastrophic-kill -5.0000E-008   0.0000   1.0000)
+            )
+         )
+      )
+      (angle-of-incidence 
+         (angle  1.5708)
+         (range-determinant 
+            (coefficients 
+               (catastrophic-kill -5.0000E-008   0.0000   1.0000)
+            )
+         )
+      )
+   )
+  (top
+      (angle-of-incidence 
+         (angle  0.523600)
+         (range-determinant 
+            (coefficients 
+               (catastrophic-kill -5.0000E-008   0.0000   1.0000)
+            )
+         )
+      )
+      (angle-of-incidence 
+         (angle  1.047200)
+         (range-determinant 
+            (coefficients 
+               (catastrophic-kill -5.0000E-008   0.0000   1.0000)
+            )
+         )
+      )
+      (angle-of-incidence 
+         (angle  1.570800)
+         (range-determinant 
+            (coefficients 
+               (catastrophic-kill -5.0000E-008   0.0000   1.0000)
+            )
+         )
+      )
+   )
+   (bottom
+      (angle-of-incidence 
+         (angle  0.523600)
+         (range-determinant 
+            (range-list 
+               (range 2000.000000
+                  (catastrophic-kill  0.800000)
+               )
+               (range 3000.000000
+                  (catastrophic-kill  0.600000)
+               )
+               (range 4000.000000
+                  (catastrophic-kill  0.300000)
+               )
+            )
+         )
+      )
+      (angle-of-incidence 
+         (angle  1.047200)
+         (range-determinant 
+            (range-list 
+               (range 2000.000000
+                  (catastrophic-kill  0.800000)
+               )
+               (range 3000.000000
+                  (catastrophic-kill  0.600000)
+               )
+               (range 4000.000000
+                  (catastrophic-kill  0.300000)
+               )
+            )
+         )
+      )
+      (angle-of-incidence 
+         (angle  1.570800)
+         (range-determinant 
+            (range-list 
+               (range 2000.000000
+                  (catastrophic-kill  0.800000)
+               )
+               (range 3000.000000
+                  (catastrophic-kill  0.600000)
+               )
+               (range 4000.000000
+                  (catastrophic-kill  0.300000)
+               )
+            )
+         )
+      )
+   )
+   (rear 
+      (angle-of-incidence 
+         (angle  0.523600)
+         (range-determinant 
+            (range-list
+               (range 2000.000000
+                  (catastrophic-kill  0.800000)
+               )
+               (range 3000.000000
+                  (catastrophic-kill  0.600000)
+               )
+               (range 4000.000000
+                  (catastrophic-kill  0.300000)
+               )
+            )
+         )
+      )
+      (angle-of-incidence 
+         (angle  1.047200)
+         (range-determinant 
+            (range-list 
+               (range 2000.000000
+                  (catastrophic-kill  0.800000)
+               )
+               (range 3000.000000
+                  (catastrophic-kill  0.600000)
+               )
+               (range 4000.000000
+                  (catastrophic-kill  0.300000)
+               )
+            )
+         )
+      )
+      (angle-of-incidence 
+         (angle  1.570800)
+         (range-determinant 
+            (range-list 
+               (range 2000.000000
+                  (catastrophic-kill  0.800000)
+               )
+               (range 3000.000000
+                  (catastrophic-kill  0.600000)
+               )
+               (range 4000.000000
+                  (catastrophic-kill  0.300000)
+               )
+            )
+         )
+      )
+   )
+)

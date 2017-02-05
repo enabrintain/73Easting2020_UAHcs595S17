@@ -1,0 +1,19 @@
+(task-execution-rules
+   (all-tasks-exclusive False)
+   (mutually-exclusive-task-groups
+      ;; Entity can only perform one of these movement tasks at the same time.
+     (entry 
+        (group-name "Movement")
+        (task-names "B-HAVE-Task" "wait" "wait-duration" "wait-elapsed" "move-to" "move-along" "vrf-rail-move-along-task"  "rail-path-move" "rail-move-along-task" "rail-route-task" "follow-entity" "patrol-route" "patrol-two-points" "move-to-location-task" "embark-task" "disembark-entity-task" "turn-to-heading" "move-to-altitude" "crash-into" "move-into-formation" "plan-and-move-to" "plan-and-move-to-location" "stop-moving" "landing-task" "takeoff-task" "fly-to-location-task" "fly-along-task" "vertical-landing-task" "vertical-takeoff-task" "intercept-and-destroy" "di-guy-animation-task" "fly-heading-and-altitude-task" "fly-heading-task" "fly-altitude-task" "orbit" "scripted-movement-task")
+     )
+     (entry 
+        (group-name "Weapon")
+        (task-names "ffe-on-target" "ffe-on-entity" "ffe-on-location" "release-bomb-on-target" "release-bomb-on-location" "release-bomb-on-laser-spot")
+     )
+     (entry 
+        (group-name "Radio")
+        (task-names "send-task-message-task" "send-set-message-task" "send-text-task")
+     )
+   )
+)
+   

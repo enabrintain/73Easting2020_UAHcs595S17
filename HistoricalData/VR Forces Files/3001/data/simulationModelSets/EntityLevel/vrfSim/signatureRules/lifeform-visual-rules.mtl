@@ -1,0 +1,7 @@
+(signature-modifiers
+   (speed-less-than
+      (speed 1.0)
+      (multiplier 0.5)
+   )
+)
+   

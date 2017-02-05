@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<simObjects entityVersion="1.0">
+  <simObject objectType="1:1:5:225:2:1:2:0" matchType="1:1:5:225:2:1:2:-1" platform="@(platforms-dir)/Moving_Object.ope">
+    <componentSystem systemName="damage" platform="@(system-dir)/damage/ground-unarmored.sysdef"/>
+    <componentSystem systemName="other" platform="@(system-dir)\other/spot-report-receiver.sysdef"/>
+    <componentSystem systemName="other-2" platform="@(system-dir)\other/spot-report-generator.sysdef"/>
+    <real paramName="mass">70</real>
+    <bool paramName="can-embark">True</bool>
+    <bool paramName="use-random-appearance-upon-creation">True</bool>
+    <string paramName="short-name">DSCS</string>
+    <string paramName="character-type"/>
+    <string paramName="character-appearance"/>
+    <string paramName="animation"/>
+    <bodyPosition paramName="left-support" forward="6.205" right="-0.905" down="0"/>
+    <bodyPosition paramName="right-support" forward="6.205" right="0.905" down="0"/>
+    <bodyPosition paramName="other-support" forward="-6.205" right="0" down="0"/>
+    <boundingVolume paramName="bounding-volume" offsetType="ground-center">
+      <dimensions length="12.41" width="1.81" height="2.52"/>
+    </boundingVolume>
+    <stringList paramName="appearances-for-random-selection"/>
+    <string paramName="gui-unique-id">ModelSet-13070501-Defense Satellite</string>
+    <string paramName="gui-keywords"/>
+    <string paramName="gui-label">Defense Satellite</string>
+    <string paramName="gui-categories">"Space"</string>
+    <string paramName="gui-deployable-countries">"France" "United States" "China" "United Kingdom" "Germany" "Japan"</string>
+    <string paramName="gui-menu-icon"/>
+    <bool paramName="gui-can-create">True</bool>
+    <bool paramName="gui-can-aggregate">False</bool>
+    <bool paramName="gui-on-overlay-palette">False</bool>
+    <sensorSignatures>
+      <real paramName="active-sonar-signature">0</real>
+      <real paramName="infrared-signature">0</real>
+      <real paramName="passive-sonar-signature">0</real>
+      <real paramName="radar-signature">100000</real>
+      <real paramName="visual-signature">0</real>
+    </sensorSignatures>
+    <string paramName="object-geometry-filename"/>
+  </simObject>
+</simObjects>

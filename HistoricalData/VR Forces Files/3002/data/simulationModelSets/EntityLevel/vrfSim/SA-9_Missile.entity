@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<simObjects entityVersion="1.0">
+  <simObject objectType="1:2:1:222:1:21:0:0" matchType="1:2:1:222:1:21:-1:-1" platform="@(platforms-dir)/Missile.ope">
+    <boundingVolume paramName="bounding-volume" offsetType="center">
+      <dimensions length="1.8" width="0.12" height="0.12"/>
+    </boundingVolume>
+    <string paramName="short-name">SA9Msl</string>
+    <bool paramName="affected-by-counter-measures">True</bool>
+    <entityType paramName="counter-measure-type">8:2:-1:2:1:0:0</entityType>
+    <real paramName="distraction-probability">0.4</real>
+    <real paramName="mass">5000</real>
+    <sensorSignatures>
+      <real paramName="radar-signature">10</real>
+      <real paramName="visual-signature">2</real>
+    </sensorSignatures>
+    <bodyPosition paramName="left-support" right="-0.06" forward="0.9" down="0.06"/>
+    <bodyPosition paramName="right-support" right="0.06" forward="0.9" down="0.06"/>
+    <bodyPosition paramName="other-support" right="0" forward="-0.9" down="0.06"/>
+    <real paramName="max-speed">598</real>
+    <real paramName="ordered-speed">10</real>
+    <real paramName="max-acceleration">4.5</real>
+    <real paramName="max-deceleration">4.5</real>
+    <real paramName="disaggregation-range">8100</real>
+    <real paramName="max-maneuver-gs">30</real>
+    <bool paramName="fire-and-forget">False</bool>
+    <real paramName="cep-radius">1.5</real>
+    <real paramName="transition-angle">0.7854</real>
+    <real paramName="proportional-navigation-gain">4</real>
+    <string paramName="range-name">SA-9 Missile</string>
+    <componentSystem systemName="damage" platform="@(system-dir)/damage/missile-default.sysdef"/>
+    <componentSystem systemName="movement" platform="@(system-dir)/movement/missile-dynamics.sysdef"/>
+    <string paramName="gui-unique-id">ModelSet-182618757-SA-9 Missile</string>
+    <string paramName="gui-keywords"/>
+    <string paramName="gui-label">SA-9 Missile</string>
+    <string paramName="gui-categories">"Munition"</string>
+    <string paramName="gui-menu-icon"/>
+    <bool paramName="gui-can-create">False</bool>
+    <bool paramName="gui-can-aggregate">False</bool>
+    <bool paramName="gui-on-overlay-palette">False</bool>
+    <real paramName="effective-range">8000</real>
+    <string paramName="object-geometry-filename"/>
+  </simObject>
+</simObjects>

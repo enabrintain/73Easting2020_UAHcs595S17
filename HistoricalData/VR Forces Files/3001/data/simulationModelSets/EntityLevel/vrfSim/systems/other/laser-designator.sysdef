@@ -1,0 +1,60 @@
+(laser-designator 
+   (systems )
+   (sensors )
+   (controllers 
+      (laser-controller 
+         (component-descriptor-type "laser-controller-descriptor")
+         (component-type  "laser-controller")
+         (min-tick-period  -1.000000)
+         (min-tick-period-variance  -1.000000)
+         (process-state-repository-name  "laser-controller-process-state-repository-default")
+         (process-state-repository-type  "laser-controller-process-state-repository")
+         (is-enabled True)
+         (wave-length  790.000000)
+         (power  20.000000)
+         (designator-prf-lasing-code  -1)
+         (range  10000.000000)
+         (autonomous True)
+         (offset $laser-position)
+         (integrated-with-launcher False)
+         (targeting-control 
+            (target-priorities 
+               (entity-priority 
+                  (entity-type  1 1 -1 1 -1 -1 -1)
+                  (priority  1)
+               )
+               (entity-priority 
+                  (entity-type  1 1 -1 -1 -1 -1 -1)
+                  (priority  2)
+               )
+            )
+            (max-targets  1)
+            (target-region )
+            (fire-with-spot-report-only False)
+         )
+      )
+   )
+   (actuators )
+   (connections 
+      (connect system:target-list laser-controller:target-list)
+   )
+   (resources )
+   (meta-data 
+      (system-name  "Laser Designator")
+      (system-description  "A laser designator, which can aim a laser at targets.  For use with a laser guided missile delivery system.  This laser designator can be explicity tasked to designate particular targets, or set to autonomous lasing mode.  In autonomous lasing mode, the laser will automatically designate hostile ground vehicles.")
+      (allowed-state-repository-types "all")
+      (system-categories "other")
+      (parameter-data-list 
+         (vector-parameter-data 
+            (parameter-name  "laser-position")
+            (variable-type  "DtRwOffsetVector")
+            (display-label  "Laser Location")
+            (display-units  "meters")
+            (source-units  "meters")
+            (default-value  0.000000 0.000000 0.000000)
+            (relative-to  "")
+         )
+      )
+      (meta-data-entry-list )
+   )
+)

@@ -1,0 +1,199 @@
+(weapon-tow-missile-launcher-with-turret 
+   (controllers 
+      (tow-launcher-control 
+         (component-descriptor-type "weapon-controller-descriptor")
+         (component-type  "missile-launcher-controller")
+         (min-tick-period  -1.000000)
+         (min-tick-period-variance  -1.000000)
+         (tick-period-uses-real-time False)
+         (process-state-repository-name  "")
+         (process-state-repository-type  "")
+         (is-enabled True)
+         (max-vehicle-speed-to-fire  500.000000)
+         (max-angle-off-boresight  0.005000)
+         (disabled-by-suppression $suppressible)
+         (preload-weapon True)
+         (load-ammo-time  10.000000)
+         (unload-ammo-time  5.000000)
+         (ammo-select-table-file 
+            (filename  "$(ammoselect-dir)\HMMWV_TOW.asl")
+         )
+         (range-name  "TOW Missile Launcher")
+         (targeting-control 
+            (target-priorities 
+               (entity-priority 
+                  (entity-type  1 1 -1 1 -1 -1 -1)
+                  (priority  1)
+               )
+               (entity-priority 
+                  (entity-type  1 1 -1 -1 -1 -1 -1)
+                  (priority  2)
+               )
+            )
+            (max-targets  1)
+            (target-region )
+            (fire-with-spot-report-only False)
+         )
+      )
+   )
+   (actuators 
+      (rotating-mount-point 
+         (component-descriptor-type "azimuth-mount-descriptor")
+         (component-type  "azimuth-mount-actuator")
+         (min-tick-period  -1.000000)
+         (min-tick-period-variance  -1.000000)
+         (tick-period-uses-real-time False)
+         (process-state-repository-name  "")
+         (process-state-repository-type  "")
+         (is-enabled True)
+         (art-part-list 
+            (azimuth-mount 
+               (art-part-type $rot-turret-art-part-type)
+;; primaryTurret1
+               (parent-part-type  -1)
+;; connected to vehicle body
+               (attach-point $attach-point)
+               (art-part-param-list 
+                  (part-type  11)
+;; azimuth
+                  (part-type  12)
+               )
+            )
+         )
+;; sweeps through ~120degrees centered at zero
+         (max-slew-rate  1.500000)
+         (nominal-azimuth  0.000000)
+         (azimuth-range  2.090000)
+      )
+;; rotating-mount-point
+      (elevating-mount-point 
+         (component-descriptor-type "elevation-mount-descriptor")
+         (component-type  "elevation-mount-actuator")
+         (min-tick-period  -1.000000)
+         (min-tick-period-variance  -1.000000)
+         (tick-period-uses-real-time False)
+         (process-state-repository-name  "")
+         (process-state-repository-type  "")
+         (is-enabled True)
+         (art-part-list 
+            (elevating-mount 
+               (art-part-type $elevating-turret-art-part-type)
+;; primaryTurret2
+               (parent-part-type $rot-turret-art-part-type)
+;; connected to primaryTurret1
+               (attach-point  0.000000 0.000000 0.000000)
+               (art-part-param-list 
+                  (part-type  13)
+;; elevation
+                  (part-type  14)
+               )
+            )
+         )
+         (nominal-elevation  0.174500)
+;; nominal is 10degrees
+         (elevation-range  1.047000)
+;; elevates through 60degrees centered at nominal
+         (max-elevate-rate  1.500000)
+      )
+;; elevating-mount-point
+      (tow-launcher 
+         (component-descriptor-type "weapon-actuator-descriptor")
+         (component-type  "missile-launcher-actuator")
+         (min-tick-period  -1.000000)
+         (min-tick-period-variance  -1.000000)
+         (tick-period-uses-real-time False)
+         (process-state-repository-name  "")
+         (process-state-repository-type  "")
+         (is-enabled True)
+         (art-part-list 
+            (primary-launcher 
+               (art-part-type $launcher-art-part-type)
+;; primaryLauncher1
+               (parent-part-type $elevating-turret-art-part-type)
+;; connected to primaryTurret2
+               (attach-point  0.000000 0.000000 0.000000)
+               (art-part-param-list 
+                  (part-type  11)
+                  (part-type  12)
+               )
+            )
+         )
+         (projectile-start-speed  50.000000)
+;; meters/sec
+         (muzzle-offset  0.600000 0.000000 0.000000)
+      )
+   )
+   (connections 
+      (connect tow-launcher-control:mounting-control:azimuth rotating-mount-point:azimuth)
+      (connect tow-launcher-control:mounting-control:elevation elevating-mount-point:elevation)
+      (connect rotating-mount-point:mounting-info tow-launcher-control:azimuth-info)
+      (connect elevating-mount-point:mounting-info tow-launcher-control:elevation-info)
+      (connect tow-launcher-control:weapon-control tow-launcher:weapon-control)
+      (connect tow-launcher:weapon-info tow-launcher-control:weapon-info)
+   )
+   (resources 
+      (TOW-missile 
+         (resource-type "integer-resource")
+         (amount $num-missiles)
+         (full-amount $num-missiles)
+      )
+   )
+   (meta-data 
+      (system-name  "TOW Missile Launcher")
+      (system-description  "Turreted TOW Missile Launcher. Targets ground vehicles.")
+      (allowed-state-repository-types "ground-vehicle-param")
+      (system-categories "weapon")
+      (parameter-data-list 
+         (int-parameter-data 
+            (parameter-name  "num-missiles")
+            (variable-type  "DtRwInt")
+            (display-label  "Number of Missiles")
+            (display-units  "")
+            (source-units  "")
+            (default-value  8)
+         )
+         (bool-parameter-data
+            (parameter-name "suppressible")
+            (variable-type "DtRwBoolean")
+            (display-label "Disabled by Suppression")
+            (display-units "")
+            (source-units  "")
+            (default-value False)
+         )
+         (vector-parameter-data 
+            (parameter-name  "attach-point")
+            (variable-type  "DtRwOffsetVector")
+            (display-label  "Turret Location")
+            (display-units  "meters")
+            (source-units  "meters")
+            (default-value  0.000000 0.000000 0.000000)
+            (relative-to  "")
+         )
+         (art-part-parameter-data 
+            (parameter-name  "rot-turret-art-part-type")
+            (variable-type  "DtRwInt")
+            (display-label  "Turret (rotating) Part Number")
+            (display-units  "")
+            (source-units  "")
+            (art-part-category  "turret")
+         )
+         (art-part-parameter-data 
+            (parameter-name  "elevating-turret-art-part-type")
+            (variable-type  "DtRwInt")
+            (display-label  "Turret (elevating) Part Number")
+            (display-units  "")
+            (source-units  "")
+            (art-part-category  "turret")
+         )
+         (art-part-parameter-data 
+            (parameter-name  "launcher-art-part-type")
+            (variable-type  "DtRwInt")
+            (display-label  "Launcher Part Number")
+            (display-units  "")
+            (source-units  "")
+            (art-part-category  "launcher")
+         )
+      )
+      (meta-data-entry-list )
+   )
+)

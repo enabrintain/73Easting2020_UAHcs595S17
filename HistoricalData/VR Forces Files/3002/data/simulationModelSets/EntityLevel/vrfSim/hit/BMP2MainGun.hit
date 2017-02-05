@@ -1,0 +1,34 @@
+;;
+;; File - BMP2MainGun.hit
+;;
+;;
+;; Copyright (c) 1999 MaK Technologies, Inc.
+;; All rights reserved.
+;;
+;; $RCSfile: BMP2MainGun.hit,v $ $Revision: 1.1 $ $State: Exp $
+;;
+;; Hit Probability Table for the BMP2 Main Gun (30mm)
+;; (for example only!)
+;;
+
+(hit-probability-table
+  (entity-range 
+     (entity-type  1 1 -1 -1 -1 -1 -1)
+     (range-determinant 
+        (range-list 
+           (range 1000.000000
+              (probability 0.80000)
+           )
+           (range 2000.000000
+              (probability 0.6000)
+           )
+           (range 3000.000000
+              (probability 0.3000)
+           )
+            (range 4000.000000
+              (probability 0.10000)
+           )
+        )
+     )
+  )
+)

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<simObjects entityVersion="1.0">
+   <simObject objectType="1:1:2:225:50:0:0:0" matchType="1:1:2:225:50:-1:-1:-1" platform="@(platforms-dir)/Rotary_Wing_Aircraft.ope">
+      <componentSystem systemName="damage" platform="@(system-dir)/damage/rotary-wing-default.sysdef"/>
+      <componentSystem systemName="movement" platform="@(system-dir)/movement/rotary-wing-vtuav.sysdef">
+         <real paramName="fuel-amount">350</real>
+      </componentSystem>
+      <componentSystem systemName="other-2" platform="@(system-dir)\other/iff-transponder.sysdef"/>
+      <componentSystem systemName="other" platform="@(system-dir)\other\spot-report-generator.sysdef">
+         <bool paramName="broadcast">True</bool>
+      </componentSystem>
+      <componentSystem systemName="sensor" platform="@(system-dir)\sensors\airborne-targeting-radar.sysdef">
+         <bodyPosition paramName="sensor-position" forward="3" right="0" down="0"/>
+         <real paramName="max-range">10000</real>
+         <real paramName="sensor-sensitivity-start">1</real>
+      </componentSystem>
+      <DtReaderWriters paramName="sensor-signatures"/>
+      <bodyPosition paramName="left-support" forward="-0.05954410135746" right="-1.005570054054" down="1.756199985437e-008"/>
+      <bodyPosition paramName="right-support" forward="-0.05954610183835" right="1.005570054054" down="6.527500318043e-008"/>
+      <bodyPosition paramName="other-support" forward="0.9652640223503" right="-1.192090053337e-006" down="4.141849885286e-008"/>
+      <bool paramName="can-be-embarked-upon">False</bool>
+      <bool paramName="can-embark">True</bool>
+      <bool paramName="use-random-appearance-upon-creation">True</bool>
+      <bool paramName="flip-disembark-body-x">False</bool>
+      <bool paramName="flip-disembark-body-y">False</bool>
+      <bool paramName="use-object-geometry">True</bool>
+      <bool paramName="use-random-hand-item-upon-creation">False</bool>
+      <boundingVolume paramName="bounding-volume" offsetType="custom">
+         <offset forward="0.0164" right="-1.19e-006" down="-0.844"/>
+         <dimensions length="1.96" width="2.07" height="1.69"/>
+      </boundingVolume>
+      <real paramName="mass">100</real>
+      <real paramName="max-speed">140</real>
+      <real paramName="ordered-speed">30</real>
+      <real paramName="max-acceleration">16</real>
+      <real paramName="max-deceleration">12</real>
+      <real paramName="disaggregation-range">11000</real>
+      <real paramName="max-altitude">12000</real>
+      <real paramName="max-climb-rate">50</real>
+      <real paramName="max-yaw-rate">5</real>
+      <real paramName="max-pitch-rate">2.5</real>
+      <real paramName="max-roll-rate">5</real>
+      <real paramName="max-yaw-acceleration">1</real>
+      <real paramName="max-pitch-acceleration">1.2</real>
+      <real paramName="max-roll-acceleration">2.28</real>
+      <real paramName="zero-collective-lift-acceleration">-10</real>
+      <real paramName="full-collective-lift-acceleration">30</real>
+      <string paramName="short-name">UAV</string>
+      <string paramName="character-type"/>
+      <string paramName="character-appearance"/>
+      <string paramName="animation"/>
+      <string paramName="object-geometry-filename"/>
+      <string paramName="hand-item"/>
+      <stringList paramName="appearances-for-random-selection"/>
+      <stringList paramName="hand-items-for-random-selection"/>
+      <string paramName="gui-unique-id">ModelSet-264455106-Cypher VTUAV</string>
+      <string paramName="gui-keywords"/>
+      <string paramName="gui-default-overlay-layer"/>
+      <string paramName="gui-label">Cypher VTUAV</string>
+      <string paramName="gui-categories">"Rotary Wing"</string>
+      <string paramName="gui-deployable-countries"/>
+      <string paramName="gui-menu-icon"/>
+      <bool paramName="gui-can-create">True</bool>
+      <bool paramName="gui-can-aggregate">False</bool>
+      <bool paramName="IncludeInBVSPCalcs">True</bool>
+      <string paramName="gui-on-palettes">"EntityCreationPalette"</string>
+      <sensorSignatures>
+         <real paramName="active-sonar-signature">0</real>
+         <real paramName="infrared-signature">2</real>
+         <real paramName="mad-signature">0</real>
+         <real paramName="passive-sonar-signature">0</real>
+         <real paramName="radar-signature">2</real>
+         <real paramName="visual-signature">2</real>
+      </sensorSignatures>
+   </simObject>
+</simObjects>

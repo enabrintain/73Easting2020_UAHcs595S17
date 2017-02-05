@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<simObjects entityVersion="1.0">
+   <simObject objectType="1:1:3:225:62:6:13:0" matchType="1:1:3:225:62:6:13:0" platform="@(platforms-dir)/Surface_Ship.ope">
+      <componentSystem systemName="damage" platform="@(system-dir)\damage\surface-default.sysdef">
+         <int paramName="full-health">5</int>
+         <int paramName="fire-power-kill">2</int>
+         <int paramName="mobility-power-kill">1</int>
+      </componentSystem>
+      <componentSystem systemName="other-2" platform="@(system-dir)\other\spot-report-receiver.sysdef"/>
+      <componentSystem systemName="other-3" platform="@(system-dir)\other\spot-report-generator.sysdef"/>
+      <componentSystem systemName="sensor" platform="@(system-dir)\sensors\active-radar-sensor.sysdef">
+         <bodyPosition paramName="sensor-position" forward="0" right="0" down="-15"/>
+         <real paramName="max-range">10000</real>
+         <real paramName="sensor-sensitivity-start">1</real>
+      </componentSystem>
+      <componentSystem systemName="sensor-2" platform="@(system-dir)\sensors\passive-radar-sensor.sysdef">
+         <bodyPosition paramName="sensor-position" forward="0" right="0" down="0"/>
+         <real paramName="max-range">10000</real>
+         <real paramName="sensor-sensitivity-start">1</real>
+      </componentSystem>
+      <componentSystem systemName="sensor-3" platform="@(system-dir)\sensors\sonar-sensor.sysdef">
+         <bodyPosition paramName="sensor-position" forward="0" right="0" down="0"/>
+         <bool paramName="sonar-dip-capable">True</bool>
+         <bool paramName="active-by-default">False</bool>
+         <real paramName="max-range">4000</real>
+         <real paramName="max-effective-speed">10</real>
+         <real paramName="sensor-sensitivity-start">1</real>
+      </componentSystem>
+      <componentSystem systemName="weapon-4" platform="@(system-dir)\weapons\MK45NavalGun.sysdef">
+         <bodyPosition paramName="attach-point" forward="41" right="0" down="-5"/>
+         <bodyPosition paramName="gun-attach-point" forward="41" right="0" down="-6.5"/>
+         <int paramName="num-rounds">600</int>
+         <int paramName="rot-turret-art-part-type">4096</int>
+         <int paramName="elevating-turret-art-part-type">4416</int>
+         <int paramName="gun-art-part-type">8192</int>
+         <real paramName="nominal-azimuth">0</real>
+         <real paramName="azimuth-neutral-offset">0</real>
+      </componentSystem>
+      <DtReaderWriters paramName="sensor-signatures"/>
+      <bodyPosition paramName="left-support" forward="50" right="-6" down="0"/>
+      <bodyPosition paramName="right-support" forward="50" right="6" down="0"/>
+      <bodyPosition paramName="other-support" forward="-55" right="0" down="0"/>
+      <bool paramName="can-be-embarked-upon">True</bool>
+      <bool paramName="use-random-appearance-upon-creation">False</bool>
+      <bool paramName="can-embark">False</bool>
+      <bool paramName="use-random-hand-item-upon-creation">False</bool>
+      <boundingVolume paramName="bounding-volume" offsetType="custom">
+         <offset forward="0" right="0" down="-4"/>
+         <dimensions length="27" width="5.92" height="15"/>
+      </boundingVolume>
+      <real paramName="mass">8100000</real>
+      <real paramName="max-speed">12.5</real>
+      <real paramName="max-reverse-speed">4.166666666667</real>
+      <real paramName="turning-radius">153</real>
+      <real paramName="ordered-speed">8.333333333333</real>
+      <real paramName="max-acceleration">0.3</real>
+      <real paramName="max-deceleration">0.3</real>
+      <real paramName="max-lateral-acceleration">0.67</real>
+      <real paramName="normal-acceleration-fraction">0.5</real>
+      <real paramName="disaggregation-range">28000</real>
+      <string paramName="short-name">PtrlBt</string>
+      <string paramName="character-type">afghan_child_crowd2</string>
+      <string paramName="character-appearance"/>
+      <string paramName="animation"/>
+      <string paramName="object-geometry-filename">@(DATA_DIR)/Vehicles/Surface/WPB 87239 Cochito/WPB 87239 Cochito.medf</string>
+      <string paramName="hand-item"/>
+      <string paramName="nav-data-path"/>
+      <stringList paramName="appearances-for-random-selection"/>
+      <stringList paramName="hand-items-for-random-selection"/>
+      <componentSystem systemName="movement" platform="@(system-dir)\movement\surface-large-ship.sysdef">
+         <real paramName="fuel-amount">1000</real>
+         <real paramName="normal-acceleration-fraction">0.7</real>
+      </componentSystem>
+      <string paramName="gui-unique-id">ModelSet-6575663-WPB 87329 Cochito</string>
+      <string paramName="gui-keywords"/>
+      <string paramName="gui-default-overlay-layer"/>
+      <string paramName="gui-label">Marine Protector Class Patrol Boat</string>
+      <string paramName="gui-categories">"Surface"</string>
+      <string paramName="gui-deployable-countries">"Chile" "United States"</string>
+      <string paramName="gui-menu-icon"/>
+      <bool paramName="gui-can-create">True</bool>
+      <bool paramName="gui-can-aggregate">False</bool>
+      <bool paramName="IncludeInBVSPCalcs">True</bool>
+      <string paramName="gui-on-palettes">"EntityCreationPalette"</string>
+      <loadPoints paramName="ingress-points">
+         <loadPoint supportedSlots="1">
+            <vector paramName="embarkation-load-point" x="0" y="0" z="0"/>
+         </loadPoint>
+         <loadPoint supportedSlots="2">
+            <vector paramName="embarkation-load-point" x="0" y="0" z="0"/>
+         </loadPoint>
+      </loadPoints>
+      <loadPoints paramName="egress-points">
+         <loadPoint supportedSlots="1">
+            <vector paramName="embarkation-load-point" x="0" y="0" z="0"/>
+         </loadPoint>
+         <loadPoint supportedSlots="2">
+            <vector paramName="embarkation-load-point" x="0" y="0" z="0"/>
+         </loadPoint>
+      </loadPoints>
+      <embarkationSlots paramName="embarkation-slots">
+         <embarkationSlot embarkableObject="-1:3:-1:-1:-1:-1:-1:-1" capacity="-1" jumpToLocation="True" turnToHeading="True" embarkedAppearance="       0">
+            <embarkedPosition x="0" y="0" z="0"/>
+            <embarkedOrientation yaw="0" pitch="0" roll="0"/>
+         </embarkationSlot>
+         <embarkationSlot embarkableObject="-1:1:2:-1:20:-1:-1:-1" capacity="-1" jumpToLocation="True" turnToHeading="True" embarkedAppearance="       0">
+            <embarkedPosition x="0" y="0" z="0"/>
+            <embarkedOrientation yaw="0" pitch="0" roll="0"/>
+         </embarkationSlot>
+      </embarkationSlots>
+      <bool paramName="flip-disembark-body-x">False</bool>
+      <bool paramName="flip-disembark-body-y">False</bool>
+      <sensorSignatures>
+         <real paramName="active-sonar-signature">8</real>
+         <real paramName="infrared-signature">25</real>
+         <real paramName="mad-signature">0</real>
+         <real paramName="passive-sonar-signature">6</real>
+         <real paramName="radar-signature">25</real>
+         <real paramName="visual-signature">18</real>
+      </sensorSignatures>
+
+
+
+
+
+
+simObject</simObject>
+</simObjects>

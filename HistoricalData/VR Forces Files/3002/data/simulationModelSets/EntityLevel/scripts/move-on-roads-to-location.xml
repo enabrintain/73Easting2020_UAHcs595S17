@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE boost_serialization>
+<boost_serialization signature="serialization::archive" version="9">
+<DtScriptedTaskMetaData class_id="0" tracking_level="0" version="8">
+	<myScriptId>move-on-roads-to-location</myScriptId>
+	<myMenuText>Move to Location (On Roads)</myMenuText>
+	<myToolTip></myToolTip>
+	<myMenuIcon>$(DATA_DIR)/Icons/TaskMoveToLocationOnRoads.svg</myMenuIcon>
+	<myVersion>1</myVersion>
+	<myScriptEngine>c++</myScriptEngine>
+	<myComments></myComments>
+	<myMenuLocations class_id="1" tracking_level="0" version="0">
+		<count>1</count>
+		<item_version>0</item_version>
+		<item>Movement/$(menutext)&gt;Movement/DtVrfTaskMoveToLocationAction</item>
+	</myMenuLocations>
+	<myIsSystemScript>1</myIsSystemScript>
+	<myDescription>If entity is within 10 meters of a road, drive on the road to the point on the road that is nearest the destination.</myDescription>
+	<myScriptLocation></myScriptLocation>
+	<myDirectoryPath>Ground Movement</myDirectoryPath>
+	<myEntityTypes>
+		<count>0</count>
+		<item_version>0</item_version>
+	</myEntityTypes>
+	<myVariables>
+		<count>1</count>
+		<item_version>0</item_version>
+		<item>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot; ?&gt;
+&lt;!DOCTYPE boost_serialization&gt;
+&lt;boost_serialization signature=&quot;serialization::archive&quot; version=&quot;9&quot;&gt;
+&lt;DtScriptedTaskVariable class_id=&quot;0&quot; tracking_level=&quot;0&quot; version=&quot;3&quot;&gt;
+	&lt;myVariableName&gt;destination&lt;/myVariableName&gt;
+	&lt;myType&gt;location&lt;/myType&gt;
+	&lt;myLabel&gt;Destination&lt;/myLabel&gt;
+	&lt;myToolTip&gt;The point you want the entity to move near&lt;/myToolTip&gt;
+	&lt;myDefaultValue&gt;&lt;/myDefaultValue&gt;
+	&lt;myRangeBottom&gt;-100000&lt;/myRangeBottom&gt;
+	&lt;myRangeTop&gt;100000&lt;/myRangeTop&gt;
+	&lt;myVariableData&gt;&lt;/myVariableData&gt;
+	&lt;myVisible&gt;1&lt;/myVisible&gt;
+	&lt;myIndent&gt;0&lt;/myIndent&gt;
+	&lt;myInternal&gt;0&lt;/myInternal&gt;
+&lt;/DtScriptedTaskVariable&gt;
+</item>
+	</myVariables>
+	<myScript></myScript>
+	<myActionCategories>Movement</myActionCategories>
+	<myShowInMenu>0</myShowInMenu>
+	<myEncrypted>0</myEncrypted>
+	<myScriptType>1</myScriptType>
+	<myDoctrines></myDoctrines>
+	<myFlags>1</myFlags>
+	<myShowInToolbar>0</myShowInToolbar>
+	<myToolbarLocation></myToolbarLocation>
+	<myExtendedMenuText></myExtendedMenuText>
+</DtScriptedTaskMetaData>
+</boost_serialization>
+

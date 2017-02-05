@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE boost_serialization>
+<boost_serialization signature="serialization::archive" version="8">
+<DtScriptedMovementObject class_id="0" tracking_level="0" version="0">
+	<myName>Short Range Ballistic Missile (400km)</myName>
+	<myMovementFileConfiguration class_id="1" tracking_level="0" version="0">
+		<myRowStart>1</myRowStart>
+		<myColumns class_id="2" tracking_level="0" version="0">
+			<count>4</count>
+			<item_version>0</item_version>
+			<item class_id="3" tracking_level="0" version="0">
+				<myColumnInFile>0</myColumnInFile>
+				<myColumnType>time</myColumnType>
+				<myColumnUnits>seconds</myColumnUnits>
+			</item>
+			<item>
+				<myColumnInFile>1</myColumnInFile>
+				<myColumnType>lateral-distance</myColumnType>
+				<myColumnUnits>km</myColumnUnits>
+			</item>
+			<item>
+				<myColumnInFile>2</myColumnInFile>
+				<myColumnType>altitude</myColumnType>
+				<myColumnUnits>km</myColumnUnits>
+			</item>
+			<item>
+				<myColumnInFile>3</myColumnInFile>
+				<myColumnType>range</myColumnType>
+				<myColumnUnits>km</myColumnUnits>
+			</item>
+		</myColumns>
+	</myMovementFileConfiguration>
+	<myPhases class_id="4" tracking_level="0" version="0">
+		<count>1</count>
+		<item_version>0</item_version>
+		<item class_id="5" tracking_level="0" version="0">
+			<myMovementFile>Fast Traj.csv</myMovementFile>
+			<myCompletionRule>2</myCompletionRule>
+			<myGroundClamp>0</myGroundClamp>
+			<mySimulationStartTimeOffset>0</mySimulationStartTimeOffset>
+			<myEntityType>2:11:222:2:2:0:0</myEntityType>
+		</item>
+	</myPhases>
+</DtScriptedMovementObject>
+</boost_serialization>
+

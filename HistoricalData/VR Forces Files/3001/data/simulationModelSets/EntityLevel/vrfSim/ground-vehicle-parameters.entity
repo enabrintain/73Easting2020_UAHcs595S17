@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<simObjects entityVersion="1.0">
+   <simObject objectType="1:1:1:-1:-1:-1:-1:-1" matchType="1:1:1:-1:-1:-1:-1:-1" platform="@(platforms-dir)/Ground_Vehicle.ope">
+      <bool paramName="can-be-embarked-upon">False</bool>
+      <boundingVolume paramName="bounding-volume" offsetType="ground-center">
+         <dimensions length="7.1" width="3.2" height="2.82"/>
+      </boundingVolume>
+      <string paramName="short-name">GndV</string>
+      <bool paramName="can-embark">True</bool>
+      <real paramName="mass">5000</real>
+      <sensorSignatures>
+         <real paramName="visual-signature">4</real>
+         <real paramName="radar-signature">0.5</real>
+         <real paramName="infrared-signature">4</real>
+      </sensorSignatures>
+      <bool paramName="can-pivot">True</bool>
+      <real paramName="max-pivot-speed">0.202954</real>
+      <bodyPosition paramName="left-support" right="-1.6" forward="3.55" down="0"/>
+      <bodyPosition paramName="right-support" right="1.6" forward="3.55" down="0"/>
+      <bodyPosition paramName="other-support" right="0" forward="-3.55" down="0"/>
+      <real paramName="max-speed">17.777778</real>
+      <real paramName="max-reverse-speed">10</real>
+      <real paramName="turning-radius">4</real>
+      <real paramName="max-slope">1</real>
+      <real paramName="ordered-speed">10</real>
+      <real paramName="max-acceleration">3.5</real>
+      <real paramName="max-deceleration">4</real>
+      <string paramName="character-type"/>
+      <string paramName="character-appearance"/>
+      <string paramName="animation"/>
+      <bool paramName="use-random-appearance-upon-creation">False</bool>
+      <stringList paramName="appearances-for-random-selection"/>
+      <real paramName="disaggregation-range">4100</real>
+      <componentSystem systemName="damage" platform="@(system-dir)/damage/ground-light-armor.sysdef"/>
+      <componentSystem systemName="sensor" platform="@(system-dir)\sensors/visual-sensor.sysdef">
+         <bodyPosition paramName="sensor-position" right="0" forward="0" down="0"/>
+         <real paramName="max-range">4000</real>
+         <real paramName="sensor-sensitivity-start">1</real>
+      </componentSystem>
+      <componentSystem systemName="other" platform="@(system-dir)\other/spot-report-generator.sysdef"/>
+      <componentSystem systemName="other-2" platform="@(system-dir)\other/spot-report-receiver.sysdef"/>
+      <componentSystem systemName="movement" platform="@(system-dir)\movement/ground-wheels-off-road.sysdef">
+         <real paramName="fuel-amount">500</real>
+         <string paramName="automotive-driving">Automotive Driving</string>
+      </componentSystem>
+      <string paramName="object-geometry-filename"/>
+      <bool paramName="di-guy-enabled">False</bool>
+   </simObject>
+</simObjects>

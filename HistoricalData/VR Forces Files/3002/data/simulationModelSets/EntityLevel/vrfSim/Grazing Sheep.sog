@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <simulation-object-group-entry name="simulation-object-group">
+    <string paramName="gui-unique-id"/>
+    <string paramName="gui-keywords">simulationObjectGroup</string>
+    <string paramName="gui-default-overlay-layer"/>
+    <string paramName="gui-label">Grazing Sheep</string>
+    <string paramName="gui-categories">"Object Group"</string>
+    <string paramName="gui-deployable-countries"/>
+    <string paramName="gui-menu-icon"/>
+    <bool paramName="gui-can-create">True</bool>
+    <bool paramName="gui-can-aggregate">False</bool>
+    <bool paramName="IncludeInBVSPCalcs">True</bool>
+    <string paramName="gui-on-palettes">"EntityCreationPalette"</string>
+    <string paramName="object-type">1:256:0:0:0:0:0:4</string>
+    <string paramName="group-description"/>
+    <int paramName="group-creation-flags">36</int>
+    <DtRwStringAttributeList paramName="additional-information"/>
+    <entity-simulation-object>
+      <DtSimulationObjectEntityState>
+        <DtRwUUID paramName="uuid">VRF_UUID:846568e8-925d-41de-9959-2bfe681b6ca0</DtRwUUID>
+        <string paramName="marking-text">Sheep 3</string>
+        <entityType paramName="entity-type">3:1:0:5:1:7:1</entityType>
+        <DtRwUUID paramName="attached-to"/>
+        <int paramName="force">1</int>
+        <int paramName="appearance">6291456</int>
+        <bool paramName="hide-on-create">False</bool>
+        <string paramName="diguy-appearance">sheep</string>
+        <string paramName="diguy-character-type">goat</string>
+        <string paramName="diguy-head-appearance"/>
+        <string paramName="diguy-item-appearance"/>
+        <orientation paramName="orientation" yaw="3.136129746969" pitch="-1.570794105522" roll="3.136129746969"/>
+        <vector paramName="location" x="13.64264736488" y="-6.040697" z="5.448892921141e-006"/>
+      </DtSimulationObjectEntityState>
+    </entity-simulation-object>
+    <entity-simulation-object>
+      <DtSimulationObjectEntityState>
+        <DtRwUUID paramName="uuid">VRF_UUID:3398f583-1edc-4f25-940b-2fa494e530be</DtRwUUID>
+        <string paramName="marking-text">Sheep 1</string>
+        <entityType paramName="entity-type">3:1:0:5:1:7:1</entityType>
+        <DtRwUUID paramName="attached-to"/>
+        <int paramName="force">1</int>
+        <int paramName="appearance">6291456</int>
+        <bool paramName="hide-on-create">False</bool>
+        <string paramName="diguy-appearance">sheep</string>
+        <string paramName="diguy-character-type">goat</string>
+        <string paramName="diguy-head-appearance"/>
+        <string paramName="diguy-item-appearance"/>
+        <orientation paramName="orientation" yaw="-1.687256317145e-006" pitch="-1.570796012808" roll="0"/>
+        <vector paramName="location" x="1.909354120143" y="-10.761394" z="-2.700337916195e-006"/>
+      </DtSimulationObjectEntityState>
+    </entity-simulation-object>
+    <entity-simulation-object>
+      <DtSimulationObjectEntityState>
+        <DtRwUUID paramName="uuid">VRF_UUID:2cfd0d32-3422-4147-9967-5ae1d4d27ad2</DtRwUUID>
+        <string paramName="marking-text">Sheep 4</string>
+        <entityType paramName="entity-type">3:1:0:5:1:7:1</entityType>
+        <DtRwUUID paramName="attached-to"/>
+        <int paramName="force">1</int>
+        <int paramName="appearance">6291456</int>
+        <bool paramName="hide-on-create">False</bool>
+        <string paramName="diguy-appearance">sheep</string>
+        <string paramName="diguy-character-type">goat</string>
+        <string paramName="diguy-head-appearance"/>
+        <string paramName="diguy-item-appearance"/>
+        <orientation paramName="orientation" yaw="0.003994403291912" pitch="-1.570795178438" roll="0.003994402394093"/>
+        <vector paramName="location" x="-7.351934258161" y="12.543661" z="4.558466886792e-006"/>
+      </DtSimulationObjectEntityState>
+    </entity-simulation-object>
+    <entity-simulation-object>
+      <DtSimulationObjectEntityState>
+        <DtRwUUID paramName="uuid">VRF_UUID:ea29b107-0e98-48e2-88d9-e54a88e90687</DtRwUUID>
+        <string paramName="marking-text">Sheep 5</string>
+        <entityType paramName="entity-type">3:1:0:5:1:7:1</entityType>
+        <DtRwUUID paramName="attached-to"/>
+        <int paramName="force">1</int>
+        <int paramName="appearance">6291456</int>
+        <bool paramName="hide-on-create">False</bool>
+        <string paramName="diguy-appearance">sheep</string>
+        <string paramName="diguy-character-type">goat</string>
+        <string paramName="diguy-head-appearance"/>
+        <string paramName="diguy-item-appearance"/>
+        <orientation paramName="orientation" yaw="-0.006404339890041" pitch="-1.570794701543" roll="0.006404339849996"/>
+        <vector paramName="location" x="-10.38718960841" y="-4.643817" z="-1.827570211091e-006"/>
+      </DtSimulationObjectEntityState>
+    </entity-simulation-object>
+    <entity-simulation-object>
+      <DtSimulationObjectEntityState>
+        <DtRwUUID paramName="uuid">VRF_UUID:fafcef43-abfa-47bd-8fde-bf6bc25b7091</DtRwUUID>
+        <string paramName="marking-text">Sheep 2</string>
+        <entityType paramName="entity-type">3:1:0:5:1:7:1</entityType>
+        <DtRwUUID paramName="attached-to"/>
+        <int paramName="force">1</int>
+        <int paramName="appearance">6291456</int>
+        <bool paramName="hide-on-create">False</bool>
+        <string paramName="diguy-appearance">sheep</string>
+        <string paramName="diguy-character-type">goat</string>
+        <string paramName="diguy-head-appearance"/>
+        <string paramName="diguy-item-appearance"/>
+        <orientation paramName="orientation" yaw="1.39578628866e-006" pitch="-1.570796012808" roll="0"/>
+        <vector paramName="location" x="2.18712238155" y="8.902247" z="-5.478520358072e-006"/>
+      </DtSimulationObjectEntityState>
+    </entity-simulation-object>
+  </simulation-object-group-entry>
+</root>

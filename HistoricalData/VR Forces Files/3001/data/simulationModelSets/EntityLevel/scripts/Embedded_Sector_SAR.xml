@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE boost_serialization>
+<boost_serialization signature="serialization::archive" version="9">
+<DtScriptedTaskMetaData class_id="0" tracking_level="0" version="8">
+	<myScriptId>Embedded_Sector_SAR</myScriptId>
+	<myMenuText>Sector Search Operation</myMenuText>
+	<myToolTip>Embedded sector search</myToolTip>
+	<myMenuIcon></myMenuIcon>
+	<myVersion>1</myVersion>
+	<myScriptEngine>lua</myScriptEngine>
+	<myComments></myComments>
+	<myMenuLocations class_id="1" tracking_level="0" version="0">
+		<count>1</count>
+		<item_version>0</item_version>
+		<item>$(menutext)&gt;Explode_Charge_At_Depth</item>
+	</myMenuLocations>
+	<myIsSystemScript>1</myIsSystemScript>
+	<myDescription>Finds an embedded entity available on this object and tasks it with a sector search and rescue task.</myDescription>
+	<myScriptLocation></myScriptLocation>
+	<myDirectoryPath>Embedded Entity</myDirectoryPath>
+	<myEntityTypes>
+		<count>0</count>
+		<item_version>0</item_version>
+	</myEntityTypes>
+	<myVariables>
+		<count>7</count>
+		<item_version>0</item_version>
+		<item>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot; ?&gt;
+&lt;!DOCTYPE boost_serialization&gt;
+&lt;boost_serialization signature=&quot;serialization::archive&quot; version=&quot;9&quot;&gt;
+&lt;DtScriptedTaskVariable class_id=&quot;0&quot; tracking_level=&quot;0&quot; version=&quot;3&quot;&gt;
+	&lt;myVariableName&gt;divertEnabled&lt;/myVariableName&gt;
+	&lt;myType&gt;checkbox&lt;/myType&gt;
+	&lt;myLabel&gt;Allow Diversion&lt;/myLabel&gt;
+	&lt;myToolTip&gt;Enables this task to divert a deployed embedded entity from its current task if necessary.&lt;/myToolTip&gt;
+	&lt;myDefaultValue&gt;0&lt;/myDefaultValue&gt;
+	&lt;myRangeBottom&gt;-100000&lt;/myRangeBottom&gt;
+	&lt;myRangeTop&gt;100000&lt;/myRangeTop&gt;
+	&lt;myVariableData&gt;&lt;/myVariableData&gt;
+	&lt;myVisible&gt;1&lt;/myVisible&gt;
+	&lt;myIndent&gt;0&lt;/myIndent&gt;
+	&lt;myInternal&gt;0&lt;/myInternal&gt;
+&lt;/DtScriptedTaskVariable&gt;
+</item>
+		<item>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot; ?&gt;
+&lt;!DOCTYPE boost_serialization&gt;
+&lt;boost_serialization signature=&quot;serialization::archive&quot; version=&quot;9&quot;&gt;
+&lt;DtScriptedTaskVariable class_id=&quot;0&quot; tracking_level=&quot;0&quot; version=&quot;3&quot;&gt;
+	&lt;myVariableName&gt;recoverOnComplete&lt;/myVariableName&gt;
+	&lt;myType&gt;checkbox&lt;/myType&gt;
+	&lt;myLabel&gt;Recover When Finished&lt;/myLabel&gt;
+	&lt;myToolTip&gt;If selected, parent&amp;apos;s plan does not advance until the SAR pattern is finished. Parent then recovers the embedded entity. If cleared, parent advances its plan while the embedded entity executes the SAR pattern.&lt;/myToolTip&gt;
+	&lt;myDefaultValue&gt;0&lt;/myDefaultValue&gt;
+	&lt;myRangeBottom&gt;-100000&lt;/myRangeBottom&gt;
+	&lt;myRangeTop&gt;100000&lt;/myRangeTop&gt;
+	&lt;myVariableData&gt;&lt;/myVariableData&gt;
+	&lt;myVisible&gt;1&lt;/myVisible&gt;
+	&lt;myIndent&gt;0&lt;/myIndent&gt;
+	&lt;myInternal&gt;0&lt;/myInternal&gt;
+&lt;/DtScriptedTaskVariable&gt;
+</item>
+		<item>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot; ?&gt;
+&lt;!DOCTYPE boost_serialization&gt;
+&lt;boost_serialization signature=&quot;serialization::archive&quot; version=&quot;9&quot;&gt;
+&lt;DtScriptedTaskVariable class_id=&quot;0&quot; tracking_level=&quot;0&quot; version=&quot;3&quot;&gt;
+	&lt;myVariableName&gt;&lt;/myVariableName&gt;
+	&lt;myType&gt;separator&lt;/myType&gt;
+	&lt;myLabel&gt;&lt;/myLabel&gt;
+	&lt;myToolTip&gt;&lt;/myToolTip&gt;
+	&lt;myDefaultValue&gt;&lt;/myDefaultValue&gt;
+	&lt;myRangeBottom&gt;-100000&lt;/myRangeBottom&gt;
+	&lt;myRangeTop&gt;100000&lt;/myRangeTop&gt;
+	&lt;myVariableData&gt;&lt;/myVariableData&gt;
+	&lt;myVisible&gt;1&lt;/myVisible&gt;
+	&lt;myIndent&gt;0&lt;/myIndent&gt;
+	&lt;myInternal&gt;0&lt;/myInternal&gt;
+&lt;/DtScriptedTaskVariable&gt;
+</item>
+		<item>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot; ?&gt;
+&lt;!DOCTYPE boost_serialization&gt;
+&lt;boost_serialization signature=&quot;serialization::archive&quot; version=&quot;9&quot;&gt;
+&lt;DtScriptedTaskVariable class_id=&quot;0&quot; tracking_level=&quot;0&quot; version=&quot;3&quot;&gt;
+	&lt;myVariableName&gt;csp&lt;/myVariableName&gt;
+	&lt;myType&gt;locationwithoutaltitude&lt;/myType&gt;
+	&lt;myLabel&gt;Commence Search Point (CSP):&lt;/myLabel&gt;
+	&lt;myToolTip&gt;Centerpoint of the SAR pattern.&lt;/myToolTip&gt;
+	&lt;myDefaultValue&gt;&lt;/myDefaultValue&gt;
+	&lt;myRangeBottom&gt;-100000&lt;/myRangeBottom&gt;
+	&lt;myRangeTop&gt;100000&lt;/myRangeTop&gt;
+	&lt;myVariableData&gt;&lt;/myVariableData&gt;
+	&lt;myVisible&gt;1&lt;/myVisible&gt;
+	&lt;myIndent&gt;0&lt;/myIndent&gt;
+	&lt;myInternal&gt;0&lt;/myInternal&gt;
+&lt;/DtScriptedTaskVariable&gt;
+</item>
+		<item>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot; ?&gt;
+&lt;!DOCTYPE boost_serialization&gt;
+&lt;boost_serialization signature=&quot;serialization::archive&quot; version=&quot;9&quot;&gt;
+&lt;DtScriptedTaskVariable class_id=&quot;0&quot; tracking_level=&quot;0&quot; version=&quot;3&quot;&gt;
+	&lt;myVariableName&gt;leg&lt;/myVariableName&gt;
+	&lt;myType&gt;range&lt;/myType&gt;
+	&lt;myLabel&gt;Leg&lt;/myLabel&gt;
+	&lt;myToolTip&gt;length of trackline&lt;/myToolTip&gt;
+	&lt;myDefaultValue&gt;10000&lt;/myDefaultValue&gt;
+	&lt;myRangeBottom&gt;0&lt;/myRangeBottom&gt;
+	&lt;myRangeTop&gt;100000&lt;/myRangeTop&gt;
+	&lt;myVariableData&gt;&lt;/myVariableData&gt;
+	&lt;myVisible&gt;1&lt;/myVisible&gt;
+	&lt;myIndent&gt;0&lt;/myIndent&gt;
+	&lt;myInternal&gt;0&lt;/myInternal&gt;
+&lt;/DtScriptedTaskVariable&gt;
+</item>
+		<item>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot; ?&gt;
+&lt;!DOCTYPE boost_serialization&gt;
+&lt;boost_serialization signature=&quot;serialization::archive&quot; version=&quot;9&quot;&gt;
+&lt;DtScriptedTaskVariable class_id=&quot;0&quot; tracking_level=&quot;0&quot; version=&quot;3&quot;&gt;
+	&lt;myVariableName&gt;altitude&lt;/myVariableName&gt;
+	&lt;myType&gt;altitude&lt;/myType&gt;
+	&lt;myLabel&gt;Altitude&lt;/myLabel&gt;
+	&lt;myToolTip&gt;Search altitude&lt;/myToolTip&gt;
+	&lt;myDefaultValue&gt;3000&lt;/myDefaultValue&gt;
+	&lt;myRangeBottom&gt;500&lt;/myRangeBottom&gt;
+	&lt;myRangeTop&gt;100000&lt;/myRangeTop&gt;
+	&lt;myVariableData&gt;&lt;/myVariableData&gt;
+	&lt;myVisible&gt;1&lt;/myVisible&gt;
+	&lt;myIndent&gt;0&lt;/myIndent&gt;
+	&lt;myInternal&gt;0&lt;/myInternal&gt;
+&lt;/DtScriptedTaskVariable&gt;
+</item>
+		<item>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot; ?&gt;
+&lt;!DOCTYPE boost_serialization&gt;
+&lt;boost_serialization signature=&quot;serialization::archive&quot; version=&quot;9&quot;&gt;
+&lt;DtScriptedTaskVariable class_id=&quot;0&quot; tracking_level=&quot;0&quot; version=&quot;3&quot;&gt;
+	&lt;myVariableName&gt;airSpeed&lt;/myVariableName&gt;
+	&lt;myType&gt;rate&lt;/myType&gt;
+	&lt;myLabel&gt;Air Speed&lt;/myLabel&gt;
+	&lt;myToolTip&gt;Speed of search&lt;/myToolTip&gt;
+	&lt;myDefaultValue&gt;83.3333&lt;/myDefaultValue&gt;
+	&lt;myRangeBottom&gt;0&lt;/myRangeBottom&gt;
+	&lt;myRangeTop&gt;100000&lt;/myRangeTop&gt;
+	&lt;myVariableData&gt;&lt;/myVariableData&gt;
+	&lt;myVisible&gt;1&lt;/myVisible&gt;
+	&lt;myIndent&gt;0&lt;/myIndent&gt;
+	&lt;myInternal&gt;0&lt;/myInternal&gt;
+&lt;/DtScriptedTaskVariable&gt;
+</item>
+	</myVariables>
+	<myScript></myScript>
+	<myActionCategories></myActionCategories>
+	<myShowInMenu>1</myShowInMenu>
+	<myEncrypted>0</myEncrypted>
+	<myScriptType>1</myScriptType>
+	<myDoctrines></myDoctrines>
+	<myFlags>1</myFlags>
+	<myShowInToolbar>0</myShowInToolbar>
+	<myToolbarLocation></myToolbarLocation>
+	<myExtendedMenuText></myExtendedMenuText>
+</DtScriptedTaskMetaData>
+</boost_serialization>
+

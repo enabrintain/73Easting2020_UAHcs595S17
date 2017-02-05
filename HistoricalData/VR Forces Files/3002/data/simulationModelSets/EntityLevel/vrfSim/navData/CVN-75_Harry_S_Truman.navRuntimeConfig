@@ -1,0 +1,10 @@
+(nav-runtime-config 
+   (extent-nw  -60.000000 180.000000 37.341266)
+   (extent-ne  60.000000 180.000000 37.341266)
+   (extent-sw  -60.000000 -180.000000 -37.341266)
+   (extent-se  60.000000 -180.000000 37.341266)
+   (offset  -3.870605 -0.295616 26.051694)
+   (nav-data-path  "$(nav-data-dir)\CVN-75_Harry_S_Truman")
+   (cs-type  6)
+   (original-terrain  "$(DATA_DIR)\Vehicles\Surface\CVN-75_Harry_S_Truman\CVN-75_Harry_S_Truman.medf")
+)

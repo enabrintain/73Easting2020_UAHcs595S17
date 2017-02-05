@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <simulation-object-group-entry name="simulation-object-group">
+    <string paramName="gui-unique-id"/>
+    <string paramName="gui-keywords">simulationObjectGroup</string>
+    <string paramName="gui-default-overlay-layer"/>
+    <string paramName="gui-label">Conversing Civilians</string>
+    <string paramName="gui-categories">"Object Group"</string>
+    <string paramName="gui-deployable-countries"/>
+    <string paramName="gui-menu-icon"/>
+    <bool paramName="gui-can-create">True</bool>
+    <bool paramName="gui-can-aggregate">False</bool>
+    <bool paramName="IncludeInBVSPCalcs">True</bool>
+    <string paramName="gui-on-palettes">"EntityCreationPalette"</string>
+    <string paramName="object-type">1:256:0:0:0:0:0:5</string>
+    <string paramName="group-description"/>
+    <int paramName="group-creation-flags">36</int>
+    <DtRwStringAttributeList paramName="additional-information"/>
+    <entity-simulation-object>
+      <DtSimulationObjectEntityState>
+        <DtRwUUID paramName="uuid">VRF_UUID:cee3182b-1e67-4a03-a3be-d4852455a3d7</DtRwUUID>
+        <string paramName="marking-text">Cvln 1</string>
+        <entityType paramName="entity-type">3:1:225:3:0:1:0</entityType>
+        <DtRwUUID paramName="attached-to"/>
+        <int paramName="force">1</int>
+        <int paramName="appearance">39911424</int>
+        <bool paramName="hide-on-create">False</bool>
+        <string paramName="diguy-appearance">sk_male_casual_5</string>
+        <string paramName="diguy-character-type">mped_07</string>
+        <string paramName="diguy-head-appearance"/>
+        <string paramName="diguy-item-appearance"/>
+        <orientation paramName="orientation" yaw="1.570796251297" pitch="0.174532994628" roll="-1.570796251297"/>
+        <vector paramName="location" x="0" y="-0.656226" z="0"/>
+      </DtSimulationObjectEntityState>
+    </entity-simulation-object>
+    <entity-simulation-object>
+      <DtSimulationObjectEntityState>
+        <DtRwUUID paramName="uuid">VRF_UUID:4366c4bb-893f-4014-bbf5-9c8d72b316c8</DtRwUUID>
+        <string paramName="marking-text">Cvln 2</string>
+        <entityType paramName="entity-type">3:1:225:3:1:0:0</entityType>
+        <DtRwUUID paramName="attached-to"/>
+        <int paramName="force">1</int>
+        <int paramName="appearance">39911424</int>
+        <bool paramName="hide-on-create">False</bool>
+        <string paramName="diguy-appearance">sk_male_casual_3</string>
+        <string paramName="diguy-character-type">mped5_crowd1</string>
+        <string paramName="diguy-head-appearance"/>
+        <string paramName="diguy-item-appearance"/>
+        <orientation paramName="orientation" yaw="-1.570796251297" pitch="-0.2617990076542" roll="1.570796251297"/>
+        <vector paramName="location" x="0" y="0.656226" z="0"/>
+      </DtSimulationObjectEntityState>
+    </entity-simulation-object>
+  </simulation-object-group-entry>
+</root>

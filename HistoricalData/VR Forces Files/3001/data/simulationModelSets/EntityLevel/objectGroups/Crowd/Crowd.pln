@@ -1,0 +1,12 @@
+(
+   (Plan-File (version "2.0"))
+   (Plan 
+      (is-complete  True)
+      (is-abandoned  True)
+      (pending-triggers )
+      (plan-name  "VRF_UUID:2a2703e9-bc8b-4388-96da-962deaf71c20")
+      (Block )
+      (plan-execution-stack 
+      )
+   )
+)

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<computedRouteRulesInfo>
+  <ruleDefinitions>
+    <ruleDefinition keyword="avoid-buildings" followOrAvoid="avoid" displayText="Avoid Buildings" feature="MAK_BUILDING"/>
+    <ruleDefinition keyword="avoid-vegetation" followOrAvoid="avoid" displayText="Avoid Vegetation" feature="MAK_VEGETATION"/>
+    <ruleDefinition keyword="avoid-water" followOrAvoid="avoid" displayText="Avoid Water" feature="MAK_WATERWAY"/>
+    <ruleDefinition keyword="follow-roads" followOrAvoid="follow" displayText="Follow Roads" feature="MAK_ROAD"/>
+    <ruleDefinition keyword="follow-railroads" followOrAvoid="follow" displayText="Follow Railroads" feature="MAK_RAILROADS"/>
+    <ruleDefinition keyword="follow-waterways" followOrAvoid="follow" displayText="Follow Waterways" feature="MAK_WATERWAY"/>
+  </ruleDefinitions>
+  <rulesTypes>
+    <rulesType keyword="Ship">
+      <rule keyword="avoid-buildings" value="1"/>
+      <rule keyword="avoid-vegetation" value="1"/>
+      <rule keyword="avoid-water" value="0"/>
+      <rule keyword="follow-roads" value="0"/>
+      <rule keyword="follow-railroads" value="0"/>
+      <rule keyword="follow-waterways" value="1"/>
+    </rulesType>
+    <rulesType keyword="Ground Vehicle">
+      <rule keyword="avoid-buildings" value="1"/>
+      <rule keyword="avoid-vegetation" value="1"/>
+      <rule keyword="avoid-water" value="1"/>
+      <rule keyword="follow-roads" value="1"/>
+      <rule keyword="follow-railroads" value="0"/>
+      <rule keyword="follow-waterways" value="0"/>
+    </rulesType>
+  </rulesTypes>
+</computedRouteRulesInfo>

@@ -1,0 +1,10 @@
+(nav-runtime-config 
+   (extent-nw  -20.000000 20.000000 6.686350)
+   (extent-ne  20.000000 20.000000 6.686350)
+   (extent-sw  -20.000000 -20.000000 -6.686350)
+   (extent-se  20.000000 -20.000000 6.686350)
+   (offset  0.000000 -0.132700 4.000000)
+   (nav-data-path  "$(nav-data-dir)\Y345-Tug Boat")
+   (cs-type  6)
+   (original-terrain  "$(DATA_DIR)\Vehicles\Surface\Y345-Tug Boat\Y345-Tug Boat.medf")
+)

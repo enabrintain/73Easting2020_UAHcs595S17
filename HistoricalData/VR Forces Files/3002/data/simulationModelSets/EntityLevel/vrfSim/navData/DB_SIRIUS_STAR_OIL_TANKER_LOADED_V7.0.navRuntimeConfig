@@ -1,0 +1,10 @@
+(nav-runtime-config 
+   (extent-nw  -40.000000 160.000000 30.547285)
+   (extent-ne  40.000000 160.000000 30.547285)
+   (extent-sw  -40.000000 -160.000000 -30.547285)
+   (extent-se  40.000000 -160.000000 30.547285)
+   (offset  0.000000 1.932136 11.531454)
+   (nav-data-path  "$(nav-data-dir)\DB_SIRIUS_STAR_OIL_TANKER_LOADED_V7.0")
+   (cs-type  6)
+   (original-terrain  "$(DATA_DIR)\Vehicles\Surface\SIRIUS_STAR_OIL_TANKER_LOADED_V7.0.flt\DB_SIRIUS_STAR_OIL_TANKER_LOADED_V7.0.medf")
+)

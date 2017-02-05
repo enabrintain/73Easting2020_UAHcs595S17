@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<simObjects entityVersion="1.0">
+  <simObject objectType="1:101:1:225:2:1:2:0" matchType="1:101:1:225:2:1:2:0" platform="@(platforms-dir)/Symbol_Object.ope">
+    <string paramName="short-name">M2A2</string>
+    <string paramName="gui-unique-id">ModelSet-329282-M2A2</string>
+    <string paramName="gui-keywords"/>
+    <string paramName="gui-label">M2A2 Symbol</string>
+    <string paramName="gui-categories">"Symbols"</string>
+    <string paramName="gui-menu-icon"/>
+    <bool paramName="gui-can-create">True</bool>
+    <bool paramName="gui-can-aggregate">False</bool>
+    <bool paramName="gui-on-overlay-palette">True</bool>
+  </simObject>
+</simObjects>

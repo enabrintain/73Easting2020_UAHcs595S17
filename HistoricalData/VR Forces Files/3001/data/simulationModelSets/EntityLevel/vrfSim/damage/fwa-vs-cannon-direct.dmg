@@ -1,0 +1,94 @@
+;;
+;; File - fwa-vs-cannon-direct.dmg
+;;
+;;
+;; Copyright (c) 2014 MaK Technologies, Inc.
+;; All rights reserved.
+;;
+;;
+;; Damage Table for aircraft hit directly by cannon fire (12.7-30mm, multi-round bursts).
+;; AC are soft, so range, angle and aspect are not important (no penetration computation).
+;; However, since P(Hit) doesn't account for aspect, the P(kill) here will be modified so
+;; that there are higher chances from the rear, then side/top/bottom, then front.
+;; Example only!
+
+(damage-table 
+   (front 
+      (angle-of-incidence 
+         (angle  1.5708) ;; 90 degrees
+         (range-determinant 
+            (range-list
+               (range 1000000000.0
+                  (catastrophic-kill  0.2)
+                  (firepower-kill 0.1)
+               )
+            )
+         )
+      )
+   )
+   (left-side 
+      (angle-of-incidence 
+         (angle  1.5708) ;; 90 degrees
+         (range-determinant 
+            (range-list
+               (range 1000000000.0
+                  (catastrophic-kill  0.6)
+                  (firepower-kill 0.5)
+               )
+            )
+         )
+      )
+   )   
+   (right-side 
+      (angle-of-incidence 
+         (angle  1.5708) ;; 90 degrees
+         (range-determinant 
+            (range-list
+               (range 1000000000.0
+                  (catastrophic-kill  0.6)
+                  (firepower-kill 0.5)
+               )
+            )
+         )
+      )
+   )
+  (top
+      (angle-of-incidence 
+         (angle  1.5708) ;; 90 degrees
+         (range-determinant 
+            (range-list
+               (range 1000000000.0
+                  (catastrophic-kill  0.6)
+                  (firepower-kill 0.5)
+               )
+            )
+         )
+      )
+   )
+   (bottom
+      (angle-of-incidence 
+         (angle  1.5708) ;; 90 degrees
+         (range-determinant 
+            (range-list
+               (range 1000000000.0
+                  (catastrophic-kill  0.6)
+                  (firepower-kill 0.5)
+                )
+            )
+         )
+      )
+   )
+   (rear 
+      (angle-of-incidence 
+         (angle  1.5708) ;; 90 degrees
+         (range-determinant 
+            (range-list
+               (range 1000000000.0
+                  (catastrophic-kill  0.8)
+                  (firepower-kill 0.5)
+              )
+            )
+         )
+      )
+   )
+)

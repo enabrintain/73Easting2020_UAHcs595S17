@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<simObjects entityVersion="1.0">
+  <simObject objectType="1:2:2:225:1:3:6:0" matchType="1:2:2:225:1:3:6:-1" platform="@(platforms-dir)/Missile.ope">
+    <boundingVolume paramName="bounding-volume" offsetType="center">
+      <dimensions length="1.6" width="0.18" height="0.18"/>
+    </boundingVolume>
+    <string paramName="short-name">Hllfre</string>
+    <real paramName="mass">5000</real>
+    <sensorSignatures>
+      <real paramName="radar-signature">10</real>
+      <real paramName="visual-signature">2</real>
+    </sensorSignatures>
+    <bodyPosition paramName="left-support" forward="0.8" right="-0.09" down="0.09"/>
+    <bodyPosition paramName="right-support" forward="0.8" right="0.09" down="0.09"/>
+    <bodyPosition paramName="other-support" forward="-0.8" right="0" down="0.09"/>
+    <real paramName="max-speed">310</real>
+    <real paramName="ordered-speed">10</real>
+    <real paramName="max-acceleration">4.5</real>
+    <real paramName="max-deceleration">4.5</real>
+    <real paramName="disaggregation-range">7100</real>
+    <real paramName="effective-range">7000</real>
+    <real paramName="max-maneuver-gs">22</real>
+    <bool paramName="fire-and-forget">False</bool>
+    <real paramName="cep-radius">1.5</real>
+    <real paramName="transition-angle">0.7854</real>
+    <real paramName="proportional-navigation-gain">4</real>
+    <string paramName="range-name">Laser Guided Hellfire Missile</string>
+    <componentSystem systemName="damage" platform="@(system-dir)/damage/missile-default.sysdef"/>
+    <componentSystem systemName="movement" platform="@(system-dir)/movement/laser-guided-missile-dynamics.sysdef"/>
+    <string paramName="gui-unique-id">ModelSet-258294597-Laser Guided Hellfire Missile</string>
+    <string paramName="gui-keywords"/>
+    <string paramName="gui-label">Laser Guided Hellfire Missile</string>
+    <string paramName="gui-categories">"Munition"</string>
+    <string paramName="gui-deployable-countries"/>
+    <string paramName="gui-menu-icon"/>
+    <bool paramName="gui-can-create">False</bool>
+    <bool paramName="gui-can-aggregate">False</bool>
+    <bool paramName="gui-on-overlay-palette">False</bool>
+    <bool paramName="affected-by-counter-measures">False</bool>
+    <string paramName="object-geometry-filename"/>
+  </simObject>
+</simObjects>

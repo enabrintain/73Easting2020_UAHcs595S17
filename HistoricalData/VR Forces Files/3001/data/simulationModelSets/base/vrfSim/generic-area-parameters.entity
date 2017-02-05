@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<simObjects entityVersion="1.0">
+  <simObject objectType="1:18:-1:-1:-1:-1:-1:-1" matchType="1:18:-1:-1:-1:-1:-1:-1" platform="@(platforms-dir)/Area_Object.ope">
+    <string paramName="short-name">Area</string>
+  </simObject>
+</simObjects>

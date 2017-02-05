@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<simObjects entityVersion="1.0">
+  <simObject objectType="1:5:1:0:28:1:0:13" matchType="1:5:1:0:28:1:0:13" platform="@(platforms-dir)/Cultural_Feature.ope">
+    <boundingVolume paramName="bounding-volume" offsetType="ground-center">
+      <dimensions length="0.51" width="3.4" height="11.8"/>
+    </boundingVolume>
+    <string paramName="short-name">LampPost</string>
+    <real paramName="mass">57145</real>
+    <sensorSignatures>
+      <real paramName="visual-signature">4</real>
+      <real paramName="radar-signature">27</real>
+      <real paramName="infrared-signature">4</real>
+    </sensorSignatures>
+    <bodyPosition paramName="left-support" right="-1.7" forward="0.255" down="0"/>
+    <bodyPosition paramName="right-support" right="1.7" forward="0.255" down="0"/>
+    <bodyPosition paramName="other-support" right="0" forward="-0.255" down="0"/>
+    <bool paramName="gravity-aligned">True</bool>
+    <string paramName="gui-unique-id">ModelSet-148634654-Light Lamp Post Sign Slow Children</string>
+    <string paramName="gui-keywords"/>
+    <string paramName="gui-label">Light Lamp Post Sign Slow Children</string>
+    <string paramName="gui-categories">"Cultural Feature"</string>
+    <string paramName="gui-menu-icon"/>
+    <bool paramName="gui-can-create">True</bool>
+    <bool paramName="gui-can-aggregate">False</bool>
+    <bool paramName="gui-on-overlay-palette">False</bool>
+    <string paramName="object-geometry-filename"/>
+  </simObject>
+</simObjects>

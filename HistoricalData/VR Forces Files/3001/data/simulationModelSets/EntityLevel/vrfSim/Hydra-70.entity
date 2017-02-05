@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<simObjects entityVersion="1.0">
+   <simObject objectType="1:2:9:225:1:27:1:0" matchType="1:2:9:225:1:27:1:0" platform="@(platforms-dir)/Missile.ope">
+      <componentSystem systemName="damage" platform="@(system-dir)\damage\missile-default.sysdef"/>
+      <componentSystem systemName="movement" platform="@(system-dir)\movement\laser-guided-missile-dynamics.sysdef"/>
+      <DtReaderWriters paramName="sensor-signatures"/>
+      <bodyPosition paramName="left-support" forward="0.8" right="-0.09" down="0.09"/>
+      <bodyPosition paramName="right-support" forward="0.8" right="0.09" down="0.09"/>
+      <bodyPosition paramName="other-support" forward="-0.8" right="0" down="0.09"/>
+      <bool paramName="fire-and-forget">False</bool>
+      <bool paramName="affected-by-counter-measures">False</bool>
+      <bool paramName="use-random-appearance-upon-creation">False</bool>
+      <bool paramName="use-random-hand-item-upon-creation">False</bool>
+      <boundingVolume paramName="bounding-volume" offsetType="center">
+         <dimensions length="1.06" width="0.07" height="0.07"/>
+      </boundingVolume>
+      <entityType paramName="counter-measure-type">0:0:0:0:0:0:0</entityType>
+      <real paramName="mass">6.2</real>
+      <real paramName="max-speed">350</real>
+      <real paramName="ordered-speed">250</real>
+      <real paramName="max-acceleration">4.5</real>
+      <real paramName="max-deceleration">4.5</real>
+      <real paramName="disaggregation-range">7100</real>
+      <real paramName="effective-range">10500000</real>
+      <real paramName="max-maneuver-gs">100</real>
+      <real paramName="cep-radius">1.5</real>
+      <real paramName="transition-angle">0.7854</real>
+      <real paramName="proportional-navigation-gain">4</real>
+      <real paramName="distraction-probability">0</real>
+      <string paramName="short-name">APKWS</string>
+      <string paramName="range-name">APKWS Missile</string>
+      <string paramName="object-geometry-filename"/>
+      <string paramName="character-type">afghan_child_crowd2</string>
+      <string paramName="character-appearance"/>
+      <string paramName="hand-item"/>
+      <string paramName="animation"/>
+      <stringList paramName="appearances-for-random-selection"/>
+      <stringList paramName="hand-items-for-random-selection"/>
+      <string paramName="gui-unique-id">ModelSet-263735616-Hydra-70</string>
+      <string paramName="gui-keywords"/>
+      <string paramName="gui-default-overlay-layer"/>
+      <string paramName="gui-label">Hydra-70</string>
+      <string paramName="gui-categories">"Munition"</string>
+      <string paramName="gui-deployable-countries"/>
+      <string paramName="gui-menu-icon"/>
+      <bool paramName="gui-can-create">True</bool>
+      <bool paramName="gui-can-aggregate">False</bool>
+      <string paramName="gui-on-palettes">"EntityCreationPalette"</string>
+      <sensorSignatures>
+         <real paramName="active-sonar-signature">0</real>
+         <real paramName="infrared-signature">0</real>
+         <real paramName="mad-signature">0</real>
+         <real paramName="passive-sonar-signature">0</real>
+         <real paramName="radar-signature">10</real>
+         <real paramName="visual-signature">2</real>
+      </sensorSignatures>
+
+
+simObject</simObject>
+</simObjects>

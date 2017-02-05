@@ -1,0 +1,8 @@
+(signature-modifiers
+   (underwater-acoustics
+      (nominal-rpm 1000)
+	  (minimum-signature-modifier 0.01)
+	  (maximum-signature-modifier 100)
+	  (active-sonar-enabled-modifier 100)
+   )
+)

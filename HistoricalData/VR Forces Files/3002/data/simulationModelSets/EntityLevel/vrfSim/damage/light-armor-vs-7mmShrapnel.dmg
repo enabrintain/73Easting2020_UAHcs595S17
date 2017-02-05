@@ -1,0 +1,314 @@
+;;
+;; File - light-armor-vs-7mmShrapnel.dmg
+;;
+;;
+;; Copyright (c) 2007 MaK Technologies, Inc.
+;; All rights reserved.
+;;
+;; $RCSfile: light-armor-vs-7mmShrapnel.dmg,v $ $Revision: 1.1 $ $State: Exp $
+;;
+;; Damage Table for Light Armor ground vs. generic shrapnel from a suicide vest-Usually 7mm steel balls
+;; (for example only!)
+;;
+(damage-table 
+   (front 
+      (angle-of-incidence 
+         (angle  0.5236) ;; 30 degrees
+         (range-determinant 
+            (range-list 
+               (range 1.000000
+                  (catastrophic-kill  0.600000)
+               )
+               (range 5.000000
+                  (catastrophic-kill  0.400000)
+               )
+               (range 10.000000
+                  (catastrophic-kill  0.100000)
+               )
+            )
+         )
+      )
+      (angle-of-incidence 
+         (angle  1.0472) ;; 60 degrees
+         (range-determinant 
+            (range-list 
+               (range 1.000000
+                  (catastrophic-kill  0.600000)
+               )
+               (range 5.000000
+                  (catastrophic-kill  0.400000)
+               )
+               (range 10.000000
+                  (catastrophic-kill  0.100000)
+               )
+            )
+         )
+      )
+      (angle-of-incidence 
+         (angle  1.5708) ;; 90 degrees
+         (range-determinant 
+            (range-list 
+               (range 1.000000
+                  (catastrophic-kill  0.600000)
+               )
+               (range 5.000000
+                  (catastrophic-kill  0.400000)
+               )
+               (range 10.000000
+                  (catastrophic-kill  0.100000)
+               )
+            )
+         )
+      )
+   )
+   (left-side 
+      (angle-of-incidence 
+         (angle  0.5236)
+         (range-determinant 
+            (range-list 
+               (range 1.000000
+                  (catastrophic-kill  0.600000)
+               )
+               (range 5.000000
+                  (catastrophic-kill  0.400000)
+               )
+               (range 10.000000
+                  (catastrophic-kill  0.100000)
+               )
+            )
+         )
+      )
+      (angle-of-incidence 
+         (angle  1.0472)
+         (range-determinant 
+            (range-list 
+               (range 1.000000
+                  (catastrophic-kill  0.600000)
+               )
+               (range 5.000000
+                  (catastrophic-kill  0.400000)
+               )
+               (range 10.000000
+                  (catastrophic-kill  0.100000)
+               )
+            )
+         )
+      )
+      (angle-of-incidence 
+         (angle  1.5708)
+         (range-determinant 
+            (range-list 
+               (range 1.000000
+                  (catastrophic-kill  0.600000)
+               )
+               (range 5.000000
+                  (catastrophic-kill  0.400000)
+               )
+               (range 10.000000
+                  (catastrophic-kill  0.100000)
+               )
+            )
+         )
+      )
+   )   
+   (right-side 
+      (angle-of-incidence 
+         (angle  0.5236)
+         (range-determinant 
+            (range-list 
+               (range 1.000000
+                  (catastrophic-kill  0.600000)
+               )
+               (range 5.000000
+                  (catastrophic-kill  0.400000)
+               )
+               (range 10.000000
+                  (catastrophic-kill  0.100000)
+               )
+            )
+         )
+      )
+      (angle-of-incidence 
+         (angle  1.0472)
+         (range-determinant 
+            (range-list 
+               (range 1.000000
+                  (catastrophic-kill  0.600000)
+               )
+               (range 5.000000
+                  (catastrophic-kill  0.400000)
+               )
+               (range 10.000000
+                  (catastrophic-kill  0.100000)
+               )
+            )
+         )
+      )
+      (angle-of-incidence 
+         (angle  1.5708)
+         (range-determinant 
+            (range-list 
+               (range 1.000000
+                  (catastrophic-kill  0.600000)
+               )
+               (range 5.000000
+                  (catastrophic-kill  0.400000)
+               )
+               (range 10.000000
+                  (catastrophic-kill  0.100000)
+               )
+            )
+         )
+      )
+   )
+  (top
+      (angle-of-incidence 
+         (angle  0.523600)
+         (range-determinant 
+            (range-list 
+               (range 1.000000
+                  (catastrophic-kill  0.600000)
+               )
+               (range 5.000000
+                  (catastrophic-kill  0.400000)
+               )
+               (range 10.000000
+                  (catastrophic-kill  0.100000)
+               )
+            )
+         )
+      )
+      (angle-of-incidence 
+         (angle  1.047200)
+         (range-determinant 
+            (range-list 
+               (range 1.000000
+                  (catastrophic-kill  0.600000)
+               )
+               (range 5.000000
+                  (catastrophic-kill  0.400000)
+               )
+               (range 10.000000
+                  (catastrophic-kill  0.100000)
+               )
+            )
+         )
+      )
+      (angle-of-incidence 
+         (angle  1.570800)
+         (range-determinant 
+            (range-list 
+               (range 1.000000
+                  (catastrophic-kill  0.600000)
+               )
+               (range 5.000000
+                  (catastrophic-kill  0.400000)
+               )
+               (range 10.000000
+                  (catastrophic-kill  0.100000)
+               )
+            )
+         )
+      )
+   )
+   (bottom
+      (angle-of-incidence 
+         (angle  0.523600)
+         (range-determinant 
+            (range-list 
+               (range 1.000000
+                  (catastrophic-kill  0.900000)
+               )
+               (range 5.000000
+                  (catastrophic-kill  0.400000)
+               )
+               (range 10.000000
+                  (catastrophic-kill  0.100000)
+               )
+            )
+         )
+      )
+      (angle-of-incidence 
+         (angle  1.047200)
+         (range-determinant 
+            (range-list 
+               (range 1.000000
+                  (catastrophic-kill  0.900000)
+               )
+               (range 5.000000
+                  (catastrophic-kill  0.400000)
+               )
+               (range 10.000000
+                  (catastrophic-kill  0.100000)
+               )
+            )
+         )
+      )
+      (angle-of-incidence 
+         (angle  1.570800)
+         (range-determinant 
+            (range-list 
+               (range 1.000000
+                  (catastrophic-kill  0.900000)
+               )
+               (range 5.000000
+                  (catastrophic-kill  0.400000)
+               )
+               (range 10.000000
+                  (catastrophic-kill  0.100000)
+               )
+            )
+         )
+      )
+   )
+   (rear 
+      (angle-of-incidence 
+         (angle  0.523600)
+         (range-determinant 
+            (range-list 
+               (range 1.000000
+                  (catastrophic-kill  0.800000)
+               )
+               (range 5.000000
+                  (catastrophic-kill  0.400000)
+               )
+               (range 10.000000
+                  (catastrophic-kill  0.100000)
+               )
+            )
+         )
+      )
+      (angle-of-incidence 
+         (angle  1.047200)
+         (range-determinant 
+            (range-list 
+               (range 1.000000
+                  (catastrophic-kill  0.800000)
+               )
+               (range 5.000000
+                  (catastrophic-kill  0.400000)
+               )
+               (range 10.000000
+                  (catastrophic-kill  0.100000)
+               )
+            )
+         )
+      )
+      (angle-of-incidence 
+         (angle  1.570800)
+         (range-determinant 
+            (range-list 
+               (range 1.000000
+                  (catastrophic-kill  0.800000)
+               )
+               (range 5.000000
+                  (catastrophic-kill  0.400000)
+               )
+               (range 10.000000
+                  (catastrophic-kill  0.100000)
+               )
+            )
+         )
+      )
+   )
+)

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<simObjects entityVersion="1.0">
+   <simObject objectType="3:11:1:222:5:2:-1:-1" matchType="3:11:1:222:5:2:-1:-1" platform="@(platforms-dir)/Aggregate.ope">
+      <string paramName="short-name">AR</string>
+      <string paramName="echelon-level">Co</string>
+      <bool paramName="display-combat-range">True</bool>
+      <real paramName="combat-range">4000</real>
+      <bool paramName="allow-aggregation">True</bool>
+      <real paramName="disaggregation-range">4100</real>
+      <subordinates paramName="subordinates">
+         <subordinate objectType="3:11:1:222:5:20:0:0" headingOffset="0" x="0" y="0" z="0"/>
+         <subordinate objectType="3:11:1:222:3:2:0:0" headingOffset="0" x="0" y="0" z="0"/>
+         <subordinate objectType="3:11:1:222:3:2:0:0" headingOffset="0" x="0" y="0" z="0"/>
+         <subordinate objectType="3:11:1:222:3:2:0:0" headingOffset="0" x="0" y="0" z="0"/>
+      </subordinates>
+      <formations paramName="formation-list" autoLayout="0">
+         <formation formationName="Line" formationFile="@(formation-dir)/Ar_Co_US_Line.frm"/>
+         <formation formationName="Column" formationFile="@(formation-dir)/Ar_Co_US_Column.frm"/>
+         <formation formationName="Wedge" formationFile="@(formation-dir)/Ar_Co_US_Wedge.frm"/>
+         <formation formationName="Vee" formationFile="@(formation-dir)/Ar_Co_US_Vee.frm"/>
+      </formations>
+      <componentSystem systemName="aggregated-movement" platform="@(system-dir)/movement/ground-aggregated-movement.sysdef"/>
+      <componentSystem systemName="disaggregated-movement" platform="@(system-dir)/movement/ground-disaggregated-movement.sysdef"/>
+      <string paramName="object-geometry-filename"/>
+      <sensorSignatures>
+         <real paramName="visual-signature">0</real>
+         <real paramName="infrared-signature">0</real>
+         <real paramName="radar-signature">0</real>
+      </sensorSignatures>
+   </simObject>
+</simObjects>

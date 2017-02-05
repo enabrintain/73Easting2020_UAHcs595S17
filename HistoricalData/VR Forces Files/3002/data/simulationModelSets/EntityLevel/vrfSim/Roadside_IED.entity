@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<simObjects entityVersion="1.0">
+   <simObject objectType="1:2:2:0:3:1:1:0" matchType="1:2:2:0:3:1:1:-1" platform="@(platforms-dir)/Moving_Object.ope">
+      <componentSystem systemName="weapon" platform="@(system-dir)/weapons/explosive-device.sysdef">
+         <int paramName="num-bombs">1</int>
+      </componentSystem>
+      <componentSystem systemName="damage" platform="@(system-dir)/damage/ground-unarmored.sysdef"/>
+      <bodyPosition paramName="left-support" forward="0.5" right="-1" down="0"/>
+      <bodyPosition paramName="right-support" forward="0.5" right="1" down="0"/>
+      <bodyPosition paramName="other-support" forward="-0.2" right="0" down="0"/>
+      <bool paramName="can-embark">True</bool>
+      <bool paramName="use-random-appearance-upon-creation">True</bool>
+      <boundingVolume paramName="bounding-volume" offsetType="ground-center">
+         <dimensions length="1.6" width="1" height="1"/>
+      </boundingVolume>
+      <real paramName="mass">70</real>
+      <string paramName="short-name">IED-Artillery</string>
+      <string paramName="character-type"/>
+      <string paramName="character-appearance"/>
+      <string paramName="animation"/>
+      <string paramName="object-geometry-filename"/>
+      <stringList paramName="appearances-for-random-selection"/>
+      <DtReaderWriters paramName="sensor-signatures"/>
+      <string paramName="hand-item"/>
+      <bool paramName="use-random-hand-item-upon-creation">False</bool>
+      <stringList paramName="hand-items-for-random-selection"/>
+      <componentSystem systemName="sensor" platform="@(system-dir)\sensors\visual-sensor.sysdef">
+         <bodyPosition paramName="sensor-position" forward="0" right="0" down="-1"/>
+         <real paramName="max-range">4000</real>
+         <real paramName="sensor-sensitivity-start">1</real>
+         <real paramName="suppression-factor">0</real>
+      </componentSystem>
+      <string paramName="gui-unique-id">ModelSet-76397236-Roadside IED</string>
+      <string paramName="gui-keywords"/>
+      <string paramName="gui-default-overlay-layer"/>
+      <string paramName="gui-label">Roadside IED</string>
+      <string paramName="gui-categories">"Ground"</string>
+      <string paramName="gui-deployable-countries"/>
+      <string paramName="gui-menu-icon"/>
+      <bool paramName="gui-can-create">True</bool>
+      <bool paramName="gui-can-aggregate">False</bool>
+      <string paramName="gui-on-palettes">"EntityCreationPalette"</string>
+      <sensorSignatures>
+         <real paramName="active-sonar-signature">0</real>
+         <real paramName="infrared-signature">0</real>
+         <real paramName="mad-signature">0</real>
+         <real paramName="passive-sonar-signature">0</real>
+         <real paramName="radar-signature">0</real>
+         <real paramName="visual-signature">0.01</real>
+      </sensorSignatures>
+   </simObject>
+</simObjects>

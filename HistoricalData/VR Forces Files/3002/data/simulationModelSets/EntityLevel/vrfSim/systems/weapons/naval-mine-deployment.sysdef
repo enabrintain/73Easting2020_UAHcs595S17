@@ -1,0 +1,46 @@
+(naval-mine-deployment
+   (controllers 
+      (script-enable-controller
+	     (component-descriptor-type "script-enable-controller-descriptor")
+         (component-type  "script-enable-controller")
+         (min-tick-period  -1.000000)
+         (min-tick-period-variance  -1.000000)
+         (tick-period-uses-real-time False)
+         (process-state-repository-name  "")
+         (process-state-repository-type  "")
+         (is-enabled True)
+		   (script-ids "Drop_Naval_Mine" "Drop_Naval_Mines_Along_Route")
+	  )
+   )
+   (actuators )
+   (connections )
+   (resources 
+      (Mk-65 
+         (resource-type "munition-resource")
+         (amount $num-Mk-65)
+         (full-amount $num-Mk-65)
+         (munition-type 
+            (munition-type  2 6 225 3 8 4 0)
+            (warhead  0)
+            (guidance-mode  0)
+         )
+      )
+   )
+   (meta-data 
+      (system-name  "Naval Mine Deployment")
+      (system-description  "Mine release system for naval (underwater) mines.")
+      (allowed-state-repository-types "fixed-wing-entity-param" "subsurface-entity-param" "surface-entity-param")
+      (system-categories "weapon")
+      (parameter-data-list 
+         (int-parameter-data 
+            (parameter-name  "num-Mk-65")
+            (variable-type  "DtRwInt")
+            (display-label  "Number of Quick Strike Mk-65 Mines")
+            (display-units  "")
+            (source-units  "")
+            (default-value  28)
+         )
+      )
+      (meta-data-entry-list )
+   )
+)

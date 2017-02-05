@@ -1,0 +1,93 @@
+;;
+;; File - inf-PG7.dmg
+;;
+;;
+;; Copyright (c) 1999 MaK Technologies, Inc.
+;; All rights reserved.
+;;
+;; $RCSfile: inf-PG7.dmg,v $ $Revision: 1.1 $ $State: Exp $
+;;
+;; Damage Table for human vs. RPG grenade.
+;; Any direct hit from an RPG will probably kill the human.
+;; (for example only!)
+;;
+(damage-table 
+   (front 
+      (angle-of-incidence 
+         (angle  1.5708) ;; 90 degrees
+         (range-determinant 
+            (range-list
+               (range 1000.000000
+                  (catastrophic-kill  0.900000)
+                  (firepower-kill 1.0)
+               )
+            )
+         )
+      )
+   )
+   (left-side 
+      (angle-of-incidence 
+         (angle  1.5708) ;; 90 degrees
+         (range-determinant 
+            (range-list
+               (range 1000.000000
+                  (catastrophic-kill  0.900000)
+                  (firepower-kill 1.0)
+               )
+            )
+         )
+      )
+   )   
+   (right-side 
+      (angle-of-incidence 
+         (angle  1.5708) ;; 90 degrees
+         (range-determinant 
+            (range-list
+               (range 1000.000000
+                  (catastrophic-kill  0.900000)
+                  (firepower-kill 1.0)
+               )
+            )
+         )
+      )
+   )
+  (top
+      (angle-of-incidence 
+         (angle  1.5708) ;; 90 degrees
+         (range-determinant 
+            (range-list
+               (range 1000.000000
+                  (catastrophic-kill  0.900000)
+                  (firepower-kill 1.0)
+               )
+            )
+         )
+      )
+   )
+   (bottom
+      (angle-of-incidence 
+         (angle  1.5708) ;; 90 degrees
+         (range-determinant 
+            (range-list
+               (range 1000.000000
+                  (catastrophic-kill  0.900000)
+                  (firepower-kill 1.0)
+               )
+            )
+         )
+      )
+   )
+   (rear 
+      (angle-of-incidence 
+         (angle  1.5708) ;; 90 degrees
+         (range-determinant 
+            (range-list
+               (range 1000.000000
+                  (catastrophic-kill  0.900000)
+                  (firepower-kill 1.0)
+               )
+            )
+         )
+      )
+   )
+)

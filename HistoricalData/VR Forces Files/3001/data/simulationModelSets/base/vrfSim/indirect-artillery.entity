@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<simObjects entityVersion="1.0">
+  <simObject objectType="1:19:3:-1:1:-1:-1:-1" matchType="1:19:3:-1:1:-1:-1:-1" platform="@(platforms-dir)/Indirect_Artillery_Target.ope">
+    <string paramName="short-name">Indirect Fire</string>
+  </simObject>
+</simObjects>

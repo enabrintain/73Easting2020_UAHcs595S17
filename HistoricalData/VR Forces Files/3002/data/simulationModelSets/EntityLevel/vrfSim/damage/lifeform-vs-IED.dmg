@@ -1,0 +1,121 @@
+;;
+;; File - lifeform-vs-IED.dmg
+;;
+;; Copyright (c) 1999-2007 MaK Technologies, Inc.
+;; All rights reserved.
+;;
+;; $RCSfile: lifeform-vs-IED.dmg,v $ $Revision: 1.1 $ $State: Exp $
+;;
+;; Damage Table for generic lifeform vs. Generic IED
+;; (for example only!)
+;;
+(damage-table 
+   (front 
+      (angle-of-incidence 
+         (angle  1.5708) ;; 90 degrees
+         (range-determinant 
+            (range-list 
+               (range 5.000000
+                  (catastrophic-kill  1.000000)
+               )
+	       (range 10.000000
+                  (catastrophic-kill  0.800000)
+               )
+               (range 20.000000
+                  (catastrophic-kill  0.100000)
+               )
+            ) 
+         )
+      )
+   )
+   (left-side 
+      (angle-of-incidence 
+         (angle  1.5708)
+         (range-determinant 
+            (range-list 
+               (range 5.000000
+                  (catastrophic-kill  1.000000)
+               )
+	       (range 10.000000
+                  (catastrophic-kill  0.800000)
+               )
+               (range 20.000000
+                  (catastrophic-kill  0.100000)
+               )
+            )         
+         )
+      )
+   )   
+   (right-side 
+      (angle-of-incidence 
+         (angle  1.5708)
+         (range-determinant 
+            (range-list 
+               (range 5.000000
+                  (catastrophic-kill  1.000000)
+               )
+	       (range 10.000000
+                  (catastrophic-kill  0.800000)
+               )
+               (range 20.000000
+                  (catastrophic-kill  0.100000)
+               )
+            )      
+         )
+      )
+   )
+  (top
+      (angle-of-incidence 
+         (angle  1.570800)
+         (range-determinant 
+            (range-list 
+               (range 5.000000
+                  (catastrophic-kill  1.000000)
+               )
+	       (range 10.000000
+                  (catastrophic-kill  0.800000)
+               )
+               (range 20.000000
+                  (catastrophic-kill  0.100000)
+               )
+            )
+         )
+      )
+   )
+   (bottom
+      (angle-of-incidence 
+         (angle  1.570800)
+         (range-determinant 
+            (range-list 
+               (range 5.000000
+                  (catastrophic-kill  1.000000)
+               )
+	       (range 10.000000
+                  (catastrophic-kill  0.800000)
+               )
+               (range 20.000000
+                  (catastrophic-kill  0.100000)
+               )
+            )
+         )
+      )
+   )
+   (rear 
+      (angle-of-incidence 
+         (angle  1.570800)
+         (range-determinant 
+            (range-list 
+               (range 5.000000
+                  (catastrophic-kill  1.000000)
+               )
+	       (range 10.000000
+                  (catastrophic-kill  0.800000)
+               )
+               (range 20.000000
+                  (catastrophic-kill  0.100000)
+               )
+            )
+         )
+      )
+   )
+)

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<simObjects entityVersion="1.0">
+  <simObject objectType="3:11:-1:-1:-1:-1:-1:-1" matchType="3:11:-1:-1:-1:-1:-1:-1" platform="@(platforms-dir)/Aggregate.ope">
+    <string paramName="short-name">Gnd</string>
+    <string paramName="echelon-level"/>
+    <bool paramName="display-combat-range">True</bool>
+    <real paramName="combat-range">5000</real>
+    <bool paramName="allow-aggregation">True</bool>
+    <real paramName="disaggregation-range">4100</real>
+    <string paramName="object-geometry-filename"/>
+  </simObject>
+</simObjects>

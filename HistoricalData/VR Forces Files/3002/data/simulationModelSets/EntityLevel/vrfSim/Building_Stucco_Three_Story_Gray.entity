@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<simObjects entityVersion="1.0">
+  <simObject objectType="1:5:1:0:2:3:1:1" matchType="1:5:1:0:2:3:1:1" platform="@(platforms-dir)/Cultural_Feature.ope">
+    <real paramName="mass">57145</real>
+    <bool paramName="gravity-aligned">True</bool>
+    <bool paramName="use-random-appearance-upon-creation">True</bool>
+    <string paramName="short-name">Bldg</string>
+    <string paramName="character-type"/>
+    <string paramName="character-appearance"/>
+    <string paramName="animation"/>
+    <bodyPosition paramName="left-support" forward="6.66" right="-4.125" down="0"/>
+    <bodyPosition paramName="right-support" forward="6.66" right="4.125" down="0"/>
+    <bodyPosition paramName="other-support" forward="-6.66" right="0" down="0"/>
+    <boundingVolume paramName="bounding-volume" offsetType="ground-center">
+      <dimensions length="13.32" width="8.25" height="8.76"/>
+    </boundingVolume>
+    <stringList paramName="appearances-for-random-selection"/>
+    <string paramName="gui-unique-id">ModelSet-234245001-Building Stucco Three Story Gray</string>
+    <string paramName="gui-keywords"/>
+    <string paramName="gui-label">Building Stucco Three Story Gray</string>
+    <string paramName="gui-categories">"Building"</string>
+    <string paramName="gui-deployable-countries">"Canada"</string>
+    <string paramName="gui-menu-icon"/>
+    <bool paramName="gui-can-create">True</bool>
+    <bool paramName="gui-can-aggregate">False</bool>
+    <bool paramName="gui-on-overlay-palette">False</bool>
+    <sensorSignatures>
+      <real paramName="infrared-signature">4</real>
+      <real paramName="radar-signature">27</real>
+      <real paramName="visual-signature">4</real>
+    </sensorSignatures>
+    <string paramName="object-geometry-filename"/>
+  </simObject>
+</simObjects>

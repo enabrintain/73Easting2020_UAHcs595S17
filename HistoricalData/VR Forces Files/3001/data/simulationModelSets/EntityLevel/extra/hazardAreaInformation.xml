@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <DtRwHazardAreaInformation paramName="hazardareainformation">
+    <DtRwHazardTypes paramName="hazardtypes">
+    <DtRwHazardType paramName="ALPHA RADIATION">
+      <entityType paramName="hazardtype">18:1:1:1:1:1:-1</entityType>
+      <string paramName="description">Alpha Radiation</string>
+    </DtRwHazardType>
+    <DtRwHazardType paramName="BETA RADIATION">
+      <entityType paramName="hazardtype">18:1:1:1:1:1:-1</entityType>
+      <string paramName="description">Beta Radiation</string>
+    </DtRwHazardType>
+    <DtRwHazardType paramName="GAMMA RADIATION">
+      <entityType paramName="hazardtype">18:1:1:1:1:1:-1</entityType>
+      <string paramName="description">Gamma Radiation</string>
+    </DtRwHazardType>
+    <DtRwHazardType paramName="OTHER NUCLEAR">
+      <entityType paramName="hazardtype">18:1:1:1:1:1:-1</entityType>
+      <string paramName="description">Other Nuclear</string>
+    </DtRwHazardType>
+    <DtRwHazardType paramName="UNKNOWN NUCLEAR">
+      <entityType paramName="hazardtype">18:1:1:1:1:1:-1</entityType>
+      <string paramName="description">Unknown Nuclear</string>
+    </DtRwHazardType>
+    <DtRwHazardType paramName="ANTHRAX">
+      <entityType paramName="hazardtype">18:1:1:1:1:2:-1</entityType>
+      <string paramName="description">Anthrax</string>
+    </DtRwHazardType>
+    <DtRwHazardType paramName="BOTULISM">
+      <entityType paramName="hazardtype">18:1:1:1:1:2:-1</entityType>
+      <string paramName="description">Botulism</string>
+    </DtRwHazardType>
+    <DtRwHazardType paramName="BRUCELLOSIS">
+      <entityType paramName="hazardtype">18:1:1:1:1:2:-1</entityType>
+      <string paramName="description">Brucellosis</string>
+    </DtRwHazardType>
+    <DtRwHazardType paramName="E COLI">
+      <entityType paramName="hazardtype">18:1:1:1:1:2:-1</entityType>
+      <string paramName="description">E Coli</string>
+    </DtRwHazardType>
+    <DtRwHazardType paramName="ENCEPHALITIS">
+      <entityType paramName="hazardtype">18:1:1:1:1:2:-1</entityType>
+      <string paramName="description">Encephalitis</string>
+    </DtRwHazardType>
+    <DtRwHazardType paramName="EPSILON TOXIN">
+      <entityType paramName="hazardtype">18:1:1:1:1:2:-1</entityType>
+      <string paramName="description">Epsilon Toxin</string>
+    </DtRwHazardType>
+    <DtRwHazardType paramName="MELIOIDOSIS">
+      <entityType paramName="hazardtype">18:1:1:1:1:2:-1</entityType>
+      <string paramName="description">Meliodosis</string>
+    </DtRwHazardType>
+    <DtRwHazardType paramName="NIPAH">
+      <entityType paramName="hazardtype">18:1:1:1:1:2:-1</entityType>
+      <string paramName="description">Nipah</string>
+    </DtRwHazardType>
+    <DtRwHazardType paramName="PLAGUE">
+      <entityType paramName="hazardtype">18:1:1:1:1:2:-1</entityType>
+      <string paramName="description">Plague</string>
+    </DtRwHazardType>
+    <DtRwHazardType paramName="Q FEVER">
+      <entityType paramName="hazardtype">18:1:1:1:1:2:-1</entityType>
+      <string paramName="description">Q Fever</string>
+    </DtRwHazardType>
+    <DtRwHazardType paramName="SALMONELLA">
+      <entityType paramName="hazardtype">18:1:1:1:1:2:-1</entityType>
+      <string paramName="description">Salmonella</string>
+    </DtRwHazardType>
+    <DtRwHazardType paramName="SMALLPOX">
+      <entityType paramName="hazardtype">18:1:1:1:1:2:-1</entityType>
+      <string paramName="description">Smallpox</string>
+    </DtRwHazardType>
+    <DtRwHazardType paramName="STAPHYLOCOCCUS">
+      <entityType paramName="hazardtype">18:1:1:1:1:2:-1</entityType>
+      <string paramName="description">Staphylococus</string>
+    </DtRwHazardType>
+    <DtRwHazardType paramName="TULAREMIA">
+      <entityType paramName="hazardtype">18:1:1:1:1:2:-1</entityType>
+      <string paramName="description">Tularemia</string>
+    </DtRwHazardType>
+    <DtRwHazardType paramName="TYPHUS">
+      <entityType paramName="hazardtype">18:1:1:1:1:2:-1</entityType>
+      <string paramName="description">Typhus</string>
+    </DtRwHazardType>
+    <DtRwHazardType paramName="VIBRIO CHOLERAE">
+      <entityType paramName="hazardtype">18:1:1:1:1:2:-1</entityType>
+      <string paramName="description">Vibrio Cholerae</string>
+    </DtRwHazardType>
+    <DtRwHazardType paramName="VHF">
+      <entityType paramName="hazardtype">18:1:1:1:1:2:-1</entityType>
+      <string paramName="description">Viral Hemorrhagic Fevers</string>
+    </DtRwHazardType>
+    <DtRwHazardType tparamName="OTHER BIOLOGICAL">
+      <entityType paramName="hazardtype">18:1:1:1:1:2:-1</entityType>
+      <string paramName="description">Other Biological</string>
+    </DtRwHazardType>
+    <DtRwHazardType paramName="UNKNOWN BIOLOGICAL">
+      <entityType paramName="hazardtype">18:1:1:1:1:2:-1</entityType>
+      <string paramName="description">Unknown Biological</string>
+    </DtRwHazardType>
+    <DtRwHazardType paramName="CHLORINE">
+      <entityType paramName="hazardtype">18:1:1:1:1:3:-1</entityType>
+      <string paramName="description">Chlorine</string>
+    </DtRwHazardType>
+    <DtRwHazardType paramName="CYANIDE">
+      <entityType paramName="hazardtype">18:1:1:1:1:3:-1</entityType>
+      <string paramName="description">Cyanide</string>
+    </DtRwHazardType>
+    <DtRwHazardType paramName="MUSTARD">
+      <entityType paramName="hazardtype">18:1:1:1:1:3:-1</entityType>
+      <string paramName="description">Mustard</string>
+    </DtRwHazardType>
+    <DtRwHazardType paramName="NERVE">
+      <entityType paramName="hazardtype">18:1:1:1:1:3:-1</entityType>
+      <string paramName="description">Nerve</string>
+    </DtRwHazardType>
+    <DtRwHazardType paramName="PHOSGENE">
+      <entityType paramName="hazardtype">18:1:1:1:1:3:-1</entityType>
+      <string paramName="description">Phosgene</string>
+    </DtRwHazardType>
+    <DtRwHazardType paramName="SARIN">
+      <entityType paramName="hazardtype">18:1:1:1:1:3:-1</entityType>
+      <string paramName="description">Sarin</string>
+    </DtRwHazardType>
+    <DtRwHazardType paramName="TABUN">
+      <entityType paramName="hazardtype">18:1:1:1:1:3:-1</entityType>
+      <string paramName="description">Tabun</string>
+    </DtRwHazardType>
+    <DtRwHazardType paramName="TOXIN">
+      <entityType paramName="hazardtype">18:1:1:1:1:3:-1</entityType>
+      <string paramName="description">Toxin</string>
+    </DtRwHazardType>
+    <DtRwHazardType paramName="VX">
+      <entityType paramName="hazardtype">18:1:1:1:1:3:-1</entityType>
+      <string paramName="description">VX</string>
+    </DtRwHazardType>
+    <DtRwHazardType paramName="OTHER CHEMICAL">
+      <entityType paramName="hazardtype">18:1:1:1:1:3:-1</entityType>
+      <string paramName="description">Other Chemical</string>
+    </DtRwHazardType>
+    <DtRwHazardType paramName="UNKNOWN CHEMICAL">
+      <entityType paramName="hazardtype">18:1:1:1:1:3:-1</entityType>
+      <string paramName="description">Unknown Chemical</string>
+    </DtRwHazardType>
+  </DtRwHazardTypes>
+  <strings paramName="terraintypes">
+    <string paramName="FLAT">Flat</string>
+    <string paramName="SANDY">Sandy</string>
+    <string paramName="HILLS">Hills</string>
+    <string paramName="MOUNTAIN">Mountain</string>
+    <string paramName="VALLEY">Valley</string>    
+    <string paramName="OTHER">Other</string>
+  </strings>
+  <strings paramName="topographytypes">
+    <string paramName="ARCTIC">Arctic</string>
+    <string paramName="DESERT">Desert</string>
+    <string paramName="RURAL">Rural</string>
+    <string paramName="URBAN">Urban</string>
+    <string paramName="WOODLAND">Woodland</string>
+    <string paramName="OTHER">Other</string>
+  </strings>
+  <strings paramName="vegetationtypes">
+    <string paramName="ARCTIC ALPINE TUNDRA">Arctic Alpine Tundra</string>
+    <string paramName="DESERT">Desert</string>
+    <string paramName="DESERT-LIKE SCRUB">Desert-Like Scrub</string>
+    <string paramName="ESTUARINE WETLANDS">Estuarine Wetlands</string>
+    <string paramName="FRESHWATER WETLANDS">Freshwater Wetlands</string>
+    <string paramName="HEATHLAND">Heathland</string>
+    <string paramName="MARINE WETLANDS">Marine Wetlands</string>
+    <string paramName="SAVANNA">Savanna</string>
+    <string paramName="STRAND">Strand</string>
+    <string paramName="SUBTROPICAL FORESTS">Subtropical Forests</string>
+    <string paramName="TAIGA">Taiga</string>
+    <string paramName="TEMPERATE FOREST">Temperate Forest</string>
+    <string paramName="TEMPERATE GRASSLANDS">Temperate Grasslands</string>
+    <string paramName="TROPICAL ALPINE">Tropical Alpine</string>
+    <string paramName="TROPICAL FOREST">Tropical Forest</string>
+    <string paramName="OTHER">Other</string>
+    <string paramName="UNKNOWN">Unknown</string>
+  </strings>
+</DtRwHazardAreaInformation>
+  </root>

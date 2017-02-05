@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<simObjects entityVersion="1.0">
+  <simObject objectType="1:2:6:71:1:1:0:0" matchType="1:2:6:71:1:1:-1:-1" platform="@(platforms-dir)/Fixed_Wing_Aircraft.ope">
+    <bool paramName="can-embark">False</bool>
+    <bool paramName="can-be-embarked-upon">False</bool>
+    <boundingVolume paramName="bounding-volume" offsetType="center">
+      <dimensions length="11.6" width="2.2" height="0.7"/>
+    </boundingVolume>
+    <string paramName="short-name">AM39</string>
+    <real paramName="mass">670</real>
+    <sensorSignatures>
+      <real paramName="visual-signature">2</real>
+      <real paramName="infrared-signature">20</real>
+      <real paramName="radar-signature">25</real>
+    </sensorSignatures>
+    <bodyPosition paramName="left-support" right="-1.1" forward="5.8" down="0.35"/>
+    <bodyPosition paramName="right-support" right="1.1" forward="5.8" down="0.35"/>
+    <bodyPosition paramName="other-support" right="0" forward="-5.8" down="0.35"/>
+    <real paramName="max-speed">308</real>
+    <real paramName="ordered-speed">308</real>
+    <real paramName="max-acceleration">4.5</real>
+    <real paramName="max-deceleration">20</real>
+    <real paramName="disaggregation-range">1000</real>
+    <real paramName="min-speed">0</real>
+    <real paramName="max-altitude">15000</real>
+    <real paramName="max-climb-rate">1000</real>
+    <real paramName="max-yaw-rate">3.14</real>
+    <real paramName="max-pitch-rate">3.14</real>
+    <real paramName="max-roll-rate">3.14</real>
+    <real paramName="flaps-deceleration">10</real>
+    <real paramName="ordered-ground-speed">10</real>
+    <real paramName="max-ground-speed">200</real>
+    <real paramName="max-ground-stopping-deceleration">20</real>
+    <real paramName="ground-turning-radius">5</real>
+    <real paramName="max-ground-slope">1</real>
+    <real paramName="on-ground-tolerance">10</real>
+    <componentSystem systemName="movement" platform="@(system-dir)/movement/cruise-missile-dynamics.sysdef">
+      <real paramName="fuel-amount">70</real>
+    </componentSystem>
+    <componentSystem systemName="damage" platform="@(system-dir)/damage/missile-default.sysdef"/>
+    <componentSystem systemName="weapon" platform="@(system-dir)/weapons/missile-warhead.sysdef"/>
+    <string paramName="gui-unique-id">ModelSet-158877573-Exocet Cruise Missile</string>
+    <string paramName="gui-keywords"/>
+    <string paramName="gui-label">Exocet Cruise Missile</string>
+    <string paramName="gui-categories">"Munition"</string>
+    <string paramName="gui-menu-icon"/>
+    <bool paramName="gui-can-create">False</bool>
+    <bool paramName="gui-can-aggregate">False</bool>
+    <bool paramName="gui-on-overlay-palette">False</bool>
+    <string paramName="object-geometry-filename"/>
+  </simObject>
+</simObjects>

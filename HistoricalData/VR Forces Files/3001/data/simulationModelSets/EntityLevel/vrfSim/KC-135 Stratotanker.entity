@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<simObjects entityVersion="1.0">
+   <simObject objectType="1:1:2:225:4:5:-1:-1" matchType="1:1:2:225:4:5:-1:-1" platform="@(platforms-dir)/Fixed_Wing_Aircraft.ope">
+      <componentSystem systemName="damage" platform="@(system-dir)\damage\fixed-wing-default.sysdef"/>
+      <componentSystem systemName="other" platform="@(system-dir)\other\iff-transponder.sysdef"/>
+      <componentSystem systemName="movement" platform="@(system-dir)\movement\fixed-wing-heavy.sysdef">
+         <real paramName="fuel-amount">2419</real>
+         <string paramName="flight-controls">Flight Controls</string>
+      </componentSystem>
+      <DtReaderWriters paramName="sensor-signatures"/>
+      <bodyPosition paramName="left-support" forward="2.838639974594" right="-3.075999975204" down="2.626650094986"/>
+      <bodyPosition paramName="right-support" forward="2.838639974594" right="3.075999975204" down="2.626650094986"/>
+      <bodyPosition paramName="other-support" forward="14.85939979553" right="0" down="2.626650094986"/>
+      <bool paramName="can-be-embarked-upon">True</bool>
+      <bool paramName="can-embark">False</bool>
+      <bool paramName="use-random-appearance-upon-creation">False</bool>
+      <bool paramName="flip-disembark-body-x">False</bool>
+      <bool paramName="flip-disembark-body-y">False</bool>
+      <bool paramName="use-random-hand-item-upon-creation">False</bool>
+      <bool paramName="use-object-geometry">False</bool>
+      <boundingVolume paramName="bounding-volume" offsetType="custom">
+         <offset forward="-0.278" right="0" down="-3.99"/>
+         <dimensions length="40.3" width="39.7" height="11.8"/>
+      </boundingVolume>
+      <real paramName="mass">135000</real>
+      <real paramName="max-speed">259.1666666667</real>
+      <real paramName="ordered-speed">236.9444444444</real>
+      <real paramName="max-acceleration">4.5</real>
+      <real paramName="max-deceleration">4</real>
+      <real paramName="disaggregation-range">321000</real>
+      <real paramName="min-speed">50</real>
+      <real paramName="max-altitude">15200</real>
+      <real paramName="max-climb-rate">24.83333333333</real>
+      <real paramName="max-yaw-rate">0.5</real>
+      <real paramName="max-pitch-rate">0.25</real>
+      <real paramName="max-roll-rate">0.2443460952792</real>
+      <real paramName="flaps-deceleration">9</real>
+      <real paramName="ordered-ground-speed">10</real>
+      <real paramName="max-ground-speed">100</real>
+      <real paramName="max-ground-stopping-deceleration">1</real>
+      <real paramName="ground-turning-radius">5</real>
+      <real paramName="max-ground-slope">1</real>
+      <real paramName="on-ground-tolerance">9</real>
+      <string paramName="short-name">KC-135</string>
+      <string paramName="character-type">afghan_child_crowd2</string>
+      <string paramName="character-appearance"/>
+      <string paramName="animation"/>
+      <string paramName="object-geometry-filename"/>
+      <string paramName="hand-item"/>
+      <stringList paramName="appearances-for-random-selection"/>
+      <stringList paramName="hand-items-for-random-selection"/>
+      <componentSystem systemName="other-2" platform="@(system-dir)\other\tanker-refueling-boom.sysdef">
+         <real paramName="deployed-angle">0.680678408</real>
+         <real paramName="max-extension">6.5</real>
+         <real paramName="min-extension">0</real>
+         <real paramName="extension-rate">2</real>
+      </componentSystem>
+      <string paramName="gui-unique-id">ModelSet-7494402-KC-135 Stratotanker</string>
+      <string paramName="gui-keywords"/>
+      <string paramName="gui-default-overlay-layer"/>
+      <string paramName="gui-label">KC-135 Stratotanker</string>
+      <string paramName="gui-categories">"Fixed Wing"</string>
+      <string paramName="gui-deployable-countries"/>
+      <string paramName="gui-menu-icon"/>
+      <bool paramName="gui-can-create">True</bool>
+      <bool paramName="gui-can-aggregate">False</bool>
+      <bool paramName="IncludeInBVSPCalcs">True</bool>
+      <string paramName="gui-on-palettes">"EntityCreationPalette"</string>
+      <slotExclusions paramName="slot-exclusions">
+         <slotExclusion/>
+      </slotExclusions>
+      <sensorSignatures>
+         <real paramName="active-sonar-signature">0</real>
+         <real paramName="infrared-signature">20</real>
+         <real paramName="mad-signature">0</real>
+         <real paramName="passive-sonar-signature">0</real>
+         <real paramName="radar-signature">50</real>
+         <real paramName="visual-signature">4</real>
+      </sensorSignatures>
+
+
+simObject</simObject>
+</simObjects>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<simObjects entityVersion="1.0">
+   <simObject objectType="1:1:1:175:1:1:0:0" matchType="1:1:1:175:1:1:-1:-1" platform="@(platforms-dir)/Ground_Vehicle.ope">
+      <componentSystem systemName="movement" platform="@(system-dir)\movement\ground-tracked.sysdef">
+         <real paramName="fuel-amount">465</real>
+         <string paramName="automotive-driving">Automotive Driving</string>
+      </componentSystem>
+      <componentSystem systemName="damage" platform="@(system-dir)\damage\ground-heavy-armor.sysdef"/>
+      <componentSystem systemName="other" platform="@(system-dir)\other\spot-report-receiver.sysdef"/>
+      <componentSystem systemName="other-2" platform="@(system-dir)\other\spot-report-generator.sysdef"/>
+      <componentSystem systemName="sensor" platform="@(system-dir)\sensors\visual-sensor.sysdef">
+         <bodyPosition paramName="sensor-position" forward="-1.14" right="0.57" down="-2.1"/>
+         <real paramName="max-range">4000</real>
+         <real paramName="sensor-sensitivity-start">1</real>
+      </componentSystem>
+      <DtReaderWriters paramName="sensor-signatures"/>
+      <bodyPosition paramName="left-support" forward="2.826722" right="-1.586219" down="0"/>
+      <bodyPosition paramName="right-support" forward="2.826722" right="1.586219" down="0"/>
+      <bodyPosition paramName="other-support" forward="-1.640341" right="0" down="0"/>
+      <bool paramName="can-be-embarked-upon">False</bool>
+      <bool paramName="can-embark">True</bool>
+      <bool paramName="can-pivot">True</bool>
+      <bool paramName="use-random-appearance-upon-creation">False</bool>
+      <bool paramName="di-guy-enabled">False</bool>
+      <bool paramName="flip-disembark-body-x">True</bool>
+      <bool paramName="flip-disembark-body-y">True</bool>
+      <bool paramName="use-random-hand-item-upon-creation">False</bool>
+      <boundingVolume paramName="bounding-volume" offsetType="custom">
+         <offset forward="0" right="0" down="-1.410001"/>
+         <dimensions length="9.67" width="3.59" height="2.19"/>
+      </boundingVolume>
+      <real paramName="mass">45900</real>
+      <real paramName="max-pivot-speed">0.2</real>
+      <real paramName="max-speed">16.66666666667</real>
+      <real paramName="max-reverse-speed">11</real>
+      <real paramName="turning-radius">4</real>
+      <real paramName="max-slope">0.94</real>
+      <real paramName="ordered-speed">10</real>
+      <real paramName="max-acceleration">1.27</real>
+      <real paramName="max-deceleration">4</real>
+      <real paramName="disaggregation-range">4100</real>
+      <soilList paramName="soil-list"/>
+      <string paramName="short-name">PT91</string>
+      <string paramName="character-type"/>
+      <string paramName="character-appearance"/>
+      <string paramName="animation"/>
+      <string paramName="object-geometry-filename"/>
+      <string paramName="hand-item"/>
+      <stringList paramName="appearances-for-random-selection"/>
+      <stringList paramName="hand-items-for-random-selection"/>
+      <componentSystem systemName="weapon" platform="@(system-dir)\weapons\120mm-gun.sysdef">
+         <bodyPosition paramName="attach-point" forward="0" right="0" down="-1.4987"/>
+         <bodyPosition paramName="turret-attach-point" forward="1.0169" right="0.3094" down="-0.6489"/>
+         <int paramName="num-ap-rounds">20</int>
+         <int paramName="num-heat-rounds">20</int>
+         <int paramName="turret-art-part-type">4096</int>
+         <int paramName="gun-art-part-type">4416</int>
+         <real paramName="slew-rate">0.69813</real>
+         <int paramName="rapid-fire-rate">6</int>
+         <int paramName="sustained-rate">3</int>
+         <string paramName="slew-group">weapon:120mm Ballistic Gun</string>
+         <string paramName="ballistic-gun-group">weapon:120mm Ballistic Gun</string>
+      </componentSystem>
+      <componentSystem systemName="weapon-2" platform="@(system-dir)\weapons\M240-7_62mm-mach-gun.sysdef">
+         <bodyPosition paramName="attach-point" forward="-0.7621" right="-0.4617" down="-0.8763"/>
+         <bodyPosition paramName="turret-attach-point" forward="0.2004" right="-0.0251" down="-0.307"/>
+         <bodyPosition paramName="muzzle-offset" forward="1.4104" right="0.0222" down="-0.0122"/>
+         <int paramName="num-rounds">1400</int>
+         <int paramName="magazine-rounds">1400</int>
+         <int paramName="parent-art-part-type">4096</int>
+         <int paramName="turret-art-part-type">4128</int>
+         <int paramName="gun-art-part-type">4448</int>
+         <real paramName="min-elevation">-0.17453</real>
+         <real paramName="max-elevation">0.523599</real>
+         <real paramName="left-angle-limit">-3.2</real>
+         <real paramName="right-angle-limit">0.5</real>
+         <real paramName="slew-rate">0.69813</real>
+         <int paramName="rapid-fire-rate">200</int>
+         <int paramName="sustained-rate">100</int>
+         <string paramName="slew-group">weapon:M240-7-62mm Ballistic Gun</string>
+         <string paramName="ballistic-gun-group">weapon:M240-7-62mm Ballistic Gun</string>
+      </componentSystem>
+      <string paramName="gui-unique-id">ModelSet-12940884-PT-91 Twardy MBT</string>
+      <string paramName="gui-keywords"/>
+      <string paramName="gui-default-overlay-layer"/>
+      <string paramName="gui-label">PT-91 Twardy MBT (No 3D)</string>
+      <string paramName="gui-categories">"Ground"</string>
+      <string paramName="gui-deployable-countries">"Poland"</string>
+      <string paramName="gui-menu-icon"/>
+      <bool paramName="gui-can-create">True</bool>
+      <bool paramName="gui-can-aggregate">False</bool>
+      <string paramName="gui-on-palettes">"EntityCreationPalette"</string>
+      <sensorSignatures>
+         <real paramName="active-sonar-signature">0</real>
+         <real paramName="infrared-signature">4</real>
+         <real paramName="mad-signature">0</real>
+         <real paramName="passive-sonar-signature">0</real>
+         <real paramName="radar-signature">0.5</real>
+         <real paramName="visual-signature">3</real>
+      </sensorSignatures>
+   </simObject>
+</simObjects>

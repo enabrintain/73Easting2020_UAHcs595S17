@@ -1,0 +1,119 @@
+;;
+;; File - heavy-armor-vs-IED.dmg
+;;
+;; Copyright (c) 1999-2007 MaK Technologies, Inc.
+;; All rights reserved.
+;;
+;; Damage Table for generic tank entity vs. Generic ballistic missile (conventional warhead)
+;; (for example only!)
+;;
+(damage-table 
+   (front 
+      (angle-of-incidence 
+         (angle  1.5708) ;; 90 degrees
+         (range-determinant 
+            (range-list 
+               (range 25.000000
+                  (catastrophic-kill  1.000000)
+               )
+               (range 50.000000
+                  (catastrophic-kill  0.700000)
+               )
+               (range 100.000000
+                  (catastrophic-kill  0.500000)
+               )
+            ) 
+         )
+      )
+   )
+   (left-side 
+      (angle-of-incidence 
+         (angle  1.5708)
+         (range-determinant 
+            (range-list 
+               (range 25.000000
+                  (catastrophic-kill  1.000000)
+               )
+               (range 50.000000
+                  (catastrophic-kill  0.700000)
+               )
+               (range 100.000000
+                  (catastrophic-kill  0.500000)
+               )
+            )           
+         )
+      )
+   )   
+   (right-side 
+      (angle-of-incidence 
+         (angle  1.5708)
+         (range-determinant 
+            (range-list 
+               (range 25.000000
+                  (catastrophic-kill  1.000000)
+               )
+               (range 50.000000
+                  (catastrophic-kill  0.700000)
+               )
+               (range 100.000000
+                  (catastrophic-kill  0.500000)
+               )
+            )       
+         )
+      )
+   )
+  (top
+      (angle-of-incidence 
+         (angle  1.570800)
+         (range-determinant 
+            (range-list 
+               (range 25.000000
+                  (catastrophic-kill  1.000000)
+               )
+               (range 50.000000
+                  (catastrophic-kill  0.700000)
+               )
+               (range 100.000000
+                  (catastrophic-kill  0.500000)
+               )
+            ) 
+         )
+      )
+   )
+   (bottom
+      (angle-of-incidence 
+         (angle  1.570800)
+         (range-determinant 
+            (range-list 
+               (range 25.000000
+                  (catastrophic-kill  1.000000)
+               )
+               (range 50.000000
+                  (catastrophic-kill  0.700000)
+               )
+               (range 100.000000
+                  (catastrophic-kill  0.500000)
+               )
+            ) 
+         )
+      )
+   )
+   (rear 
+      (angle-of-incidence 
+         (angle  1.570800)
+         (range-determinant 
+            (range-list 
+               (range 25.000000
+                  (catastrophic-kill  1.000000)
+               )
+               (range 50.000000
+                  (catastrophic-kill  0.700000)
+               )
+               (range 100.000000
+                  (catastrophic-kill  0.500000)
+               )
+            )  
+         )
+      )
+   )
+)

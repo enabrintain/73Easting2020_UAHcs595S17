@@ -1,0 +1,10 @@
+(nav-runtime-config 
+   (extent-nw  -20.000000 20.000000 8.061231)
+   (extent-ne  20.000000 20.000000 8.061231)
+   (extent-sw  -20.000000 -20.000000 -8.061231)
+   (extent-se  20.000000 -20.000000 8.061231)
+   (offset  0.073593 0.051319 6.368416)
+   (nav-data-path  "$(nav-data-dir)\DB_FISHING_VESSEL_MEDIUM_V7.0")
+   (cs-type  6)
+   (original-terrain  "$(DATA_DIR)\Vehicles\Surface\FISHING_VESSEL_MEDIUM_V7.0.flt\DB_FISHING_VESSEL_MEDIUM_V7.0.medf")
+)

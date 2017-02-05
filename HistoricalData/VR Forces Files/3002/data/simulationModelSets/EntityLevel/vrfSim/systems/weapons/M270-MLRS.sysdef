@@ -1,0 +1,198 @@
+;; https://www.fas.org/man/dod-101/sys/land/docs/xst_206-60-20/CHAP1.html
+
+(weapon-M270-MLRS 
+   (controllers 
+      (rocket-controller 
+         (component-descriptor-type "indirect-fire-controller-descriptor")
+         (component-type  "indirect-fire-weapon-controller")
+         (min-tick-period  -1.000000)
+         (min-tick-period-variance  -1.000000)
+         (tick-period-uses-real-time False)
+         (process-state-repository-name  "")
+         (process-state-repository-type  "")
+         (is-enabled True)
+         (max-vehicle-speed-to-fire  500.000000)
+         (max-angle-off-boresight  0.005000)
+         (preload-weapon True)
+         (load-ammo-time  30.000000)
+         (unload-ammo-time  5.000000)
+         (default-ammo-list 
+            (m26  "M26-rocket")
+         )
+         (num-rounds-per-mission  12)
+         (min-range  10000.000000)
+         (max-range-list 25000.000000 50000.000000 150000.000000 200000.000000 250000.000000 300000.000000)
+         (range-name  "M270-MLRS")
+      )
+   )
+   (actuators 
+      (M269-gun-mount-azimuth 
+         (component-descriptor-type "azimuth-mount-descriptor")
+         (component-type  "azimuth-mount-actuator")
+         (min-tick-period  -1.000000)
+         (min-tick-period-variance  -1.000000)
+         (tick-period-uses-real-time False)
+         (process-state-repository-name  "")
+         (process-state-repository-type  "")
+         (is-enabled True)
+         (art-part-list 
+            (azimuth-mount 
+               (art-part-type $rot-turret-art-part-type)
+;; primaryTurret1
+               (parent-part-type  -1)
+;; connected to vehicle body
+               (attach-point $attach-point)
+               (art-part-param-list 
+                  (part-type  11)
+;; azimuth
+                  (part-type  12)
+               )
+            )
+         )
+;; sweeps through ~90degrees centered at zero
+         (max-slew-rate  0.300000)
+         (nominal-azimuth  0.000000)
+         (azimuth-range  3.140000)
+      )
+;; rotating-mount-point
+      (M269-gun-mount-elevation 
+         (component-descriptor-type "elevation-mount-descriptor")
+         (component-type  "elevation-mount-actuator")
+         (min-tick-period  -1.000000)
+         (min-tick-period-variance  -1.000000)
+         (tick-period-uses-real-time False)
+         (process-state-repository-name  "")
+         (process-state-repository-type  "")
+         (is-enabled True)
+         (art-part-list 
+            (elevating-mount 
+               (art-part-type $elevating-turret-art-part-type)
+;; primaryTurret2
+               (parent-part-type $rot-turret-art-part-type)
+;; connected to primaryTurret1
+               (attach-point  0.000000 0.000000 0.000000)
+               (art-part-param-list 
+                  (part-type  13)
+;; elevation
+                  (part-type  14)
+               )
+            )
+         )
+         (nominal-elevation  0.524000)
+;; nominal is 30degrees
+         (elevation-range  1.571428)
+;; elevates through 90degrees centered at nominal
+         (max-elevate-rate  0.300000)
+      )
+;; elevating-mount-point
+      (M269-rocket 
+         (component-descriptor-type "indirect-fire-actuator-descriptor")
+         (component-type  "indirect-fire-actuator")
+         (min-tick-period  -1.000000)
+         (min-tick-period-variance  -1.000000)
+         (tick-period-uses-real-time False)
+         (process-state-repository-name  "")
+         (process-state-repository-type  "")
+         (is-enabled True)
+         (art-part-list 
+            (primary-launcher 
+               (art-part-type $gun-art-part-type)
+;; primaryGun1
+               (parent-part-type $elevating-turret-art-part-type)
+;; connected to primaryTurret2
+               (attach-point $gun-attach-point)
+               (art-part-param-list 
+                  (part-type  11)
+                  (part-type  12)
+               )
+            )
+         )
+         (projectile-start-speed  200.000000)
+         (muzzle-offset  3.645631 0.000000 -0.904932)
+         (probable-error-in-range  25.000000)
+         (probable-error-in-displacement  15.000000)
+         (probable-error-in-burst-height  5.000000)
+         (simulate-munition True)
+         (high-angle False)
+      )
+   )
+   (connections 
+      (connect rocket-controller:mounting-control:azimuth M269-gun-mount-azimuth:azimuth)
+      (connect rocket-controller:mounting-control:elevation M269-gun-mount-elevation:elevation)
+      (connect M269-gun-mount-azimuth:mounting-info rocket-controller:azimuth-info)
+      (connect M269-gun-mount-elevation:mounting-info rocket-controller:elevation-info)
+      (connect M269-rocket:weapon-info rocket-controller:weapon-info)
+      (connect rocket-controller:weapon-control M269-rocket:weapon-control)
+   )
+   (resources 
+      (M26-rocket 
+         (resource-type "munition-resource")
+         (amount $num-rounds)
+         (full-amount $num-rounds)
+         (munition-type 
+            (munition-type  2 9 225 2 80 1 0)
+            (warhead  0)
+            (guidance-mode  0)
+         )
+      )
+   )
+   (meta-data 
+      (system-name  "M270 MLRS Launcher")
+      (system-description  "Turreted indirect fire weapon.  Fires M26 rockets on command.  Targets must be at least 2km away.")
+      (allowed-state-repository-types "ground-vehicle-param")
+      (system-categories "weapon")
+      (parameter-data-list 
+         (int-parameter-data 
+            (parameter-name  "num-rounds")
+            (variable-type  "DtRwInt")
+            (display-label  "Number of Rounds")
+            (display-units  "")
+            (source-units  "")
+            (default-value  100)
+         )
+         (vector-parameter-data 
+            (parameter-name  "attach-point")
+            (variable-type  "DtRwOffsetVector")
+            (display-label  "Turret Location")
+            (display-units  "meters")
+            (source-units  "meters")
+            (default-value  0.000000 0.000000 0.000000)
+            (relative-to  "")
+         )
+         (art-part-parameter-data 
+            (parameter-name  "rot-turret-art-part-type")
+            (variable-type  "DtRwInt")
+            (display-label  "Turret (rotating) Part Number")
+            (display-units  "")
+            (source-units  "")
+            (art-part-category  "turret")
+         )
+         (art-part-parameter-data 
+            (parameter-name  "elevating-turret-art-part-type")
+            (variable-type  "DtRwInt")
+            (display-label  "Turret (elevating) Part Number")
+            (display-units  "")
+            (source-units  "")
+            (art-part-category  "turret")
+         )
+         (art-part-parameter-data 
+            (parameter-name  "gun-art-part-type")
+            (variable-type  "DtRwInt")
+            (display-label  "Gun Part Number")
+            (display-units  "")
+            (source-units  "")
+            (art-part-category  "gun")
+         )
+         (vector-parameter-data 
+            (parameter-name  "gun-attach-point")
+            (variable-type  "DtRwOffsetVector")
+            (display-label  "Gun Location")
+            (display-units  "meters")
+            (source-units  "meters")
+            (default-value  0.000000 0.000000 0.000000)
+            (relative-to  "")
+         )
+      )
+      (meta-data-entry-list )
+   )
+)

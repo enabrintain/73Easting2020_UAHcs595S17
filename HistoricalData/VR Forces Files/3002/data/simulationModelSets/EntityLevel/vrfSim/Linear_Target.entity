@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<simObjects entityVersion="1.0">
+  <simObject objectType="1:17:0:0:12:0:0:0" matchType="1:17:0:0:12:0:0:0" platform="@(platforms-dir)/Line_Object.ope">
+    <string paramName="short-name">Linear Target</string>
+    <string paramName="gui-unique-id">ModelSet-60947460-Linear Target</string>
+    <string paramName="gui-keywords">min=2;max=2;penstyle</string>
+    <string paramName="gui-label">Linear Target</string>
+    <string paramName="gui-categories">"Fire Support"</string>
+    <string paramName="gui-menu-icon">@(DATA_DIR)/images/overlays/small/lintarg.png</string>
+    <bool paramName="gui-can-create">True</bool>
+    <bool paramName="gui-can-aggregate">False</bool>
+    <bool paramName="gui-on-overlay-palette">True</bool>
+  </simObject>
+</simObjects>

@@ -1,0 +1,53 @@
+;;
+;; File - RPG.hit
+;;
+;;
+;; Copyright (c) 1999 MaK Technologies, Inc.
+;; All rights reserved.
+;;
+;; $RCSfile: RPG.hit,v $ $Revision: 1.1 $ $State: Exp $
+;;
+;; Hit Probability Table for the RPG-7(85mm)
+;; (for example only!)
+;;
+
+(hit-probability-table
+  (entity-range 
+     (entity-type  1 1 -1 -1 -1 -1 -1)
+     (range-determinant 
+        (range-list 
+           (range 100.000000
+              (probability 0.90000)
+           )
+           (range 300.000000
+              (probability 0.8000)
+           )
+           (range 550.000000
+              (probability 0.50000)
+           )
+            (range 1000.000000
+              (probability 0.20000)
+           )
+        )
+     )
+  )
+  (entity-range 
+     (entity-type  1 2 -1 -1 -1 -1 -1)
+     (range-determinant 
+        (range-list 
+           (range 100.000000
+              (probability 0.90000)
+           )
+           (range 300.000000
+              (probability 0.7500)
+           )
+           (range 550.000000
+              (probability 0.20000)
+           )
+            (range 1000.000000
+              (probability 0.05000)
+           )
+        )
+     )
+  )
+)

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<simObjects entityVersion="1.0">
+   <simObject objectType="1:1:4:225:1:0:0:0" matchType="1:1:4:225:1:0:0:0" platform="@(platforms-dir)/Subsurface_Vehicle.ope">
+      <componentSystem systemName="damage" platform="@(system-dir)/damage/subsurface-default.sysdef"/>
+      <componentSystem systemName="other" platform="@(system-dir)/other/spot-report-generator.sysdef"/>
+      <componentSystem systemName="other-2" platform="@(system-dir)/other/spot-report-receiver.sysdef"/>
+      <componentSystem systemName="other-4" platform="@(system-dir)\other\periscope.sysdef">
+         <real paramName="max-extension">0</real>
+         <real paramName="min-extension">-13.2</real>
+         <real paramName="extension-rate">2</real>
+      </componentSystem>
+      <componentSystem systemName="sensor" platform="@(system-dir)\sensors\sonar-sensor.sysdef">
+         <real paramName="max-range">4000</real>
+         <bool paramName="sonar-dip-capable">False</bool>
+         <bool paramName="active-by-default">False</bool>
+         <bodyPosition paramName="sensor-position" forward="0" right="0" down="0"/>
+         <real paramName="max-effective-speed">10</real>
+         <real paramName="sensor-sensitivity-start">1</real>
+      </componentSystem>
+      <componentSystem systemName="movement" platform="@(system-dir)\movement\subsurface-dynamics.sysdef">
+         <real paramName="fuel-amount">200000</real>
+      </componentSystem>
+      <componentSystem systemName="weapon-2" platform="@(system-dir)\weapons\Homing-torpedo-fwd-launcher.sysdef">
+         <int paramName="num-missiles">10</int>
+         <bodyPosition paramName="attach-point" forward="90" right="0" down="5"/>
+      </componentSystem>
+      <real paramName="mass">17000000</real>
+      <real paramName="max-speed">12.861111</real>
+      <real paramName="turning-radius">170</real>
+      <real paramName="max-slope">0.5</real>
+      <real paramName="ordered-speed">10</real>
+      <real paramName="max-acceleration">0.2</real>
+      <real paramName="max-deceleration">0.1</real>
+      <real paramName="max-lateral-acceleration">0.5</real>
+      <real paramName="disaggregation-range">4100</real>
+      <real paramName="max-depth">240</real>
+      <bool paramName="can-embark">False</bool>
+      <bool paramName="use-random-appearance-upon-creation">True</bool>
+      <bool paramName="can-be-embarked-upon">False</bool>
+      <string paramName="short-name">SSBN</string>
+      <string paramName="character-type"/>
+      <string paramName="character-appearance"/>
+      <string paramName="animation"/>
+      <bodyPosition paramName="left-support" forward="85" right="-6.5" down="0"/>
+      <bodyPosition paramName="right-support" forward="85" right="6.5" down="0"/>
+      <bodyPosition paramName="other-support" forward="-85" right="0" down="0"/>
+      <boundingVolume paramName="bounding-volume" offsetType="custom">
+         <offset forward="0" right="0" down="1.3"/>
+         <dimensions length="170" width="14" height="22"/>
+      </boundingVolume>
+      <stringList paramName="appearances-for-random-selection"/>
+      <string paramName="gui-unique-id">ModelSet-145362734-Friendly SSBN</string>
+      <string paramName="gui-keywords"/>
+      <string paramName="gui-label">Ohio-class Submarine</string>
+      <string paramName="gui-categories">"Subsurface"</string>
+      <string paramName="gui-deployable-countries">"United States"</string>
+      <string paramName="gui-menu-icon"/>
+      <bool paramName="gui-can-create">True</bool>
+      <bool paramName="gui-can-aggregate">False</bool>
+      <bool paramName="gui-on-overlay-palette">False</bool>
+      <bool paramName="flip-disembark-body-x">False</bool>
+      <bool paramName="flip-disembark-body-y">False</bool>
+      <sensorSignatures>
+         <real paramName="active-sonar-signature">1</real>
+         <real paramName="infrared-signature">2</real>
+         <real paramName="mad-signature">0.3</real>
+         <real paramName="passive-sonar-signature">0.5</real>
+         <real paramName="radar-signature">3</real>
+         <real paramName="visual-signature">2</real>
+      </sensorSignatures>
+      <string paramName="object-geometry-filename"/>
+   </simObject>
+</simObjects>

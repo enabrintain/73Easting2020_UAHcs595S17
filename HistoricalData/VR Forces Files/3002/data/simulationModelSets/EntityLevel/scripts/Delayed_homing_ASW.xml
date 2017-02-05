@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE boost_serialization>
+<boost_serialization signature="serialization::archive" version="9">
+<DtScriptedTaskMetaData class_id="0" tracking_level="0" version="8">
+	<myScriptId>Delayed_homing_ASW</myScriptId>
+	<myMenuText>Launch Anti-Submarine Torpedo</myMenuText>
+	<myToolTip></myToolTip>
+	<myMenuIcon></myMenuIcon>
+	<myVersion>1</myVersion>
+	<myScriptEngine>lua</myScriptEngine>
+	<myComments></myComments>
+	<myMenuLocations class_id="1" tracking_level="0" version="0">
+		<count>1</count>
+		<item_version>0</item_version>
+		<item>Engagement/Launch torpedo/$(menutext)&gt;Engagement/DtVrfTaskFireCruiseMissileAction</item>
+	</myMenuLocations>
+	<myIsSystemScript>1</myIsSystemScript>
+	<myDescription>Launches one homing torpedo at a target entity. The torpedo moves straight at the given bearing for a given distance, then moves toward the target. It adjusts depth to aim at the target center, and explodes when it is the given proximity to the target.</myDescription>
+	<myScriptLocation></myScriptLocation>
+	<myDirectoryPath>Naval Warfare/Torpedoes</myDirectoryPath>
+	<myEntityTypes>
+		<count>4</count>
+		<item_version>0</item_version>
+		<item>2:7:225:1:10:-1:-1</item>
+		<item>2:6:225:1:13:-1:-1</item>
+		<item>2:6:-1:1:-1:-1:-1</item>
+		<item>2:7:-1:1:-1:-1:-1</item>
+	</myEntityTypes>
+	<myVariables>
+		<count>5</count>
+		<item_version>0</item_version>
+		<item>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot; ?&gt;
+&lt;!DOCTYPE boost_serialization&gt;
+&lt;boost_serialization signature=&quot;serialization::archive&quot; version=&quot;9&quot;&gt;
+&lt;DtScriptedTaskVariable class_id=&quot;0&quot; tracking_level=&quot;0&quot; version=&quot;3&quot;&gt;
+	&lt;myVariableName&gt;targetEntity&lt;/myVariableName&gt;
+	&lt;myType&gt;simulationobject&lt;/myType&gt;
+	&lt;myLabel&gt;Target Entity:&lt;/myLabel&gt;
+	&lt;myToolTip&gt;The target (submarine)&lt;/myToolTip&gt;
+	&lt;myDefaultValue&gt;All Surface&lt;/myDefaultValue&gt;
+	&lt;myRangeBottom&gt;-100000&lt;/myRangeBottom&gt;
+	&lt;myRangeTop&gt;100000&lt;/myRangeTop&gt;
+	&lt;myVariableData&gt;DtAllSurfaceFilter;DtAllSubsurfaceFilter;DtAllEntitiesFilter;DtAllSurfaceByForceFilter;DtAllSubsurfaceByForceFilter;DtAllEntitiesByForceFilter&lt;/myVariableData&gt;
+	&lt;myVisible&gt;1&lt;/myVisible&gt;
+	&lt;myIndent&gt;0&lt;/myIndent&gt;
+	&lt;myInternal&gt;0&lt;/myInternal&gt;
+&lt;/DtScriptedTaskVariable&gt;
+</item>
+		<item>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot; ?&gt;
+&lt;!DOCTYPE boost_serialization&gt;
+&lt;boost_serialization signature=&quot;serialization::archive&quot; version=&quot;9&quot;&gt;
+&lt;DtScriptedTaskVariable class_id=&quot;0&quot; tracking_level=&quot;0&quot; version=&quot;3&quot;&gt;
+	&lt;myVariableName&gt;initialBearing&lt;/myVariableName&gt;
+	&lt;myType&gt;heading&lt;/myType&gt;
+	&lt;myLabel&gt;Initial bearing&lt;/myLabel&gt;
+	&lt;myToolTip&gt;The bearing (from the launch platform) on which the torpedo moves before turning toward target.&lt;/myToolTip&gt;
+	&lt;myDefaultValue&gt;0&lt;/myDefaultValue&gt;
+	&lt;myRangeBottom&gt;-6.2831853071795862&lt;/myRangeBottom&gt;
+	&lt;myRangeTop&gt;6.2831853071795862&lt;/myRangeTop&gt;
+	&lt;myVariableData&gt;&lt;/myVariableData&gt;
+	&lt;myVisible&gt;1&lt;/myVisible&gt;
+	&lt;myIndent&gt;0&lt;/myIndent&gt;
+	&lt;myInternal&gt;0&lt;/myInternal&gt;
+&lt;/DtScriptedTaskVariable&gt;
+</item>
+		<item>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot; ?&gt;
+&lt;!DOCTYPE boost_serialization&gt;
+&lt;boost_serialization signature=&quot;serialization::archive&quot; version=&quot;9&quot;&gt;
+&lt;DtScriptedTaskVariable class_id=&quot;0&quot; tracking_level=&quot;0&quot; version=&quot;3&quot;&gt;
+	&lt;myVariableName&gt;homingDelay&lt;/myVariableName&gt;
+	&lt;myType&gt;range&lt;/myType&gt;
+	&lt;myLabel&gt;Homing Start Delay&lt;/myLabel&gt;
+	&lt;myToolTip&gt;Distance torpedo travels at initial bearing before turning toward the target.&lt;/myToolTip&gt;
+	&lt;myDefaultValue&gt;1000&lt;/myDefaultValue&gt;
+	&lt;myRangeBottom&gt;0&lt;/myRangeBottom&gt;
+	&lt;myRangeTop&gt;40000&lt;/myRangeTop&gt;
+	&lt;myVariableData&gt;&lt;/myVariableData&gt;
+	&lt;myVisible&gt;1&lt;/myVisible&gt;
+	&lt;myIndent&gt;0&lt;/myIndent&gt;
+	&lt;myInternal&gt;0&lt;/myInternal&gt;
+&lt;/DtScriptedTaskVariable&gt;
+</item>
+		<item>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot; ?&gt;
+&lt;!DOCTYPE boost_serialization&gt;
+&lt;boost_serialization signature=&quot;serialization::archive&quot; version=&quot;9&quot;&gt;
+&lt;DtScriptedTaskVariable class_id=&quot;0&quot; tracking_level=&quot;0&quot; version=&quot;3&quot;&gt;
+	&lt;myVariableName&gt;proximityTrigger&lt;/myVariableName&gt;
+	&lt;myType&gt;range&lt;/myType&gt;
+	&lt;myLabel&gt;Proximity Trigger Distance&lt;/myLabel&gt;
+	&lt;myToolTip&gt;Distance from target that triggers detonation. Use 0 to require impact.&lt;/myToolTip&gt;
+	&lt;myDefaultValue&gt;0&lt;/myDefaultValue&gt;
+	&lt;myRangeBottom&gt;0&lt;/myRangeBottom&gt;
+	&lt;myRangeTop&gt;100&lt;/myRangeTop&gt;
+	&lt;myVariableData&gt;&lt;/myVariableData&gt;
+	&lt;myVisible&gt;1&lt;/myVisible&gt;
+	&lt;myIndent&gt;0&lt;/myIndent&gt;
+	&lt;myInternal&gt;0&lt;/myInternal&gt;
+&lt;/DtScriptedTaskVariable&gt;
+</item>
+		<item>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot; ?&gt;
+&lt;!DOCTYPE boost_serialization&gt;
+&lt;boost_serialization signature=&quot;serialization::archive&quot; version=&quot;9&quot;&gt;
+&lt;DtScriptedTaskVariable class_id=&quot;0&quot; tracking_level=&quot;0&quot; version=&quot;3&quot;&gt;
+	&lt;myVariableName&gt;parentLauncher&lt;/myVariableName&gt;
+	&lt;myType&gt;simulationobject&lt;/myType&gt;
+	&lt;myLabel&gt;Parent platform that launched torpedo&lt;/myLabel&gt;
+	&lt;myToolTip&gt;Parent platform&lt;/myToolTip&gt;
+	&lt;myDefaultValue&gt;-&lt;/myDefaultValue&gt;
+	&lt;myRangeBottom&gt;-100000&lt;/myRangeBottom&gt;
+	&lt;myRangeTop&gt;100000&lt;/myRangeTop&gt;
+	&lt;myVariableData&gt;&lt;/myVariableData&gt;
+	&lt;myVisible&gt;0&lt;/myVisible&gt;
+	&lt;myIndent&gt;0&lt;/myIndent&gt;
+	&lt;myInternal&gt;0&lt;/myInternal&gt;
+&lt;/DtScriptedTaskVariable&gt;
+</item>
+	</myVariables>
+	<myScript></myScript>
+	<myActionCategories>Weapon</myActionCategories>
+	<myShowInMenu>1</myShowInMenu>
+	<myEncrypted>0</myEncrypted>
+	<myScriptType>1</myScriptType>
+	<myDoctrines></myDoctrines>
+	<myFlags>1</myFlags>
+	<myShowInToolbar>0</myShowInToolbar>
+	<myToolbarLocation></myToolbarLocation>
+	<myExtendedMenuText></myExtendedMenuText>
+</DtScriptedTaskMetaData>
+</boost_serialization>
+

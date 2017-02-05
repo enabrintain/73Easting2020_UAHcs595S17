@@ -1,0 +1,64 @@
+(aircraft-cargo-door
+   (systems )
+   (sensors )
+   (controllers 
+      (script-enable-controller
+	     (component-descriptor-type "script-enable-controller-descriptor")
+         (component-type  "script-enable-controller")
+         (min-tick-period  -1.000000)
+         (min-tick-period-variance  -1.000000)
+         (tick-period-uses-real-time False)
+         (process-state-repository-name  "")
+         (process-state-repository-type  "")
+         (is-enabled True)
+		 (script-ids "Open_Cargo_Door" "Close_Cargo_Door")
+	  )
+   )
+   (actuators 
+      (cargodoor 
+         (component-descriptor-type "swinging-part-actuator-descriptor")
+         (component-type  "swinging-part-actuator")
+         (min-tick-period  -1.000000)
+         (min-tick-period-variance  -1.000000)
+         (tick-period-uses-real-time False)
+         (process-state-repository-name  "")
+         (process-state-repository-type  "")
+         (is-enabled True)
+         (art-part-list 
+            (landing-gear 
+               (art-part-type  7648)
+               (parent-part-type  -1)
+               (attach-point  0.000000 0.000000 0.000000)
+               (art-part-param-list 
+                  (param-type  13)
+                  (param-type  14)
+               )
+            )
+         )
+         (closed-angle  0.0)
+         (open-angle  $open-angle)
+         (swing-axis  "Y")
+         (swing-rate  0.300000)
+      )
+      
+   )
+   (connections )
+   (resources )
+   (meta-data 
+      (system-name  "Cargo Door")
+      (system-description  "Articulates the opening and closing of a cargo door.")
+      (allowed-state-repository-types "rotary-wing-entity-param" "fixed-wing-entity-param" "ground-vehicle-param" "surface-entity-param")
+      (system-categories "other")
+      (parameter-data-list 
+         (real-parameter-data 
+            (parameter-name  "open-angle")
+            (variable-type  "DtRwReal")
+            (display-label  "Door Open Angle")
+            (display-units  "degrees")
+            (source-units  "radians")
+            (default-value  0.680678408)
+         )
+      )
+      (meta-data-entry-list )
+   )
+)

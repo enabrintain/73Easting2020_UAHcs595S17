@@ -1,0 +1,44 @@
+(sonobuoy-deployer
+   (systems )
+   (sensors )
+   (controllers 
+      (script-enable-controller
+	     (component-descriptor-type "script-enable-controller-descriptor")
+         (component-type  "script-enable-controller")
+         (min-tick-period  -1.000000)
+         (min-tick-period-variance  -1.000000)
+         (tick-period-uses-real-time False)
+         (process-state-repository-name  "")
+         (process-state-repository-type  "")
+         (is-enabled True)
+		 (script-ids "Deploy_Sonobuoy" "Deploy_Sonobuoys_Along_Route")
+	  )
+   )
+   (actuators       
+   )
+   (connections )
+   (resources 
+      (sonobuoy
+         (resource-type "integer-resource")
+         (amount $num-buoys)
+         (full-amount $num-buoys)
+      )
+   )
+   (meta-data 
+      (system-name  "Sonobuoy Deployer")
+      (system-description  "System that allows an entity to deploy sonobuoys.")
+      (allowed-state-repository-types "all")
+      (system-categories "other")
+      (parameter-data-list 
+         (int-parameter-data 
+            (parameter-name  "num-buoys")
+            (variable-type  "DtRwInt")
+            (display-label  "Number of Sonobuoys")
+            (display-units  "")
+            (source-units  "")
+            (default-value  10)
+         )         
+      )
+      (meta-data-entry-list )
+   )
+)

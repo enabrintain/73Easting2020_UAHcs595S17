@@ -1,0 +1,10 @@
+(nav-runtime-config 
+   (extent-nw  -20.000000 80.000000 23.871813)
+   (extent-ne  20.000000 80.000000 23.871813)
+   (extent-sw  -20.000000 -80.000000 -23.871813)
+   (extent-se  20.000000 -80.000000 23.871813)
+   (offset  0.000000 -10.854794 17.261687)
+   (nav-data-path  "$(nav-data-dir)\1407007162_arleigh-burke_ddg51_arleigh-burke_navy")
+   (cs-type  6)
+   (original-terrain  "$(DATA_DIR)\Vehicles\Surface\ddg51_arleigh-burke_navy\1407007162_arleigh-burke_ddg51_arleigh-burke_navy.medf")
+)

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE boost_serialization>
+<boost_serialization signature="serialization::archive" version="8">
+<DtMenuPathConfiguration class_id="0" tracking_level="0" version="0">
+	<count>57</count>
+	<item_version>0</item_version>
+  <item>:DtSetMenu/Action/DtVrfSetCollisionAvoidTypesAction</item>
+   <item>:DtSetMenu/Action/DtVrfSetMovementStrategyAction</item>
+   <item>:DtSetMenu/Action/DtVrfSetCurrentSpeedAction</item>
+   <item>:DtSetMenu/Action/DtVrfSetNavigationPreferenceAction</item>
+   <item>:DtSetMenu/Action/DtVrfSetOrderedSpeedAction</item>   
+   <item>:DtSetMenu/Action/DtVrfSetPostureAction</item>
+   <item>:DtSetMenu/Action/DtVrfSetStayInLaneAction</item>
+   <item>:DtSetMenu/Unit/DtVrfSetAggregateStateAction</item>
+   <item>:DtSetMenu/Unit/DtVrfSetFormationAction</item>
+   <item>:DtSetMenu/Unit/DtVrfSetReorganizeAction</item>
+   <item>:DtSetMenu/Appearance/DtVrfSetAppearanceAction</item>
+   <item>:DtSetMenu/Appearance/DtVrfSetDIGuyAppearanceAction</item>
+   <item>:DtSetMenu/Appearance/DtVrfSetDIGuyHandItemAction</item>
+  <item>:DtSetMenu/Disposition/DtVrfSetActivityAction</item>
+  <item>:DtSetMenu/Disposition/DtVrfSetAllStatePropertiesAction</item>
+  <item>:DtSetMenu/Disposition/DtVrfSetCapabilitiesAction</item>
+   <item>:DtSetMenu/Disposition/DtVrfSetConcealmentAction</item>
+   <item>:DtSetMenu/Disposition/DtVrfSetDestroyAction</item>
+   <item>:DtSetMenu/Disposition/DtVrfSetForceAction</item>
+   <item>:DtSetMenu/Disposition/DtVrfSetResourcesAction</item>   
+   <item>:DtSetMenu/Disposition/DtVrfSetRestoreAction</item>
+   <item>:DtSetMenu/Disposition/DtVrfSetSurrenderAction</item>
+   <item>:DtSetMenu/Embarkation/DtVrfSetDisembarkedAction</item>
+   <item>:DtSetMenu/Embarkation/DtVrfSetEmbarkedAction</item>
+   <item>:DtSetMenu/Engagement/DtVrfSetAimingPointAction</item>
+   <item>:DtSetMenu/Engagement/DtVrfSetArmedAction</item>
+   <item>:DtSetMenu/Engagement/DtVrfSetAutoLaunchEnabledAction</item>
+   <item>:DtSetMenu/Engagement/DtVrfSetDetonationAction</item>
+   <item>:DtSetMenu/Engagement/DtVrfSetEngagementAction</item>
+   <item>:DtSetMenu/Engagement/DtVrfSetEngagementtateAction</item>
+   <item>:DtSetMenu/Engagement/DtVrfSetResponsibilityAction</item>
+   <item>:DtSetMenu/Engagement/DtVrfSetTargetAction</item>
+   <item>:DtSetMenu/Engagement/DtVrfSetTracerUseAction</item>
+   <item>:DtSetMenu/Laser Designator/DtVrfSetLaseAutonomousAction</item>
+   <item>:DtSetMenu/Laser Designator/DtVrfSetLaserCodeAction</item>
+   <item>:DtSetMenu/Laser Designator/DtVrfSetSyncLaserCodeAction</item>
+   <item>:DtSetMenu/Other/DtVrfSetNotifyLevelAction</item>
+   <item>:DtSetMenu/Other/DtVrfSetSuperiorAction</item>
+   <item>:DtSetMenu/Other/DtVrfSetTaskedBySuperiorAction</item>
+   <item>:DtSetMenu/Position/DtVrfSetAltitudeAction</item>
+   <item>:DtSetMenu/Position/DtVrfSetHeadingAction</item>
+   <item>:DtSetMenu/Position/DtVrfSetLocationAction</item>
+   <item>:DtSetMenu/Reactive Tasks/DtVrfSetReactiveTaskDisabledAction</item>
+   <item>:DtSetMenu/Reactive Tasks/DtVrfSetReactiveTaskEnabledAction</item>
+   <item>:DtSetMenu/Reactive Tasks/DtVrfSetReactiveTaskStatusAction</item>
+   <item>:DtSetMenu/Reactive Tasks/DtVrfSetReactiveTaskPriorityAction</item>
+   <item>:DtSetMenu/Sensors/DtVrfSetAimSensorAction</item>
+   <item>:DtSetMenu/Sensors/DtVrfSetEmitterAction</item>
+   <item>:DtSetMenu/Sensors/DtVrfSetIffAction</item>
+   <item>:DtSetMenu/Sensors/DtVrfSetRadarModeAction</item>
+   <item>:DtSetMenu/Sensors/DtVrfSetTrackTargetsAction</item>
+   <item>:DtSetMenu/Sensors/DtVrfSetJamTargetsAction</item>
+   <item>:DtSetMenu/Sensors/DtVrfSetSensorEnabledAction</item>
+   <item>:DtSetMenu/Sensors/DtVrfSetSpotReportsAction</item>
+   <item>:DtSetMenu/Sensors/DtVrfSetSonarDepthAction</item>
+   <item>:DtSetMenu/Sensors/DtVrfSetActiveSonarModeAction</item>
+   <item>:DtSetMenu/Sensors/DtVrfSetZoomSensorAction</item>
+</DtMenuPathConfiguration>
+</boost_serialization>
+

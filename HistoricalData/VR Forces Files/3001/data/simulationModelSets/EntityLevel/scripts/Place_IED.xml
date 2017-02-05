@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE boost_serialization>
+<boost_serialization signature="serialization::archive" version="9">
+<DtScriptedTaskMetaData class_id="0" tracking_level="0" version="8">
+	<myScriptId>Place_IED</myScriptId>
+	<myMenuText>Place IED</myMenuText>
+	<myToolTip></myToolTip>
+	<myMenuIcon></myMenuIcon>
+	<myVersion>1</myVersion>
+	<myScriptEngine>lua</myScriptEngine>
+	<myComments></myComments>
+	<myMenuLocations class_id="1" tracking_level="0" version="0">
+		<count>1</count>
+		<item_version>0</item_version>
+		<item>Engagement/$(menutext)&gt;Engagement/DtVrfTaskLaseTargetAction</item>
+	</myMenuLocations>
+	<myIsSystemScript>1</myIsSystemScript>
+	<myDescription>Tasks an entity to move to a location, place an IED, and then move away to another location.</myDescription>
+	<myScriptLocation></myScriptLocation>
+	<myDirectoryPath>Human</myDirectoryPath>
+	<myEntityTypes>
+		<count>4</count>
+		<item_version>0</item_version>
+		<item>3:1:-1:1:-1:-1:-1</item>
+		<item>3:1:-1:2:-1:-1:-1</item>
+		<item>3:1:-1:3:-1:-1:-1</item>
+		<item>3:1:-1:4:-1:-1:-1</item>
+	</myEntityTypes>
+	<myVariables>
+		<count>7</count>
+		<item_version>0</item_version>
+		<item>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot; ?&gt;
+&lt;!DOCTYPE boost_serialization&gt;
+&lt;boost_serialization signature=&quot;serialization::archive&quot; version=&quot;9&quot;&gt;
+&lt;DtScriptedTaskVariable class_id=&quot;0&quot; tracking_level=&quot;0&quot; version=&quot;3&quot;&gt;
+	&lt;myVariableName&gt;placementLocation&lt;/myVariableName&gt;
+	&lt;myType&gt;location&lt;/myType&gt;
+	&lt;myLabel&gt;Placement Location&lt;/myLabel&gt;
+	&lt;myToolTip&gt;Location at which to place the IED&lt;/myToolTip&gt;
+	&lt;myDefaultValue&gt;&lt;/myDefaultValue&gt;
+	&lt;myRangeBottom&gt;-100000&lt;/myRangeBottom&gt;
+	&lt;myRangeTop&gt;100000&lt;/myRangeTop&gt;
+	&lt;myVariableData&gt;&lt;/myVariableData&gt;
+	&lt;myVisible&gt;1&lt;/myVisible&gt;
+	&lt;myIndent&gt;0&lt;/myIndent&gt;
+	&lt;myInternal&gt;0&lt;/myInternal&gt;
+&lt;/DtScriptedTaskVariable&gt;
+</item>
+		<item>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot; ?&gt;
+&lt;!DOCTYPE boost_serialization&gt;
+&lt;boost_serialization signature=&quot;serialization::archive&quot; version=&quot;9&quot;&gt;
+&lt;DtScriptedTaskVariable class_id=&quot;0&quot; tracking_level=&quot;0&quot; version=&quot;3&quot;&gt;
+	&lt;myVariableName&gt;placementDuration&lt;/myVariableName&gt;
+	&lt;myType&gt;time&lt;/myType&gt;
+	&lt;myLabel&gt;Placement Duration:&lt;/myLabel&gt;
+	&lt;myToolTip&gt;Length of time it takes to place the IED&lt;/myToolTip&gt;
+	&lt;myDefaultValue&gt;&lt;/myDefaultValue&gt;
+	&lt;myRangeBottom&gt;-100000&lt;/myRangeBottom&gt;
+	&lt;myRangeTop&gt;100000&lt;/myRangeTop&gt;
+	&lt;myVariableData&gt;&lt;/myVariableData&gt;
+	&lt;myVisible&gt;1&lt;/myVisible&gt;
+	&lt;myIndent&gt;0&lt;/myIndent&gt;
+	&lt;myInternal&gt;0&lt;/myInternal&gt;
+&lt;/DtScriptedTaskVariable&gt;
+</item>
+		<item>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot; ?&gt;
+&lt;!DOCTYPE boost_serialization&gt;
+&lt;boost_serialization signature=&quot;serialization::archive&quot; version=&quot;9&quot;&gt;
+&lt;DtScriptedTaskVariable class_id=&quot;0&quot; tracking_level=&quot;0&quot; version=&quot;3&quot;&gt;
+	&lt;myVariableName&gt;fuseType&lt;/myVariableName&gt;
+	&lt;myType&gt;combo&lt;/myType&gt;
+	&lt;myLabel&gt;Fuse Type:&lt;/myLabel&gt;
+	&lt;myToolTip&gt;Chooses the type of fuse to arm the IED with&lt;/myToolTip&gt;
+	&lt;myDefaultValue&gt;proximity&lt;/myDefaultValue&gt;
+	&lt;myRangeBottom&gt;-100000&lt;/myRangeBottom&gt;
+	&lt;myRangeTop&gt;100000&lt;/myRangeTop&gt;
+	&lt;myVariableData&gt;immediate;timed;proximity&lt;/myVariableData&gt;
+	&lt;myVisible&gt;1&lt;/myVisible&gt;
+	&lt;myIndent&gt;0&lt;/myIndent&gt;
+	&lt;myInternal&gt;0&lt;/myInternal&gt;
+&lt;/DtScriptedTaskVariable&gt;
+</item>
+		<item>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot; ?&gt;
+&lt;!DOCTYPE boost_serialization&gt;
+&lt;boost_serialization signature=&quot;serialization::archive&quot; version=&quot;9&quot;&gt;
+&lt;DtScriptedTaskVariable class_id=&quot;0&quot; tracking_level=&quot;0&quot; version=&quot;3&quot;&gt;
+	&lt;myVariableName&gt;timeDelay&lt;/myVariableName&gt;
+	&lt;myType&gt;time&lt;/myType&gt;
+	&lt;myLabel&gt;Time Delay:&lt;/myLabel&gt;
+	&lt;myToolTip&gt;Amount of time set on the timed fuse&lt;/myToolTip&gt;
+	&lt;myDefaultValue&gt;&lt;/myDefaultValue&gt;
+	&lt;myRangeBottom&gt;-100000&lt;/myRangeBottom&gt;
+	&lt;myRangeTop&gt;100000&lt;/myRangeTop&gt;
+	&lt;myVariableData&gt;&lt;/myVariableData&gt;
+	&lt;myVisible&gt;1&lt;/myVisible&gt;
+	&lt;myIndent&gt;0&lt;/myIndent&gt;
+	&lt;myInternal&gt;0&lt;/myInternal&gt;
+&lt;/DtScriptedTaskVariable&gt;
+</item>
+		<item>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot; ?&gt;
+&lt;!DOCTYPE boost_serialization&gt;
+&lt;boost_serialization signature=&quot;serialization::archive&quot; version=&quot;9&quot;&gt;
+&lt;DtScriptedTaskVariable class_id=&quot;0&quot; tracking_level=&quot;0&quot; version=&quot;3&quot;&gt;
+	&lt;myVariableName&gt;proximity&lt;/myVariableName&gt;
+	&lt;myType&gt;range&lt;/myType&gt;
+	&lt;myLabel&gt;Proximity&lt;/myLabel&gt;
+	&lt;myToolTip&gt;Proximity at which to detonate a proximity fuse&lt;/myToolTip&gt;
+	&lt;myDefaultValue&gt;10&lt;/myDefaultValue&gt;
+	&lt;myRangeBottom&gt;0&lt;/myRangeBottom&gt;
+	&lt;myRangeTop&gt;100000&lt;/myRangeTop&gt;
+	&lt;myVariableData&gt;&lt;/myVariableData&gt;
+	&lt;myVisible&gt;1&lt;/myVisible&gt;
+	&lt;myIndent&gt;0&lt;/myIndent&gt;
+	&lt;myInternal&gt;0&lt;/myInternal&gt;
+&lt;/DtScriptedTaskVariable&gt;
+</item>
+		<item>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot; ?&gt;
+&lt;!DOCTYPE boost_serialization&gt;
+&lt;boost_serialization signature=&quot;serialization::archive&quot; version=&quot;9&quot;&gt;
+&lt;DtScriptedTaskVariable class_id=&quot;0&quot; tracking_level=&quot;0&quot; version=&quot;3&quot;&gt;
+	&lt;myVariableName&gt;postPlacementLocation&lt;/myVariableName&gt;
+	&lt;myType&gt;location&lt;/myType&gt;
+	&lt;myLabel&gt;Post Placement Location&lt;/myLabel&gt;
+	&lt;myToolTip&gt;Location to move to after the IED has been placed.&lt;/myToolTip&gt;
+	&lt;myDefaultValue&gt;&lt;/myDefaultValue&gt;
+	&lt;myRangeBottom&gt;-100000&lt;/myRangeBottom&gt;
+	&lt;myRangeTop&gt;100000&lt;/myRangeTop&gt;
+	&lt;myVariableData&gt;&lt;/myVariableData&gt;
+	&lt;myVisible&gt;1&lt;/myVisible&gt;
+	&lt;myIndent&gt;0&lt;/myIndent&gt;
+	&lt;myInternal&gt;0&lt;/myInternal&gt;
+&lt;/DtScriptedTaskVariable&gt;
+</item>
+		<item>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot; ?&gt;
+&lt;!DOCTYPE boost_serialization&gt;
+&lt;boost_serialization signature=&quot;serialization::archive&quot; version=&quot;9&quot;&gt;
+&lt;DtScriptedTaskVariable class_id=&quot;0&quot; tracking_level=&quot;0&quot; version=&quot;3&quot;&gt;
+	&lt;myVariableName&gt;armLocation&lt;/myVariableName&gt;
+	&lt;myType&gt;combo&lt;/myType&gt;
+	&lt;myLabel&gt;Arming Location:&lt;/myLabel&gt;
+	&lt;myToolTip&gt;Choose to arm the fuse at the placement location or at the post-placement location&lt;/myToolTip&gt;
+	&lt;myDefaultValue&gt;arm at post placement location&lt;/myDefaultValue&gt;
+	&lt;myRangeBottom&gt;-100000&lt;/myRangeBottom&gt;
+	&lt;myRangeTop&gt;100000&lt;/myRangeTop&gt;
+	&lt;myVariableData&gt;arm at placement location;arm at post placement location&lt;/myVariableData&gt;
+	&lt;myVisible&gt;1&lt;/myVisible&gt;
+	&lt;myIndent&gt;0&lt;/myIndent&gt;
+	&lt;myInternal&gt;0&lt;/myInternal&gt;
+&lt;/DtScriptedTaskVariable&gt;
+</item>
+	</myVariables>
+	<myScript></myScript>
+	<myActionCategories>Movement;Weapon</myActionCategories>
+	<myShowInMenu>1</myShowInMenu>
+	<myEncrypted>0</myEncrypted>
+	<myScriptType>1</myScriptType>
+	<myDoctrines></myDoctrines>
+	<myFlags>1</myFlags>
+	<myShowInToolbar>0</myShowInToolbar>
+	<myToolbarLocation></myToolbarLocation>
+	<myExtendedMenuText></myExtendedMenuText>
+</DtScriptedTaskMetaData>
+</boost_serialization>
+

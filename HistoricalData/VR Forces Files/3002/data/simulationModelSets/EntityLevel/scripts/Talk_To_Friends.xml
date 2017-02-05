@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE boost_serialization>
+<boost_serialization signature="serialization::archive" version="9">
+<DtScriptedTaskMetaData class_id="0" tracking_level="0" version="8">
+	<myScriptId>Talk_To_Friends</myScriptId>
+	<myMenuText>Talk to Friends...</myMenuText>
+	<myToolTip></myToolTip>
+	<myMenuIcon></myMenuIcon>
+	<myVersion>1</myVersion>
+	<myScriptEngine>lua</myScriptEngine>
+	<myComments></myComments>
+	<myMenuLocations class_id="1" tracking_level="0" version="0">
+		<count>1</count>
+		<item_version>0</item_version>
+		<item>Movement/$(menutext)&lt;Movement/DtVrfTaskTurnToHeadingAction</item>
+	</myMenuLocations>
+	<myIsSystemScript>1</myIsSystemScript>
+	<myDescription>Entity wanders and randomly approaches and talks to other nearby entities running this same task.</myDescription>
+	<myScriptLocation></myScriptLocation>
+	<myDirectoryPath>Examples</myDirectoryPath>
+	<myEntityTypes>
+		<count>1</count>
+		<item_version>0</item_version>
+		<item>3:-1:-1:-1:-1:-1:-1</item>
+	</myEntityTypes>
+	<myVariables>
+		<count>3</count>
+		<item_version>0</item_version>
+		<item>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot; ?&gt;
+&lt;!DOCTYPE boost_serialization&gt;
+&lt;boost_serialization signature=&quot;serialization::archive&quot; version=&quot;9&quot;&gt;
+&lt;DtScriptedTaskVariable class_id=&quot;0&quot; tracking_level=&quot;0&quot; version=&quot;3&quot;&gt;
+	&lt;myVariableName&gt;FriendDistance&lt;/myVariableName&gt;
+	&lt;myType&gt;range&lt;/myType&gt;
+	&lt;myLabel&gt;Friend Distance&lt;/myLabel&gt;
+	&lt;myToolTip&gt;Maximum distance from entity to query for &amp;quot;friends&amp;quot;&lt;/myToolTip&gt;
+	&lt;myDefaultValue&gt;50&lt;/myDefaultValue&gt;
+	&lt;myRangeBottom&gt;0&lt;/myRangeBottom&gt;
+	&lt;myRangeTop&gt;100000&lt;/myRangeTop&gt;
+	&lt;myVariableData&gt;&lt;/myVariableData&gt;
+	&lt;myVisible&gt;1&lt;/myVisible&gt;
+	&lt;myIndent&gt;0&lt;/myIndent&gt;
+	&lt;myInternal&gt;0&lt;/myInternal&gt;
+&lt;/DtScriptedTaskVariable&gt;
+</item>
+		<item>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot; ?&gt;
+&lt;!DOCTYPE boost_serialization&gt;
+&lt;boost_serialization signature=&quot;serialization::archive&quot; version=&quot;9&quot;&gt;
+&lt;DtScriptedTaskVariable class_id=&quot;0&quot; tracking_level=&quot;0&quot; version=&quot;3&quot;&gt;
+	&lt;myVariableName&gt;movement&lt;/myVariableName&gt;
+	&lt;myType&gt;checkbox&lt;/myType&gt;
+	&lt;myLabel&gt;Restrict to Area&lt;/myLabel&gt;
+	&lt;myToolTip&gt;Select to restrict entity movement to the specified area.&lt;/myToolTip&gt;
+	&lt;myDefaultValue&gt;0&lt;/myDefaultValue&gt;
+	&lt;myRangeBottom&gt;-100000&lt;/myRangeBottom&gt;
+	&lt;myRangeTop&gt;100000&lt;/myRangeTop&gt;
+	&lt;myVariableData&gt;&lt;/myVariableData&gt;
+	&lt;myVisible&gt;1&lt;/myVisible&gt;
+	&lt;myIndent&gt;0&lt;/myIndent&gt;
+	&lt;myInternal&gt;0&lt;/myInternal&gt;
+&lt;/DtScriptedTaskVariable&gt;
+</item>
+		<item>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot; ?&gt;
+&lt;!DOCTYPE boost_serialization&gt;
+&lt;boost_serialization signature=&quot;serialization::archive&quot; version=&quot;9&quot;&gt;
+&lt;DtScriptedTaskVariable class_id=&quot;0&quot; tracking_level=&quot;0&quot; version=&quot;3&quot;&gt;
+	&lt;myVariableName&gt;Area&lt;/myVariableName&gt;
+	&lt;myType&gt;simulationobject&lt;/myType&gt;
+	&lt;myLabel&gt;Area:&lt;/myLabel&gt;
+	&lt;myToolTip&gt;If Restrict to Area is selected, the area in which to restrict movement.&lt;/myToolTip&gt;
+	&lt;myDefaultValue&gt;All Overlay and Control Objects&lt;/myDefaultValue&gt;
+	&lt;myRangeBottom&gt;-100000&lt;/myRangeBottom&gt;
+	&lt;myRangeTop&gt;100000&lt;/myRangeTop&gt;
+	&lt;myVariableData&gt;DtAllOverlayAndControlObjectsFilter&lt;/myVariableData&gt;
+	&lt;myVisible&gt;1&lt;/myVisible&gt;
+	&lt;myIndent&gt;1&lt;/myIndent&gt;
+	&lt;myInternal&gt;0&lt;/myInternal&gt;
+&lt;/DtScriptedTaskVariable&gt;
+</item>
+	</myVariables>
+	<myScript></myScript>
+	<myActionCategories>Movement</myActionCategories>
+	<myShowInMenu>0</myShowInMenu>
+	<myEncrypted>0</myEncrypted>
+	<myScriptType>1</myScriptType>
+	<myDoctrines></myDoctrines>
+	<myFlags>1</myFlags>
+	<myShowInToolbar>0</myShowInToolbar>
+	<myToolbarLocation></myToolbarLocation>
+	<myExtendedMenuText></myExtendedMenuText>
+</DtScriptedTaskMetaData>
+</boost_serialization>
+
