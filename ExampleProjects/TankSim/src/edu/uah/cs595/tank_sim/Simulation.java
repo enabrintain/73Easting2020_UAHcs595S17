@@ -109,7 +109,7 @@ public class Simulation implements Runnable {
 
 
 	public String getStatus() {
-		return "Received "+comm.getReceivedCt() + "ES PDUs\nSent "+comm.getSentCt();
+		return "Received "+comm.getReceivedCt() + " ESPDUs\nSent "+comm.getSentCt()+ " ESPDUs\n";
 	}
 
 }// Simulation
