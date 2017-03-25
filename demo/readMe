@@ -1,0 +1,24 @@
+Description: 
+T14 : T14 tanck class 
+T14Sender : sender thread 
+EspduReceiver :  receiver thread 
+DataRRepository: "database", remote Espdu table, local Espdy table, event pdu table
+Simulation  : main logic 
+demo Class: excution pool 
+
+Issue:
+1. This version of demo still use DIS6, version configuration need to be done later
+2. The print out messages are jam right now, but you might still be able to identity if it sending out Pdus and receiving Pdus
+3. Haven't got chance to print hash tables in DataRRepository, I thinks it should insert values in... 
+
+
+
+Run demo instruciton: 
+
+1.in "demo.java" change Ip address to your local broad cast ip addr.
+2. "anotherSender.java"  plays remote simulation node here, you can test demo by running demo.java and anotherSender.java or create a tank 
+inside of vr forces(using DIS6 now) to see if demo.java works fine.
+
+
+Let me know if you have any questions!
+
