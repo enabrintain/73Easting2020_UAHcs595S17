@@ -1,0 +1,11 @@
+﻿Build started 3/26/2017 7:37:31 PM.
+     1>Project "C:\MAK\vrforces4.4.2\InTerra\simpleCGF\simpleCGFHLA1516.vcxproj" on node 3 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /IC:\MAK\vrlink5.3.1\include /I/include/HLA1516 /I../../include /I/include /I/include /Zi /nologo /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D NO_DFD_SUPPORT /D _DEBUG /D NOMINMAX /D BOOST_NO_RVALUE_REFERENCES /D _SCL_SECURE_NO_WARNINGS /D _CRT_SECURE_NO_WARNINGS /D DT_DLL_BUILD /D DT_USE_DLL /D DtHLA=1 /D DtHLA_1516=1 /D RTI_USES_STD_FSTREAM=1 /D IS_64BIT /D DEBUG_PLUGIN_SUPPORT /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo"simpleCGFHLA1516.dir/Debug/" /Fd"simpleCGFHLA1516.dir/Debug/vc120.pdb" /Gd /TP /wd4005 /wd4251 /wd4267 /wd4311 /wd4312 /wd4275 /wd4675 /wd4250 /errorReport:prompt main.cxx
+         main.cxx
+     1>c:\mak\vrlink5.3.1\include\vl\rtiNamespace.h(28): fatal error C1083: Cannot open include file: 'RTI/RTI1516.h': No such file or directory
+     1>Done Building Project "C:\MAK\vrforces4.4.2\InTerra\simpleCGF\simpleCGFHLA1516.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.79
