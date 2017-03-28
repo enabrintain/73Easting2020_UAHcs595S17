@@ -4,7 +4,7 @@ import java.io.*;
 import java.net.*;
 import java.util.*;
 
-import edu.nps.moves.dis.*;
+import edu.nps.moves.dis7.*;
 import edu.nps.moves.disenum.ForceID;
 import edu.nps.moves.disutil.CoordinateConversions;
 import edu.nps.moves.disutil.DisTime;
@@ -116,23 +116,25 @@ public class T14Sender extends Thread
     	            
     	        	Dictionary<EntityID, EntityStatePdu> localEspdus; 
     	        	localEspdus = dataObj.getLocalEspdus();
+    	        	//ArrayList<EntityStatePdu> removeList = new ArrayList<>();
     	        	
     	        	 for (Enumeration<EntityStatePdu> e = localEspdus.elements(); e.hasMoreElements();) {
-    	        		 
+    	        	
     	        		    EntityStatePdu t14EsPdu =  e.nextElement() ; 
-    	        		    long ts = t14EsPdu.getTimestamp() ;//getDisAbsoluteTimestamp();
+    	        		    //long ts = t14EsPdu.getTimestamp() ;//getDisAbsoluteTimestamp();
+    	        		    int ts = DisTime.getInstance().getDisRelativeTimestamp();
     	        		    t14EsPdu.setTimestamp(ts);
-    	    	            
+    	        		    //removeList.add(t14EsPdu);
     	    	           
     	    	            ByteArrayOutputStream baos = new ByteArrayOutputStream();
     	    	            DataOutputStream dos = new DataOutputStream(baos);
     	    	            
-    	    	            t14EsPdu.setPduLength(t14EsPdu.getMarshalledSize());
+    	    	            t14EsPdu.setLength(t14EsPdu.getMarshalledSize());
     	    	            t14EsPdu.marshal(dos);
     	    	            //t14Obj.printLocation(); // print out the position of a tank 
     	    	            System.out.println("sending local Espdu to: " + destinationIp.toString());
     	    	            EntityID eid = t14EsPdu.getEntityID();
-    	    	            System.out.print( "EID=[" + eid.getSite() + "," + eid.getApplication() + "," + eid.getEntity() + "]");
+    	    	            System.out.print( "EID=[" + eid.getSiteID() + "," + eid.getApplicationID() + "," + eid.getEntityID() + "]");
     	    	           
     	    	            
     	    	            // The byte array here is the packet in DIS format. We put that into a 
@@ -146,6 +148,8 @@ public class T14Sender extends Thread
     	        		   
     	        		   } // end for: iterate local entity data base 
     	        	
+    	        	 //for(EntityStatePdu e : removeList)
+    	        	//	 localEspdus.remove(e);
     	        	
     	            
     	            // Send every 1 sec. Otherwise this will be all over in a fraction of a second.

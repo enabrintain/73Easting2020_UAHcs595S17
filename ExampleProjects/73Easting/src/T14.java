@@ -9,7 +9,7 @@
  * 
  */
 
-import edu.nps.moves.dis.*;
+import edu.nps.moves.dis7.*;
 import edu.nps.moves.disutil.CoordinateConversions;
 import edu.nps.moves.disutil.DisTime;
 
@@ -79,9 +79,9 @@ public int getT14Count() {
  */
 	private void m_setEntityIDParameter( short applicationID, short siteID) {
 		m_eid = m_espdu.getEntityID();
-		m_eid.setSite(siteID);
-	    m_eid.setApplication(applicationID); 
-	    m_eid.setEntity(m_count); 
+		m_eid.setSiteID(siteID);
+	    m_eid.setApplicationID(applicationID); 
+	    m_eid.setEntityID(m_count); 
 	} 
 
 	public EntityID getEntityID() {
@@ -89,7 +89,7 @@ public int getT14Count() {
 	} 
 	
 	public void printEntityID() {
-		System.out.print( " EID=[" + m_eid.getSite() + "," + m_eid.getApplication() + "," + m_eid.getEntity() + "]");
+		System.out.print( " EID=[" + m_eid.getSiteID() + "," + m_eid.getApplicationID() + "," + m_eid.getEntityID() + "]");
 	} 
 /*****END  EntityID ********/ 
 
@@ -107,7 +107,7 @@ public int getT14Count() {
 	    m_entityType.setDomain((short)1);          // Land (vs air, surface, subsurface, space)
 	    m_entityType.setCategory((short)1);        // Tank
 	    m_entityType.setSubcategory((short)1);     // M1 Abrams
-	    m_entityType.setSpec((short)3);            // M1A2 Abrams
+	    m_entityType.setSpecific((short)3);            // M1A2 Abrams
 	    
 	
 } 
@@ -154,7 +154,7 @@ public double getAlt() {
 } 
 
 public void printLocation() {
-	 System.out.print( " EID=[" + m_eid.getSite() + "," + m_eid.getApplication() + "," + m_eid.getEntity() + "]");
+	 System.out.print( " EID=[" + m_eid.getSiteID() + "," + m_eid.getApplicationID() + "," + m_eid.getEntityID() + "]");
     System.out.print(" DIS coordinates location=[" + m_location.getX() + "," + m_location.getY() + "," + m_location.getZ() + "]");
     double c[] = {m_location.getX(), m_location.getY(), m_location.getZ()};
     double lla[] = CoordinateConversions.xyzToLatLonDegrees(c);
@@ -167,7 +167,7 @@ public void printLocation() {
 /****** fire event ***************/ 
 /*
  * when a Fire event happened, this function will instantiate a FirePdu according to the eventID
- */
+ *
 public void fire(EventID  pEventID) { // EventIdentifier 
 	m_firepdu = new FirePdu() ; 
 	m_firepdu.setEventID(pEventID);
@@ -175,13 +175,13 @@ public void fire(EventID  pEventID) { // EventIdentifier
 	//m_firepdu.setRangeToTarget(pRangeToTarget)
 	// more tobe done 
 	
-} 
+} //*/
 
-public boolean isTargetHit(EventID  eventID) { // EventIdentifier
+/*public boolean isTargetHit(EventID  eventID) { // EventIdentifier
 	
 	// more to be done 
 	return false;
-}
+}//*/
 /******END  fire event ***************/ 
 
 /******denotation  ***************/

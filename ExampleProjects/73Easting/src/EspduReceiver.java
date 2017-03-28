@@ -7,7 +7,7 @@ import java.net.*;
 import java.util.*;
 
 import edu.nps.moves.disutil.*;
-import edu.nps.moves.dis.*;
+import edu.nps.moves.dis7.*;
 
 
 
@@ -109,7 +109,7 @@ public class EspduReceiver extends Thread {
 	
 	    DatagramPacket packet;
        // InetAddress address;
-        PduFactory pduFactory = new PduFactory();
+        Pdu7Factory pduFactory = new Pdu7Factory();
 	    
         try {
             // Specify the socket to receive data
@@ -145,13 +145,13 @@ public class EspduReceiver extends Thread {
                     {
                     	EntityStatePdu Rpdu = (EntityStatePdu) aPdu;
                     	
-                    	if(Rpdu.getEntityID().getApplication() != (int)Simulation.APPLICATION_ID) {
+                    	if(Rpdu.getEntityID().getApplicationID() != (int)Simulation.APPLICATION_ID) {
                     	   dataObj.update_remoteEsPdus(Rpdu);
                     	
                     	eid = ((EntityStatePdu)aPdu).getEntityID();
                     	System.out.print("got PDU of type: " + aPdu.getClass().getName());
                         Vector3Double position = ((EntityStatePdu)aPdu).getEntityLocation();
-                        System.out.print(" EID:[" + eid.getSite() + ", " + eid.getApplication() + ", " + eid.getEntity() + "] ");
+                        System.out.print(" EID:[" + eid.getSiteID() + ", " + eid.getApplicationID() + ", " + eid.getEntityID() + "] ");
                         System.out.print(" Location in DIS coordinates: [" + position.getX() + ", " + position.getY() + ", " + position.getZ() + "]");
                     	}
                     }

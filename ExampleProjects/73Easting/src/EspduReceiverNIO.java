@@ -1,10 +1,10 @@
-package edu.nps.moves.examples;
-
+//package edu.nps.moves.examples;
+/*
 import java.net.*;
 import java.nio.*;
 
 import edu.nps.moves.disutil.*;
-
+import edu.nps.moves.examples.EspduSender;
 import edu.nps.moves.dis.*;
 
 /**
@@ -13,12 +13,12 @@ import edu.nps.moves.dis.*;
  *
  * @author DMcG rharder
  * @version $Id:$
- */
+ * /
 public class EspduReceiverNIO {
 
     /** Max size of a PDU in binary format that we can receive. This is actually
      * somewhat outdated--PDUs can be larger--but this is a reasonable starting point
-     */
+     * /
     public static final int MAX_PDU_SIZE = 8192; // This has actually been superceded by a larger buffer size, but good enough for now
 
     public static void main(String args[]) {
@@ -57,4 +57,4 @@ public class EspduReceiverNIO {
 
 
     } // end main
-} // end class
+} // end class//*/

@@ -19,7 +19,7 @@ public class anotherSender
 	public enum NetworkMode{UNICAST, MULTICAST, BROADCAST};
 
     /** default multicast group we send on */
-    public static final String DEFAULT_MULTICAST_GROUP="192.168.0.255";//"192.168.0.255"; //"239.1.2.3";
+    public static final String DEFAULT_MULTICAST_GROUP="10.56.1.255";//"192.168.0.255";//"192.168.0.255"; //"239.1.2.3";
     public static final String UNICAST_IP="10.56.1.171";
     public static final String BROAD_CAST= "10.56.1.255";
    
@@ -138,7 +138,7 @@ public static void main(String args[])
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
             DataOutputStream dos = new DataOutputStream(baos);
             
-            t14_1.getEntityStatePdu().setPduLength(t14_1.getEntityStatePdu().getMarshalledSize());
+            t14_1.getEntityStatePdu().setLength(t14_1.getEntityStatePdu().getMarshalledSize());
             t14_1.getEntityStatePdu().marshal(dos);
             t14_1.printLocation(); // print out the position of a tank 
             
