@@ -6,6 +6,7 @@
  */
 
 
+import java.util.ArrayList;
 import java.util.Dictionary;
 import java.util.Hashtable;
 
@@ -21,6 +22,7 @@ public class DataRepository {
 	private Dictionary<EntityID, EntityStatePdu> m_localEspdus;
 	// Dictionary<key, FirePdu> firePdus;
 	// Dictionary<key, DetonationPdu  > detonationPdus;
+	private ArrayList<T14> localTanks = new ArrayList<>();
 	
 	
 	/***************/
@@ -89,5 +91,22 @@ public class DataRepository {
 		return m_localEspdus;
 	}
 	/***************/
+	public void notify_FirePdu(FirePdu fire) {
+		// TODO Auto-generated method stub
+		
+	}
+	public void notify_DetonationPdu(DetonationPdu detonation) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+	public void addTank(T14 t14) {
+		if(!localTanks.contains(t14))
+			localTanks.add(t14);
+	}
+	public ArrayList<T14> getTanks() {
+		return localTanks;
+	}
 	
 } // end dataRepository class

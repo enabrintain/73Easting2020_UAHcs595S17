@@ -24,10 +24,18 @@ public class Simulation extends Thread {
 	    T14 t14_1 = new T14(EXERCISE_ID,FORCE_ID, APPLICATION_ID,SITE_ID ); //(short exerciseID, short forceID, short applicationID, short siteID)
 	    t14_1.setLocation(29, 43, 240) ; // set tank location with its position in ( lat, lon, alt )
 	    // t14_1.printLocation();
+	    dataObj.addTank(t14_1);
 	    /******* END create local entity *******/ 
 	    
 	    dataObj.update_localEsPdus(t14_1.getEntityStatePdu());
 		
+	    while(true)
+	    {
+	    	for(T14 tank : dataObj.getTanks())
+	    }
+	    
+	    
+	    
 	} // end run 
 
 }// end simulation class 

@@ -37,7 +37,7 @@ public class demo {
 	public static void main(String[] args) throws IOException {
 		
 		
-		/******* set up socket ********/   
+		/******* set up socket ********
 	    MulticastSocket socket = null;
 	   
 	    int port = PORT;
@@ -122,9 +122,9 @@ public class demo {
 	   
 	    
 	    while (true) {
-			executor1.execute( new T14Sender(dataRepository)); // sender thread 	
+			//executor1.execute( new T14Sender(dataRepository)); // sender thread 	
 			executor1.execute(new EspduReceiver(dataRepository)); // receiver thread 
-			executor1.execute(new Simulation(dataRepository)); // simulation thread 
+			//executor1.execute(new Simulation(dataRepository)); // simulation thread 
 			
 								
 			} 
