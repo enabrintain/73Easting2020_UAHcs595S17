@@ -52,6 +52,16 @@ public class T14 {
 
 	public void update(DataRepository dataObj) {
 
+		
+		
+		
+		
+		
+		
+		
+		
+
+	    dataObj.update_localEsPdus(this.getEntityStatePdu());
 	}// update
 
 

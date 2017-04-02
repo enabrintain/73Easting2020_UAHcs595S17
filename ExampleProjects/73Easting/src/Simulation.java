@@ -27,11 +27,11 @@ public class Simulation extends Thread {
 	    dataObj.addTank(t14_1);
 	    /******* END create local entity *******/ 
 	    
-	    dataObj.update_localEsPdus(t14_1.getEntityStatePdu());
 		
 	    while(true)
 	    {
 	    	for(T14 tank : dataObj.getTanks())
+	    		tank.update(dataObj);
 	    }
 	    
 	    
