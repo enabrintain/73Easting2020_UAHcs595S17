@@ -10,6 +10,7 @@
  * 
  */
 
+import edu.nps.moves.dis.Orientation;
 import edu.nps.moves.dis7.*;
 import edu.nps.moves.disutil.CoordinateConversions;
 import edu.nps.moves.disutil.DisTime;
@@ -26,8 +27,9 @@ public class T14 {
 
 	protected double m_disCoordinates[]; // tank's Coordinates in X, Y, Z
 	protected Vector3Double m_location; // Tank's location in lan, lon, alt
-	// more like velocity, orientation
-
+	protected EulerAngles m_orientation; 
+	protected Vector3Float m_linearVelocity;
+	
 	protected FirePdu m_firepdu; // fire event
 	protected DetonationPdu m_depdu; // been hit, report demage
 
@@ -52,14 +54,6 @@ public class T14 {
 
 	public void update(DataRepository dataObj) {
 
-		
-		
-		
-		
-		
-		
-		
-		
 
 	    dataObj.update_localEsPdus(this.getEntityStatePdu());
 	}// update
@@ -174,6 +168,37 @@ public class T14 {
 		System.out.println(" Location (lat/lon/alt): [" + lla[0] + ", " + lla[1] + ", " + lla[2] + "]");
 	}
 	/***** END Location ********/
+	
+	
+	/***** orientation ********/
+	public EulerAngles getM_orientation() {
+		return m_orientation;
+	}
+
+
+	public void setM_orientation(float phi, float psi, float theta) {
+		m_orientation=m_espdu.getEntityOrientation();
+		m_orientation.setPhi(phi) ;
+		m_orientation.setPsi(psi) ;
+		m_orientation.setTheta(theta);
+	}
+	/***** END orientation ********/
+	
+	/***** velocity ********/
+
+	public Vector3Float getM_linearVelocity() {
+		return m_linearVelocity;
+	}
+
+
+	public void setM_linearVelocity(float xValue, float yValue, float zValue) {
+		m_linearVelocity= m_espdu.getEntityLinearVelocity();
+		 m_linearVelocity.setX(xValue);
+		 m_linearVelocity.setY(yValue);
+		 m_linearVelocity.setZ(zValue);
+		 
+	}
+	/***** END velocity ********/
 	
 	
 
