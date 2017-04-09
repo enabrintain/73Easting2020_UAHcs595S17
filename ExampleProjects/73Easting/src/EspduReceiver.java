@@ -9,6 +9,9 @@ import java.util.*;
 
 import edu.nps.moves.disutil.*;
 import edu.nps.moves.dis7.*;
+import edu.nps.moves.deadreckoning.DIS_DR_FPW_02;
+import edu.nps.moves.deadreckoning.DIS_DeadReckoning;
+import edu.nps.moves.deadreckoning.utils.*;
 
 public class EspduReceiver extends Thread {
 
@@ -100,8 +103,10 @@ public class EspduReceiver extends Thread {
 						EntityStatePdu esPdu = (EntityStatePdu) aPdu;
 
 						if (esPdu.getEntityID().getApplicationID() != (int) Simulation.APPLICATION_ID)
+						{
 							dataObj.update_remoteEsPdus(esPdu);
-
+						    dataObj.update_dr(esPdu);
+						}
 					} else {
 						String name = aPdu.getClass().getName();
 						if (!name.contains("DataPduReceived") && !name.contains("DataPdu"))
@@ -126,5 +131,7 @@ public class EspduReceiver extends Thread {
 		}
 
 	} // end run
+	
+	
 
 } // end class

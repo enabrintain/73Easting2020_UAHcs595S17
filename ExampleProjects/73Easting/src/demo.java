@@ -1,3 +1,4 @@
+
 /*
  * Using DIS6 now, still have problem with DIS7,  version configuration need to be done later 
  * This demo put 3 threads(sender, receiver and simulation) into execution pool and runs okay 
@@ -29,24 +30,22 @@ public class demo {
 	public static final int PORT = 3000;
 
 	public static void main(String[] args) throws IOException {
-
 		DataRepository dataRepository = new DataRepository();
 
-		Thread receiver = new Thread(new EspduReceiver(dataRepository));
-		Thread simulation = new Thread(new Simulation(dataRepository));
+		EspduReceiver e = new EspduReceiver(dataRepository);
+		Simulation s = new Simulation(dataRepository);
+		s.start(); // simulation
+		e.start(); // receiver
 
-		receiver.start();
-		simulation.start();
-		
-		// goofy way of adding a enter 
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("Type enter to stop: \n\n\n");
-        try {
-            reader.readLine();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        System.exit(-1);
+		// goofy way of adding a enter
+		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+		System.out.println("Type enter to stop: \n\n\n");
+		try {
+			reader.readLine();
+		} catch (IOException ex) {
+			ex.printStackTrace();
+		}
+		System.exit(-1);
 		System.out.println("Terminating..");
 	}
 

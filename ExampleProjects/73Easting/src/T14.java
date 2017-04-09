@@ -20,7 +20,6 @@ public class T14 {
 										// created
 	private int ID = -1;
 
-	// protected EntityStatePdu m_espdu;// Entity State
 	protected DisTime m_disTime; // time padding
 	protected short ExerciseID;
 	protected short ForceId;
@@ -29,12 +28,12 @@ public class T14 {
 
 	protected double m_disCoordinates[]; // tank's Coordinates in X, Y, Z
 	protected Vector3Double m_location; // Tank's location in lan, lon, alt
-	// more like velocity, orientation
 
-	//protected FirePdu m_firepdu; // fire event
-	//protected DetonationPdu m_depdu; // been hit, report demage
-
-	private long localClock;
+	protected EulerAngles m_orientation; 
+	protected Vector3Float m_linearVelocity;
+	
+	protected FirePdu m_firepdu; // fire event
+	protected DetonationPdu m_depdu; // been hit, report demage
 
 	/********* End Field **************/
 
@@ -60,9 +59,9 @@ public class T14 {
 	private ArrayList<FirePdu> firePdus = new ArrayList<>();
 	private boolean detonateFlag = false;
 	private ArrayList<DetonationPdu> detonatePdus = new ArrayList<>();
+	private long localClock = -1;
 	
 	public void update(DataRepository dataObj) {
-
 		/*if(lastUpdated!=-1){
 			System.out.println("Update " + (System.currentTimeMillis()-lastUpdated));
 		}
@@ -79,7 +78,6 @@ public class T14 {
 		
 		if (shouldSendUpdate())
 			dataObj.sendESPdu(this.getEntityStatePdu());
-
 	}// update
 
 	private void detonateUpdate() {
@@ -103,7 +101,7 @@ public class T14 {
 	private boolean shouldSendUpdate() {
 		long num = 2; // send a ESPdu every num seconds
 		
-		long t = ((System.currentTimeMillis() - localClock) / 1000);
+		long t = ((System.currentTimeMillis() - localClock ) / 1000);
 		//System.out.println("\t" + t);
 		if (t % num == 0) // if the time since the sim started is divisable by num then update ES PDU
 		{
@@ -175,6 +173,11 @@ public class T14 {
 		m_location.setX(m_disCoordinates[0]);
 		m_location.setY(m_disCoordinates[1]);
 		m_location.setZ(m_disCoordinates[2]);
+		
+		if(m_orientation!=null)
+			espdu.setEntityOrientation(m_orientation);
+		if(m_linearVelocity!=null)
+			espdu.setEntityLinearVelocity(m_linearVelocity);
 
 		espdu.setLength(espdu.getMarshalledSize());
 		return espdu;
@@ -260,6 +263,40 @@ public class T14 {
 	 * + ", " + lla[2] + "]"); }
 	 */
 	/***** END Location ********/
+
+	
+	/***** orientation ********/
+	public EulerAngles getM_orientation() {
+		return m_orientation;
+	}
+
+
+	public void setM_orientation(float phi, float psi, float theta) {
+		if(m_orientation==null)
+			m_orientation = new EulerAngles();
+		m_orientation.setPhi(phi) ;
+		m_orientation.setPsi(psi) ;
+		m_orientation.setTheta(theta);
+	}
+	/***** END orientation ********/
+	
+	/***** velocity ********/
+
+	public Vector3Float getM_linearVelocity() {
+		return m_linearVelocity;
+	}
+
+
+	public void setM_linearVelocity(float xValue, float yValue, float zValue) {
+		if(m_linearVelocity==null)
+			m_linearVelocity = new Vector3Float();
+		 m_linearVelocity.setX(xValue);
+		 m_linearVelocity.setY(yValue);
+		 m_linearVelocity.setZ(zValue);
+		 
+	}
+	/***** END velocity ********/
+	
 
 	/****** fire event ***************/
 	/*
