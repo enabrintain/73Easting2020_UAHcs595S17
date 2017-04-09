@@ -32,21 +32,48 @@ public class EspduReceiver extends Thread {
 	public void run() {
 		/****** set up socket *****/
 		MulticastSocket socket = null;
+        // Default settings. These are used if no system properties are set. 
+        // If system properties are passed in, these are over ridden.
+        
+        InetAddress address = null; // maybe not needed because of broadcast...
+        
+        try
+        {
+            address = InetAddress.getByName(demo.DEFAULT_MULTICAST_GROUP);
+        }
+        catch(Exception e)
+        {
+            System.out.println(e + " Cannot create multicast address");
+            System.exit(0);
+        }
 
-		int port = demo.PORT;
-		// NetworkMode mode = NetworkMode.MULTICAST;
-		NetworkMode mode = NetworkMode.BROADCAST;
-		InetAddress destinationIp = null;
+        // All system properties, passed in on the command line via -Dattribute=value
+        Properties systemProperties = System.getProperties();
 
-		try {
-			destinationIp = InetAddress.getByName(demo.DEFAULT_MULTICAST_GROUP);
-			socket = new MulticastSocket(port);
-			socket.setBroadcast(true);
-		} catch (Exception e) {
-			System.out.println("Cannot create multicast address:");
-			e.printStackTrace(System.out);
-			System.exit(0);
-		}
+        // IP address we send to
+        String destinationIpString = systemProperties.getProperty("destinationIp");
+
+        // Port we send to, and local port we open the socket on
+        String portString = systemProperties.getProperty("port");
+
+        // Set up a socket to send information
+        try
+        {
+            socket = new MulticastSocket(demo.PORT);
+            socket.setBroadcast(true);
+
+            // Where we send packets to, the destination IP address
+            if(destinationIpString != null)
+            {
+                address = InetAddress.getByName(destinationIpString);
+            }
+        }
+        catch(Exception e)
+        {
+            System.out.println("Unable to initialize networking. Exiting.");
+            System.out.println(e);
+            //System.exit(-1);
+        }
 		/********** END setup socket ***********/
 
 		DatagramPacket packet;
@@ -74,12 +101,11 @@ public class EspduReceiver extends Thread {
 
 						if (esPdu.getEntityID().getApplicationID() != (int) Simulation.APPLICATION_ID)
 							dataObj.update_remoteEsPdus(esPdu);
-						
+
 					} else {
 						String name = aPdu.getClass().getName();
-						// if(!name.contains("DataPduReceived") &&
-						// !name.contains("DataPdu"))
-						System.out.println("Received " + name);
+						if (!name.contains("DataPduReceived") && !name.contains("DataPdu"))
+							System.out.println("Received " + name);
 						if (aPdu instanceof FirePdu) {
 							FirePdu fire = (FirePdu) aPdu;
 							dataObj.notify_FirePdu(fire);

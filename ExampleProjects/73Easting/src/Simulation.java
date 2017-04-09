@@ -4,8 +4,8 @@
  */
 public class Simulation extends Thread {
 	public static final short EXERCISE_ID = 1;
-	public static final short FORCE_ID = 0 ; // 
-	public static final short APPLICATION_ID = 595;
+	public static final short FORCE_ID = 2 ; // 2 for Iraqis
+	public static final short APPLICATION_ID = 1;//595;
 	public static final short SITE_ID = 1;
 	
 	
@@ -22,7 +22,7 @@ public class Simulation extends Thread {
 		
 		 /******* create local entity *******/ 
 	    T14 t14_1 = new T14(EXERCISE_ID,FORCE_ID, APPLICATION_ID,SITE_ID ); //(short exerciseID, short forceID, short applicationID, short siteID)
-	    t14_1.setLocation(29, 43, 240) ; // set tank location with its position in ( lat, lon, alt )
+	    t14_1.setLocation(29.507035, 46.595540, 250) ; // set tank location with its position in ( lat, lon, alt )
 	    // t14_1.printLocation();
 	    dataObj.addTank(t14_1);
 	    /******* END create local entity *******/ 
