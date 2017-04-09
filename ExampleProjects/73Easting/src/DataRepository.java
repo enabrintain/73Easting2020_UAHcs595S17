@@ -14,6 +14,7 @@ import edu.nps.moves.deadreckoning.DIS_DR_FPW_02;
 import edu.nps.moves.deadreckoning.DIS_DR_RVW_04;
 import edu.nps.moves.deadreckoning.DIS_DeadReckoning;
 import edu.nps.moves.dis7.* ;
+import edu.nps.moves.disutil.DisTime;
 
 
 /*
@@ -23,25 +24,24 @@ import edu.nps.moves.dis7.* ;
 public class DataRepository {
 	
 	private  Dictionary<String, EntityStatePdu> m_remoteEspdus;
-	private  Dictionary<String, DIS_DeadReckoning  > m_dr;
+	private  Dictionary<String, DIS_DeadReckoning> m_dr;
 	private Dictionary<String, EntityStatePdu> m_localEspdus;
 	// Dictionary<key, FirePdu> firePdus;
 	// Dictionary<key, DetonationPdu  > detonationPdus;
 	private ArrayList<T14> localTanks = new ArrayList<>();
-	 
-	
-	
-	
+	private T14Sender sender = null;
+
 	
 	/***************/
 	public DataRepository() {
 		m_remoteEspdus= new Hashtable<>();
+		m_localEspdus = new Hashtable();
+		sender = new T14Sender(this);
 		m_localEspdus = new Hashtable<>();
 		m_dr =  new Hashtable<>();
 	}
 	/**
 	 * @throws Exception *************/
-	
 	public void update_remoteEsPdus(EntityStatePdu Rpdu) throws Exception {
 		int a =Rpdu.getEntityID().getSiteID();
 		int b =Rpdu.getEntityID().getApplicationID();
@@ -59,10 +59,8 @@ public class DataRepository {
 				m_remoteEspdus.put(key, Rpdu); // update with new one
 				
 			} // end else 
-			
 		} // end else
-		
-	} 
+	}
 	
 	/***************/
 	
@@ -165,14 +163,26 @@ public class DataRepository {
 	/***************/
 	
 	public void notify_FirePdu(FirePdu fire) {
-		// TODO Auto-generated method stub
-		
-	}
-	public void notify_DetonationPdu(DetonationPdu detonation) {
-		// TODO Auto-generated method stub
-		
+		System.out.println("DataRepository.notify_FirePdu()" + fire.getFiringEntityID().getEntityID() + " at " + fire.getTargetEntityID().getEntityID());
+		EntityID id = fire.getTargetEntityID();
+		for(T14 tank : localTanks)
+			if(tank.getEntityID(null).equalsImpl(id))
+			{
+				tank.fireTarget(fire);
+				return;
+			}
 	}
 	
+	public void notify_DetonationPdu(DetonationPdu detonation) {
+		System.out.println("DataRepository.notify_DetonationPdu()" + detonation.getFiringEntityID().getEntityID() + " at " + detonation.getTargetEntityID().getEntityID());
+		EntityID id = detonation.getTargetEntityID();
+		for(T14 tank : localTanks)
+			if(tank.getEntityID(null).equalsImpl(id))
+			{
+				tank.detonationTarget(detonation);
+				return;
+			}
+	}
 	
 	public void addTank(T14 t14) {
 		if(!localTanks.contains(t14))
@@ -180,6 +190,11 @@ public class DataRepository {
 	}
 	public ArrayList<T14> getTanks() {
 		return localTanks;
+	}
+	public void sendESPdu(EntityStatePdu entityStatePdu) {
+		entityStatePdu.setTimestamp(DisTime.getInstance().getDisRelativeTimestamp());
+		entityStatePdu.setLength(entityStatePdu.getMarshalledSize());
+		sender.send(entityStatePdu);
 	}
 	
 	

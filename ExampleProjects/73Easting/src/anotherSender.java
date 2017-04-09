@@ -151,7 +151,7 @@ public static void main(String args[])
             
             t14_1.getEntityStatePdu().setLength(t14_1.getEntityStatePdu().getMarshalledSize());
             t14_1.getEntityStatePdu().marshal(dos);
-            t14_1.printLocation(); // print out the position of a tank 
+            //t14_1.printLocation(); // print out the position of a tank 
             
             // The byte array here is the packet in DIS format. We put that into a 
             // datagram and send it.
