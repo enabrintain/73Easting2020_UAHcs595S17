@@ -4,6 +4,11 @@ import java.io.*;
 import java.net.*;
 import java.util.*;
 
+import edu.nps.moves.dis7.Vector3Double;
+import edu.nps.moves.dis7.Vector3Float;
+import edu.nps.moves.disutil.CoordinateConversions;
+import edu.nps.moves.disutil.DisTime;
+
 
 
 /**
@@ -19,7 +24,7 @@ public class anotherSender
 	public enum NetworkMode{UNICAST, MULTICAST, BROADCAST};
 
     /** default multicast group we send on */
-    public static final String DEFAULT_MULTICAST_GROUP="10.56.1.255";//"192.168.0.255";//"192.168.0.255"; //"239.1.2.3";
+    public static final String DEFAULT_MULTICAST_GROUP="10.56.0.255";//"192.168.0.255";//"10.56.0.255"; //"239.1.2.3";
     public static final String UNICAST_IP="10.56.1.171";
     public static final String BROAD_CAST= "10.56.1.255";
    
@@ -122,17 +127,23 @@ public static void main(String args[])
     
     // create a new T14 tank with its position in ( lat, lon, alt )
     T14 t14_1 = new T14((short)1,(short) 0, (short)1,(short) 1 ); //(short exerciseID, short forceID, short applicationID, short siteID)
-    t14_1.setLocation(12,12,12) ; 
+    t14_1.setLocation(29.3318,46.3748,0) ; 
+    t14_1.setM_orientation(150.0f, -0.01f, 0.01f);
+    t14_1.setM_linearVelocity(0, 1f, 0);
+    
 
     // Loop through sending 100 ESPDUs
     try
     {
         System.out.println("from another sender : Sending 100 ESPDU packets to " + destinationIp.toString());
-        for(int idx = 0; idx < 1000; idx++)
+        while (true)
         {
             
-            int ts = t14_1.getM_disTime().getDisRelativeTimestamp();//getDisAbsoluteTimestamp();
-            t14_1.getEntityStatePdu().setTimestamp(ts);
+        	moving(t14_1);
+           // int ts = t14_1.getM_disTime().getDisRelativeTimestamp();//getDisAbsoluteTimestamp();
+           int ts =  DisTime.getInstance().getDisRelativeTimestamp();
+           System.out.println(ts);
+        	t14_1.getEntityStatePdu().setTimestamp(ts);
             
            
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -151,7 +162,7 @@ public static void main(String args[])
             socket.send(packet);
             
             // Send every 1 sec. Otherwise this will be all over in a fraction of a second.
-            Thread.sleep(1000);
+            Thread.sleep(5000);
            
 
         }// end for
@@ -161,6 +172,37 @@ public static void main(String args[])
         System.out.println(e);
     }
         
+}
+
+public static void moving(T14 t) {
+	double x, y, z;
+	//double lat, lon, alt;
+	
+	//Vector3Float v = t.getM_linearVelocity();
+	//Vector3Double l =t.getM_location();
+	//x = v.getX();
+	//y = v.getY();
+    //z = v.getZ();
+	x = t.getM_location().getX();
+	y = t.getM_location().getY();
+	z = t.getM_location().getZ();
+	
+	y = y+5;
+	
+	t.getM_location().setX(x);
+	t.getM_location().setY(y);
+	t.getM_location().setZ(z);
+	
+	
+	
+	//xyz = CoordinateConversions.xyzToLatLonDegrees(xyz);
+	
+	//xyz[1]+=  0.00005;
+	
+	//xyz = CoordinateConversions.getXYZfromLatLonDegrees(xyz[0], xyz[1], xyz[2]);
+	
+	//t.setLocation(xyz[0], xyz[1], xyz[2]);
+	
 }
 
 }

@@ -25,7 +25,7 @@ public class demo {
 	public enum NetworkMode{UNICAST, MULTICAST, BROADCAST};
 
     /** default multicast group we send on */
-    public static final String DEFAULT_MULTICAST_GROUP="10.56.0.255";//"192.168.0.255";//"192.168.0.255"; //"239.1.2.3";  // public static final String UNICAST_IP="10.56.1.171";
+    public static final String DEFAULT_MULTICAST_GROUP="10.56.0.255";//"192.168.0.255";//"10.56.0.255"; //"239.1.2.3";  // public static final String UNICAST_IP="10.56.1.171";
    //public static final String BROAD_CAST= "10.56.1.255";
    
     /** Port we send on */
@@ -121,15 +121,17 @@ public class demo {
 	   ExecutorService executor1 = Executors.newFixedThreadPool(3);
 	   
 	    
-	    while (true) {
+	   /* while (true) {
 			//executor1.execute( new T14Sender(dataRepository)); // sender thread 	
-			executor1.execute(new EspduReceiver(dataRepository)); // receiver thread 
+			//executor1.execute(new EspduReceiver(dataRepository)); // receiver thread 
 			//executor1.execute(new Simulation(dataRepository)); // simulation thread 
 			
 								
-			} 
-			
-	    
+			} */
+	   		EspduReceiver e = new EspduReceiver(dataRepository);
+			Simulation s = new Simulation(dataRepository);
+			s.start(); // simulation
+			e.start(); // receiver 
 		
 	}
 
