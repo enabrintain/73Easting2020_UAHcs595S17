@@ -30,7 +30,7 @@ public class DataRepository {
 	// Dictionary<key, DetonationPdu  > detonationPdus;
 	private ArrayList<T14> localTanks = new ArrayList<>();
 	private T14Sender sender = null;
-
+	private int eventUID = 4000;
 	
 	/***************/
 	public DataRepository() {
@@ -89,10 +89,7 @@ public class DataRepository {
 	/***************/
 	
 	public void update_dr( EntityStatePdu Rpdu) throws Exception {
-		int a =Rpdu.getEntityID().getSiteID();
-		int b =Rpdu.getEntityID().getApplicationID();
-		int c =Rpdu.getEntityID().getEntityID();
-		String key = String.valueOf(a)+String.valueOf(b)+String.valueOf(c);
+		String key = getkey(Rpdu.getEntityID());
  
 		if (m_dr.isEmpty()) {
 			DIS_DeadReckoning Rdr = getDR(Rpdu);
@@ -126,8 +123,6 @@ public class DataRepository {
 		        //                loc           orien               lin V          Accel    Ang V
 		        double[] locOr = {lx, ly, lz,   ophi,opsi,otheta,   lvx, lvy,lvz,  Ax, Ay, Az,   AVx, AVy, AVz};
 				m_dr.get(key).setNewAll(locOr);
-				
-				
 			} // end else 
 			
 		} // end else
@@ -160,7 +155,7 @@ public class DataRepository {
 	}
 	/***************/
 	
-	public Dictionary<String, DIS_DeadReckoning> getM_dr() {
+	public Dictionary<String, DIS_DeadReckoning> getDeadReckonings() {
 		return m_dr;
 	}
 	/***************/
@@ -234,6 +229,19 @@ public class DataRepository {
         return dr;
 
 		
+	}
+
+
+	public void sendFirePDU(FirePdu fPDU) {
+		fPDU.setTimestamp(DisTime.getInstance().getDisRelativeTimestamp());
+		fPDU.setLength(fPDU.getMarshalledSize());
+		sender.send(fPDU);
+	}
+
+
+	public int getEventID() {
+		eventUID++;
+		return eventUID;
 	}
 	
 	
