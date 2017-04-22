@@ -40,13 +40,16 @@ public class DataRepository {
 		m_localEspdus = new Hashtable<>();
 		m_dr =  new Hashtable<>();
 	}
+	
+	
+	public String getkey(EntityID id) {
+		return String.valueOf(id.getSiteID())+String.valueOf(id.getApplicationID())+String.valueOf(id.getEntityID());
+	}
+	
 	/**
 	 * @throws Exception *************/
 	public void update_remoteEsPdus(EntityStatePdu Rpdu) throws Exception {
-		int a =Rpdu.getEntityID().getSiteID();
-		int b =Rpdu.getEntityID().getApplicationID();
-		int c =Rpdu.getEntityID().getEntityID();
-		String key = String.valueOf(a)+String.valueOf(b)+String.valueOf(c);
+		String key = getkey(Rpdu.getEntityID());
  
 		if (m_remoteEspdus.isEmpty()) {
 			m_remoteEspdus.put(key, Rpdu);
