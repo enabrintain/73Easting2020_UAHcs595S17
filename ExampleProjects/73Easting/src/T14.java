@@ -370,10 +370,34 @@ public class T14 {
 	/****** END PH function ***************/
 
 	/****** probability of kill function ***************/
-	public boolean isDamaged(double distance) {
+	public boolean isDead(double distance) {
+		Random rng = null;
+		double r1=rng.nextDouble();
+		double coefficient =1; 
+		if (distance < 2000) { // unit is meter
+			//coefficient = 0.089;
+			double final_probability = 0.8*coefficient;
+			if (r1 < final_probability) {
+				return true;
+				}
+			
+		}else if(distance < 3000) {
+			//coefficient = 0.05;
+			double final_probability = 0.6*coefficient;
+			if (r1 < final_probability) {
+				return true;
+				}
+		}else if (distance < 4000) {
+			//coefficient = 0.027;
+			double final_probability = 0.30*coefficient;
+			if (r1 < final_probability) {
+				return true;
+				}
+		}
 		
 		return false;
 	}
+	
 	
 
 	/****** END PK function ***************/
