@@ -19,8 +19,12 @@ import edu.nps.moves.disutil.DisTime;
 public class T14 {
 
 	/******** T14 Field ********/
+	public static long FUNCTIONAL_APPEARANCE = 400000;
+	public static long KILLED_APPEARANCE = 408038;
 	public static double MIN_FIRE_DISTANCE = 4000;
 	public static double MAX_FIRE_DISTANCE = 20000;
+	
+	public static double FIRE_DELAY = 10; //10 seconds
 	
 	private static int m_count = 302; // keep track on how many T14 has been
 										// created
@@ -33,6 +37,8 @@ public class T14 {
 	protected short ApplicationID;
 	protected short SiteID;
 
+	protected double CrewQualityMultiplier = 0.8; //range is 0 to 1, with 0 being absent and 1 being the best.
+
 	protected double m_disCoordinates[]; // tank's Coordinates in X, Y, Z
 	protected Vector3Double m_location; // Tank's location in lan, lon, alt
 
@@ -43,8 +49,6 @@ public class T14 {
 	protected DetonationPdu m_depdu; // been hit, report demage
 	protected EntityStatePdu aimed_target = null;
 
-	public static long FUNCTIONAL_APPEARANCE = 400000;
-	public static long KILLED_APPEARANCE = 408038;
 	protected long m_appearance;
 	/********* End Field **************/
 
@@ -72,19 +76,23 @@ public class T14 {
 	private boolean detonateFlag = false;
 	private ArrayList<DetonationPdu> detonatePdus = new ArrayList<>();
 	private long localClock = -1;
+	private double fireTime = 0.0;
 	
 	public void update(DataRepository dataObj) {
 		
 		// Does the Tank see something to shoot at?
         if(aimed_target == null) {
         	findNearestTarget(dataObj); 
-        	
+        	// calculate fire delay
+        	fireTime = System.currentTimeMillis();
+        	fireTime += (FIRE_DELAY + (5.0-5.0*CrewQualityMultiplier); // as CrewQualityMultiplier -> 0 firedelay -> 15 
         }else {
         	// check if the target dead 
         	//if (aimed_target.getEntityAppearance() != 400000)
         	System.out.println(aimed_target.getEntityAppearance());
         	System.out.println("I am seeing this tank: "+aimed_target.getEntityID().getApplicationID()+aimed_target.getEntityID().getSiteID()+aimed_target.getEntityID().getEntityID());
         	// keep shooting at it 
+        	
         }
 		
 		
