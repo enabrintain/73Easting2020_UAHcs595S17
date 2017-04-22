@@ -388,7 +388,7 @@ public class T14 {
 			EntityStatePdu temp = e.nextElement() ;
 			
 			if ((temp.getForceId()!= this.ForceId ) &&
-					(temp.getEntityAppearance() != FUNCTIONAL_APPEARANCE )  ) {
+					(temp.getEntityAppearance() == FUNCTIONAL_APPEARANCE )  ) {
 				double rx = temp.getEntityLocation().getX() ; 
 				double ry = temp.getEntityLocation().getY() ; 
 				double rz  = temp.getEntityLocation().getZ() ; 
