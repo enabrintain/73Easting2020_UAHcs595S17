@@ -235,6 +235,13 @@ public class DataRepository {
 
 		
 	}
+
+
+	public void sendFirePDU(FirePdu fPDU) {
+		fPDU.setTimestamp(DisTime.getInstance().getDisRelativeTimestamp());
+		fPDU.setLength(fPDU.getMarshalledSize());
+		sender.send(fPDU);
+	}
 	
 	
 } // end dataRepository class
