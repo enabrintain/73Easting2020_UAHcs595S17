@@ -39,6 +39,8 @@ public class T14 {
 	protected FirePdu m_firepdu; // fire event
 	protected DetonationPdu m_depdu; // been hit, report demage
 	protected EntityStatePdu aimed_target = null;
+	
+	protected long m_appearance;
 	/********* End Field **************/
 
 	/*** constructor with location ***/
@@ -51,6 +53,7 @@ public class T14 {
 		m_count++; // increment T14 count
 		ID = m_count;
 
+		m_appearance = 400000; 
 		m_disTime = DisTime.getInstance();
 	} // end constructor
 
@@ -105,8 +108,10 @@ public class T14 {
 	}// update
 
 	private void detonateUpdate() {
-		for(DetonationPdu d : detonatePdus)
+		for(DetonationPdu d : detonatePdus){
+			m_appearance = 408038;
 			System.out.println(d.getFiringEntityID().getEntityID() + " detonated " + this.ID);
+		}
 		detonatePdus.clear();	
 		detonateFlag = false;
 	}
@@ -192,6 +197,8 @@ public class T14 {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		espdu.setEntityAppearance(m_appearance);
 
 		m_location = espdu.getEntityLocation();
 		m_location.setX(m_disCoordinates[0]);
