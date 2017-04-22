@@ -85,7 +85,7 @@ public class T14 {
         	findNearestTarget(dataObj); 
         	// calculate fire delay
         	fireTime = System.currentTimeMillis();
-        	fireTime += (FIRE_DELAY + (5.0-5.0*CrewQualityMultiplier); // as CrewQualityMultiplier -> 0 firedelay -> 15 
+        	fireTime += (FIRE_DELAY + (5.0-5.0*CrewQualityMultiplier)); // as CrewQualityMultiplier -> 0 firedelay -> 15 
         }else {
         	// check if the target dead 
         	//if (aimed_target.getEntityAppearance() != 400000)
