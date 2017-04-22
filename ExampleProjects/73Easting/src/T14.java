@@ -431,7 +431,7 @@ public class T14 {
 			EntityStatePdu temp = e.nextElement() ;
 			
 			if ((temp.getForceId()!= this.ForceId ) &&
-					(temp.getEntityAppearance() != FUNCTIONAL_APPEARANCE )  ) {
+					(temp.getEntityAppearance() == FUNCTIONAL_APPEARANCE )  ) {
 
 				int a =temp.getEntityID().getSiteID();
 				int b =temp.getEntityID().getApplicationID();
