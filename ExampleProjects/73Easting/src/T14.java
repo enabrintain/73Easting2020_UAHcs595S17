@@ -103,7 +103,7 @@ public class T14 {
 				
 			}
 			if(detonateFlag)
-				detonateUpdate();
+				detonateUpdate(dataObj);
 			
 		
 		
@@ -116,10 +116,30 @@ public class T14 {
 		
 	}// update
 
-	private void detonateUpdate() {
+	private void detonateUpdate(DataRepository dataObj) {
 		for(DetonationPdu d : detonatePdus){
-			m_appearance = KILLED_APPEARANCE;
+			
 			System.out.println(d.getFiringEntityID().getEntityID() + " detonated " + this.ID);
+			int a = d.getFiringEntityID().getSiteID();
+			int b = d.getFiringEntityID().getApplicationID();
+			int c = d.getFiringEntityID().getEntityID();
+			String fire_tank_key = String.valueOf(a)+String.valueOf(b)+String.valueOf(c);
+			double[] r = dataObj.getM_dr().get(fire_tank_key).getUpdatedPositionOrientation();
+			double rx = r[0] ; 
+			double ry = r[1] ; 
+			double rz  = r[2]; 
+			double lx = this.getM_location().getX();
+			double ly = this.getM_location().getY();
+			double lz = this.getM_location().getZ();
+			
+			double fire_distance = Math.sqrt( 
+					Math.pow((lx-rx), 2.0) + 
+					Math.pow((ly-ry), 2.0) + 
+					Math.pow((lz-rz), 2.0)) ; 
+			
+			if (isDead(fire_distance) )
+			   m_appearance = KILLED_APPEARANCE;
+			
 		}
 		detonatePdus.clear();	
 		detonateFlag = false;
@@ -406,7 +426,6 @@ public class T14 {
 		return false;
 	}
 	
-	
 
 	/****** END PK function ***************/
 	/******isSeeTarget**********************/
@@ -421,9 +440,17 @@ public class T14 {
 			
 			if ((temp.getForceId()!= this.ForceId ) &&
 					(temp.getEntityAppearance() == FUNCTIONAL_APPEARANCE )  ) {
-				double rx = temp.getEntityLocation().getX() ; 
-				double ry = temp.getEntityLocation().getY() ; 
-				double rz  = temp.getEntityLocation().getZ() ; 
+
+				int a =temp.getEntityID().getSiteID();
+				int b =temp.getEntityID().getApplicationID();
+				int c =temp.getEntityID().getEntityID();
+				String key = String.valueOf(a)+String.valueOf(b)+String.valueOf(c);
+		 
+				double[] r = dataObj.getM_dr().get(key).getUpdatedPositionOrientation();
+				
+				double rx = r[0] ; 
+				double ry = r[1] ; 
+				double rz  = r[2]; 
 				double distance = Math.sqrt( 
 						Math.pow((lx-rx), 2.0) + 
 						Math.pow((ly-ry), 2.0) + 
