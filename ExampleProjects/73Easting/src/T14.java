@@ -19,6 +19,9 @@ import edu.nps.moves.disutil.DisTime;
 public class T14 {
 
 	/******** T14 Field ********/
+	public static double MIN_FIRE_DISTANCE = 4000;
+	public static double MAX_FIRE_DISTANCE = 20000;
+	
 	private static int m_count = 302; // keep track on how many T14 has been
 										// created
 	private static int m_loads = 45;
@@ -39,7 +42,9 @@ public class T14 {
 	protected FirePdu m_firepdu; // fire event
 	protected DetonationPdu m_depdu; // been hit, report demage
 	protected EntityStatePdu aimed_target = null;
-	
+
+	public static long FUNCTIONAL_APPEARANCE = 400000;
+	public static long KILLED_APPEARANCE = 408038;
 	protected long m_appearance;
 	/********* End Field **************/
 
@@ -53,7 +58,7 @@ public class T14 {
 		m_count++; // increment T14 count
 		ID = m_count;
 
-		m_appearance = 400000; 
+		m_appearance = FUNCTIONAL_APPEARANCE; 
 		m_disTime = DisTime.getInstance();
 	} // end constructor
 
@@ -69,14 +74,10 @@ public class T14 {
 	private long localClock = -1;
 	
 	public void update(DataRepository dataObj) {
-		/*if(lastUpdated!=-1){
-			System.out.println("Update " + (System.currentTimeMillis()-lastUpdated));
-		}
-		lastUpdated = System.currentTimeMillis();*/
 		
 		// Does the Tank see something to shoot at?
         if(aimed_target == null) {
-        	isSeeTarget(dataObj); 
+        	findNearestTarget(dataObj); 
         	
         }else {
         	// check if the target dead 
@@ -109,7 +110,7 @@ public class T14 {
 
 	private void detonateUpdate() {
 		for(DetonationPdu d : detonatePdus){
-			m_appearance = 408038;
+			m_appearance = KILLED_APPEARANCE;
 			System.out.println(d.getFiringEntityID().getEntityID() + " detonated " + this.ID);
 		}
 		detonatePdus.clear();	
@@ -377,37 +378,35 @@ public class T14 {
 
 	/****** END PK function ***************/
 	/******isSeeTarget**********************/
-	public boolean isSeeTarget(DataRepository dataObj) {
+	public boolean findNearestTarget(DataRepository dataObj) {
 		double lx = m_disCoordinates[0];
 		double ly = m_disCoordinates[1];
 		double lz = m_disCoordinates[2];
-		double distance =0; 
-		double min_dis = 20000 ;
-		//Vector<EntityStatePdu> seelist = null;
+		double currentMax = MAX_FIRE_DISTANCE;
+		
 		for (Enumeration<EntityStatePdu> e = dataObj.getRemoteEspdus().elements(); e.hasMoreElements();) {
 			EntityStatePdu temp = e.nextElement() ;
 			
-			if ((temp.getEntityID().getApplicationID()== 3002 ) && (temp.getEntityAppearance() != 400000 )  ) {
+			if ((temp.getForceId()!= this.ForceId ) &&
+					(temp.getEntityAppearance() == FUNCTIONAL_APPEARANCE )  ) {
 				double rx = temp.getEntityLocation().getX() ; 
 				double ry = temp.getEntityLocation().getY() ; 
 				double rz  = temp.getEntityLocation().getZ() ; 
-				distance = Math.sqrt( Math.pow((lx-rx), 2.0 ) + Math.pow((ly-ry), 2.0)  + Math.pow((lz-rz), 2.0)) ; 
+				double distance = Math.sqrt( 
+						Math.pow((lx-rx), 2.0) + 
+						Math.pow((ly-ry), 2.0) + 
+						Math.pow((lz-rz), 2.0)) ; 
 				//System.out.println("distance to me: "+ distance);	
-				if (distance < 4000) {
-					if (distance < min_dis) {
-						min_dis = distance;
+				
+				if ((distance > MIN_FIRE_DISTANCE) && (distance < MAX_FIRE_DISTANCE)) 
+					if(distance<currentMax){
+						currentMax = distance;
 						aimed_target = temp;
-					}
-					//seelist.addElement(temp);
-					return true;
-				}
+						}
 			}
-			
-			
-		}
-				  
-		return false;
-	}
+		} 
+		return aimed_target!=null;
+	}// seeTarget
 	
 	
 	/******END isSeeTarget**********************/
