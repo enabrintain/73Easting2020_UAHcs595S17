@@ -8,6 +8,9 @@
 import java.io.ByteArrayOutputStream;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.Enumeration;
+import java.util.Random;
+import java.util.Vector;
 
 import edu.nps.moves.dis7.*;
 import edu.nps.moves.disutil.CoordinateConversions;
@@ -18,6 +21,7 @@ public class T14 {
 	/******** T14 Field ********/
 	private static int m_count = 302; // keep track on how many T14 has been
 										// created
+	private static int m_loads = 45;
 	private int ID = -1;
 
 	protected DisTime m_disTime; // time padding
@@ -34,7 +38,7 @@ public class T14 {
 	
 	protected FirePdu m_firepdu; // fire event
 	protected DetonationPdu m_depdu; // been hit, report demage
-
+	protected EntityStatePdu aimed_target = null;
 	/********* End Field **************/
 
 	/*** constructor with location ***/
@@ -68,16 +72,36 @@ public class T14 {
 		lastUpdated = System.currentTimeMillis();*/
 		
 		// Does the Tank see something to shoot at?
-
-		// Has the tank been shot at?
-		if(firedFlag)
-			fireUpdate();
-		if(detonateFlag)
-			detonateUpdate();
-
+        if(aimed_target == null) {
+        	isSeeTarget(dataObj); 
+        	
+        }else {
+        	// check if the target dead 
+        	//if (aimed_target.getEntityAppearance() != 400000)
+        	System.out.println(aimed_target.getEntityAppearance());
+        	System.out.println("I am seeing this tank: "+aimed_target.getEntityID().getApplicationID()+aimed_target.getEntityID().getSiteID()+aimed_target.getEntityID().getEntityID());
+        	// keep shooting at it 
+        }
 		
+		
+		
+		// Has the tank been shot at?
+			if(firedFlag) {
+				fireUpdate();
+				
+			}
+			if(detonateFlag)
+				detonateUpdate();
+			
+		
+		
+		
+		
+		// if it's time to update Espdus
 		if (shouldSendUpdate())
 			dataObj.sendESPdu(this.getEntityStatePdu());
+		
+		
 	}// update
 
 	private void detonateUpdate() {
@@ -297,31 +321,90 @@ public class T14 {
 	}
 	/***** END velocity ********/
 	
+	/****** probability of hit function ***************/
+	public boolean isTargertHit(double distance) {
+		Random rng = null;
+		double r1=rng.nextDouble();
+		double coefficient =0; 
+		if (distance < 1000) { // unit is meter
+			coefficient = 0.089;
+			double final_probability = 0.9*coefficient;
+			if (r1 < final_probability) {
+				return true;
+				}
+			
+		}else if(distance < 2000) {
+			coefficient = 0.05;
+			double final_probability = 0.8*coefficient;
+			if (r1 < final_probability) {
+				return true;
+				}
+		}else if (distance < 3000) {
+			coefficient = 0.027;
+			double final_probability = 0.75*coefficient;
+			if (r1 < final_probability) {
+				return true;
+				}
+		}else if (distance < 4000) {
+			coefficient = 0.014;
+			double final_probability = 0.7*coefficient;
+			if (r1 < final_probability) {
+				return true;
+				}
+			
+		}
+		
+		
+		return false;
+	}
+	
+	
+	/****** END PH function ***************/
 
-	/****** fire event ***************/
-	/*
-	 * when a Fire event happened, this function will instantiate a FirePdu
-	 * according to the eventID
-	 *
-	 * public void fire(EventID pEventID) { // EventIdentifier m_firepdu = new
-	 * FirePdu() ; m_firepdu.setEventID(pEventID);
-	 * m_firepdu.setExerciseID(m_espdu.getExerciseID());
-	 * //m_firepdu.setRangeToTarget(pRangeToTarget) // more tobe done
-	 * 
-	 * } //
-	 */
+	/****** probability of kill function ***************/
+	public boolean isDamaged(double distance) {
+		
+		return false;
+	}
+	
 
-	/*
-	 * public boolean isTargetHit(EventID eventID) { // EventIdentifier
-	 * 
-	 * // more to be done return false; }//
-	 */
-	/****** END fire event ***************/
-
-	/****** denotation ***************/
-
-	// more to be done
-
-	/****** END denotation ***************/
+	/****** END PK function ***************/
+	/******isSeeTarget**********************/
+	public boolean isSeeTarget(DataRepository dataObj) {
+		double lx = m_disCoordinates[0];
+		double ly = m_disCoordinates[1];
+		double lz = m_disCoordinates[2];
+		double distance =0; 
+		double min_dis = 20000 ;
+		//Vector<EntityStatePdu> seelist = null;
+		for (Enumeration<EntityStatePdu> e = dataObj.getRemoteEspdus().elements(); e.hasMoreElements();) {
+			EntityStatePdu temp = e.nextElement() ;
+			
+			if ((temp.getEntityID().getApplicationID()== 3002 ) && (temp.getEntityAppearance() != 400000 )  ) {
+				double rx = temp.getEntityLocation().getX() ; 
+				double ry = temp.getEntityLocation().getY() ; 
+				double rz  = temp.getEntityLocation().getZ() ; 
+				distance = Math.sqrt( Math.pow((lx-rx), 2.0 ) + Math.pow((ly-ry), 2.0)  + Math.pow((lz-rz), 2.0)) ; 
+				//System.out.println("distance to me: "+ distance);	
+				if (distance < 4000) {
+					if (distance < min_dis) {
+						min_dis = distance;
+						aimed_target = temp;
+					}
+					//seelist.addElement(temp);
+					return true;
+				}
+			}
+			
+			
+		}
+				  
+		return false;
+	}
+	
+	
+	/******END isSeeTarget**********************/
+	
+	
 
 } // end T14 class
