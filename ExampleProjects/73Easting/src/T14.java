@@ -12,6 +12,7 @@ import java.util.Enumeration;
 import java.util.Random;
 import java.util.Vector;
 
+import edu.nps.moves.deadreckoning.DIS_DeadReckoning;
 import edu.nps.moves.dis7.*;
 import edu.nps.moves.disutil.CoordinateConversions;
 import edu.nps.moves.disutil.DisTime;
@@ -122,6 +123,76 @@ public class T14 {
 
 	}// update
 
+	private void shootAt(EntityID target, DataRepository dataObj) {
+		FirePdu fPDU = new FirePdu();
+		fPDU.setExerciseID(ExerciseID);
+		EntityID firingId = fPDU.getFiringEntityID();
+		firingId.setSiteID(SiteID);
+		firingId.setApplicationID(ApplicationID);
+		firingId.setEntityID(ID);
+		EntityID targetId = fPDU.getTargetEntityID();
+		targetId.setSiteID(target.getSiteID());
+		targetId.setApplicationID(target.getApplicationID());
+		firingId.setEntityID(target.getEntityID());
+
+		EventIdentifier eventId = fPDU.getEventID();
+		eventId.getSimulationAddress().setApplication(ApplicationID);
+		eventId.getSimulationAddress().setSite(SiteID);
+		eventId.setEventNumber(dataObj.getEventID());
+
+		double[] locAndOrientation = dataObj.getDeadReckonings().get(dataObj.getkey(target))
+				.getUpdatedPositionOrientation();
+		Vector3Double location = fPDU.getLocationInWorldCoordinates();
+		location.setX(locAndOrientation[0]);
+		location.setY(locAndOrientation[1]);
+		location.setZ(locAndOrientation[2]);
+
+		MunitionDescriptor descriptor = fPDU.getDescriptor();
+		descriptor.setQuantity(4);
+		EntityType munitionType = descriptor.getMunitionType();
+		munitionType.setEntityKind((short) 2); // munition (vs platform,
+												// lifeform, munition, sensor,
+												// etc.)
+		munitionType.setDomain((short) 1); // Land (vs air, surface, subsurface,
+											// space)
+		munitionType.setCountry(222); // 102 Iraq
+		munitionType.setCategory((short) 2);
+		munitionType.setSubcategory((short) 2);
+		munitionType.setSpecific((short) 1);
+		descriptor.setRate(600); // just 'cause
+
+		fPDU.setRange(getRange(locAndOrientation));
+		calculateVelocity(fPDU, locAndOrientation);
+
+		fPDU.setTimestamp(DisTime.getInstance().getDisRelativeTimestamp());
+
+		dataObj.sendFirePDU(fPDU);
+		// isTargetHit
+	}
+
+	private void calculateVelocity(FirePdu fPDU, double[] locAndOrientation) {
+		double x = locAndOrientation[0] - m_location.getX();
+		double y = locAndOrientation[1] - m_location.getY();
+		double z = locAndOrientation[2] - m_location.getZ();
+		double vel = getRange(locAndOrientation) / fPDU.getDescriptor().getRate();
+		fPDU.getVelocity().setX((float) (x/vel));
+		fPDU.getVelocity().setY((float) (y/vel));
+		fPDU.getVelocity().setZ((float) (z/vel));
+	}
+
+	private float getRange(double[] location) {
+		double lx = m_disCoordinates[0];
+		double ly = m_disCoordinates[1];
+		double lz = m_disCoordinates[2];
+
+		double rx = location[0];
+		double ry = location[1];
+		double rz = location[2];
+		double distance = Math.sqrt(Math.pow((lx - rx), 2.0) + Math.pow((ly - ry), 2.0) + Math.pow((lz - rz), 2.0));
+
+		return (float) distance;
+	}
+
 	private void detonateUpdate(DataRepository dataObj) {
 		for (DetonationPdu d : detonatePdus) {
 
@@ -130,7 +201,7 @@ public class T14 {
 			int b = d.getFiringEntityID().getApplicationID();
 			int c = d.getFiringEntityID().getEntityID();
 			String fire_tank_key = String.valueOf(a) + String.valueOf(b) + String.valueOf(c);
-			double[] r = dataObj.getM_dr().get(fire_tank_key).getUpdatedPositionOrientation();
+			double[] r = dataObj.getDeadReckonings().get(fire_tank_key).getUpdatedPositionOrientation();
 			double rx = r[0];
 			double ry = r[1];
 			double rz = r[2];
@@ -435,9 +506,6 @@ public class T14 {
 	/****** END PK function ***************/
 	/****** isSeeTarget **********************/
 	public boolean findNearestTarget(DataRepository dataObj) {
-		double lx = m_disCoordinates[0];
-		double ly = m_disCoordinates[1];
-		double lz = m_disCoordinates[2];
 		double currentMax = MAX_FIRE_DISTANCE;
 
 		for (Enumeration<EntityStatePdu> e = dataObj.getRemoteEspdus().elements(); e.hasMoreElements();) {
@@ -445,19 +513,9 @@ public class T14 {
 
 			if ((temp.getForceId() != this.ForceId) && (temp.getEntityAppearance() == FUNCTIONAL_APPEARANCE)) {
 
-				int a = temp.getEntityID().getSiteID();
-				int b = temp.getEntityID().getApplicationID();
-				int c = temp.getEntityID().getEntityID();
-				String key = String.valueOf(a) + String.valueOf(b) + String.valueOf(c);
-
-				double[] r = dataObj.getM_dr().get(key).getUpdatedPositionOrientation();
-
-				double rx = r[0];
-				double ry = r[1];
-				double rz = r[2];
-				double distance = Math
-						.sqrt(Math.pow((lx - rx), 2.0) + Math.pow((ly - ry), 2.0) + Math.pow((lz - rz), 2.0));
-				// System.out.println("distance to me: "+ distance);
+				double[] r = dataObj.getDeadReckonings().get(dataObj.getkey(temp.getEntityID()))
+						.getUpdatedPositionOrientation();
+				double distance = getRange(r);
 
 				if ((distance > MIN_FIRE_DISTANCE) && (distance < MAX_FIRE_DISTANCE))
 					if (distance < currentMax) {
