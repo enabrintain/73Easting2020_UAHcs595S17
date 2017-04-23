@@ -80,6 +80,7 @@ public class T14 {
 	private ArrayList<DetonationPdu> detonatePdus = new ArrayList<>();
 	private long localClock = -1;
 	private double fireTime = 0.0;
+	private boolean fireWait = false;
 
 	public void update(DataRepository dataObj) {
 
@@ -88,25 +89,38 @@ public class T14 {
 			findNearestTarget(dataObj);
 			// calculate fire delay
 			fireTime = System.currentTimeMillis();
-			fireTime += (FIRE_DELAY + (5.0 - 5.0 * CrewQualityMultiplier)) * 1000; // as
-																					// CrewQualityMultiplier
-																					// ->
-																					// 0
-																					// firedelay
-																					// ->
-																					// 15
 		} else {
 			// check if the target dead
 			EntityID target = aimed_target.getEntityID();
 			if (dataObj.getRemoteEspdus().get(dataObj.getkey(target)).getEntityAppearance() != FUNCTIONAL_APPEARANCE) {
 				// target is dead
 				aimed_target = null;
+				fireWait = false;
 			} else {
 				// shoot at target if time>=firetime
 				if (System.currentTimeMillis() >= fireTime)
-					shootAt(target, dataObj);
+					if (!fireWait) {
+						// firewait is false - so shoot!
+						shootAt(target, dataObj); // generates fire pdu and
+													// xmits it
+						fireWait = true;
+						fireTime += 500; // wait half a second and then
+											// calculate hit
+					} else {
+						// fire wait is true - so calculate pHit
+						if (isTargetHit(getRange(dataObj.getDeadReckonings().get(dataObj.getkey(target))
+								.getUpdatedPositionOrientation()))) {
+							// Target was hit - send a detonate!
+							detonateAt(target, dataObj);
+							
+							// decide to shoot at target again
+							fireWait = false;
+							
+							 // as CrewQualityMultiplier -> 0, firedelay -> 15
+							fireTime += (FIRE_DELAY + (5.0 - 5.0 * CrewQualityMultiplier)) * 1000;
+						}
+					}
 			}
-
 		}
 
 		// Has the tank been shot at?
@@ -122,6 +136,57 @@ public class T14 {
 			dataObj.sendESPdu(this.getEntityStatePdu());
 
 	}// update
+
+	private void detonateAt(EntityID target, DataRepository dataObj) {
+		DetonationPdu dPDU = new DetonationPdu();
+		dPDU.setExerciseID(ExerciseID);
+		EntityID firingId = dPDU.getFiringEntityID();
+		firingId.setSiteID(SiteID);
+		firingId.setApplicationID(ApplicationID);
+		firingId.setEntityID(ID);
+		EntityID targetId = dPDU.getTargetEntityID();
+		targetId.setSiteID(target.getSiteID());
+		targetId.setApplicationID(target.getApplicationID());
+		firingId.setEntityID(target.getEntityID());
+
+		EventIdentifier eventId = dPDU.getEventID();
+		eventId.getSimulationAddress().setApplication(ApplicationID);
+		eventId.getSimulationAddress().setSite(SiteID);
+		eventId.setEventNumber(dataObj.getEventID());
+
+		
+		
+		//STOPPED HERE
+		
+		double[] locAndOrientation = dataObj.getDeadReckonings().get(dataObj.getkey(target))
+				.getUpdatedPositionOrientation();
+		Vector3Double location = dPDU.getLocationInWorldCoordinates();
+		location.setX(locAndOrientation[0]);
+		location.setY(locAndOrientation[1]);
+		location.setZ(locAndOrientation[2]);
+
+		MunitionDescriptor descriptor = dPDU.getDescriptor();
+		descriptor.setQuantity(4);
+		EntityType munitionType = descriptor.getMunitionType();
+		munitionType.setEntityKind((short) 2); // munition (vs platform,
+												// lifeform, munition, sensor,
+												// etc.)
+		munitionType.setDomain((short) 1); // Land (vs air, surface, subsurface,
+											// space)
+		munitionType.setCountry(222); // 102 Iraq
+		munitionType.setCategory((short) 2);
+		munitionType.setSubcategory((short) 2);
+		munitionType.setSpecific((short) 1);
+		descriptor.setRate(600); // just 'cause
+
+		dPDU.setRange(getRange(locAndOrientation));
+		calculateVelocity(dPDU, locAndOrientation);
+
+		dPDU.setTimestamp(DisTime.getInstance().getDisRelativeTimestamp());
+
+		dataObj.sendDetonationPDU(dPDU);
+		// isTargetHit
+	}
 
 	private void shootAt(EntityID target, DataRepository dataObj) {
 		FirePdu fPDU = new FirePdu();
@@ -175,9 +240,9 @@ public class T14 {
 		double y = locAndOrientation[1] - m_location.getY();
 		double z = locAndOrientation[2] - m_location.getZ();
 		double vel = getRange(locAndOrientation) / fPDU.getDescriptor().getRate();
-		fPDU.getVelocity().setX((float) (x/vel));
-		fPDU.getVelocity().setY((float) (y/vel));
-		fPDU.getVelocity().setZ((float) (z/vel));
+		fPDU.getVelocity().setX((float) (x / vel));
+		fPDU.getVelocity().setY((float) (y / vel));
+		fPDU.getVelocity().setZ((float) (z / vel));
 	}
 
 	private float getRange(double[] location) {

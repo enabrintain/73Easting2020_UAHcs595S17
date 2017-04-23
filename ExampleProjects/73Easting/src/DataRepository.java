@@ -239,6 +239,13 @@ public class DataRepository {
 	}
 
 
+	public void sendDetonationPDU(DetonationPdu dPDU) {
+		dPDU.setTimestamp(DisTime.getInstance().getDisRelativeTimestamp());
+		dPDU.setLength(dPDU.getMarshalledSize());
+		sender.send(dPDU);
+	}
+
+
 	public int getEventID() {
 		eventUID++;
 		return eventUID;
