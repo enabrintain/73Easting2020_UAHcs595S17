@@ -7,7 +7,9 @@
 
 import java.io.ByteArrayOutputStream;
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
+import java.util.Dictionary;
 import java.util.Enumeration;
 import java.util.Random;
 import java.util.Vector;
@@ -20,10 +22,10 @@ import edu.nps.moves.disutil.DisTime;
 public class T14 {
 
 	/******** T14 Field ********/
-	public static long FUNCTIONAL_APPEARANCE = 400000;
-	public static long KILLED_APPEARANCE = 408038;
-	public static double MIN_FIRE_DISTANCE = 4000;
-	public static double MAX_FIRE_DISTANCE = 20000;
+	public static long FUNCTIONAL_APPEARANCE = 4194304; //NOT FROZEN 400000 in HEX
+	public static long KILLED_APPEARANCE = 4227128; // 408038 in hex
+	public static double MIN_FIRE_DISTANCE = 50;
+	public static double MAX_FIRE_DISTANCE = 4000;
 
 	public static double FIRE_DELAY = 10; // 10 seconds
 
@@ -81,9 +83,10 @@ public class T14 {
 	private long localClock = -1;
 	private double fireTime = 0.0;
 	private boolean fireWait = false;
+	private FirePdu currentFire = null;
 
 	public void update(DataRepository dataObj) {
-
+try{
 		// Does the Tank see something to shoot at?
 		if (aimed_target == null) {
 			findNearestTarget(dataObj);
@@ -91,35 +94,60 @@ public class T14 {
 			fireTime = System.currentTimeMillis();
 		} else {
 			// check if the target dead
-			EntityID target = aimed_target.getEntityID();
-			if (dataObj.getRemoteEspdus().get(dataObj.getkey(target)).getEntityAppearance() != FUNCTIONAL_APPEARANCE) {
+			EntityID targetID = aimed_target.getEntityID();
+			if(targetID==null)
+			{
+				System.out.println("T14.update() targetID == null");
+				System.exit(-1);
+			}
+			String key = dataObj.getkey(targetID);
+			if(key==null)
+			{
+				System.out.println("T14.update() dataObj.getkey(targetID) == null");
+				System.exit(-1);
+			}
+			Dictionary<String, EntityStatePdu> remTable = dataObj.getRemoteEspdus();
+			if(remTable==null)
+			{
+				System.out.println("T14.update() dataObj.getRemoteEspdus() == null");
+				System.exit(-1);
+			}
+			EntityStatePdu esp = dataObj.getRemoteEspdus().get(key);
+			if(esp==null)
+			{
+				System.out.println("T14.update() dataObj.getRemoteEspdus().get("+key+") == null");
+				System.exit(-1);
+			}
+			if (esp.getEntityAppearance() != FUNCTIONAL_APPEARANCE) {
 				// target is dead
 				aimed_target = null;
 				fireWait = false;
 			} else {
 				// shoot at target if time>=firetime
-				if (System.currentTimeMillis() >= fireTime)
+				if (System.currentTimeMillis() >= fireTime){
 					if (!fireWait) {
 						// firewait is false - so shoot!
-						shootAt(target, dataObj); // generates fire pdu and
-													// xmits it
-						fireWait = true;
-						fireTime += 500; // wait half a second and then
-											// calculate hit
+						currentFire = shootAt(targetID, dataObj); // generates fire pdu and xmits it
+						if(currentFire!=null) // abort fire - target ES lookup failed to find in remote ES dictionary
+						{
+							fireWait = true;
+							fireTime = System.currentTimeMillis()+500; // wait half a second and then calculate hit
+						}
 					} else {
 						// fire wait is true - so calculate pHit
-						if (isTargetHit(getRange(dataObj.getDeadReckonings().get(dataObj.getkey(target))
-								.getUpdatedPositionOrientation()))) {
-							// Target was hit - send a detonate!
-							detonateAt(target, dataObj);
-							
-							// decide to shoot at target again
-							fireWait = false;
-							
-							 // as CrewQualityMultiplier -> 0, firedelay -> 15
-							fireTime += (FIRE_DELAY + (5.0 - 5.0 * CrewQualityMultiplier)) * 1000;
-						}
+
+						// Target was hit - send a detonate!
+						detonateAt(targetID, dataObj, isTargetHit(getRange(dataObj.getDeadReckonings().get(dataObj.getkey(targetID))
+								.getUpdatedPositionOrientation())), currentFire);
+						
+						// decide to shoot at target again
+						fireWait = false;
+						currentFire = null;
+						
+						 // as CrewQualityMultiplier -> 0, firedelay -> 15
+						fireTime += (FIRE_DELAY + (5.0 - 5.0 * CrewQualityMultiplier)) * 1000;
 					}
+				}
 			}
 		}
 
@@ -134,53 +162,30 @@ public class T14 {
 		// if it's time to update Espdus
 		if (shouldSendUpdate())
 			dataObj.sendESPdu(this.getEntityStatePdu());
-
+}catch(Exception derp)
+{
+	derp.printStackTrace(System.out);
+}
 	}// update
 
-	private void detonateAt(EntityID target, DataRepository dataObj) {
+	private void detonateAt(EntityID target, DataRepository dataObj, boolean hit, FirePdu fire) {
 		DetonationPdu dPDU = new DetonationPdu();
 		dPDU.setExerciseID(ExerciseID);
-		EntityID firingId = dPDU.getFiringEntityID();
-		firingId.setSiteID(SiteID);
-		firingId.setApplicationID(ApplicationID);
-		firingId.setEntityID(ID);
-		EntityID targetId = dPDU.getTargetEntityID();
-		targetId.setSiteID(target.getSiteID());
-		targetId.setApplicationID(target.getApplicationID());
-		firingId.setEntityID(target.getEntityID());
+		dPDU.setFiringEntityID(fire.getFiringEntityID());
+		if(hit)
+			dPDU.setTargetEntityID(fire.getTargetEntityID());
+		dPDU.setEventID(fire.getEventID());
+		dPDU.setDescriptor(fire.getDescriptor());
+		dPDU.setVelocity(fire.getVelocity());
 
-		EventIdentifier eventId = dPDU.getEventID();
-		eventId.getSimulationAddress().setApplication(ApplicationID);
-		eventId.getSimulationAddress().setSite(SiteID);
-		eventId.setEventNumber(dataObj.getEventID());
-
-		
-		
-		//STOPPED HERE
-		
 		double[] locAndOrientation = dataObj.getDeadReckonings().get(dataObj.getkey(target))
 				.getUpdatedPositionOrientation();
 		Vector3Double location = dPDU.getLocationInWorldCoordinates();
 		location.setX(locAndOrientation[0]);
 		location.setY(locAndOrientation[1]);
 		location.setZ(locAndOrientation[2]);
-
-		MunitionDescriptor descriptor = dPDU.getDescriptor();
-		descriptor.setQuantity(4);
-		EntityType munitionType = descriptor.getMunitionType();
-		munitionType.setEntityKind((short) 2); // munition (vs platform,
-												// lifeform, munition, sensor,
-												// etc.)
-		munitionType.setDomain((short) 1); // Land (vs air, surface, subsurface,
-											// space)
-		munitionType.setCountry(222); // 102 Iraq
-		munitionType.setCategory((short) 2);
-		munitionType.setSubcategory((short) 2);
-		munitionType.setSpecific((short) 1);
-		descriptor.setRate(600); // just 'cause
-
-		dPDU.setRange(getRange(locAndOrientation));
-		calculateVelocity(dPDU, locAndOrientation);
+		
+		dPDU.setDetonationResult((short) (hit?1:0));
 
 		dPDU.setTimestamp(DisTime.getInstance().getDisRelativeTimestamp());
 
@@ -188,7 +193,11 @@ public class T14 {
 		// isTargetHit
 	}
 
-	private void shootAt(EntityID target, DataRepository dataObj) {
+	private FirePdu shootAt(EntityID target, DataRepository dataObj) {
+		EntityStatePdu targetES = dataObj.getRemoteEspdus().get(dataObj.getkey(target));
+		if(targetES==null)
+			return null;
+		
 		FirePdu fPDU = new FirePdu();
 		fPDU.setExerciseID(ExerciseID);
 		EntityID firingId = fPDU.getFiringEntityID();
@@ -221,9 +230,18 @@ public class T14 {
 		munitionType.setDomain((short) 1); // Land (vs air, surface, subsurface,
 											// space)
 		munitionType.setCountry(222); // 102 Iraq
-		munitionType.setCategory((short) 2);
-		munitionType.setSubcategory((short) 2);
-		munitionType.setSpecific((short) 1);
+		// if shooting m1s(1 1 3), use 2 11 1
+		if(targetES.getEntityType().getCategory()==1 && targetES.getEntityType().getSubcategory()==1 && targetES.getEntityType().getSpecific()==3){
+			munitionType.setCategory((short) 2);
+			munitionType.setSubcategory((short) 11);
+			munitionType.setSpecific((short) 1);
+		}
+		else // use 2 11 3
+		{
+			munitionType.setCategory((short) 2);
+			munitionType.setSubcategory((short) 11);
+			munitionType.setSpecific((short) 3);
+		}
 		descriptor.setRate(600); // just 'cause
 
 		fPDU.setRange(getRange(locAndOrientation));
@@ -231,8 +249,12 @@ public class T14 {
 
 		fPDU.setTimestamp(DisTime.getInstance().getDisRelativeTimestamp());
 
+
+		System.out.println("T14.shootAt() " + dataObj.getkey(fPDU.getFiringEntityID()) + " shot at " + dataObj.getkey(fPDU.getTargetEntityID()));
+		
 		dataObj.sendFirePDU(fPDU);
 		// isTargetHit
+		return fPDU;
 	}
 
 	private void calculateVelocity(FirePdu fPDU, double[] locAndOrientation) {
@@ -260,7 +282,9 @@ public class T14 {
 
 	private void detonateUpdate(DataRepository dataObj) {
 		for (DetonationPdu d : detonatePdus) {
-
+			if(!canKill(d.getDescriptor().getMunitionType()))
+				continue;
+			
 			System.out.println(d.getFiringEntityID().getEntityID() + " detonated " + this.ID);
 			int a = d.getFiringEntityID().getSiteID();
 			int b = d.getFiringEntityID().getApplicationID();
@@ -277,12 +301,18 @@ public class T14 {
 			double fire_distance = Math
 					.sqrt(Math.pow((lx - rx), 2.0) + Math.pow((ly - ry), 2.0) + Math.pow((lz - rz), 2.0));
 
-			if (isDead(fire_distance))
+			if (isDead(fire_distance)){
 				m_appearance = KILLED_APPEARANCE;
-
+				break;
+			}
 		}
 		detonatePdus.clear();
 		detonateFlag = false;
+	}
+
+	//returns true if the munition has the ability to kill the tank
+	private boolean canKill(EntityType t) {
+		return t.getCategory()==1 || (t.getCategory()==2 && t.getSubcategory()==13 && t.getSpecific()==2);
 	}
 
 	private void fireUpdate() {
@@ -502,8 +532,8 @@ public class T14 {
 	/***** END velocity ********/
 
 	/****** probability of hit function ***************/
+	private Random rng = new Random();
 	public boolean isTargetHit(double distance) {
-		Random rng = null;
 		double r1 = rng.nextDouble();
 		double coefficient = 0;
 		if (distance < 1000) { // unit is meter
@@ -572,13 +602,24 @@ public class T14 {
 	/****** isSeeTarget **********************/
 	public boolean findNearestTarget(DataRepository dataObj) {
 		double currentMax = MAX_FIRE_DISTANCE;
+		String currentKey = "";
 
-		for (Enumeration<EntityStatePdu> e = dataObj.getRemoteEspdus().elements(); e.hasMoreElements();) {
-			EntityStatePdu temp = e.nextElement();
+		//for (Enumeration<EntityStatePdu> e = dataObj.getRemoteEspdus().elements(); e.hasMoreElements();) {
+		for (Enumeration<String> e = dataObj.getRemoteEspdus().keys(); e.hasMoreElements();) {
+		    String key = e.nextElement();
+			EntityStatePdu temp = dataObj.getRemoteEspdus().get(key);
+			if(temp==null)
+				break;
 
 			if ((temp.getForceId() != this.ForceId) && (temp.getEntityAppearance() == FUNCTIONAL_APPEARANCE)) {
+				if(dataObj.getDeadReckonings().get(key) == null)
+				{
+					System.out.println("T14.findNearestTarget() " + key + " returned null");
+					System.out.println("T14.findNearestTarget() " + dataObj.getkey(temp.getEntityID()) + " returned null");
+					System.exit(-1);
+				}
 
-				double[] r = dataObj.getDeadReckonings().get(dataObj.getkey(temp.getEntityID()))
+				double[] r = dataObj.getDeadReckonings().get(key)
 						.getUpdatedPositionOrientation();
 				double distance = getRange(r);
 
@@ -586,11 +627,19 @@ public class T14 {
 					if (distance < currentMax) {
 						currentMax = distance;
 						aimed_target = temp;
+						currentKey = key;
+						//System.out.println("T14.findNearestTarget() found  " + name(aimed_target) + " at " + distance);
 					}
 			}
 		}
+		if(aimed_target != null)
+			System.out.println("T14.findNearestTarget() found  " + name(aimed_target) + "("+currentKey+") at " + currentMax + " - " + aimed_target.getEntityID().getEntityID());
 		return aimed_target != null;
 	}// seeTarget
+
+	private String name(EntityStatePdu esp) {
+		return new String(esp.getMarking().getCharacters(), Charset.forName("US-ASCII")).trim();
+	}
 
 	/****** END isSeeTarget **********************/
 
