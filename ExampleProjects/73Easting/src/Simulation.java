@@ -1,8 +1,10 @@
+import java.util.ArrayList;
 import java.util.Enumeration;
 
 import edu.nps.moves.deadreckoning.DIS_DR_FPW_02;
 import edu.nps.moves.deadreckoning.DIS_DeadReckoning;
 import edu.nps.moves.dis7.EntityStatePdu;
+import edu.nps.moves.dis7.FirePdu;
 import edu.nps.moves.disutil.CoordinateConversions;
 import edu.nps.moves.disutil.DisTime;
 

@@ -109,8 +109,8 @@ public class EspduReceiver extends Thread {
 						}
 					} else {
 						String name = aPdu.getClass().getName();
-						if (!name.contains("DataPduReceived") && !name.contains("DataPdu"))
-							System.out.println("Received " + name);
+						//if (!name.contains("DataPduReceived") && !name.contains("DataPdu"))
+						//	System.out.println("Received " + name);
 						if (aPdu instanceof FirePdu) {
 							FirePdu fire = (FirePdu) aPdu;
 							dataObj.notify_FirePdu(fire);

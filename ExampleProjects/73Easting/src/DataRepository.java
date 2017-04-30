@@ -32,6 +32,8 @@ public class DataRepository {
 	private T14Sender sender = null;
 	private int eventUID = 4000;
 	
+	public ArrayList<FirePdu> shootList = new ArrayList<>();
+	
 	/***************/
 	public DataRepository() {
 		m_remoteEspdus= new Hashtable<>();
@@ -43,26 +45,19 @@ public class DataRepository {
 	
 	
 	public String getkey(EntityID id) {
-		return String.valueOf(id.getSiteID())+String.valueOf(id.getApplicationID())+String.valueOf(id.getEntityID());
+		return ""+id.getApplicationID()+id.getEntityID();
 	}
 	
 	/**
 	 * @throws Exception *************/
 	public void update_remoteEsPdus(EntityStatePdu Rpdu) throws Exception {
 		String key = getkey(Rpdu.getEntityID());
- 
-		if (m_remoteEspdus.isEmpty()) {
-			m_remoteEspdus.put(key, Rpdu);
-		} else { // remote localEsPdus not empty
-			if (m_remoteEspdus.get(key) == null){
-				m_remoteEspdus.put(key, Rpdu); // insert new entity
-				
-			} else {
-				m_remoteEspdus.remove(key); // delete old one
-				m_remoteEspdus.put(key, Rpdu); // update with new one
-				
-			} // end else 
-		} // end else
+		if (m_remoteEspdus.get(key) == null){
+			m_remoteEspdus.put(key, Rpdu); // insert new entity
+		} else {
+			//m_remoteEspdus.remove(key); // delete old one
+			m_remoteEspdus.put(key, Rpdu); // update with new one
+		} // end else 
 	}
 	
 	/***************/
@@ -79,7 +74,6 @@ public class DataRepository {
 			if (m_localEspdus.get(key) == null){
 				m_localEspdus.put(key, Lpdu); // insert new entity
 			} else {
-				m_localEspdus.remove(key); // delete old one
 				m_localEspdus.put(key, Lpdu); // update with new one
 			} // end else 
 			
@@ -95,7 +89,8 @@ public class DataRepository {
 			DIS_DeadReckoning Rdr = getDR(Rpdu);
 			m_dr.put(key, Rdr);
 		} else { // 
-			if (m_dr.get(key) == null){
+			DIS_DeadReckoning dr = m_dr.get(key);
+			if (dr == null){
 				DIS_DeadReckoning Rdr = getDR(Rpdu);
 				m_dr.put(key, Rdr); // insert new entity
 				
@@ -120,9 +115,9 @@ public class DataRepository {
 				AVz = Rpdu.getDeadReckoningParameters().getEntityAngularVelocity().getZ();
 				
 				// make the arrays of location and other parameters
-		        //                loc           orien               lin V          Accel    Ang V
+		        //                loc           orien               lin V          Accel         Ang V
 		        double[] locOr = {lx, ly, lz,   ophi,opsi,otheta,   lvx, lvy,lvz,  Ax, Ay, Az,   AVx, AVy, AVz};
-				m_dr.get(key).setNewAll(locOr);
+				dr.setNewAll(locOr);
 			} // end else 
 			
 		} // end else
@@ -161,7 +156,7 @@ public class DataRepository {
 	/***************/
 	
 	public void notify_FirePdu(FirePdu fire) {
-		System.out.println("DataRepository.notify_FirePdu()" + fire.getFiringEntityID().getEntityID() + " at " + fire.getTargetEntityID().getEntityID());
+		//System.out.println("DataRepository.notify_FirePdu()" + fire.getFiringEntityID().getEntityID() + " at " + fire.getTargetEntityID().getEntityID());
 		EntityID id = fire.getTargetEntityID();
 		for(T14 tank : localTanks)
 			if(tank.getEntityID(null).equalsImpl(id))
@@ -172,7 +167,7 @@ public class DataRepository {
 	}
 	
 	public void notify_DetonationPdu(DetonationPdu detonation) {
-		System.out.println("DataRepository.notify_DetonationPdu()" + detonation.getFiringEntityID().getEntityID() + " at " + detonation.getTargetEntityID().getEntityID());
+		//System.out.println("DataRepository.notify_DetonationPdu()" + detonation.getFiringEntityID().getEntityID() + " at " + detonation.getTargetEntityID().getEntityID());
 		EntityID id = detonation.getTargetEntityID();
 		for(T14 tank : localTanks)
 			if(tank.getEntityID(null).equalsImpl(id))
@@ -235,6 +230,7 @@ public class DataRepository {
 	public void sendFirePDU(FirePdu fPDU) {
 		fPDU.setTimestamp(DisTime.getInstance().getDisRelativeTimestamp());
 		fPDU.setLength(fPDU.getMarshalledSize());
+		shootList.add(fPDU);
 		sender.send(fPDU);
 	}
 
