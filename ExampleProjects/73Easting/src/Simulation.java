@@ -35,7 +35,10 @@ public class Simulation extends Thread {
 																				// applicationID,
 																				// short
 																				// siteID)
-		t14_1.setLocation(29.507035, 46.595540, 250); // set tank location with
+		while(true)
+			if(dataObj.isTerrainServerLive())
+				break;
+		t14_1.setLocation(29.517024, 46.555961, 250, dataObj);//29.507035, 46.595540, 250); // set tank location with
 														// its position in (
 														// lat, lon, alt )
 		// t14_1.printLocation();

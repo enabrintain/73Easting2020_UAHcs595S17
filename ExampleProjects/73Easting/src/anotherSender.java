@@ -127,7 +127,7 @@ public static void main(String args[])
     
     // create a new T14 tank with its position in ( lat, lon, alt )
     T14 t14_1 = new T14((short)1,(short) 0, (short)1,(short) 1 ); //(short exerciseID, short forceID, short applicationID, short siteID)
-    t14_1.setLocation(29.3318,46.3748,0) ; 
+    //t14_1.setLocation(29.3318,46.3748,0) ; 
     t14_1.setM_orientation(150.0f, -0.01f, 0.01f);
     t14_1.setM_linearVelocity(0, 1f, 0);
     
