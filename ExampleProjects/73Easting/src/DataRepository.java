@@ -18,7 +18,7 @@ import edu.nps.moves.disutil.DisTime;
 
 
 /*
- * remore entiry database & local database 
+ * remove entry database & local database 
  */
 
 public class DataRepository {
@@ -30,17 +30,23 @@ public class DataRepository {
 	// Dictionary<key, DetonationPdu  > detonationPdus;
 	private ArrayList<T14> localTanks = new ArrayList<>();
 	private T14Sender sender = null;
+	private TerrainServerInterface terrainServer;
 	private int eventUID = 4000;
 	
 	public ArrayList<FirePdu> shootList = new ArrayList<>();
 	
 	/***************/
 	public DataRepository() {
-		m_remoteEspdus= new Hashtable<>();
-		m_localEspdus = new Hashtable();
-		sender = new T14Sender(this);
-		m_localEspdus = new Hashtable<>();
-		m_dr =  new Hashtable<>();
+		try {
+			m_remoteEspdus= new Hashtable<>();
+			m_localEspdus = new Hashtable();
+			sender = new T14Sender(this);
+			terrainServer = new TerrainServerInterface();
+			m_localEspdus = new Hashtable<>();
+			m_dr =  new Hashtable<>();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
 	
@@ -240,12 +246,33 @@ public class DataRepository {
 		dPDU.setLength(dPDU.getMarshalledSize());
 		sender.send(dPDU);
 	}
+	
+	public TerrainServerInterface getTerrainServer(){
+		return terrainServer;
+	}
 
 
 	public int getEventID() {
 		eventUID++;
 		return eventUID;
 	}
+
+
+	public boolean isTerrainServerLive() {
+
+		if(terrainServer==null)
+			return false;
+		else
+			try{
+				terrainServer.getAltitude(3817940.9117024885, 4036729.835147949, 3123425.9327854933);
+				return true;
+			}catch(Exception e){
+				e.printStackTrace(System.out);
+				return false;
+			}
+	}
+
+
 	
 	
 } // end dataRepository class

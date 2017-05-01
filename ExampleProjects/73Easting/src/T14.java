@@ -5,16 +5,10 @@
  * @author Phil Showers
  */
 
-import java.io.ByteArrayOutputStream;
-import java.io.UnsupportedEncodingException;
+import java.io.*;
 import java.nio.charset.Charset;
-import java.util.ArrayList;
-import java.util.Dictionary;
-import java.util.Enumeration;
-import java.util.Random;
-import java.util.Vector;
+import java.util.*;
 
-import edu.nps.moves.deadreckoning.DIS_DeadReckoning;
 import edu.nps.moves.dis7.*;
 import edu.nps.moves.disutil.CoordinateConversions;
 import edu.nps.moves.disutil.DisTime;
@@ -29,9 +23,7 @@ public class T14 {
 
 	public static double FIRE_DELAY = 10; // 10 seconds
 
-	private static int m_count = 302; // keep track on how many T14 has been
-										// created
-	private static int m_loads = 45;
+	private static int m_count = 302; // keep track on how many T14 have been created
 	private int ID = -1;
 
 	protected DisTime m_disTime; // time padding
@@ -86,6 +78,13 @@ public class T14 {
 	private FirePdu currentFire = null;
 
 	public void update(DataRepository dataObj) {
+		if(m_appearance!=FUNCTIONAL_APPEARANCE)
+		{
+			if (shouldSendUpdate())
+				dataObj.sendESPdu(this.getEntityStatePdu());
+			return;
+		}
+		
 try{
 		// Does the Tank see something to shoot at?
 		if (aimed_target == null) {
@@ -124,14 +123,15 @@ try{
 				fireWait = false;
 			} else {
 				// shoot at target if time>=firetime
-				if (System.currentTimeMillis() >= fireTime){
+				long t = System.currentTimeMillis();
+				if (t >= fireTime){
 					if (!fireWait) {
 						// firewait is false - so shoot!
 						currentFire = shootAt(targetID, dataObj); // generates fire pdu and xmits it
 						if(currentFire!=null) // abort fire - target ES lookup failed to find in remote ES dictionary
 						{
 							fireWait = true;
-							fireTime = System.currentTimeMillis()+500; // wait half a second and then calculate hit
+							fireTime = t+500; // wait half a second and then calculate hit
 						}
 					} else {
 						// fire wait is true - so calculate pHit
@@ -145,9 +145,13 @@ try{
 						currentFire = null;
 						
 						 // as CrewQualityMultiplier -> 0, firedelay -> 15
-						fireTime += (FIRE_DELAY + (5.0 - 5.0 * CrewQualityMultiplier)) * 1000;
+						fireTime = t + (FIRE_DELAY + (5.0 - 5.0 * CrewQualityMultiplier)) * 1000;
 					}
-				}
+				}/*
+				else
+				{
+					System.out.println("T14.update() waiting for fireTime " + fireTime + ":" + t);
+				}//*/
 			}
 		}
 
@@ -189,6 +193,7 @@ try{
 
 		dPDU.setTimestamp(DisTime.getInstance().getDisRelativeTimestamp());
 
+		System.out.println("T14.detonateAt() " + hit);
 		dataObj.sendDetonationPDU(dPDU);
 		// isTargetHit
 	}
@@ -200,15 +205,18 @@ try{
 		
 		FirePdu fPDU = new FirePdu();
 		fPDU.setExerciseID(ExerciseID);
+		
 		EntityID firingId = fPDU.getFiringEntityID();
 		firingId.setSiteID(SiteID);
 		firingId.setApplicationID(ApplicationID);
 		firingId.setEntityID(ID);
+		
 		EntityID targetId = fPDU.getTargetEntityID();
 		targetId.setSiteID(target.getSiteID());
 		targetId.setApplicationID(target.getApplicationID());
-		firingId.setEntityID(target.getEntityID());
-
+		targetId.setEntityID(target.getEntityID());
+		fPDU.setTargetEntityID(targetES.getEntityID());
+		
 		EventIdentifier eventId = fPDU.getEventID();
 		eventId.getSimulationAddress().setApplication(ApplicationID);
 		eventId.getSimulationAddress().setSite(SiteID);
@@ -286,11 +294,9 @@ try{
 				continue;
 			
 			System.out.println(d.getFiringEntityID().getEntityID() + " detonated " + this.ID);
-			int a = d.getFiringEntityID().getSiteID();
-			int b = d.getFiringEntityID().getApplicationID();
-			int c = d.getFiringEntityID().getEntityID();
-			String fire_tank_key = String.valueOf(a) + String.valueOf(b) + String.valueOf(c);
-			double[] r = dataObj.getDeadReckonings().get(fire_tank_key).getUpdatedPositionOrientation();
+
+			String key = dataObj.getkey(d.getFiringEntityID());
+			double[] r = dataObj.getDeadReckonings().get(key).getUpdatedPositionOrientation();
 			double rx = r[0];
 			double ry = r[1];
 			double rz = r[2];
@@ -444,8 +450,18 @@ try{
 	/***** END EntityType ********/
 
 	/***** Location ********/
-	public void setLocation(double lat, double lon, double alt) {
+	public void setLocation(double lat, double lon, double alt, DataRepository dr) {
 		m_disCoordinates = CoordinateConversions.getXYZfromLatLonDegrees(lat, lon, alt);
+		double elev;
+		try {
+			System.out.println("T14.setLocation() " + m_disCoordinates[0] + " "+ m_disCoordinates[1] + " "+ m_disCoordinates[2]);
+			elev = dr.getTerrainServer().getAltitude(m_disCoordinates[0], m_disCoordinates[1], m_disCoordinates[2]);
+			m_disCoordinates = CoordinateConversions.getXYZfromLatLonDegrees(lat, lon, elev+3);
+			System.out.println("T14.setLocation() " + m_disCoordinates[0] + " "+ m_disCoordinates[1] + " "+ m_disCoordinates[2]);
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public double[] getM_disCoordinates() {
@@ -534,29 +550,32 @@ try{
 	/****** probability of hit function ***************/
 	private Random rng = new Random();
 	public boolean isTargetHit(double distance) {
+		//god mode ;-)
+		//if(true)
+			//return true;
 		double r1 = rng.nextDouble();
-		double coefficient = 0;
+		double coefficient = 1;
 		if (distance < 1000) { // unit is meter
-			coefficient = 0.089;
+			//coefficient = 0.089;
 			double final_probability = 0.9 * coefficient;
 			if (r1 < final_probability) {
 				return true;
 			}
 
 		} else if (distance < 2000) {
-			coefficient = 0.05;
+			//coefficient = 0.05;
 			double final_probability = 0.8 * coefficient;
 			if (r1 < final_probability) {
 				return true;
 			}
 		} else if (distance < 3000) {
-			coefficient = 0.027;
+			//coefficient = 0.027;
 			double final_probability = 0.75 * coefficient;
 			if (r1 < final_probability) {
 				return true;
 			}
 		} else if (distance < 4000) {
-			coefficient = 0.014;
+			//coefficient = 0.014;
 			double final_probability = 0.7 * coefficient;
 			if (r1 < final_probability) {
 				return true;
@@ -571,7 +590,6 @@ try{
 
 	/****** probability of kill function ***************/
 	public boolean isDead(double distance) {
-		Random rng = null;
 		double r1 = rng.nextDouble();
 		double coefficient = 1;
 		if (distance < 2000) { // unit is meter
@@ -594,7 +612,6 @@ try{
 				return true;
 			}
 		}
-
 		return false;
 	}
 
@@ -619,8 +636,15 @@ try{
 					System.exit(-1);
 				}
 
-				double[] r = dataObj.getDeadReckonings().get(key)
-						.getUpdatedPositionOrientation();
+				double[] r = dataObj.getDeadReckonings().get(key).getUpdatedPositionOrientation();
+				double[] lla = CoordinateConversions.xyzToLatLonDegrees(r);
+				double[] rVis = CoordinateConversions.getXYZfromLatLonDegrees(lla[0], lla[1], lla[2]+3);
+				
+				
+				// = CoordinateConversions.getXYZfromLatLonDegrees(lat, lon, alt);
+				if(!dataObj.getTerrainServer().canSee(m_disCoordinates[0], m_disCoordinates[1], m_disCoordinates[2], rVis[0], rVis[1], rVis[2]))
+					continue;
+
 				double distance = getRange(r);
 
 				if ((distance > MIN_FIRE_DISTANCE) && (distance < MAX_FIRE_DISTANCE))
