@@ -1,33 +1,20 @@
 
 /*
- * Using DIS6 now, still have problem with DIS7,  version configuration need to be done later 
- * This demo put 3 threads(sender, receiver and simulation) into execution pool and runs okay 
+ * Using DIS7
+ * This demo puts 3 threads(itself, receiver, and simulation) into execution pool and runs them. 
  * DataRepository class shall contain all the EntityState Pdus  and "Event" Pdus(FirePdu, DenotationPdu, at.el)
- * simulation class shall maintain the main simulation logic, handle event queue
+ * Simulation class shall maintain the main simulation logic, handle event queue
+ * The 'main' thread simply listens for a keystroke to gracefully shut down the Application.
  */
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
-import java.net.DatagramPacket;
-import java.net.InetAddress;
-import java.net.MulticastSocket;
+import java.io.*;
+import java.net.*;
 import java.nio.charset.Charset;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-import java.util.Properties;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.*;
 
-import edu.nps.moves.dis7.EntityID;
-import edu.nps.moves.dis7.EntityType;
-import edu.nps.moves.dis7.EventIdentifier;
-import edu.nps.moves.dis7.FirePdu;
+import edu.nps.moves.dis7.*;
 
-public class demo {
+public class Demo {
 
 	public enum NetworkMode {
 		UNICAST, MULTICAST, BROADCAST
