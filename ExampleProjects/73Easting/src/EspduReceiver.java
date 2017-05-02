@@ -9,9 +9,6 @@ import java.util.*;
 
 import edu.nps.moves.disutil.*;
 import edu.nps.moves.dis7.*;
-import edu.nps.moves.deadreckoning.DIS_DR_FPW_02;
-import edu.nps.moves.deadreckoning.DIS_DeadReckoning;
-import edu.nps.moves.deadreckoning.utils.*;
 
 public class EspduReceiver extends Thread {
 
@@ -38,11 +35,11 @@ public class EspduReceiver extends Thread {
         // Default settings. These are used if no system properties are set. 
         // If system properties are passed in, these are over ridden.
         
-        InetAddress address = null; // maybe not needed because of broadcast...
+        //InetAddress address = null; // maybe not needed because of broadcast...
         
         try
         {
-            address = InetAddress.getByName(demo.DEFAULT_MULTICAST_GROUP);
+            //address = InetAddress.getByName(Demo.DEFAULT_MULTICAST_GROUP);
         }
         catch(Exception e)
         {
@@ -57,18 +54,18 @@ public class EspduReceiver extends Thread {
         String destinationIpString = systemProperties.getProperty("destinationIp");
 
         // Port we send to, and local port we open the socket on
-        String portString = systemProperties.getProperty("port");
+        //String portString = systemProperties.getProperty("port");
 
         // Set up a socket to send information
         try
         {
-            socket = new MulticastSocket(demo.PORT);
+            socket = new MulticastSocket(Demo.PORT);
             socket.setBroadcast(true);
 
             // Where we send packets to, the destination IP address
             if(destinationIpString != null)
             {
-                address = InetAddress.getByName(destinationIpString);
+                //address = InetAddress.getByName(destinationIpString);
             }
         }
         catch(Exception e)
@@ -93,10 +90,10 @@ public class EspduReceiver extends Thread {
 
 				List<Pdu> pduBundle = pduFactory.getPdusFromBundle(packet.getData());
 
-				Iterator it = pduBundle.iterator();
+				Iterator<Pdu> it = pduBundle.iterator();
 
 				while (it.hasNext()) {
-					EntityID eid;
+					//EntityID eid;
 					Pdu aPdu = (Pdu) it.next();
 
 					if (aPdu instanceof EntityStatePdu) {
@@ -108,7 +105,7 @@ public class EspduReceiver extends Thread {
 						    dataObj.update_dr(esPdu);
 						}
 					} else {
-						String name = aPdu.getClass().getName();
+						//String name = aPdu.getClass().getName();
 						//if (!name.contains("DataPduReceived") && !name.contains("DataPdu"))
 						//	System.out.println("Received " + name);
 						if (aPdu instanceof FirePdu) {

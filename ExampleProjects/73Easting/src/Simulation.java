@@ -1,12 +1,5 @@
-import java.util.ArrayList;
-import java.util.Enumeration;
-
-import edu.nps.moves.deadreckoning.DIS_DR_FPW_02;
-import edu.nps.moves.deadreckoning.DIS_DeadReckoning;
-import edu.nps.moves.dis7.EntityStatePdu;
-import edu.nps.moves.dis7.FirePdu;
-import edu.nps.moves.disutil.CoordinateConversions;
-import edu.nps.moves.disutil.DisTime;
+import edu.nps.moves.dis7.*;
+import edu.nps.moves.disutil.*;
 
 /*
  * main logic 
@@ -48,10 +41,10 @@ public class Simulation extends Thread {
 		// DIS_DeadReckoning dr = new DIS_DR_FPW_02();
 		DisTime dt = DisTime.getInstance();
 		int timestamp = dt.getDisRelativeTimestamp();
-		int preTs = timestamp;
+		//nt preTs = timestamp;
 		System.out.println("begin at " + timestamp);
-		int t = 0;
-		EntityStatePdu temp = null;
+		//int t = 0;
+		//EntityStatePdu temp = null;
 
 		while (true) {
 			for (T14 tank : dataObj.getTanks())
@@ -59,7 +52,7 @@ public class Simulation extends Thread {
 
 			
 			timestamp = dt.getDisRelativeTimestamp();
-			int delta = Math.abs(timestamp - preTs);
+			//int delta = Math.abs(timestamp - preTs);
 
 			/*
 			 * for (Enumeration<EntityStatePdu> e =

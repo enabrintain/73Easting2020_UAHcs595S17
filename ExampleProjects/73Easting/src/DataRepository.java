@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import java.util.Dictionary;
 import java.util.Hashtable;
 
-import edu.nps.moves.deadreckoning.DIS_DR_FPW_02;
 import edu.nps.moves.deadreckoning.DIS_DR_RVW_04;
 import edu.nps.moves.deadreckoning.DIS_DeadReckoning;
 import edu.nps.moves.dis7.* ;
@@ -39,8 +38,8 @@ public class DataRepository {
 	public DataRepository() {
 		try {
 			m_remoteEspdus= new Hashtable<>();
-			m_localEspdus = new Hashtable();
-			sender = new T14Sender(this);
+			m_localEspdus = new Hashtable<>();
+			sender = new T14Sender();
 			terrainServer = new TerrainServerInterface();
 			m_localEspdus = new Hashtable<>();
 			m_dr =  new Hashtable<>();

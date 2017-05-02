@@ -4,10 +4,6 @@ import java.net.*;
 import java.util.*;
 
 import edu.nps.moves.dis7.*;
-import edu.nps.moves.disenum.ForceID;
-import edu.nps.moves.disutil.CoordinateConversions;
-import edu.nps.moves.disutil.DisTime;
-//import edu.nps.moves.examples.EspduSender.NetworkMode;
 
 /**
  * Creates and sends ESPDUs in IEEE binary format.
@@ -16,22 +12,20 @@ import edu.nps.moves.disutil.DisTime;
  */
 public class T14Sender extends Thread {
 
-	private DataRepository dataObj;
 	private MulticastSocket socket = null;
-	private InetAddress destinationIp = null;
+	//private InetAddress destinationIp = null;
 
 	public enum NetworkMode {
 		UNICAST, MULTICAST, BROADCAST
 	};
 
-	public T14Sender(DataRepository data)
+	public T14Sender()
 	{
-		dataObj = data;
 		/****** set up socket *****/
 		try {
-			socket = new MulticastSocket(demo.PORT);
+			socket = new MulticastSocket(Demo.PORT);
 			socket.setBroadcast(true);
-	    	destinationIp = InetAddress.getByName(demo.DEFAULT_MULTICAST_GROUP);
+	    	//destinationIp = InetAddress.getByName(Demo.DEFAULT_MULTICAST_GROUP);
 		} catch (Exception e) {
 			System.out.println(e + " Cannot create multicast address");
 			System.exit(0);
