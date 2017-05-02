@@ -42,7 +42,7 @@ public class Demo {
 		} catch (IOException ex) {
 			ex.printStackTrace();
 		}
-		System.out.println("Terminating..");
+		System.out.println("Terminating...");
 		
 		
 		//Write Log
@@ -62,7 +62,8 @@ public class Demo {
 		
 		
 		
-		
+
+		System.out.println("Finished");
 		System.exit(-1);
 	}
 

@@ -36,13 +36,21 @@ public class TerrainServerInterface {
 		}
 	}// constructor
 	
-	public double getAltitude(double x, double y, double z) throws IOException 
+	public double getAltitude(double x, double y, double z) 
 	{
-		String message = "ELEVATION " + x + " " + y + " " + z;
-		out.println(message);
-		String reply = in.readLine();
-		double elevation = Double.parseDouble(reply.trim());
-		return elevation;
+		try {
+			String message = "ELEVATION " + x + " " + y + " " + z;
+			out.println(message);
+			String reply = in.readLine();
+			double elevation = Double.parseDouble(reply.trim());
+			return elevation;
+		} catch (NumberFormatException e) {
+			// The first message that the Terrain server sends back is a bad number, like "﻿250.285759982316", so just throw it out.
+			//e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace(System.out); // probably a bad thing...
+		}
+		return -1000;
 	}
 	
 	public boolean canSee(double x1, double y1, double z1, double x2, double y2, double z2)

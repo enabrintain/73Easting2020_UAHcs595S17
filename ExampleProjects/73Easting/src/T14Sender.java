@@ -10,10 +10,9 @@ import edu.nps.moves.dis7.*;
  *
  * 
  */
-public class T14Sender extends Thread {
+public class T14Sender {
 
 	private MulticastSocket socket = null;
-	//private InetAddress destinationIp = null;
 
 	public enum NetworkMode {
 		UNICAST, MULTICAST, BROADCAST
@@ -25,7 +24,6 @@ public class T14Sender extends Thread {
 		try {
 			socket = new MulticastSocket(Demo.PORT);
 			socket.setBroadcast(true);
-	    	//destinationIp = InetAddress.getByName(Demo.DEFAULT_MULTICAST_GROUP);
 		} catch (Exception e) {
 			System.out.println(e + " Cannot create multicast address");
 			System.exit(0);
@@ -34,12 +32,7 @@ public class T14Sender extends Thread {
 	}
 
 	long lastSent = -1;
-	public void send(Pdu pdu) {
-		/*if(lastSent!=-1){
-			System.out.println("Sending "+(System.currentTimeMillis()-lastSent));
-		}
-		lastSent = System.currentTimeMillis();//*/
-		
+	public void send(Pdu pdu) {		
 		Set<InetAddress> bcastAddresses = getBroadcastAddresses();
         Iterator<InetAddress> it = bcastAddresses.iterator();
 		try {
@@ -50,7 +43,7 @@ public class T14Sender extends Thread {
 			// The byte array here is the packet in DIS format. We put
 			// that into a datagram and send it.
 			byte[] data = baos.toByteArray();
-			//DatagramPacket packet = new DatagramPacket(data, data.length, destinationIp, demo.PORT);
+
 			while(it.hasNext())
 	        {
 	           InetAddress bcast = (InetAddress)it.next();
@@ -66,68 +59,8 @@ public class T14Sender extends Thread {
 		catch (Exception e) {
 			e.printStackTrace(System.out);
 		}
-		
-		/*Set<InetAddress> bcastAddresses = Utils.getBroadcastAddresses();
-        Iterator<InetAddress> it = bcastAddresses.iterator();
-        while(it.hasNext())
-        {
-           InetAddress bcast = (InetAddress)it.next();
-           //System.out.println("Sending bcast to " + bcast);
-           DatagramPacket packet = new DatagramPacket(data, data.length, bcast, 3000);
-           try {
-				socket.send(packet);
-				sentCt++;
-			} catch (IOException e) {
-				e.printStackTrace(System.out);
-			}
-        }*/
 	}
 
-	public void run() {
-		/*try {
-
-			while (true) {
-
-				Dictionary<EntityID, EntityStatePdu> localEspdus;
-				localEspdus = dataObj.getLocalEspdus();
-
-				for (Enumeration<EntityStatePdu> e = localEspdus.elements(); e.hasMoreElements();) {
-
-					EntityStatePdu t14EsPdu = e.nextElement();
-					// long ts = t14EsPdu.getTimestamp()
-					// ;//getDisAbsoluteTimestamp();
-					int ts = DisTime.getInstance().getDisRelativeTimestamp();
-					t14EsPdu.setTimestamp(ts);
-
-					ByteArrayOutputStream baos = new ByteArrayOutputStream();
-					DataOutputStream dos = new DataOutputStream(baos);
-
-					t14EsPdu.setLength(t14EsPdu.getMarshalledSize());
-					t14EsPdu.marshal(dos);
-					// t14Obj.printLocation(); // print out the position of a
-					// tank
-					System.out.println("sending local Espdu to: " + destinationIp.toString());
-					EntityID eid = t14EsPdu.getEntityID();
-					System.out.print(
-							"EID=[" + eid.getSiteID() + "," + eid.getApplicationID() + "," + eid.getEntityID() + "]");
-
-					// The byte array here is the packet in DIS format. We put
-					// that into a datagram and send it.
-					byte[] data = baos.toByteArray();
-
-					DatagramPacket packet = new DatagramPacket(data, data.length, destinationIp, demo.PORT);
-
-					socket.send(packet);
-
-				} // end for: iterate local entity data base
-
-			} // end while
-		} // end try
-		catch (Exception e) {
-			System.out.println(e);
-		} // end sending espdu try and catch block
-*/
-	} // end run
 
 	 /**
 	  * FROM edu.nps.moves.examples.EspduSender

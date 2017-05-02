@@ -453,15 +453,10 @@ try{
 	public void setLocation(double lat, double lon, double alt, DataRepository dr) {
 		m_disCoordinates = CoordinateConversions.getXYZfromLatLonDegrees(lat, lon, alt);
 		double elev;
-		try {
-			System.out.println("T14.setLocation() " + m_disCoordinates[0] + " "+ m_disCoordinates[1] + " "+ m_disCoordinates[2]);
-			elev = dr.getTerrainServer().getAltitude(m_disCoordinates[0], m_disCoordinates[1], m_disCoordinates[2]);
-			m_disCoordinates = CoordinateConversions.getXYZfromLatLonDegrees(lat, lon, elev+3);
-			System.out.println("T14.setLocation() " + m_disCoordinates[0] + " "+ m_disCoordinates[1] + " "+ m_disCoordinates[2]);
-			
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		//System.out.println("T14.setLocation() " + m_disCoordinates[0] + " "+ m_disCoordinates[1] + " "+ m_disCoordinates[2]);
+		elev = dr.getTerrainServer().getAltitude(m_disCoordinates[0], m_disCoordinates[1], m_disCoordinates[2]);
+		m_disCoordinates = CoordinateConversions.getXYZfromLatLonDegrees(lat, lon, elev+3);
+		//System.out.println("T14.setLocation() " + m_disCoordinates[0] + " "+ m_disCoordinates[1] + " "+ m_disCoordinates[2]);
 	}
 
 	public double[] getM_disCoordinates() {

@@ -25,8 +25,7 @@ public class DataRepository {
 	private  Dictionary<String, EntityStatePdu> m_remoteEspdus;
 	private  Dictionary<String, DIS_DeadReckoning> m_dr;
 	private Dictionary<String, EntityStatePdu> m_localEspdus;
-	// Dictionary<key, FirePdu> firePdus;
-	// Dictionary<key, DetonationPdu  > detonationPdus;
+
 	private ArrayList<T14> localTanks = new ArrayList<>();
 	private T14Sender sender = null;
 	private TerrainServerInterface terrainServer;
@@ -197,7 +196,6 @@ public class DataRepository {
 	
 	
 	public static DIS_DeadReckoning getDR( EntityStatePdu obj) throws Exception{
-		
 		//DIS_DeadReckoning dr = new DIS_DR_FPW_02();
 		DIS_DeadReckoning dr = new DIS_DR_RVW_04();
 		double lx , ly, lz, ophi,opsi,otheta, lvx, lvy,lvz,Ax, Ay, Az, AVx, AVy, AVz = 0;
@@ -219,16 +217,10 @@ public class DataRepository {
 		// make the arrays of location and other parameters
         //                loc           orien               lin V          Accel    Ang V
 		double[] locOr = {lx, ly, lz,   ophi,opsi,otheta,   lvx, lvy,lvz,  Ax, Ay, Az,   AVx, AVy, AVz};
-     // set the parameters
+		// set the parameters
         dr.setNewAll(locOr);
         
-        // Print out the current state
-       // System.out.println(dr.toString());
-        //System.out.println();
-        
         return dr;
-
-		
 	}
 
 
@@ -271,7 +263,5 @@ public class DataRepository {
 			}
 	}
 
-
 	
-	
-} // end dataRepository class
+} // end DataRepository class

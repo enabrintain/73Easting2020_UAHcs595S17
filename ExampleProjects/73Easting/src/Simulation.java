@@ -31,20 +31,19 @@ public class Simulation extends Thread {
 		while(true)
 			if(dataObj.isTerrainServerLive())
 				break;
-		t14_1.setLocation(29.517024, 46.555961, 250, dataObj);//29.507035, 46.595540, 250); // set tank location with
+		
+		//checkpoint
+		//29.517024, 46.555961, 250, dataObj);//
+		
+		t14_1.setLocation(29.507035, 46.595540, 250, dataObj); // set tank location with
 														// its position in (
 														// lat, lon, alt )
-		// t14_1.printLocation();
 		dataObj.addTank(t14_1);
 		/******* END create local entity *******/
 
-		// DIS_DeadReckoning dr = new DIS_DR_FPW_02();
 		DisTime dt = DisTime.getInstance();
 		int timestamp = dt.getDisRelativeTimestamp();
-		//nt preTs = timestamp;
 		System.out.println("begin at " + timestamp);
-		//int t = 0;
-		//EntityStatePdu temp = null;
 
 		while (true) {
 			for (T14 tank : dataObj.getTanks())
@@ -52,69 +51,7 @@ public class Simulation extends Thread {
 
 			
 			timestamp = dt.getDisRelativeTimestamp();
-			//int delta = Math.abs(timestamp - preTs);
-
-			/*
-			 * for (Enumeration<EntityStatePdu> e =
-			 * dataObj.getRemoteEspdus().elements(); e.hasMoreElements();) {
-			 * 
-			 * EntityStatePdu temp = e.nextElement() ;
-			 * System.out.println("tank's updatetime"+temp.getTimestamp());
-			 * System.out.println("time now : "+ timestamp);
-			 * printLocation(temp);
-			 * System.out.println(temp.getDeadReckoningParameters().
-			 * getDeadReckoningAlgorithm()); double[] r =
-			 * dataObj.getM_dr().get("1300246").
-			 * getUpdatedPositionOrientation();
-			 * System.out.println(dataObj.getM_dr().get("1300246").toString( ));
-			 * //System.out.println("dr: "); //getDR(timestamp, temp);
-			 * 
-			 * }
-			 */
-
-			/***********************************************************
-			// This is where actually needed code probably
-			if ((!dataObj.getRemoteEspdus().isEmpty())) {
-				temp = dataObj.getRemoteEspdus().get("1300246"); // get
-																	// ESpdu
-																	// with
-																	// EID[1,3002,46]
-																	// EID[siteID,
-																	// applicationID,EntityID]
-				System.out.println("tank's updatetime" + temp.getTimestamp());
-				System.out.println("time now : " + timestamp);
-				printLocation(temp);
-				double[] r = dataObj.getM_dr().get("1300246").getUpdatedPositionOrientation();// get
-																								// dead
-																								// reckoning
-																								// data
-																								// of
-																								// EID[1,3002,46]
-																								// ESpdu
-				// location x value: r[0],location y value: r[1], location z
-				// value: r[2]
-				System.out.println(dataObj.getM_dr().get("1300246").toString());// print
-																				// out
-																				// all
-																				// dead
-																				// reckoning
-																				// data
-
-			}
-			***********************************************************
-
-			if (temp != null) {
-				System.out.println("tank's updatetime" + temp.getTimestamp());
-				System.out.println("delta: " + delta);
-				printLocation(temp);
-			}
-
-			t++;
-			Thread.sleep(1000);
-			System.out.println(t + " times.");
-			System.out.println("delta: " + delta);
-			preTs = timestamp;
-			*/
+			
 		}
 
 	} // end run
