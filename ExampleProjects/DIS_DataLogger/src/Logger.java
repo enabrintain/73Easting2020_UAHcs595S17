@@ -68,6 +68,23 @@ public class Logger implements Runnable{
 		}
 		
 	}
+
+	private long numES = 0;
+	private long numDet = 0;
+	private long numDetNothing = 0;
+	private long numFire = 0;
+
+	ArrayList<FirePdu> firePDUs = new ArrayList<>();
+	ArrayList<DetonationPdu> detPDUs = new ArrayList<>();
+	//ArrayList<EntityStatePdu> esPDUs = new ArrayList<>();
+	ArrayList<KillLog> killLogs = new ArrayList<>();
+
+	Hashtable<String, FirePdu> fireHash = new Hashtable<>();
+	Hashtable<String, DetonationPdu> detHash = new Hashtable<>();
+	Hashtable<String, EntityStatePdu> esHash = new Hashtable<>();
+	Hashtable<String, KillLog> killLogHash = new Hashtable<>();
+
+	private GregorianCalendar cal = new GregorianCalendar();
 	
 	public Logger()
 	{
@@ -117,9 +134,6 @@ public class Logger implements Runnable{
 		/********** END setup socket ***********/
 	}
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
 		Logger logger = new Logger();
 		Thread t = new Thread(logger);
@@ -211,21 +225,6 @@ public class Logger implements Runnable{
 			System.out.println(e);
 		}
 	}
-
-	private long numES = 0;
-	private long numDet = 0;
-	private long numDetNothing = 0;
-	private long numFire = 0;
-
-	ArrayList<FirePdu> firePDUs = new ArrayList<>();
-	ArrayList<DetonationPdu> detPDUs = new ArrayList<>();
-	//ArrayList<EntityStatePdu> esPDUs = new ArrayList<>();
-	ArrayList<KillLog> killLogs = new ArrayList<>();
-
-	Hashtable<String, FirePdu> fireHash = new Hashtable<>();
-	Hashtable<String, DetonationPdu> detHash = new Hashtable<>();
-	Hashtable<String, EntityStatePdu> esHash = new Hashtable<>();
-	Hashtable<String, KillLog> killLogHash = new Hashtable<>();
 
 	private void log(DetonationPdu detonation) {
 		try {
@@ -366,8 +365,6 @@ public class Logger implements Runnable{
 		else
 			return "Nothing";
 	}
-	
-	private GregorianCalendar cal = new GregorianCalendar();
 	
 	private String time(long timestamp)
 	{
