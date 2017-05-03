@@ -25,6 +25,8 @@ public class T14 {
 
 	private static int m_count = 302; // keep track on how many T14 have been created
 	private int ID = -1;
+	
+	protected String marking;
 
 	protected DisTime m_disTime; // time padding
 	protected short ExerciseID;
@@ -51,7 +53,7 @@ public class T14 {
 	/********* End Field **************/
 
 	/*** constructor with location ***/
-	public T14(short exerciseID, short forceID, short applicationID, short siteID) {
+	public T14(short exerciseID, short forceID, short applicationID, short siteID, String name) {
 		ExerciseID = exerciseID;
 		ForceId = forceID;
 		ApplicationID = applicationID;
@@ -59,9 +61,11 @@ public class T14 {
 		localClock = System.currentTimeMillis();
 		m_count++; // increment T14 count
 		ID = m_count;
+		marking = name;
 
 		m_appearance = FUNCTIONAL_APPEARANCE;
 		m_disTime = DisTime.getInstance();
+		System.out.println("T14() " + marking + " " + ID);
 	} // end constructor
 
 	private boolean sendFlag = true;
@@ -190,6 +194,11 @@ try{
 		location.setZ(locAndOrientation[2]);
 		
 		dPDU.setDetonationResult((short) (hit?1:0));
+		
+		Vector3Float loc = dPDU.getLocationOfEntityCoordinates();
+		loc.setX(-4.0f);
+		loc.setY(0.0f);
+		loc.setZ(0.0f);
 
 		dPDU.setTimestamp(DisTime.getInstance().getDisRelativeTimestamp());
 
@@ -333,9 +342,9 @@ try{
 	// otherwise send "heartbeat" ES pdu once every 5 seconds.
 	// TODO: this algorithm is not exactly right...
 	private boolean shouldSendUpdate() {
-		long num = 2; // send a ESPdu every num seconds
+		long num = 1; // send a ESPdu every num seconds
 
-		long t = ((System.currentTimeMillis() - localClock) / 1000);
+		long t = ((System.currentTimeMillis() - localClock) / 250); // send a pdu every 1/2 sec?
 		// System.out.println("\t" + t);
 		if (t % num == 0) // if the time since the sim started is divisable by
 							// num then update ES PDU
@@ -359,7 +368,8 @@ try{
 		return false;
 	}// shouldSendUpdate
 
-	/*****************************************************************/
+	/**
+	 * @param Marking ***************************************************************/
 	public EntityStatePdu getEntityStatePdu() {
 		EntityStatePdu espdu = new EntityStatePdu();
 		espdu.setExerciseID(ExerciseID);
@@ -402,7 +412,7 @@ try{
 
 		espdu.getMarking().setCharacterSet((short) 1); // ascii
 		try {
-			espdu.getMarking().setCharacters("AAAAAAAAAAAAAAAAAAAAAAAAAAAA".getBytes("US-ASCII"));
+			espdu.getMarking().setCharacters(marking.getBytes("US-ASCII"));
 		} catch (UnsupportedEncodingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -452,7 +462,7 @@ try{
 	/***** Location ********/
 	public void setLocation(double lat, double lon, double alt, DataRepository dr) {
 		m_disCoordinates = CoordinateConversions.getXYZfromLatLonDegrees(lat, lon, alt);
-		double elev;
+		double elev = alt;
 		//System.out.println("T14.setLocation() " + m_disCoordinates[0] + " "+ m_disCoordinates[1] + " "+ m_disCoordinates[2]);
 		elev = dr.getTerrainServer().getAltitude(m_disCoordinates[0], m_disCoordinates[1], m_disCoordinates[2]);
 		m_disCoordinates = CoordinateConversions.getXYZfromLatLonDegrees(lat, lon, elev+3);
@@ -612,9 +622,15 @@ try{
 
 	/****** END PK function ***************/
 	/****** isSeeTarget **********************/
+	int skipCt = 10;
 	public boolean findNearestTarget(DataRepository dataObj) {
 		double currentMax = MAX_FIRE_DISTANCE;
 		String currentKey = "";
+		
+		if(skipCt!=0){
+			skipCt--;
+			return false;
+		}
 
 		//for (Enumeration<EntityStatePdu> e = dataObj.getRemoteEspdus().elements(); e.hasMoreElements();) {
 		for (Enumeration<String> e = dataObj.getRemoteEspdus().keys(); e.hasMoreElements();) {
@@ -635,8 +651,7 @@ try{
 				double[] lla = CoordinateConversions.xyzToLatLonDegrees(r);
 				double[] rVis = CoordinateConversions.getXYZfromLatLonDegrees(lla[0], lla[1], lla[2]+3);
 				
-				
-				// = CoordinateConversions.getXYZfromLatLonDegrees(lat, lon, alt);
+				// = CoordinateConversions.getXYZfromLatLonDegrees(lat, lon, alt);				
 				if(!dataObj.getTerrainServer().canSee(m_disCoordinates[0], m_disCoordinates[1], m_disCoordinates[2], rVis[0], rVis[1], rVis[2]))
 					continue;
 
@@ -651,6 +666,8 @@ try{
 					}
 			}
 		}
+		if(skipCt==0)
+			skipCt = 10;
 		if(aimed_target != null)
 			System.out.println("T14.findNearestTarget() found  " + name(aimed_target) + "("+currentKey+") at " + currentMax + " - " + aimed_target.getEntityID().getEntityID());
 		return aimed_target != null;

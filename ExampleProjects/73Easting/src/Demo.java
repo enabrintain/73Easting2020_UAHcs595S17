@@ -46,7 +46,7 @@ public class Demo {
 		
 		
 		//Write Log
-		try {
+		/*try {
 			File log = new File("73EastingData.txt");
 			if(log.exists())
 				log.delete();
@@ -57,7 +57,7 @@ public class Demo {
 			out.close();
 		} catch (Exception ex) {
 			ex.printStackTrace();
-		}
+		}//*/
 		
 		
 		
