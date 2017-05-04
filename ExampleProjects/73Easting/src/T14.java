@@ -35,6 +35,9 @@ public class T14 {
 	protected short ApplicationID;
 	protected short SiteID;
 
+	private int heatRounds = 20;
+	private int sabotRounds = 25;
+
 	protected double CrewQualityMultiplier = 0.8; // range is 0 to 1, with 0
 													// being absent and 1 being
 													// the best.
@@ -140,6 +143,10 @@ try{
 						{
 							fireWait = true;
 							fireTime = t+500; // wait half a second and then calculate hit
+						}
+						else // out of ammo
+						{
+							// do no more fighting until I die.
 						}
 					} else {
 						// fire wait is true - so calculate pHit
@@ -253,16 +260,33 @@ try{
 		munitionType.setCountry(222); // 102 Iraq
 		// if shooting m1s(1 1 3), use 2 11 1
 		if(targetES.getEntityType().getCategory()==1 && targetES.getEntityType().getSubcategory()==1 && targetES.getEntityType().getSpecific()==3){
+			if(sabotRounds==0){
+				//out.println(marking".shootAt() ran out of sabots trying to shoot " + name(targetES));
+				munitionType.setCategory((short) 2);
+				munitionType.setSubcategory((short) 11);
+				munitionType.setSpecific((short) 3);
+			}
 			munitionType.setCategory((short) 2);
 			munitionType.setSubcategory((short) 11);
 			munitionType.setSpecific((short) 1);
+			sabotRounds--;
 		}
 		else // use 2 11 3
 		{
+			if(heatRounds==0){
+				//out.println(marking".shootAt() ran out of HEAT trying to shoot " + name(targetES));
+				munitionType.setCategory((short) 2);
+				munitionType.setSubcategory((short) 11);
+				munitionType.setSpecific((short) 1);
+			}
 			munitionType.setCategory((short) 2);
 			munitionType.setSubcategory((short) 11);
 			munitionType.setSpecific((short) 3);
+			heatRounds--;
 		}
+		
+		if(heatRounds==0 && sabotRounds==0)
+			return null;
 		descriptor.setRate(600); // just 'cause
 
 		fPDU.setRange(getRange(locAndOrientation));
