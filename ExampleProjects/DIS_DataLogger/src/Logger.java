@@ -20,6 +20,8 @@ public class Logger implements Runnable{
 	public static final int PORT = 3000;
 	public static final String DEFAULT_MULTICAST_GROUP = "10.56.0.255";
 	public static final int APPLICATION_ID = 999;
+	public static final short USA_FORCE_ID = 1;
+	public static final short IRAQI_FORCE_ID = 2; // 2 for Iraqis
 
 	public static long FUNCTIONAL_APPEARANCE_TANK_F = 6291456; //FROZEN 600000 in HEX
 	public static long FUNCTIONAL_APPEARANCE_TANK_N = 4194304; //NOT FROZEN 400000 in HEX
@@ -237,7 +239,7 @@ public class Logger implements Runnable{
 			}
 			else
 				numDetNothing++;
-			
+			detHash.put(getKey(detonation.getEventID()), detonation);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			//System.out.println("Logger.log(detonation) " + getKey(detonation.getTargetEntityID()) + ((killLogHash.get(getKey(detonation.getTargetEntityID()))!=null)?"notNull":"Null"));
@@ -255,6 +257,8 @@ public class Logger implements Runnable{
 				killLogHash.get(getKey(fire.getTargetEntityID())).log(fire);
 			if(killLogHash.containsKey(getKey(fire.getFiringEntityID())))
 				killLogHash.get(getKey(fire.getFiringEntityID())).log(fire);
+
+			fireHash.put(getKey(fire.getEventID()), fire);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -285,8 +289,19 @@ public class Logger implements Runnable{
 		return entityID.getApplicationID() + ":" + entityID.getEntityID();
 	}
 
+	private String getKey(EntityType e) {
+		return e.getEntityKind() + ":" + e.getDomain() + ":" +  e.getCountry() + ":" + e.getCategory() + ":" + e.getSubcategory() + ":" + e.getSpecific() + ":" + e.getExtra();
+	}
+
 	//check to see if the vehicle is 
 	private boolean isKilled(EntityStatePdu esPdu) {
+		
+		long app = esPdu.getEntityAppearance();
+		long tmp = app>>3;
+	    tmp = tmp&3;
+	    if(tmp!=3)
+	    	System.out.println("Logger.isKilled() " + name(esPdu.getEntityID()) + " " + tmp);
+		
 		return !(esPdu.getEntityAppearance() == FUNCTIONAL_APPEARANCE_INFANTRY_F ||
 				esPdu.getEntityAppearance() == FUNCTIONAL_APPEARANCE_INFANTRY_N ||
 				esPdu.getEntityAppearance() == FUNCTIONAL_APPEARANCE_TANK_F ||
@@ -298,11 +313,13 @@ public class Logger implements Runnable{
 	}
 
 	private void writeLog(PrintWriter out) {
-		out.println("Number of ES PDUs: " + numES);
-		out.println("Number of Fire PDUs: " + numFire);
-		out.println("Number of Detonate PDUs: " + numDet);
-		out.println("Number of Detonate PDUs containing null Targets: " + numDetNothing);
+		out.println("Number of ES PDUs: \t" + numES);
+		out.println("Number of Fire PDUs: \t" + numFire);
+		out.println("Number of Detonate PDUs: \t" + numDet);
+		out.println("Number of Detonate PDUs containing null Targets: \t" + numDetNothing);
 
+		processFires(out);
+		
 		out.println("\nAll Fire PDUs:");
 		for(FirePdu f : firePDUs)
 			out.println("\t" + getKey(f.getEventID()) + ": " + name(f.getFiringEntityID()) + " fired at " + name(f.getTargetEntityID()) + "["+typeFire(f)+"] @ "+time(f.getTimestamp()));
@@ -311,6 +328,21 @@ public class Logger implements Runnable{
 		for(DetonationPdu f : detPDUs)
 			out.println("\t" + getKey(f.getEventID()) + ": " + name(f.getFiringEntityID()) + " fired at " + name(f.getTargetEntityID()) + "["+typeDet(f)+"] @ "+time(f.getTimestamp()));
 
+		int numDead = 0;
+		int deadRed = 0;
+		int deadBlue = 0;
+		for(KillLog kl : killLogs)
+			if(kl.isKilled){
+				numDead++;
+				if(kl.original.getForceId()==1)
+					deadBlue++;
+				else
+					deadRed++;
+			}
+
+		out.println("Number of Dead Entities: \t" + numDead);
+		out.println("Number of Dead Blue: \t" + deadBlue);
+		out.println("Number of Dead Red: \t" + deadRed);
 		
 		for(KillLog kl : killLogs)
 			writeLog(out, kl);
@@ -327,6 +359,143 @@ public class Logger implements Runnable{
 		} catch (Exception e1) {
 			e1.printStackTrace();
 		}//*/
+	}
+
+	private void processFires(PrintWriter out) {
+		//num hits usa hits / misses
+		//num hits iraqi hits / misses
+		ArrayList<FirePdu> usaFires = new ArrayList<>();
+		int usaHits=0, usaMisses = 0;
+		double usaHitSumDist = 0, usaMissSumDist = 0;
+		ArrayList<FirePdu> iraqiFires = new ArrayList<>();
+		int iraqiHits=0, iraqiMisses = 0;
+		double iraqiHitSumDist = 0, iraqiMissSumDist = 0;
+		for(FirePdu f : firePDUs)
+		{
+			String eskey = getKey(f.getFiringEntityID());
+			EntityStatePdu firingEntity = esHash.get(eskey);
+			if(firingEntity==null)
+				System.out.println("Logger.processFires() firingEntity==null for " + eskey + " : " + getKey(f.getEventID()));
+			else
+			{
+				String evtKey = getKey(f.getEventID());
+				DetonationPdu d = detHash.get(evtKey);
+				if(firingEntity.getForceId()==USA_FORCE_ID){
+					usaFires.add(f);
+					if(d==null)
+						System.out.println("Logger.processFires() no associated detonate with " + evtKey);
+					else
+						if(d.getDetonationResult()==1) //hit
+						{
+							usaHits++;
+							usaHitSumDist += f.getRange();
+						}
+						else
+						{
+							usaMisses++;
+							usaMissSumDist += f.getRange();
+						}
+				}// usa shooting
+				else{
+					iraqiFires.add(f);
+					if(d==null)
+						System.out.println("Logger.processFires() no associated detonate with " + evtKey);
+					else
+						if(d.getDetonationResult()==1) //hit
+						{
+							iraqiHits++;
+							iraqiHitSumDist += f.getRange();
+						}
+						else
+						{
+							iraqiMisses++;
+							iraqiMissSumDist += f.getRange();
+						}
+				}//else iraqi shooting
+			}//if shooter field not null
+		}// for every fire pdu
+
+		out.println("USA forces fired \t" + (usaHits + usaMisses) + "\t times");
+		out.println("USA forces hit \t" + usaHits + "\t times");
+		out.println("USA forces missed \t" + usaMisses + "\t times");
+		out.println("The mean distance of USA shots which hit was \t" + ((double)usaHitSumDist/(double)usaHits) + "\t ");
+		out.println("The mean distance of USA shots which missed was \t" + ((double)usaMissSumDist/(double)usaMisses) + "\t ");
+		
+		out.println("Iraqi forces fired \t" + (iraqiHits + iraqiMisses) + "\t times");
+		out.println("Iraqi forces hit \t" + iraqiHits + "\t times");
+		out.println("Iraqi forces missed \t" + iraqiMisses + "\t times");
+		out.println("The mean distance of Iraqi shots which hit was \t" + ((double)iraqiHitSumDist/(double)iraqiHits) + "\t ");
+		out.println("The mean distance of Iraqi shots which missed was \t" + ((double)iraqiMissSumDist/(double)iraqiMisses) + "\t ");
+		
+		//sort weapon types used
+		Hashtable<String, Integer> usaWeaponHash = new Hashtable<>();
+		Hashtable<String, Integer> iraqiWeaponHash = new Hashtable<>();
+		Hashtable<String, Integer> usaWeaponKillHash = new Hashtable<>();
+		Hashtable<String, Integer> iraqiWeaponKillHash = new Hashtable<>();
+		for(FirePdu f : usaFires)
+		{
+			DetonationPdu d = detHash.get(getKey(f.getEventID()));
+			if(d!=null)
+			{
+				boolean hit = d.getDetonationResult()==1;
+				String key = getKey(d.getDescriptor().getMunitionType());
+				if(!usaWeaponHash.containsKey(key))
+					usaWeaponHash.put(key, new Integer(0));
+				usaWeaponHash.put(key, usaWeaponHash.get(key)+1);
+				if(hit)
+				{
+					if(!usaWeaponKillHash.containsKey(key))
+						usaWeaponKillHash.put(key, new Integer(0));
+					usaWeaponKillHash.put(key, usaWeaponKillHash.get(key)+1);
+				}
+			}
+		}//for each usa fires//*/
+		for(FirePdu f : iraqiFires)
+		{
+			DetonationPdu d = detHash.get(getKey(f.getEventID()));
+			if(d!=null)
+			{
+				boolean hit = d.getDetonationResult()==1;
+				String key = getKey(d.getDescriptor().getMunitionType());
+				if(!iraqiWeaponHash.containsKey(key))
+					iraqiWeaponHash.put(key, new Integer(0));
+				iraqiWeaponHash.put(key, iraqiWeaponHash.get(key)+1);
+				if(hit)
+				{
+					if(!iraqiWeaponKillHash.containsKey(key))
+						iraqiWeaponKillHash.put(key, new Integer(0));
+					iraqiWeaponKillHash.put(key, iraqiWeaponKillHash.get(key)+1);
+				}
+			}
+		}//for each iraqi fires//*/
+		
+		out.println("USA Weapon Table");
+		for (Enumeration<String> e = usaWeaponHash.keys(); e.hasMoreElements();) {
+			String key="";
+		    try {
+				key = e.nextElement();
+				int numWeaponShots = usaWeaponHash.get(key);
+				int kills = usaWeaponKillHash.get(key);
+				out.println(key + "\t" + numWeaponShots + "\t" + kills + "\t"+(kills/numWeaponShots)+"");
+			} catch (Exception e1) {
+				out.println(key);
+				e1.printStackTrace();
+			}
+		}
+		
+		out.println("\nIraqi Weapon Table");
+		for (Enumeration<String> e = iraqiWeaponHash.keys(); e.hasMoreElements();) {
+			String key="";
+		    try {
+				key = e.nextElement();
+				int numWeaponShots = iraqiWeaponHash.get(key);
+				int kills = iraqiWeaponKillHash.get(key);
+				out.println(key + "\t" + numWeaponShots + "\t" + kills + "\t"+(kills/numWeaponShots)+"");
+			} catch (Exception e1) {
+				out.println(key);
+				e1.printStackTrace();
+			}
+		}
 	}
 
 	private void writeLog(PrintWriter out, KillLog kl) {
