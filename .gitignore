@@ -13,3 +13,4 @@
 hs_err_pid*
 
 ExampleProjects/.*/
+ExampleProjects/DIS_DataLogger/*.txt

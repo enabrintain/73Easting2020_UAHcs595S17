@@ -17,6 +17,7 @@ public class T14 {
 
 	/******** T14 Field ********/
 	public static long FUNCTIONAL_APPEARANCE = 4194304; //NOT FROZEN 400000 in HEX
+	public static long MOBILITYKILLED_APPEARANCE = 4194306; // 408038 in hex
 	public static long KILLED_APPEARANCE = 4227128; // 408038 in hex
 	public static double MIN_FIRE_DISTANCE = 50;
 	public static double MAX_FIRE_DISTANCE = 4000;
@@ -121,7 +122,10 @@ try{
 				System.out.println("T14.update() dataObj.getRemoteEspdus().get("+key+") == null");
 				System.exit(-1);
 			}
-			if (esp.getEntityAppearance() != FUNCTIONAL_APPEARANCE) {
+			
+			long killVar = esp.getEntityAppearance()>>3;
+			killVar = killVar&3;
+			if (killVar==3){//(esp.getEntityAppearance() == KILLED_APPEARANCE) {
 				// target is dead
 				aimed_target = null;
 				fireWait = false;
@@ -638,8 +642,10 @@ try{
 			EntityStatePdu temp = dataObj.getRemoteEspdus().get(key);
 			if(temp==null)
 				break;
-
-			if ((temp.getForceId() != this.ForceId) && (temp.getEntityAppearance() == FUNCTIONAL_APPEARANCE)) {
+			
+			long killVar = temp.getEntityAppearance()>>3;
+			killVar = killVar&3;
+			if ((temp.getForceId() != this.ForceId) && (killVar!=3)) {
 				if(dataObj.getDeadReckonings().get(key) == null)
 				{
 					System.out.println("T14.findNearestTarget() " + key + " returned null");
