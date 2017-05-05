@@ -7,17 +7,16 @@ import edu.nps.moves.dis7.*;
 import edu.nps.moves.disutil.Pdu7Factory;
 
 /**
- * 
- */
-
-/**
+ * This class stores data about the simulation execution, does a 
+ * bit of statistics and logs everything to a file when the user 
+ * ends the execution.
+ * The user ends execution by typing enter in the console input.
  * @author Phil Showers
- *
  */
 public class Logger implements Runnable{
 	
 	public static final int MAX_PDU_SIZE = 8192;
-	public static final int PORT = 3000;
+	public static final int PORT = 3300;
 	public static final String DEFAULT_MULTICAST_GROUP = "10.56.0.255";
 	public static final int APPLICATION_ID = 999;
 	public static final short USA_FORCE_ID = 1;
@@ -297,15 +296,9 @@ public class Logger implements Runnable{
 	private boolean isKilled(EntityStatePdu esPdu) {
 		
 		long app = esPdu.getEntityAppearance();
-		long tmp = app>>3;
-	    tmp = tmp&3;
-	    if(tmp!=3)
-	    	System.out.println("Logger.isKilled() " + name(esPdu.getEntityID()) + " " + tmp);
-		
-		return !(esPdu.getEntityAppearance() == FUNCTIONAL_APPEARANCE_INFANTRY_F ||
-				esPdu.getEntityAppearance() == FUNCTIONAL_APPEARANCE_INFANTRY_N ||
-				esPdu.getEntityAppearance() == FUNCTIONAL_APPEARANCE_TANK_F ||
-				esPdu.getEntityAppearance() == FUNCTIONAL_APPEARANCE_TANK_N); 
+		long tmp = app>>3;// shift this 3 decimals to the right (drop paint scheme bit, mobility bit, firepower bit) 
+	    tmp = tmp&3; // the next 2 bits are the damage bits, keep them and zero out the rest with bitwise and to number three
+		return (tmp!=3); // if tmp == 3, its completely destroyed
 	}
 
 	private String getKey(EventIdentifier eventID) {
@@ -346,19 +339,6 @@ public class Logger implements Runnable{
 		
 		for(KillLog kl : killLogs)
 			writeLog(out, kl);
-
-		/*out.println("\nEntityStatePdu Log:");
-		try {
-		
-			for(EntityStatePdu e : esPDUs)
-			{
-				out.println("\t" + getKey(e.getEntityID()) + "("+name(e.getEntityID())+"): " + e.getEntityAppearance());
-			}
-
-			//dos.close();
-		} catch (Exception e1) {
-			e1.printStackTrace();
-		}//*/
 	}
 
 	private void processFires(PrintWriter out) {
@@ -496,7 +476,7 @@ public class Logger implements Runnable{
 				e1.printStackTrace();
 			}
 		}
-	}
+	}// processFires
 
 	private void writeLog(PrintWriter out, KillLog kl) {
 		out.println();
@@ -570,6 +550,6 @@ public class Logger implements Runnable{
         cal.setTimeInMillis(time);
 
 		return cal.get(Calendar.MINUTE)+":"+cal.get(Calendar.SECOND)+"."+cal.get(Calendar.MILLISECOND);
-	}
+	}// time
 
-}
+}// Logger

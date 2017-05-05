@@ -3,7 +3,8 @@ import edu.nps.moves.disutil.*;
 
 /*
  * main logic 
- * now it's only create one tank and update local Espdu table
+ * This is where the update loop lives
+ * @author rui wang and phillip showers
  */
 public class Simulation extends Thread {
 	public static final short EXERCISE_ID = 1;

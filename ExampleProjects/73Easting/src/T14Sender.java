@@ -7,8 +7,7 @@ import edu.nps.moves.dis7.*;
 
 /**
  * Creates and sends ESPDUs in IEEE binary format.
- *
- * 
+ * @author phil showers
  */
 public class T14Sender {
 

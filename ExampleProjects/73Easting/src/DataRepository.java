@@ -1,10 +1,3 @@
-/*
- * Pdu database
- * shall contain remote  Espdu  table 
- * shall contain local  Espdu  table 
- * shall contain event pdu  table 
- */
-
 
 import java.util.ArrayList;
 import java.util.Dictionary;
@@ -17,7 +10,11 @@ import edu.nps.moves.disutil.DisTime;
 
 
 /*
- * remove entry database & local database 
+ * Pdu database
+ * shall contain remote  Espdu  table 
+ * shall contain local  Espdu  table 
+ * shall contain event pdu  table 
+ * @author Rui Wang and Phil Showers
  */
 
 public class DataRepository {

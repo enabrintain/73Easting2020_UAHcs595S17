@@ -1,7 +1,7 @@
 
 /*
  * receiver thread
- * now it receiving Espdus and update remote Espdus
+ * @author rui wang and phil showers
  */
 
 import java.net.*;
@@ -52,9 +52,6 @@ public class EspduReceiver extends Thread {
 
         // IP address we send to
         String destinationIpString = systemProperties.getProperty("destinationIp");
-
-        // Port we send to, and local port we open the socket on
-        //String portString = systemProperties.getProperty("port");
 
         // Set up a socket to send information
         try
@@ -129,6 +126,4 @@ public class EspduReceiver extends Thread {
 
 	} // end run
 	
-	
-
-} // end class
+} // end PDU Receiver
